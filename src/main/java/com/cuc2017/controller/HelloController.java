@@ -30,5 +30,4 @@ public class HelloController {
 		model.addAttribute("msg", msg);
 		return "restricted";
 	}
-
 }
