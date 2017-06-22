@@ -3,43 +3,11 @@
 <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/"> <img alt="CUC logo"
-					src="images/CUCMultilogo2017-01-1.png" class="logo"/>
-				</a>
-			</div>
-		</div>
-	</nav>
 	<div class="container-fluid">
+	<div th:replace="fragments/head :: navbar">(navbar)</div>
 		<div class="row">
 			<div class="box col-md-6 col-md-offset-3">
-
-				<!--/* displayed if account IS NOT null, indicating that the user IS logged in */-->
-				<div th:if="${account}">
-					<h1 th:inline="text">Hello, [[${account.givenName}]]!</h1>
-
-					<h1>Groups</h1>
-					<div th:each="group : ${account.getGroups()}">
-						<h3 th:if="${group.description}"
-							th:text="${group.name} + ': ' + ${group.description}">Group-Name:
-							Description</h3>
-						<h3 th:unless="${group.description}" th:text="${group.name}">Group-Name</h3>
-					</div>
-
-
-					<form th:action="@{/logout}" method="post">
-						<a th:href="@{/restricted}" class="btn btn-primary">Restricted</a>
-						<input type="submit" class="btn btn-danger" value="Logout" />
-					</form>
-				</div>
-
-				<!--/* displayed if account IS null, indicating that the user IS NOT logged in */-->
-				<div th:unless="${account}">
-					<h1>Who are you?</h1>
-					<a th:href="@{/login}" class="btn btn-success">Login</a>
-				</div>
+				This page displays the current scores
 			</div>
 		</div>
 	</div>

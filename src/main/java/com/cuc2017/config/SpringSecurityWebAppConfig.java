@@ -29,6 +29,6 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/restricted").fullyAuthenticated().antMatchers("/**").permitAll();
+		http.authorizeRequests().antMatchers("/score").fullyAuthenticated().antMatchers("/**").permitAll();
 	}
 }
