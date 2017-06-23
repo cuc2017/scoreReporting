@@ -1,31 +1,36 @@
 package com.cuc2017.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cuc2017.repository.FieldRepository;
 
 @Controller
 public class ScoreController {
 
 	private static final Logger log = LoggerFactory.getLogger(ScoreController.class);
 
+	private FieldRepository fieldRepository;
+
 	@RequestMapping("/score")
 	String restricted(HttpServletRequest request, Model model) {
-		List<Integer> fields = new ArrayList<>(18);
-		for (int i = 1; i < 19; i++) {
-			if (i != 3) {
-				fields.add(i);
-			}
-		}
-		model.addAttribute("fields", fields);
+		model.addAttribute("fields", getFieldRepository().findAll());
 		return "score";
+	}
+
+	public FieldRepository getFieldRepository() {
+		return fieldRepository;
+	}
+
+	@Autowired
+	public void setFieldRepository(FieldRepository fieldRepository) {
+		this.fieldRepository = fieldRepository;
 	}
 
 }

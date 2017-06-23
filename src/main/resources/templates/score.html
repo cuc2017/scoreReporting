@@ -11,8 +11,8 @@
 					<div class="form-group">
 						<label for="field" class="sr-only">Permission</label> <select
 							id="field" class="form-control" onchange='fieldChanged(this)'>
-							<option th:each="field: ${fields}" th:value="${field}"
-								th:text="@{'Field ' + ${field}}">(field)</option>
+							<option th:each="field: ${fields}" th:value="${field.id}"
+								th:text="${field.fieldName}">(field)</option>
 						</select>
 					</div>
 				</form>

@@ -1,8 +1,15 @@
 package com.cuc2017.model;
 
-public class Game {
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Game extends AbstractEntity {
+
 	private String homeTeam;
 	private String awayTeam;
+	@ManyToOne
+	private Field field;
 
 	public Game(String homeTeam, String awayTeam) {
 		this.homeTeam = homeTeam;
@@ -25,4 +32,11 @@ public class Game {
 		this.awayTeam = awayTeam;
 	}
 
+	public Field getField() {
+		return field;
+	}
+
+	public void setField(Field field) {
+		this.field = field;
+	}
 }
