@@ -3,6 +3,11 @@ package com.cuc2017.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+/**
+ * Field class
+ *
+ * @author Rob Tyson
+ */
 @Entity
 public class Field extends AbstractEntity {
 
