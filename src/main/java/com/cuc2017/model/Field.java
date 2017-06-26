@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 @Entity
 public class Field extends AbstractEntity {
 
-	@Column(name = "FIELD_NAME", unique = true)
+	@Column(unique = true)
 	private String fieldName;
 
 	public Field() {
@@ -20,6 +20,11 @@ public class Field extends AbstractEntity {
 
 	public Field(String fieldName) {
 		this.fieldName = fieldName;
+	}
+
+	@Override
+	public String toString() {
+		return getFieldName();
 	}
 
 	public String getFieldName() {

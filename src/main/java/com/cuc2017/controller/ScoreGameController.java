@@ -12,36 +12,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cuc2017.model.Field;
 import com.cuc2017.model.Game;
-import com.cuc2017.repository.FieldRepository;
+import com.cuc2017.service.GameService;
 
 @RestController
 public class ScoreGameController {
 
 	private static final Logger log = LoggerFactory.getLogger(ScoreGameController.class);
 
-	// private FieldService fieldService;
-	private FieldRepository fieldRepository;
+	private GameService gameService;
 
 	@RequestMapping(value = "/selectGame", method = RequestMethod.POST, params = { "field" })
-	public ResponseEntity<?> saveProjectPermission(@RequestParam("field") Long fieldId, HttpServletRequest request) {
+	public ResponseEntity<?> getGameFromField(@RequestParam("field") Long fieldId, HttpServletRequest request) {
 		try {
-			Field field = getFieldRepository().findOne(fieldId);
-			log.info("Field is:" + field);
-			Game game = new Game("Team 1", "Team 2");
+			Game game = getGameService().getGame(fieldId);
+			log.info("Game is: " + game);
 			return new ResponseEntity<Game>(game, HttpStatus.OK);
 		} catch (Exception e) {
+			log.error("Problem getting game for field: " + fieldId, e);
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
 
-	public FieldRepository getFieldRepository() {
-		return fieldRepository;
+	public GameService getGameService() {
+		return gameService;
 	}
 
 	@Autowired
-	public void setFieldRepository(FieldRepository fieldRepository) {
-		this.fieldRepository = fieldRepository;
+	public void setGameService(GameService gameService) {
+		this.gameService = gameService;
 	}
+
 }

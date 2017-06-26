@@ -6,29 +6,41 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Game extends AbstractEntity {
 
-	private String homeTeam;
-	private String awayTeam;
+	@ManyToOne
+	private Team homeTeam;
+	@ManyToOne
+	private Team awayTeam;
 	@ManyToOne
 	private Field field;
 
-	public Game(String homeTeam, String awayTeam) {
-		this.homeTeam = homeTeam;
-		this.awayTeam = awayTeam;
+	public Game() {
+		// default constructor
 	}
 
-	public String getHomeTeam() {
+	public Game(Team homeTeam, Team awayTeam, Field field) {
+		this.homeTeam = homeTeam;
+		this.awayTeam = awayTeam;
+		this.field = field;
+	}
+
+	@Override
+	public String toString() {
+		return getHomeTeam() + " vs " + getAwayTeam() + " @ " + getField();
+	}
+
+	public Team getHomeTeam() {
 		return homeTeam;
 	}
 
-	public void setHomeTeam(String homeTeam) {
+	public void setHomeTeam(Team homeTeam) {
 		this.homeTeam = homeTeam;
 	}
 
-	public String getAwayTeam() {
+	public Team getAwayTeam() {
 		return awayTeam;
 	}
 
-	public void setAwayTeam(String awayTeam) {
+	public void setAwayTeam(Team awayTeam) {
 		this.awayTeam = awayTeam;
 	}
 
