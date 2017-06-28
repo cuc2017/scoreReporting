@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cuc2017.repository.FieldRepository;
+import com.cuc2017.service.GameService;
 
 @Controller
 public class ScoreController {
@@ -15,21 +15,22 @@ public class ScoreController {
 	// private static final Logger log =
 	// LoggerFactory.getLogger(ScoreController.class);
 
-	private FieldRepository fieldRepository;
+	private GameService gameService;
 
 	@RequestMapping("/score")
 	String restricted(HttpServletRequest request, Model model) {
-		model.addAttribute("fields", getFieldRepository().findAll());
+		model.addAttribute("divisions", getGameService().getDivisions());
+		model.addAttribute("fields", getGameService().getFields());
 		return "score";
 	}
 
-	public FieldRepository getFieldRepository() {
-		return fieldRepository;
+	public GameService getGameService() {
+		return gameService;
 	}
 
 	@Autowired
-	public void setFieldRepository(FieldRepository fieldRepository) {
-		this.fieldRepository = fieldRepository;
+	public void setGameService(GameService gameService) {
+		this.gameService = gameService;
 	}
 
 }

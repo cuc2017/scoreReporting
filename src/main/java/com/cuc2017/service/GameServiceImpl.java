@@ -1,28 +1,51 @@
 package com.cuc2017.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cuc2017.model.Division;
 import com.cuc2017.model.Field;
 import com.cuc2017.model.Game;
+import com.cuc2017.model.Team;
+import com.cuc2017.repository.DivisionRepository;
 import com.cuc2017.repository.FieldRepository;
 import com.cuc2017.repository.GameRepository;
+import com.cuc2017.repository.TeamRepository;
 
 @Service
 public class GameServiceImpl implements GameService {
 
 	private static final Logger log = LoggerFactory.getLogger(GameServiceImpl.class);
 
+	private DivisionRepository divisionRepository;
+	private TeamRepository teamRepository;
 	private FieldRepository fieldRepository;
 	private GameRepository gameRepository;
 
 	@Override
-	public Game getGame(Long fieldId) {
-		Field field = getFieldRepository().findOne(fieldId);
-		log.info("Field is:" + field);
-		return getGameRepository().findByField(field);
+	public List<Division> getDivisions() {
+		return getDivisionRepository().findAllByOrderByNameAsc();
+	}
+
+	@Override
+	public List<Team> getTeams(Long divisionId) {
+		return getTeamRepository().findByDivision_Id(divisionId);
+	}
+
+	@Override
+	public List<Field> getFields() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Game createGame(Long divisionId, Long homeTeamId, Long awayTeamId, Long fieldId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public FieldRepository getFieldRepository() {
@@ -41,6 +64,24 @@ public class GameServiceImpl implements GameService {
 	@Autowired
 	public void setGameRepository(GameRepository gameRepository) {
 		this.gameRepository = gameRepository;
+	}
+
+	public DivisionRepository getDivisionRepository() {
+		return divisionRepository;
+	}
+
+	@Autowired
+	public void setDivisionRepository(DivisionRepository divisionRepository) {
+		this.divisionRepository = divisionRepository;
+	}
+
+	public TeamRepository getTeamRepository() {
+		return teamRepository;
+	}
+
+	@Autowired
+	public void setTeamRepository(TeamRepository teamRepository) {
+		this.teamRepository = teamRepository;
 	}
 
 }

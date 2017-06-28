@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import com.cuc2017.model.Division;
 import com.cuc2017.model.Field;
-import com.cuc2017.model.Game;
 import com.cuc2017.model.Player;
 import com.cuc2017.model.Team;
 import com.cuc2017.repository.DivisionRepository;
@@ -46,8 +45,6 @@ public class DataLoader implements ApplicationRunner {
 		getTeamRepository().save(team1);
 		Team team2 = new Team(openDivision, "team 2");
 		getTeamRepository().save(team2);
-		Game game1 = new Game(team1, team2, fields.get(4));
-		getGameRepository().save(game1);
 
 		addPlayersForTeam(team1);
 		addPlayersForTeam(team2);
