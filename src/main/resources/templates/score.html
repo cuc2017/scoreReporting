@@ -9,23 +9,27 @@
 			<div class="box col-md-6 col-md-offset-3">
 				<form class="form-horizontal">
 					<div class="form-group">
-						<label id="divisionLabel" for="division"
-							class="sr-only">Division</label>
+						<label id="divisionLabel" for="division" class="sr-only">Division</label>
+						<select id="divisions" class="form-control"
+							onchange='divisionChanged(this)'>
+							<option th:disabled="disabled" th:selected="selected" value=" ">--
+								select a division --</option>
+							<option th:each="division: ${divisions}"
+								th:value="${division.id}" th:text="${division.name}">(division)</option>
+						</select> <br />
+						<div id="homeTeams"></div>
+						<br />
+						<div id="awayTeams"></div>
+						<br />
+						<div id="fields" class="hidden">
+							<label id="fieldLabel" for="field" class="sr-only">Field</label>
 							<select id="field" class="form-control"
-								onchange='divisionChanged(this)'>
-								<option th:disabled="disabled" th:selected="selected" value=" ">--
-									select a division --</option>
-								<option th:each="division: ${divisions}"
-									th:value="${division.id}" th:text="${division.name}">(division)</option>
-							</select>
-						<label id="fieldLabel" for="field"
-							class="sr-only">Field</label>
-							<select id="field" class="form-control hidden"
 								onchange='fieldChanged(this)'>
 
 								<option th:each="field: ${fields}" th:value="${field.id}"
 									th:text="${field.fieldName}">(field)</option>
 							</select>
+						</div>
 					</div>
 				</form>
 			</div>

@@ -1,7 +1,5 @@
 package com.cuc2017.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cuc2017.model.Game;
-import com.cuc2017.model.Team;
 import com.cuc2017.service.GameService;
 
 @RestController
@@ -36,18 +33,6 @@ public class ScoreGameController {
 			return new ResponseEntity<Game>(game, HttpStatus.OK);
 		} catch (Exception e) {
 			log.error("Problem getting game for field: " + fieldId, e);
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
-
-	@RequestMapping(value = "/selectDivision", method = RequestMethod.POST, params = { "division" })
-	public ResponseEntity<?> getTeams(@RequestParam("division") Long divisionId, HttpServletRequest request) {
-		try {
-			List<Team> teams = getGameService().getTeams(divisionId);
-			log.info("Teams are: " + teams);
-			return new ResponseEntity<List<Team>>(teams, HttpStatus.OK);
-		} catch (Exception e) {
-			log.error("Problem getting teams for division: " + divisionId, e);
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}
