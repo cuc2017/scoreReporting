@@ -2,20 +2,34 @@
  * 
  */
 function fieldChanged(selectedField) {
-	var selectedIndex = selectedField.selectedIndex;
-	var fieldId = selectedField.options[selectedIndex].value;
-	$.ajax({
-		type : "post",
-		url : '/selectGame/?field=' + fieldId,
-		success : function(response) {
-			console.log(response);
-		},
-		error : function(error) {
-			window.alert("Could not select field. Ask for help. With error: "
-					+ error.responseText);
-		}
-	});
+	$('#scoreGameButton').removeClass('hidden');
 }
+
+$(document).ready(function() {
+	$("#form").submit(function(e) {
+		var divisionSelected = $("#divisions option:selected");
+		var divisionId = divisionSelected.val();
+		var homeTeamSelected = $("#homeTeam option:selected");
+		var homeTeamId = homeTeamSelected.val();
+		var awayTeamSelected = $("#awayTeam option:selected");
+		var awayTeamId = awayTeamSelected.val();
+		var fieldSelected = $("#field option:selected");
+		var fieldId = fieldSelected.val();
+		$.ajax({
+			type : "post",
+			url : '/selectGame/?division=' + divisionId + "&homeTeam=" + homeTeamId + '&awayTeam=' + awayTeamId + '&field=' + fieldId,
+			success : function(response) {
+				console.log(response);
+				window.
+			},
+			error : function(error) {
+				console.log(error.responseText);
+				window.alert("Could not create game. Ask for help. With error: "
+					+ error.responseText);
+			}
+		});
+	});
+});
 
 function divisionChanged(selectedDivision) {
 	var selectedIndex = selectedDivision.selectedIndex;
@@ -27,6 +41,7 @@ function divisionChanged(selectedDivision) {
 			$('#homeTeams').html(homeTeams);
 			$('#awayTeams').addClass('hidden');
 			$('#fields').addClass('hidden');
+			$('#scoreGameButton').addClass('hidden');
 		},
 		error : function(error) {
 			console.log("Could not select division.");
@@ -40,8 +55,6 @@ function homeTeamChanged(selectedHomeTeam) {
 	var homeTeamId = selectedHomeTeam.options[selectedIndex].value;
 	var divisionSelected = $("#divisions option:selected");
 	var divisionId = divisionSelected.val();
-	console.log(homeTeamId);
-	console.log("division id= " + divisionId);
 	$.ajax({
 		type : "post",
 		url : '/selectHomeTeam/?division=' + divisionId + "&homeTeam=" + homeTeamId,
@@ -49,6 +62,7 @@ function homeTeamChanged(selectedHomeTeam) {
 			$('#awayTeams').removeClass('hidden');
 			$('#awayTeams').html(awayTeams);
 			$('#fields').addClass('hidden');
+			$('#scoreGameButton').addClass('hidden');
 		},
 		error : function(error) {
 			window.alert("Could not select division. Ask for help. With error: "
@@ -59,4 +73,5 @@ function homeTeamChanged(selectedHomeTeam) {
 
 function awayTeamChanged(selectedAwayTeam){
 	$('#fields').removeClass('hidden');
+	$('#scoreGameButton').addClass('hidden');
 }

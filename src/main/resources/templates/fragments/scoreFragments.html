@@ -5,7 +5,7 @@
 <body>
 	<div th:fragment="addHomeTeams">
 		<label id="homeTeamLabel" for="homeTeam" class="sr-only">Home
-			Team</label> <select id="field hidden" class="form-control"
+			Team</label> <select id="homeTeam" class="form-control"
 			onchange='homeTeamChanged(this)'>
 			<option th:disabled="disabled" th:selected="selected" value=" ">--
 				select home team --</option>
@@ -16,7 +16,7 @@
 	
 		<div th:fragment="addAwayTeams">
 		<label id="awayTeamLabel" for="awayTeam" class="sr-only">Away
-			Team</label> <select id="field hidden" class="form-control"
+			Team</label> <select id="awayTeam" class="form-control"
 			onchange='awayTeamChanged(this)'>
 			<option th:disabled="disabled" th:selected="selected" value=" ">--
 				select away team --</option>

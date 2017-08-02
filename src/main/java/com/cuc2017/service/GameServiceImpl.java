@@ -38,14 +38,18 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public List<Field> getFields() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<Field>) getFieldRepository().findAll();
 	}
 
 	@Override
 	public Game createGame(Long divisionId, Long homeTeamId, Long awayTeamId, Long fieldId) {
-		// TODO Auto-generated method stub
-		return null;
+		Division division = getDivisionRepository().findOne(divisionId);
+		Team homeTeam = getTeamRepository().findOne(homeTeamId);
+		Team awayTeam = getTeamRepository().findOne(awayTeamId);
+		Field field = getFieldRepository().findOne(fieldId);
+		Game game = new Game(division, homeTeam, awayTeam, field);
+		gameRepository.save(game);
+		return game;
 	}
 
 	public FieldRepository getFieldRepository() {

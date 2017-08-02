@@ -7,7 +7,7 @@
 		<div th:replace="fragments/head :: navbar">(navbar)</div>
 		<div class="row">
 			<div class="box col-md-6 col-md-offset-3">
-				<form class="form-horizontal">
+				<form id="form" class="form-horizontal">
 					<div class="form-group">
 						<label id="divisionLabel" for="division" class="sr-only">Division</label>
 						<select id="divisions" class="form-control"
@@ -25,13 +25,17 @@
 							<label id="fieldLabel" for="field" class="sr-only">Field</label>
 							<select id="field" class="form-control"
 								onchange='fieldChanged(this)'>
-
+								<option th:disabled="disabled" th:selected="selected" value=" ">--
+								select a field --</option>
 								<option th:each="field: ${fields}" th:value="${field.id}"
 									th:text="${field.fieldName}">(field)</option>
 							</select>
 						</div>
+						<br />
+						<div id="scoreGameButton" class="hidden"><button class="btn btn-default" type="submit">Score Game</button></div>
 					</div>
 				</form>
+				
 			</div>
 		</div>
 	</div>
