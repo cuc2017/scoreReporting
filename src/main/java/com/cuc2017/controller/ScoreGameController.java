@@ -14,36 +14,47 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cuc2017.model.Game;
 import com.cuc2017.service.GameService;
+import com.cuc2017.service.TwitterService;
 
 @RestController
 public class ScoreGameController {
 
-	private static final Logger log = LoggerFactory.getLogger(ScoreGameController.class);
+  private static final Logger log = LoggerFactory.getLogger(ScoreGameController.class);
 
-	private GameService gameService;
+  private GameService gameService;
+  private TwitterService twitterService;
 
-	@RequestMapping(value = "/selectGame", method = RequestMethod.POST, params = { "field", "division", "homeTeam",
-			"awayTeam" })
-	public ResponseEntity<?> getGameFromField(@RequestParam("division") Long divisionId,
-			@RequestParam("homeTeam") Long homeTeamId, @RequestParam("awayTeam") Long awayTeamId,
-			@RequestParam("field") Long fieldId, HttpServletRequest request) {
-		try {
-			Game game = getGameService().createGame(divisionId, homeTeamId, awayTeamId, fieldId);
-			log.info("Game is: " + game);
-			return new ResponseEntity<Game>(game, HttpStatus.OK);
-		} catch (Exception e) {
-			log.error("Problem getting game for field: " + fieldId, e);
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
+  @RequestMapping(value = "/selectGame", method = RequestMethod.POST, params = { "field", "division", "homeTeam",
+      "awayTeam" })
+  public ResponseEntity<?> getGameFromField(@RequestParam("division") Long divisionId,
+      @RequestParam("homeTeam") Long homeTeamId, @RequestParam("awayTeam") Long awayTeamId,
+      @RequestParam("field") Long fieldId, HttpServletRequest request) {
+    try {
+      Game game = getGameService().createGame(divisionId, homeTeamId, awayTeamId, fieldId);
+      getTwitterService().tweet("Scoring game: " + game);
+      return new ResponseEntity<Game>(game, HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem getting game for field: " + fieldId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	public GameService getGameService() {
-		return gameService;
-	}
+  public GameService getGameService() {
+    return gameService;
+  }
 
-	@Autowired
-	public void setGameService(GameService gameService) {
-		this.gameService = gameService;
-	}
+  @Autowired
+  public void setGameService(GameService gameService) {
+    this.gameService = gameService;
+  }
+
+  public TwitterService getTwitterService() {
+    return twitterService;
+  }
+
+  @Autowired
+  public void setTwitterService(TwitterService twitterService) {
+    this.twitterService = twitterService;
+  }
 
 }

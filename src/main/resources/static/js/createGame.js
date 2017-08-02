@@ -20,7 +20,6 @@ $(document).ready(function() {
 			url : '/selectGame/?division=' + divisionId + "&homeTeam=" + homeTeamId + '&awayTeam=' + awayTeamId + '&field=' + fieldId,
 			success : function(response) {
 				console.log(response);
-				window.
 			},
 			error : function(error) {
 				console.log(error.responseText);
@@ -28,6 +27,7 @@ $(document).ready(function() {
 					+ error.responseText);
 			}
 		});
+		return false;
 	});
 });
 
