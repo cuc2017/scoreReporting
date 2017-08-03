@@ -29,14 +29,14 @@ public class DataLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) {
-		Division openDivision = new Division("Open");
+		Division openDivision = new Division("Junior Open", "#TestCUC2017JuniorOpen");
 		getDivisionRepository().save(openDivision);
-		Division womenDivision = new Division("Women");
+		Division womenDivision = new Division("Junior Women", "#TestCUC2017JuniorWomen");
 		getDivisionRepository().save(womenDivision);
 		List<Field> fields = new ArrayList<>(18);
 		for (int i = 1; i <= 19; i++) {
 			if (i != 3) {
-				Field field = new Field("Field " + i);
+				Field field = new Field("Field " + i, "#TestCUC2017Field" + 1);
 				getFieldRepository().save(field);
 				fields.add(field);
 			}
@@ -45,9 +45,40 @@ public class DataLoader implements ApplicationRunner {
 		getTeamRepository().save(team1);
 		Team team2 = new Team(openDivision, "team 2");
 		getTeamRepository().save(team2);
+		Team team3 = new Team(openDivision, "team 3");
+		getTeamRepository().save(team3);
+		Team team4 = new Team(openDivision, "team 4");
+		getTeamRepository().save(team4);
+		Team team5 = new Team(openDivision, "team 5");
+		getTeamRepository().save(team5);
+		Team team6 = new Team(openDivision, "team 6");
+		getTeamRepository().save(team6);
+
+		Team team11 = new Team(womenDivision, "team 11");
+		getTeamRepository().save(team11);
+		Team team12 = new Team(womenDivision, "team 12");
+		getTeamRepository().save(team12);
+		Team team13 = new Team(womenDivision, "team 13");
+		getTeamRepository().save(team13);
+		Team team14 = new Team(womenDivision, "team 14");
+		getTeamRepository().save(team14);
+		Team team15 = new Team(womenDivision, "team 15");
+		getTeamRepository().save(team15);
+		Team team16 = new Team(womenDivision, "team 16");
+		getTeamRepository().save(team16);
 
 		addPlayersForTeam(team1);
 		addPlayersForTeam(team2);
+		addPlayersForTeam(team3);
+		addPlayersForTeam(team4);
+		addPlayersForTeam(team5);
+		addPlayersForTeam(team6);
+		addPlayersForTeam(team11);
+		addPlayersForTeam(team12);
+		addPlayersForTeam(team13);
+		addPlayersForTeam(team14);
+		addPlayersForTeam(team15);
+		addPlayersForTeam(team16);
 	}
 
 	private void addPlayersForTeam(Team team) {

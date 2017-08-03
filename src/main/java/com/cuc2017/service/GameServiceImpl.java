@@ -48,8 +48,13 @@ public class GameServiceImpl implements GameService {
 		Team awayTeam = getTeamRepository().findOne(awayTeamId);
 		Field field = getFieldRepository().findOne(fieldId);
 		Game game = new Game(division, homeTeam, awayTeam, field);
-		gameRepository.save(game);
+		getGameRepository().save(game);
 		return game;
+	}
+
+	@Override
+	public Game getGame(Long gameId) {
+		return getGameRepository().findOne(gameId);
 	}
 
 	public FieldRepository getFieldRepository() {

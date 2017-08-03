@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cuc2017.model.Game;
 import com.cuc2017.model.Team;
 import com.cuc2017.service.GameService;
+import com.cuc2017.service.TwitterService;
 
 @Controller
 public class ScoreController {
@@ -23,8 +25,10 @@ public class ScoreController {
 	private static final String SCORE_FRAGMENTS_PATH = "fragments/scoreFragments ::";
 	private static final String HOME_TEAMS_FRAGMENT = SCORE_FRAGMENTS_PATH + "addHomeTeams";
 	private static final String AWAY_TEAMS_FRAGMENT = SCORE_FRAGMENTS_PATH + "addAwayTeams";
+	private static final String SCORING_GAME_FRAGMENT = SCORE_FRAGMENTS_PATH + "scoreGame";
 
 	private GameService gameService;
+	private TwitterService twitterService;
 
 	@RequestMapping("/score")
 	public String restricted(HttpServletRequest request, Model model) {
@@ -66,6 +70,23 @@ public class ScoreController {
 		}
 	}
 
+	@RequestMapping(value = "/selectGame", method = RequestMethod.POST, params = { "field", "division", "homeTeam",
+			"awayTeam" })
+	public String createGame(@RequestParam("division") Long divisionId, @RequestParam("homeTeam") Long homeTeamId,
+			@RequestParam("awayTeam") Long awayTeamId, @RequestParam("field") Long fieldId, HttpServletRequest request,
+			Model model) {
+		try {
+			Game game = getGameService().createGame(divisionId, homeTeamId, awayTeamId, fieldId);
+			String readyforGameTweet = "Getting ready for: " + game.getGameTweetSummary();
+			getTwitterService().tweet(readyforGameTweet);
+			model.addAttribute("game", game);
+			return SCORING_GAME_FRAGMENT;
+		} catch (Exception e) {
+			log.error("Problem creating game for field: " + fieldId, e);
+			throw e;
+		}
+	}
+
 	public GameService getGameService() {
 		return gameService;
 	}
@@ -73,6 +94,15 @@ public class ScoreController {
 	@Autowired
 	public void setGameService(GameService gameService) {
 		this.gameService = gameService;
+	}
+
+	public TwitterService getTwitterService() {
+		return twitterService;
+	}
+
+	@Autowired
+	public void setTwitterService(TwitterService twitterService) {
+		this.twitterService = twitterService;
 	}
 
 }

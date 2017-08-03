@@ -10,27 +10,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class TwitterServiceImpl implements TwitterService {
 
-  private static final Logger log = LoggerFactory.getLogger(TwitterServiceImpl.class);
+	private static final Logger log = LoggerFactory.getLogger(TwitterServiceImpl.class);
 
-  private TwitterTemplate twitterTemplate;
+	private TwitterTemplate twitterTemplate;
 
-  @Override
-  @Async
-  public void tweet(String tweetText) {
-    try {
-      getTwitterTemplate().timelineOperations().updateStatus(tweetText);
-    } catch (RuntimeException e) {
-      log.error("Unable to tweet " + tweetText, e);
-    }
-  }
+	@Override
+	@Async
+	public void tweet(String tweetText) {
+		try {
+			getTwitterTemplate().timelineOperations().updateStatus(tweetText + " #TestCUC2017");
+		} catch (RuntimeException e) {
+			log.error("Unable to tweet " + tweetText, e);
+		}
+	}
 
-  public TwitterTemplate getTwitterTemplate() {
-    return twitterTemplate;
-  }
+	public TwitterTemplate getTwitterTemplate() {
+		return twitterTemplate;
+	}
 
-  @Autowired
-  public void setTwitterTemplate(TwitterTemplate twitterTemplate) {
-    this.twitterTemplate = twitterTemplate;
-  }
+	@Autowired
+	public void setTwitterTemplate(TwitterTemplate twitterTemplate) {
+		this.twitterTemplate = twitterTemplate;
+	}
 
 }

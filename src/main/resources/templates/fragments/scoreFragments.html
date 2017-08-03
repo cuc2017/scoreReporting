@@ -18,5 +18,19 @@
       <option th:each="team: ${awayTeams}" th:value="${team.id}" th:text="${team.name}">(away team)</option>
     </select>
   </div>
+  
+  <div th:fragment="scoreGame">
+  	<div id="readyForGame">
+  		<h4>Waiting to start game:<br /><span th:text="${game}">(game)</span></h4>  
+  		<div id="startGameButton"><button th:attr="data-game-id=${game.id}" id="startGame" class="btn btn-default" type="button">Start Game</button></div>
+  	</div>
+  	<div id="gameOn" class="hidden">
+  		<h4>Scoring:<span th:text="${game}">(game)</span></h4>  
+  		<p>Scored by: 
+  			<button id="homeTeamScored" th:attr="data-game-id=${game.id},data-team=${game.homeTeam.id}" th:text="${game.homeTeam.name}">(homeTeam)</button>
+  			<button id="awayTeamScored" th:attr="data-game-id=${game.id},data-team=${game.awayTeam.id}" th:text="${game.awayTeam.name}">(awayTeam)</button>
+  		</p>
+  	</div>
+  </div>
 </body>
 </html>

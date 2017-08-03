@@ -18,8 +18,7 @@ public class Team extends AbstractEntity {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return getName() + " in " + getDivision();
+		return getName();
 	}
 
 	public Team(Division division, String name) {

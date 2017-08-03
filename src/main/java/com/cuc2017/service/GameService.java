@@ -15,4 +15,6 @@ public interface GameService {
 	List<Field> getFields();
 
 	Game createGame(Long divisionId, Long homeTeamId, Long awayTeamId, Long fieldId);
+
+	Game getGame(Long gameId);
 }

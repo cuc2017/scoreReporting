@@ -5,10 +5,10 @@
 <body>
 	<div class="container-fluid">
 		<div th:replace="fragments/head :: navbar">(navbar)</div>
-		<div class="row">
-			<div class="box col-md-6 col-md-offset-3">
+		<div  class="row">
+			<div id="baseRow" class="box col-md-6 col-md-offset-3">
 				<form id="form" class="form-horizontal">
-					<div class="form-group">
+					<div id="base_form" class="form-group">
 						<label id="divisionLabel" for="division" class="sr-only">Division</label>
 						<select id="divisions" class="form-control"
 							onchange='divisionChanged(this)'>

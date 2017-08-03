@@ -18,8 +18,8 @@ $(document).ready(function() {
 		$.ajax({
 			type : "post",
 			url : '/selectGame/?division=' + divisionId + "&homeTeam=" + homeTeamId + '&awayTeam=' + awayTeamId + '&field=' + fieldId,
-			success : function(response) {
-				console.log(response);
+			success : function(aboutToStartGame) {
+				$('#baseRow').html(aboutToStartGame);
 			},
 			error : function(error) {
 				console.log(error.responseText);
@@ -29,6 +29,35 @@ $(document).ready(function() {
 		});
 		return false;
 	});
+});
+
+$('#baseRow').on('click', '#startGame', function () {
+	var gameId = $(this).data('game-id')
+	console.log("Game started: " + gameId);
+	$('readyForGame').addClass('hidden');
+	$('gameOn').removeClass('hidden');
+	$.ajax({
+		type : "post",
+		url : '/startGame/?game=' + gameId,
+		success : function(startGame) {
+			console.log("posted tweet");
+		},
+		error : function(error) {
+			console.log(error.responseText);
+		}
+	});
+});
+
+$('#baseRow').on('click', '#homeTeamScored', function () {
+	var gameId = $(this).data('game-id')
+	var teamId = $(this).data('team-id')
+	console.log("Point scored: " + gameId + " for team: " + teamId);
+});
+
+$('#baseRow').on('click', '#awayTeamScored', function () {
+	var gameId = $(this).data('game-id')
+	var teamId = $(this).data('team-id')
+	console.log("Point scored: " + gameId + " for team: " + teamId);
 });
 
 function divisionChanged(selectedDivision) {

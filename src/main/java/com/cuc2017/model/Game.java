@@ -28,7 +28,12 @@ public class Game extends AbstractEntity {
 
 	@Override
 	public String toString() {
-		return getDivision() + " " + getHomeTeam() + " vs " + getAwayTeam() + " @ " + getField();
+		return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision() + " " + " @ " + getField();
+	}
+
+	public String getGameTweetSummary() {
+		return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision().getHashtag() + " at "
+				+ getField().getHashtag();
 	}
 
 	public Team getHomeTeam() {
