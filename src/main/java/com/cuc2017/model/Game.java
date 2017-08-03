@@ -6,65 +6,118 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Game extends AbstractEntity {
 
-	@ManyToOne
-	private Division division;
-	@ManyToOne
-	private Team homeTeam;
-	@ManyToOne
-	private Team awayTeam;
-	@ManyToOne
-	private Field field;
+  @ManyToOne
+  private Division division;
+  @ManyToOne
+  private Team homeTeam;
+  @ManyToOne
+  private Team awayTeam;
+  @ManyToOne
+  private Field field;
+  private String scoreKeepers;
+  private int homeTeamScore;
+  private int awayTeamScore;
 
-	public Game() {
-		// default constructor
-	}
+  public Game() {
+    // default constructor
+  }
 
-	public Game(Division division, Team homeTeam, Team awayTeam, Field field) {
-		this.division = division;
-		this.homeTeam = homeTeam;
-		this.awayTeam = awayTeam;
-		this.field = field;
-	}
+  public Game(Division division, Team homeTeam, Team awayTeam, Field field) {
+    this.division = division;
+    this.homeTeam = homeTeam;
+    this.awayTeam = awayTeam;
+    this.field = field;
+  }
 
-	@Override
-	public String toString() {
-		return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision() + " " + " @ " + getField();
-	}
+  public Game(Division division, Team homeTeam, Team awayTeam, Field field, String scoreKeepers) {
+    this.division = division;
+    this.homeTeam = homeTeam;
+    this.awayTeam = awayTeam;
+    this.field = field;
+    this.scoreKeepers = scoreKeepers;
+  }
 
-	public String getGameTweetSummary() {
-		return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision().getHashtag() + " at "
-				+ getField().getHashtag();
-	}
+  @Override
+  public String toString() {
+    return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision() + " " + " @ " + getField();
+  }
 
-	public Team getHomeTeam() {
-		return homeTeam;
-	}
+  public String getGameTweetSummary() {
+    return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision().getHashtag() + " on "
+        + getField().getHashtag() + " follow game " + getField().getAtTag();
+  }
 
-	public void setHomeTeam(Team homeTeam) {
-		this.homeTeam = homeTeam;
-	}
+  public String getCurrentGameTweet() {
+    return getDivision().getHashtag() + " " + getHomeTeam() + ": " + getHomeTeamScore() + " " + getAwayTeam() + ": "
+        + getAwayTeamScore();
+  }
 
-	public Team getAwayTeam() {
-		return awayTeam;
-	}
+  public String getCurrentScore() {
+    return getHomeTeam() + ": " + getHomeTeamScore() + "<br />" + getAwayTeam() + ": " + getAwayTeamScore();
+  }
 
-	public void setAwayTeam(Team awayTeam) {
-		this.awayTeam = awayTeam;
-	}
+  public void incrementHomeTeamScore() {
+    homeTeamScore++;
+  }
 
-	public Field getField() {
-		return field;
-	}
+  public void incrementAwayTeamScore() {
+    awayTeamScore++;
+  }
 
-	public void setField(Field field) {
-		this.field = field;
-	}
+  public Team getHomeTeam() {
+    return homeTeam;
+  }
 
-	public Division getDivision() {
-		return division;
-	}
+  public void setHomeTeam(Team homeTeam) {
+    this.homeTeam = homeTeam;
+  }
 
-	public void setDivision(Division division) {
-		this.division = division;
-	}
+  public Team getAwayTeam() {
+    return awayTeam;
+  }
+
+  public void setAwayTeam(Team awayTeam) {
+    this.awayTeam = awayTeam;
+  }
+
+  public Field getField() {
+    return field;
+  }
+
+  public void setField(Field field) {
+    this.field = field;
+  }
+
+  public Division getDivision() {
+    return division;
+  }
+
+  public void setDivision(Division division) {
+    this.division = division;
+  }
+
+  public String getScoreKeepers() {
+    return scoreKeepers;
+  }
+
+  public void setScoreKeepers(String scoreKeepers) {
+    this.scoreKeepers = scoreKeepers;
+  }
+
+  public int getHomeTeamScore() {
+    return homeTeamScore;
+  }
+
+  public void setHomeTeamScore(int homeTeamScore) {
+    this.homeTeamScore = homeTeamScore;
+  }
+
+  public int getAwayTeamScore() {
+    return awayTeamScore;
+  }
+
+  public void setAwayTeamScore(int awayTeamScore) {
+    this.awayTeamScore = awayTeamScore;
+  }
+
 }

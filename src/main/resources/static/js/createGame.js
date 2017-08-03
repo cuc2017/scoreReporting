@@ -31,16 +31,22 @@ $(document).ready(function() {
 	});
 });
 
+function onPageLeave(e) {
+  var confirmationMessage = "The Game is not over, are you sure you want to leave?";
+  (e || window.event).returnValue = confirmationMessage;
+  return confirmationMessage;
+}
+
 $('#baseRow').on('click', '#startGame', function () {
 	var gameId = $(this).data('game-id')
 	console.log("Game started: " + gameId);
-	$('readyForGame').addClass('hidden');
-	$('gameOn').removeClass('hidden');
+	$('#readyForGame').addClass('hidden');
+	$('#gameOn').removeClass('hidden');
+	 window.addEventListener('beforeunload', onPageLeave);
 	$.ajax({
 		type : "post",
 		url : '/startGame/?game=' + gameId,
 		success : function(startGame) {
-			console.log("posted tweet");
 		},
 		error : function(error) {
 			console.log(error.responseText);
@@ -48,16 +54,27 @@ $('#baseRow').on('click', '#startGame', function () {
 	});
 });
 
+function pointScored(button){
+  var gameId = button.data('game-id')
+  var teamId = button.data('team-id')
+  $.ajax({
+    type : "post",
+    url : '/pointScored/?game=' + gameId + '&team=' + teamId,
+    success : function(currentScore) {
+      $('#currentScore').html(currentScore)
+    },
+    error : function(error) {
+      console.log(error.responseText);
+    }
+  });
+  console.log("Point scored: " + gameId + " for team: " + teamId);
+}
 $('#baseRow').on('click', '#homeTeamScored', function () {
-	var gameId = $(this).data('game-id')
-	var teamId = $(this).data('team-id')
-	console.log("Point scored: " + gameId + " for team: " + teamId);
+	pointScored($(this));
 });
 
 $('#baseRow').on('click', '#awayTeamScored', function () {
-	var gameId = $(this).data('game-id')
-	var teamId = $(this).data('team-id')
-	console.log("Point scored: " + gameId + " for team: " + teamId);
+	pointScored($(this));
 });
 
 function divisionChanged(selectedDivision) {

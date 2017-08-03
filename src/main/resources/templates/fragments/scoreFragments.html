@@ -25,11 +25,13 @@
   		<div id="startGameButton"><button th:attr="data-game-id=${game.id}" id="startGame" class="btn btn-default" type="button">Start Game</button></div>
   	</div>
   	<div id="gameOn" class="hidden">
-  		<h4>Scoring:<span th:text="${game}">(game)</span></h4>  
-  		<p>Scored by: 
-  			<button id="homeTeamScored" th:attr="data-game-id=${game.id},data-team=${game.homeTeam.id}" th:text="${game.homeTeam.name}">(homeTeam)</button>
-  			<button id="awayTeamScored" th:attr="data-game-id=${game.id},data-team=${game.awayTeam.id}" th:text="${game.awayTeam.name}">(awayTeam)</button>
-  		</p>
+      <h2 id="currentScore" th:utext="${game.currentScore}"></h2>
+  		<h4 th:text="@{${game.division.name} + ' on ' + ${game.field.fieldName}}"></h4>  
+  		<p>Point Scored by: 
+   			<button id="homeTeamScored" th:attr="data-game-id=${game.id},data-team-id=${game.homeTeam.id}" th:text="${game.homeTeam.name}">(homeTeam)</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+  			<button id="awayTeamScored" th:attr="data-game-id=${game.id},data-team-id=${game.awayTeam.id}" th:text="${game.awayTeam.name}">(awayTeam)</button>	
+      </p>
   	</div>
   </div>
 </body>
