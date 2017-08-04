@@ -1,8 +1,5 @@
 package com.cuc2017;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -29,18 +26,18 @@ public class DataLoader implements ApplicationRunner {
 
   @Override
   public void run(ApplicationArguments args) {
-    Division openDivision = new Division("Junior Open", "#TestCUC2017JuniorOpen");
+    Division openDivision = new Division("Junior Open", "#CUC2017JuniorOpen");
     getDivisionRepository().save(openDivision);
-    Division womenDivision = new Division("Junior Women", "#TestCUC2017JuniorWomen");
+    Division womenDivision = new Division("Junior Women", "#CUC2017JuniorWomen");
     getDivisionRepository().save(womenDivision);
-    List<Field> fields = new ArrayList<>(18);
     for (int i = 1; i <= 19; i++) {
       if (i != 2) {
         Field field = new Field("Field " + i, "#TestCUC2017Field" + i, "@CUC2017Field" + i);
         getFieldRepository().save(field);
-        fields.add(field);
       }
     }
+    Field field = new Field("MNP Park", "#CUC2017MNPPark", "@CUC2017MNPPark");
+    getFieldRepository().save(field);
     Team team1 = new Team(openDivision, "Alpha");
     getTeamRepository().save(team1);
     Team team2 = new Team(openDivision, "Bonfire");

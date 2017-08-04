@@ -14,21 +14,22 @@ import com.stormpath.sdk.servlet.http.Saver;
 @Configuration
 public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
 
-	@Value("#{ @environment['stormpath.web.login.nextUri'] ?: '/' }")
-	protected String loginNextUri;
+  @Value("#{ @environment['stormpath.web.login.nextUri'] ?: '/' }")
+  protected String loginNextUri;
 
-	@Value("#{ @environment['stormpath.web.produces'] ?: 'application/json, text/html' }")
-	protected String produces;
+  @Value("#{ @environment['stormpath.web.produces'] ?: 'application/json, text/html' }")
+  protected String produces;
 
-	@Autowired
-	@Qualifier("stormpathAuthenticationResultSaver")
-	protected Saver<AuthenticationResult> authenticationResultSaver;
+  @Autowired
+  @Qualifier("stormpathAuthenticationResultSaver")
+  protected Saver<AuthenticationResult> authenticationResultSaver;
 
-	@Autowired
-	protected Client client;
+  @Autowired
+  protected Client client;
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/score").fullyAuthenticated().antMatchers("/**").permitAll();
-	}
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
+    http.authorizeRequests().antMatchers("/score").fullyAuthenticated().antMatchers("/**", "/currentScores/**")
+        .permitAll();
+  }
 }

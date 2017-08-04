@@ -1,5 +1,6 @@
 package com.cuc2017.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cuc2017.model.CurrentGame;
 import com.cuc2017.model.Game;
 import com.cuc2017.model.Team;
 import com.cuc2017.service.GameService;
@@ -26,6 +28,8 @@ public class ScoreController {
   private static final String HOME_TEAMS_FRAGMENT = SCORE_FRAGMENTS_PATH + "addHomeTeams";
   private static final String AWAY_TEAMS_FRAGMENT = SCORE_FRAGMENTS_PATH + "addAwayTeams";
   private static final String SCORING_GAME_FRAGMENT = SCORE_FRAGMENTS_PATH + "scoreGame";
+  private static final String CURRENT_GAMES_FRAGMENT = SCORE_FRAGMENTS_PATH + "currentGames";
+  private static final String NO_CURRENT_GAMES_FRAGMENT = SCORE_FRAGMENTS_PATH + "noCurrentGames";
 
   private GameService gameService;
   private TwitterService twitterService;
@@ -37,11 +41,29 @@ public class ScoreController {
     return "score";
   }
 
+  @RequestMapping(value = "/currentScores", method = RequestMethod.GET)
+  public String getCurrentScores(HttpServletRequest request, Model model) {
+    try {
+      List<CurrentGame> currentGames = getGameService().getCurrentGames();
+      if (currentGames == null || currentGames.isEmpty()) {
+        return NO_CURRENT_GAMES_FRAGMENT;
+      }
+      List<Game> games = new ArrayList<>(currentGames.size());
+      for (CurrentGame currentGame : currentGames) {
+        games.add(currentGame.getGame());
+      }
+      model.addAttribute("games", games);
+      return CURRENT_GAMES_FRAGMENT;
+    } catch (Exception e) {
+      log.error("Problem getting current scores", e);
+      throw e;
+    }
+  }
+
   @RequestMapping(value = "/selectDivision", method = RequestMethod.POST, params = { "division" })
   public String getHomeTeams(@RequestParam("division") Long divisionId, HttpServletRequest request, Model model) {
     try {
       List<Team> teams = getGameService().getTeams(divisionId);
-      log.info("Teams are: " + teams);
       model.addAttribute("homeTeams", teams);
       return HOME_TEAMS_FRAGMENT;
     } catch (Exception e) {
@@ -55,7 +77,6 @@ public class ScoreController {
       HttpServletRequest request, Model model) {
     try {
       List<Team> teams = getGameService().getTeams(divisionId);
-      log.info("Teams are: " + teams);
       for (Team team : teams) {
         if (team.getId() == homeTeamId) {
           teams.remove(team);
