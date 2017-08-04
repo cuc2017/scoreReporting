@@ -69,12 +69,45 @@ function pointScored(button){
   });
   console.log("Point scored: " + gameId + " for team: " + teamId);
 }
+
+function endGame(gameId){
+	console.log("Game ended: " + gameId);
+	window.removeEventListener('beforeunload', onPageLeave);
+	$.ajax({
+		type : "post",
+		url : '/endGame/?game=' + gameId,
+		success : function(startGame) {
+			window.location.replace("/");
+		},
+		error : function(error) {
+			console.log(error.responseText);
+		}
+	});	
+}
+
 $('#baseRow').on('click', '#homeTeamScored', function () {
 	pointScored($(this));
 });
 
 $('#baseRow').on('click', '#awayTeamScored', function () {
 	pointScored($(this));
+});
+
+$('#baseRow').on('click', '#gameEnded', function () {
+	  var gameId = $(this).data('game-id')
+	 $.ajax({
+		    type : "get",
+		    url : '/proposedFinalScore/?game=' + gameId,
+		    success : function(proposedFinalScore) {
+		        $('#proposedFinalScore').html(proposedFinalScore)
+		        $('#endGameModal').modal('show').one('click', '#endGameOk', function(e) {
+		    	    endGame(gameId);
+		        });
+		    },
+		    error : function(error) {
+		      console.log(error.responseText);
+		    }
+		  });
 });
 
 function divisionChanged(selectedDivision) {
