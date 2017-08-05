@@ -70,7 +70,8 @@
               <div class="panel-body">
                 <h4 th:text="${game.division.name}"></h4>
                 <p th:utext="${game.currentScore}"></p>
-                <p th:if="${game.gameOver}">Final</p>
+                <p th:if="${game.gameOver}">Game Ended</p>
+                <p th:unless="${game.gameOver}"></p>
               </div>
             </div>
           </div>
