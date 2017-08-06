@@ -1,6 +1,7 @@
 var timer;
 
 function updateCurrentScores(){
+  console.log("in update scores");
   $.ajax({
     type : "get",
     url : '/currentScores',

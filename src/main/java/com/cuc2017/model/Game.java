@@ -16,160 +16,179 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Game extends AbstractEntity {
 
-	@ManyToOne
-	private Division division;
-	@ManyToOne
-	private Team homeTeam;
-	@ManyToOne
-	private Team awayTeam;
-	@ManyToOne
-	private Field field;
-	@OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
-	@JsonBackReference
-	private List<Event> events = new ArrayList<>();
-	private String scoreKeepers;
-	private int homeTeamScore;
-	private int awayTeamScore;
+  @ManyToOne
+  private Division division;
+  @ManyToOne
+  private Team homeTeam;
+  @ManyToOne
+  private Team awayTeam;
+  @ManyToOne
+  private Field field;
+  @OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
+  @JsonBackReference
+  private List<Event> events = new ArrayList<>();
+  private String scoreKeepers;
+  private int homeTeamScore;
+  private int awayTeamScore;
 
-	public Game() {
-		// default constructor
-	}
+  public Game() {
+    // default constructor
+  }
 
-	public Game(Division division, Team homeTeam, Team awayTeam, Field field) {
-		this.division = division;
-		this.homeTeam = homeTeam;
-		this.awayTeam = awayTeam;
-		this.field = field;
-	}
+  public Game(Division division, Team homeTeam, Team awayTeam, Field field) {
+    this.division = division;
+    this.homeTeam = homeTeam;
+    this.awayTeam = awayTeam;
+    this.field = field;
+  }
 
-	public Game(Division division, Team homeTeam, Team awayTeam, Field field, String scoreKeepers) {
-		this.division = division;
-		this.homeTeam = homeTeam;
-		this.awayTeam = awayTeam;
-		this.field = field;
-		this.scoreKeepers = scoreKeepers;
-	}
+  public Game(Division division, Team homeTeam, Team awayTeam, Field field, String scoreKeepers) {
+    this.division = division;
+    this.homeTeam = homeTeam;
+    this.awayTeam = awayTeam;
+    this.field = field;
+    this.scoreKeepers = scoreKeepers;
+  }
 
-	public boolean isGameFromToday() {
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.HOUR_OF_DAY, 0);
-		calendar.set(Calendar.MINUTE, 0);
-		calendar.set(Calendar.SECOND, 0);
-		calendar.set(Calendar.MILLISECOND, 0);
-		Date today = calendar.getTime();
-		return getCreated().after(today);
-	}
+  public boolean isGameFromToday() {
+    Calendar calendar = Calendar.getInstance();
+    calendar.set(Calendar.HOUR_OF_DAY, 0);
+    calendar.set(Calendar.MINUTE, 0);
+    calendar.set(Calendar.SECOND, 0);
+    calendar.set(Calendar.MILLISECOND, 0);
+    Date today = calendar.getTime();
+    return getCreated().after(today);
+  }
 
-	public void addEvent(Event event) {
-		getEvents().add(event);
-	}
+  public void addEvent(Event event) {
+    getEvents().add(event);
+  }
 
-	@JsonIgnore
-	public Event getLastEvent() {
-		return getEvents().get(getEvents().size() - 1);
-	}
+  @JsonIgnore
+  public Event getLastEvent() {
+    int eventsSize = getEvents().size();
+    int counter = 0;
+    Event event;
+    do {
+      counter++;
+      if (counter > eventsSize) {
+        return null;
+      }
+      event = getEvents().get(eventsSize - counter);
+    } while (!event.isUseEvent());
+    return event;
 
-	@Override
-	public String toString() {
-		return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision() + " " + " @ " + getField();
-	}
+  }
 
-	public String getGameTweetSummary() {
-		return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision().getHashtag() + " on " + getField()
-				+ " follow " + getField().getAtTag();
-	}
+  @Override
+  public String toString() {
+    return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision() + " " + " @ " + getField();
+  }
 
-	public String getCurrentGameTweet() {
-		return getDivision().getHashtag() + " " + getHomeTeam() + ": " + getHomeTeamScore() + " " + getAwayTeam() + ": "
-				+ getAwayTeamScore();
-	}
+  public String getGameTweetSummary() {
+    return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision().getHashtag() + " on " + getField()
+        + " follow " + getField().getAtTag();
+  }
 
-	public String getFinalGameTweetField() {
-		return "Game Over: " + getCurrentGameTweet();
-	}
+  public String getCurrentGameTweet() {
+    return getDivision().getHashtag() + " " + getHomeTeam() + ": " + getHomeTeamScore() + " " + getAwayTeam() + ": "
+        + getAwayTeamScore();
+  }
 
-	public String getFinalGameTweet() {
-		return getFinalGameTweetField() + " on " + getField() + " " + getField().getAtTag();
-	}
+  public String getFinalGameTweetField() {
+    return "Game Over: " + getCurrentGameTweet();
+  }
 
-	public String getCurrentScore() {
-		return getHomeTeam() + ": " + getHomeTeamScore() + "<br />" + getAwayTeam() + ": " + getAwayTeamScore();
-	}
+  public String getFinalGameTweet() {
+    return getFinalGameTweetField() + " on " + getField() + " " + getField().getAtTag();
+  }
 
-	public String getProposedFinalScore() {
-		return getHomeTeam() + ": " + getHomeTeamScore() + "  " + getAwayTeam() + ": " + getAwayTeamScore();
-	}
+  public String getCurrentScore() {
+    return getHomeTeam() + ": " + getHomeTeamScore() + "<br />" + getAwayTeam() + ": " + getAwayTeamScore();
+  }
 
-	public void incrementHomeTeamScore() {
-		homeTeamScore++;
-	}
+  public String getProposedFinalScore() {
+    return getHomeTeam() + ": " + getHomeTeamScore() + "  " + getAwayTeam() + ": " + getAwayTeamScore();
+  }
 
-	public void incrementAwayTeamScore() {
-		awayTeamScore++;
-	}
+  public void incrementHomeTeamScore() {
+    homeTeamScore++;
+  }
 
-	public Team getHomeTeam() {
-		return homeTeam;
-	}
+  public void incrementAwayTeamScore() {
+    awayTeamScore++;
+  }
 
-	public void setHomeTeam(Team homeTeam) {
-		this.homeTeam = homeTeam;
-	}
+  public void decrementAwayTeamScore() {
+    awayTeamScore--;
+  }
 
-	public Team getAwayTeam() {
-		return awayTeam;
-	}
+  public void decrementHomeTeamScore() {
+    homeTeamScore--;
+  }
 
-	public void setAwayTeam(Team awayTeam) {
-		this.awayTeam = awayTeam;
-	}
+  public Team getHomeTeam() {
+    return homeTeam;
+  }
 
-	public Field getField() {
-		return field;
-	}
+  public void setHomeTeam(Team homeTeam) {
+    this.homeTeam = homeTeam;
+  }
 
-	public void setField(Field field) {
-		this.field = field;
-	}
+  public Team getAwayTeam() {
+    return awayTeam;
+  }
 
-	public Division getDivision() {
-		return division;
-	}
+  public void setAwayTeam(Team awayTeam) {
+    this.awayTeam = awayTeam;
+  }
 
-	public void setDivision(Division division) {
-		this.division = division;
-	}
+  public Field getField() {
+    return field;
+  }
 
-	public String getScoreKeepers() {
-		return scoreKeepers;
-	}
+  public void setField(Field field) {
+    this.field = field;
+  }
 
-	public void setScoreKeepers(String scoreKeepers) {
-		this.scoreKeepers = scoreKeepers;
-	}
+  public Division getDivision() {
+    return division;
+  }
 
-	public int getHomeTeamScore() {
-		return homeTeamScore;
-	}
+  public void setDivision(Division division) {
+    this.division = division;
+  }
 
-	public void setHomeTeamScore(int homeTeamScore) {
-		this.homeTeamScore = homeTeamScore;
-	}
+  public String getScoreKeepers() {
+    return scoreKeepers;
+  }
 
-	public int getAwayTeamScore() {
-		return awayTeamScore;
-	}
+  public void setScoreKeepers(String scoreKeepers) {
+    this.scoreKeepers = scoreKeepers;
+  }
 
-	public void setAwayTeamScore(int awayTeamScore) {
-		this.awayTeamScore = awayTeamScore;
-	}
+  public int getHomeTeamScore() {
+    return homeTeamScore;
+  }
 
-	public List<Event> getEvents() {
-		return events;
-	}
+  public void setHomeTeamScore(int homeTeamScore) {
+    this.homeTeamScore = homeTeamScore;
+  }
 
-	public void setEvents(List<Event> events) {
-		this.events = events;
-	}
+  public int getAwayTeamScore() {
+    return awayTeamScore;
+  }
+
+  public void setAwayTeamScore(int awayTeamScore) {
+    this.awayTeamScore = awayTeamScore;
+  }
+
+  public List<Event> getEvents() {
+    return events;
+  }
+
+  public void setEvents(List<Event> events) {
+    this.events = events;
+  }
 
 }
