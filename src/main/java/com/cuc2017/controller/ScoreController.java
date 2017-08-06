@@ -30,6 +30,7 @@ public class ScoreController {
 	private static final String SCORING_GAME_FRAGMENT = SCORE_FRAGMENTS_PATH + "scoreGame";
 	private static final String CURRENT_GAMES_FRAGMENT = SCORE_FRAGMENTS_PATH + "currentGames";
 	private static final String NO_CURRENT_GAMES_FRAGMENT = SCORE_FRAGMENTS_PATH + "noCurrentGames";
+	private static final String ADD_EVENT_FRAGMENT = SCORE_FRAGMENTS_PATH + "addEvent";
 
 	private GameService gameService;
 	private TwitterService twitterService;

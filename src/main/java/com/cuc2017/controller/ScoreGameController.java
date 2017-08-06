@@ -54,13 +54,24 @@ public class ScoreGameController {
 
 	@RequestMapping(value = "/pointScored", method = RequestMethod.POST, params = { "game", "team" })
 	public ResponseEntity<?> pointScored(@RequestParam("game") Long gameId, @RequestParam("team") Long teamId,
-			HttpServletRequest request, Model model) {
+			HttpServletRequest request) {
 		try {
 			Game game = getGameService().pointScored(gameId, teamId);
 			getTwitterService().tweetToField(game.getField(), game.getCurrentGameTweet());
 			return new ResponseEntity<String>(game.getCurrentScore(), HttpStatus.OK);
 		} catch (Exception e) {
 			log.error("Problem point scored: " + gameId + " for team " + teamId, e);
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
+	@RequestMapping(value = "/updateLastEvent", method = RequestMethod.GET, params = { "game" })
+	public ResponseEntity<?> updateLastEvent(@RequestParam("game") Long gameId, HttpServletRequest request) {
+		try {
+			Game game = getGameService().getGame(gameId);
+			return new ResponseEntity<String>(game.getLastEvent().eventAsHtmlRow(), HttpStatus.OK);
+		} catch (Exception e) {
+			log.error("Problem start game for game: " + gameId, e);
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
 	}

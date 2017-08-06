@@ -42,17 +42,31 @@ $('#baseRow').on('click', '#startGame', function () {
 	console.log("Game started: " + gameId);
 	$('#readyForGame').addClass('hidden');
 	$('#gameOn').removeClass('hidden');
-	 window.addEventListener('beforeunload', onPageLeave);
+	window.addEventListener('beforeunload', onPageLeave);
 	$.ajax({
 		type : "post",
 		url : '/startGame/?game=' + gameId,
 		success : function(startGame) {
+		    updateEventTable(gameId);
 		},
 		error : function(error) {
 			console.log(error.responseText);
 		}
 	});
 });
+
+function updateEventTable(gameId){
+	$.ajax({
+	    type : "get",
+	    url : '/updateLastEvent/?game=' + gameId,
+	    success : function(eventDetails) {
+	      $('#eventTable > tbody > tr').eq(0).after(eventDetails)
+	    },
+	    error : function(error) {
+	      console.log("Problem updating event list" + error.responseText);
+	    }
+	  });	
+}
 
 function pointScored(button){
   var gameId = button.data('game-id')
@@ -61,7 +75,8 @@ function pointScored(button){
     type : "post",
     url : '/pointScored/?game=' + gameId + '&team=' + teamId,
     success : function(currentScore) {
-      $('#currentScore').html(currentScore)
+      $('#currentScore').html(currentScore);
+      updateEventTable(gameId);
     },
     error : function(error) {
       console.log(error.responseText);

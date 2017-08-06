@@ -55,6 +55,7 @@ public class GameServiceImpl implements GameService {
 		Team awayTeam = getTeamRepository().findOne(awayTeamId);
 		Field field = getFieldRepository().findOne(fieldId);
 		Game game = new Game(division, homeTeam, awayTeam, field);
+		saveGame(game);
 		Event event = new Event(EventType.READY, game);
 		addEvent(game, event);
 		updateCurrentGame(game);
@@ -113,7 +114,8 @@ public class GameServiceImpl implements GameService {
 			log.error("Team is not playing in this game!: " + team);
 			throw new Exception("Team is not playing in this game");
 		}
-		saveGame(game);
+		Event event = new Event(EventType.POINT_SCORED, game, team);
+		addEvent(game, event);
 		return game;
 	}
 

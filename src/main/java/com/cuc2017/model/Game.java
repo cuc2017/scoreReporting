@@ -70,8 +70,8 @@ public class Game extends AbstractEntity {
 	}
 
 	public String getGameTweetSummary() {
-		return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision().getHashtag() + " on "
-				+ getField().getHashtag() + " follow " + getField().getAtTag();
+		return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision().getHashtag() + " on " + getField()
+				+ " follow " + getField().getAtTag();
 	}
 
 	public String getCurrentGameTweet() {
@@ -84,7 +84,7 @@ public class Game extends AbstractEntity {
 	}
 
 	public String getFinalGameTweet() {
-		return getFinalGameTweetField() + " on " + getField().getHashtag() + " " + getField().getAtTag();
+		return getFinalGameTweetField() + " on " + getField() + " " + getField().getAtTag();
 	}
 
 	public String getCurrentScore() {
