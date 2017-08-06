@@ -42,6 +42,7 @@ $('#baseRow').on('click', '#startGame', function () {
 	console.log("Game started: " + gameId);
 	$('#readyForGame').addClass('hidden');
 	$('#gameOn').removeClass('hidden');
+	$('#footer').removeClass('hidden');
 	window.addEventListener('beforeunload', onPageLeave);
 	$.ajax({
 		type : "post",
@@ -108,8 +109,8 @@ $('#baseRow').on('click', '#awayTeamScored', function () {
 	pointScored($(this));
 });
 
-$('#baseRow').on('click', '#gameEnded', function () {
-	  var gameId = $(this).data('game-id')
+$('#gameEnded').click(function () {
+	 var gameId =  getGameId();
 	 $.ajax({
 		    type : "get",
 		    url : '/proposedFinalScore/?game=' + gameId,
@@ -124,6 +125,11 @@ $('#baseRow').on('click', '#gameEnded', function () {
 		    }
 		  });
 });
+
+function getGameId(){
+	var info = $('#gameOn');
+	return info.data('game-id');
+}
 
 function divisionChanged(selectedDivision) {
 	var selectedIndex = selectedDivision.selectedIndex;

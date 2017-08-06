@@ -35,8 +35,8 @@
 					class="btn btn-primary" type="button">Start Game</button>
 			</div>
 		</div>
-		<div id="gameOn" class="hidden">
-			<h2 id="currentScore" th:utext="${game.currentScore}"></h2>
+		<div id="gameOn" th:attr="data-game-id=${game.id}" class="hidden">
+			<h3 id="currentScore" th:utext="${game.currentScore}"></h3>
 			<div class="row">
 				<div class="col-xs-12">
 					<h4
@@ -55,13 +55,6 @@
 					<button id="awayTeamScored" type="button" class="btn btn-default"
 						th:attr="data-game-id=${game.id},data-team-id=${game.awayTeam.id}"
 						th:text="${game.awayTeam.name}">(awayTeam)</button>
-				</div>
-			</div>
-			<p />
-			<div class="row">
-				<div class="col-xs-12">
-					<button id="gameEnded" type="button" class="btn btn-primary"
-						th:attr="data-game-id=${game.id}">Game Over</button>
 				</div>
 			</div>
 			<p />

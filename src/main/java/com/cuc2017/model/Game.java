@@ -10,6 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Game extends AbstractEntity {
 
@@ -22,6 +25,7 @@ public class Game extends AbstractEntity {
 	@ManyToOne
 	private Field field;
 	@OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
+	@JsonBackReference
 	private List<Event> events = new ArrayList<>();
 	private String scoreKeepers;
 	private int homeTeamScore;
@@ -60,6 +64,7 @@ public class Game extends AbstractEntity {
 		getEvents().add(event);
 	}
 
+	@JsonIgnore
 	public Event getLastEvent() {
 		return getEvents().get(getEvents().size() - 1);
 	}

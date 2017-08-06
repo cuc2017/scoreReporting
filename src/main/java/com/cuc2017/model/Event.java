@@ -1,10 +1,13 @@
 package com.cuc2017.model;
 
 import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Event extends AbstractEntity {
@@ -13,10 +16,16 @@ public class Event extends AbstractEntity {
 	private EventType eventType;
 	@ManyToOne
 	@JoinColumn(name = "game_id")
+	@JsonManagedReference
 	private Game game;
 	@ManyToOne
 	@JoinColumn(name = "team_id")
 	private Team team;
+
+	static {
+		TimeZone timeZone = TimeZone.getTimeZone("America/New_York");
+		FORMATTER.setTimeZone(timeZone);
+	}
 
 	public Event() {
 		// default constructor
@@ -47,6 +56,7 @@ public class Event extends AbstractEntity {
 	}
 
 	public String eventAsHtmlRow() {
+
 		StringBuffer row = new StringBuffer();
 		row.append("<tr>");
 		row.append("<td>");
