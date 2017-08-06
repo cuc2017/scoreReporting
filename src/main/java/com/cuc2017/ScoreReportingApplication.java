@@ -11,8 +11,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync
 public class ScoreReportingApplication {
 
-  public static void main(String[] args) {
-    SpringApplication.run(ScoreReportingApplication.class, args);
-  }
-
+	public static void main(String[] args) {
+		SpringApplication.run(ScoreReportingApplication.class, args);
+	}
 }
