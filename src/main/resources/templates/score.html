@@ -28,44 +28,46 @@
 	<div class="container-fluid">
 		<div th:replace="fragments/head :: navbar">(navbar)</div>
 		<div class="row">
-			<div id="baseRow" class="box col-md-6 col-md-offset-3">
-				<form id="form" class="form-horizontal">
-					<div id="base_form" class="form-group">
-						<label id="divisionLabel" for="division" class="sr-only">Division</label>
-						<select id="divisions" class="form-control"
-							onchange='divisionChanged(this)'>
-							<option th:disabled="disabled" th:selected="selected" value=" ">--
-								select a division --</option>
-							<option th:each="division: ${divisions}"
-								th:value="${division.id}" th:text="${division.name}">(division)</option>
-						</select> <br />
-						<div id="homeTeams"></div>
-						<br />
-						<div id="awayTeams"></div>
-						<br />
-						<div id="fields" class="hidden">
-							<label id="fieldLabel" for="field" class="sr-only">Field</label>
-							<select id="field" class="form-control"
-								onchange='fieldChanged(this)'>
+			<div id="baseRow">
+				<div class="box col-md-6 col-md-offset-3">
+					<form id="form" class="form-horizontal">
+						<div id="base_form" class="form-group">
+							<label id="divisionLabel" for="division" class="sr-only">Division</label>
+							<select id="divisions" class="form-control"
+								onchange='divisionChanged(this)'>
 								<option th:disabled="disabled" th:selected="selected" value=" ">--
-									select a field --</option>
-								<option th:each="field: ${fields}" th:value="${field.id}"
-									th:text="${field.fieldName}">(field)</option>
-							</select>
+									select a division --</option>
+								<option th:each="division: ${divisions}"
+									th:value="${division.id}" th:text="${division.name}">(division)</option>
+							</select> <br />
+							<div id="homeTeams"></div>
+							<br />
+							<div id="awayTeams"></div>
+							<br />
+							<div id="fields" class="hidden">
+								<label id="fieldLabel" for="field" class="sr-only">Field</label>
+								<select id="field" class="form-control"
+									onchange='fieldChanged(this)'>
+									<option th:disabled="disabled" th:selected="selected" value=" ">--
+										select a field --</option>
+									<option th:each="field: ${fields}" th:value="${field.id}"
+										th:text="${field.fieldName}">(field)</option>
+								</select>
+							</div>
+							<br />
+							<div id="scoreKeepersDiv" class="hidden">
+								<label id="scoreKeeperLabel" for="scoreKeepers" class="sr-only">Score
+									Keepers</label> <input type="text" class="form-control"
+									id="scoreKeepers" placeholder="enter score keepers name"></input>
+							</div>
+							<br />
+							<div id="scoreGameButton" class="hidden">
+								<button class="btn btn-primary" type="submit">Score
+									Game</button>
+							</div>
 						</div>
-						<br />
-						<div id="scoreKeepersDiv" class="hidden">
-							<label id="scoreKeeperLabel" for="scoreKeepers" class="sr-only">Score
-								Keepers</label> <input type="text" class="form-control"
-								id="scoreKeepers" placeholder="enter score keepers name"></input>
-						</div>
-						<br />
-						<div id="scoreGameButton" class="hidden">
-							<button class="btn btn-primary" type="submit">Score Game</button>
-						</div>
-					</div>
-				</form>
-
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -73,11 +75,16 @@
 		class="hidden navbar navbar-default navbar-fixed-bottom">
 		<div class="container">
 			<div class="navbar-header">
-				<button id="undoButton" type="button" class="btn btn-warning navbar-btn">Undo</button>
-				<button id="gameEnded" type="button" class="btn btn-primary navbar-btn">Game Over</button>
+				<button id="undoButton" type="button"
+					class="btn btn-warning navbar-btn">Undo</button>
+				<button id="halftime" type="button"
+					class="btn btn-default navbar-btn">Halftime</button>
+				<button id="gameEnded" type="button"
+					class="btn btn-primary navbar-btn">Game Over</button>
 			</div>
 		</div>
 	</footer>
+	<script src="/js/timer.js"></script>
 	<script src="/js/createGame.js"></script>
 </body>
 </html>

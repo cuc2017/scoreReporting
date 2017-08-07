@@ -1,6 +1,9 @@
-/**
- * 
- */
+var warningForOffense = 'Blow whistle once: warning for offense';
+var offenceSet = 'Blow whistle twice: offense should be set';
+var playUnderWay = 'Blow whistle three times: disc should be pulled';
+var countUpTimer;
+var countUpTimerIndex;
+
 function fieldChanged(selectedField) {
   $('#scoreGameButton').removeClass('hidden');
 }
@@ -73,6 +76,7 @@ function updateEventTable(gameId) {
 }
 
 function pointScored(button) {
+  startPointScoredTimer();
   var gameId = button.data('game-id')
   var teamId = button.data('team-id')
   $.ajax({
@@ -87,6 +91,99 @@ function pointScored(button) {
     }
   });
   console.log("Point scored: " + gameId + " for team: " + teamId);
+}
+
+function startHalftimeTimer(){
+	setUpTimer(halftimeTimerTick);
+}
+
+function startPointScoredTimer(){
+	setUpTimer(pointScoredTimerTick);
+}
+
+function setUpTimer(timerTick){
+	if (countUpTimer){
+		stopCountUpTimer();
+	}
+	showTimerMessage('');
+	$('#timer').removeClass('hide-timer');
+	countUpTimer = new Timer();
+	countUpTimerIndex = 0;
+	updateTimer(pad(countUpTimerIndex));
+	countUpTimer.Tick = timerTick;
+	countUpTimer.Start()
+}
+
+function stopCountUpTimer(){
+	countUpTimer.Stop();
+	countUpTimer = null;
+	$('#timer').addClass('hide-timer');
+	countUpTimerIndex = 0;
+}
+
+$('#baseRow').on('click', '#playStarted', function() {
+	stopCountUpTimer();
+});
+
+function updateTimer(newTime){
+	$('#countupTime').html(newTime);
+}
+
+function showTimerMessage(message){
+	$('#countupMessage').html(message);
+}
+
+function pointScoredTimerTick()
+{
+	countUpTimerIndex  = countUpTimerIndex + 1;
+	updateTimer(pad(countUpTimerIndex));
+	
+	if (countUpTimerIndex == 50) {
+		showTimerMessage(warningForOffense);
+	} else if  (countUpTimerIndex == 70) {
+		showTimerMessage(offenceSet);
+	}else if  (countUpTimerIndex == 90) {
+		showTimerMessage(playUnderWay);
+	}
+}
+
+function halftimeTimerTick()
+{
+	countUpTimerIndex  = countUpTimerIndex + 1;
+	updateTimer(pad(countUpTimerIndex));
+	
+	if (countUpTimerIndex == 260) {
+		showTimerMessage(warningForOffense);
+	} else if  (countUpTimerIndex == 280) {
+		showTimerMessage(offenceSet);
+	}else if  (countUpTimerIndex == 300) {
+		showTimerMessage(playUnderWay);
+	}
+}
+
+function pointScoredTimerTick()
+{
+	countUpTimerIndex  = countUpTimerIndex + 1;
+	updateTimer(pad(countUpTimerIndex));
+	
+	if (countUpTimerIndex == 50) {
+		showTimerMessage(warningForOffense);
+	} else if  (countUpTimerIndex == 70) {
+		showTimerMessage(offenceSet);
+	}else if  (countUpTimerIndex == 90) {
+		showTimerMessage(playUnderWay);
+	}else if  (countUpTimerIndex == 120) {
+		stopCountUpTimerTimer();
+	}
+}
+function pad(val)
+{
+    var valString = val + "";
+    if(valString.length < 2) {
+        return "0" + valString;
+    } else {
+        return valString;
+    }
 }
 
 function endGame(gameId) {
@@ -128,6 +225,22 @@ $('#gameEnded').click(function() {
     }
   });
 });
+
+$('#halftime').click(function() {
+	  var gameId = getGameId();
+	  startHalftimeTimer();
+	  $.ajax({
+	    type : "post",
+	    url : '/halftime/?game=' + gameId,
+	    success : function(proposedFinalScore) {
+	        updateEventTable(gameId);
+	    },
+	    error : function(error) {
+	      console.log(error.responseText);
+	    }
+	  });
+	});
+
 
 function updateUndoButton() {
   var amountOfRows = $('#eventTable > tbody > tr').length;
