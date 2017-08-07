@@ -21,6 +21,13 @@ public class Event extends AbstractEntity {
   @ManyToOne
   @JoinColumn(name = "team_id")
   private Team team;
+  @ManyToOne
+  @JoinColumn(name = "palyer_id")
+  private Player scoredBy;
+  @ManyToOne
+  @JoinColumn(name = "palyer_id")
+  private Player assitedBy;
+
   private boolean useEvent = true;
 
   static {
@@ -64,6 +71,7 @@ public class Event extends AbstractEntity {
     row.append("<td>");
     switch (getEventType()) {
       case POINT_SCORED:
+        row.append(getScoredBy().toString())
         row.append(getTeam().getName());
         row.append(" scored");
         break;
@@ -123,5 +131,21 @@ public class Event extends AbstractEntity {
 
   public void setUseEvent(boolean useEvent) {
     this.useEvent = useEvent;
+  }
+
+  public Player getScoredBy() {
+    return scoredBy;
+  }
+
+  public void setScoredBy(Player scoredBy) {
+    this.scoredBy = scoredBy;
+  }
+
+  public Player getAssitedBy() {
+    return assitedBy;
+  }
+
+  public void setAssitedBy(Player assitedBy) {
+    this.assitedBy = assitedBy;
   }
 }

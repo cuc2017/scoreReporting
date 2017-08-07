@@ -56,7 +56,7 @@ public class ScoreGameController {
   public ResponseEntity<?> undoEvent(@RequestParam("event") Long eventId, HttpServletRequest request, Model model) {
     try {
       Game game = getGameService().undoEvent(eventId);
-      getTwitterService().tweetToField(game.getField(), "undo");
+      getTwitterService().tweetToField(game.getField(), "Oops ... score is really " + game.getCurrentGameTweet());
       return new ResponseEntity<String>(game.getCurrentScore(), HttpStatus.OK);
     } catch (Exception e) {
       log.error("Problem undo event for: " + eventId, e);
