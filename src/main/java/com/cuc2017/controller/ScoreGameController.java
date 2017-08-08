@@ -1,5 +1,7 @@
 package com.cuc2017.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -14,121 +16,145 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cuc2017.model.Game;
+import com.cuc2017.model.Player;
 import com.cuc2017.service.GameService;
 import com.cuc2017.service.TwitterService;
 
 @RestController
 public class ScoreGameController {
 
-	private static final Logger log = LoggerFactory.getLogger(ScoreGameController.class);
+  private static final Logger log = LoggerFactory.getLogger(ScoreGameController.class);
 
-	private GameService gameService;
-	private TwitterService twitterService;
+  private GameService gameService;
+  private TwitterService twitterService;
 
-	@RequestMapping(value = "/startGame", method = RequestMethod.POST, params = { "game" })
-	public ResponseEntity<?> startGame(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
-		try {
-			Game game = getGameService().startGame(gameId);
-			String startingGameTweet = game.getLastEvent().tweetString() + game.getGameTweetSummary();
-			getTwitterService().tweet(startingGameTweet);
-			getTwitterService().tweetToField(game.getField(), startingGameTweet);
-			return new ResponseEntity<Game>(game, HttpStatus.OK);
-		} catch (Exception e) {
-			log.error("Problem start game for game: " + gameId, e);
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
+  @RequestMapping(value = "/startGame", method = RequestMethod.POST, params = { "game" })
+  public ResponseEntity<?> startGame(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
+    try {
+      Game game = getGameService().startGame(gameId);
+      String startingGameTweet = game.getLastEvent().tweetString() + game.getGameTweetSummary();
+      getTwitterService().tweet(startingGameTweet);
+      getTwitterService().tweetToField(game.getField(), startingGameTweet);
+      return new ResponseEntity<Game>(game, HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem start game for game: " + gameId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	@RequestMapping(value = "/endGame", method = RequestMethod.POST, params = { "game" })
-	public ResponseEntity<?> endGame(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
-		try {
-			Game game = getGameService().endGame(gameId);
-			getTwitterService().tweet(game.getFinalGameTweet());
-			getTwitterService().tweetToField(game.getField(), game.getFinalGameTweetField());
-			return new ResponseEntity<Game>(game, HttpStatus.OK);
-		} catch (Exception e) {
-			log.error("Problem ending game for game: " + gameId, e);
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
+  @RequestMapping(value = "/endGame", method = RequestMethod.POST, params = { "game" })
+  public ResponseEntity<?> endGame(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
+    try {
+      Game game = getGameService().endGame(gameId);
+      getTwitterService().tweet(game.getFinalGameTweet());
+      getTwitterService().tweetToField(game.getField(), game.getFinalGameTweetField());
+      return new ResponseEntity<Game>(game, HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem ending game for game: " + gameId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	@RequestMapping(value = "/halftime", method = RequestMethod.POST, params = { "game" })
-	public ResponseEntity<?> halftime(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
-		try {
-			Game game = getGameService().halftime(gameId);
+  @RequestMapping(value = "/halftime", method = RequestMethod.POST, params = { "game" })
+  public ResponseEntity<?> halftime(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
+    try {
+      Game game = getGameService().halftime(gameId);
 
-			getTwitterService().tweet(game.getHalftimeTweet());
-			getTwitterService().tweetToField(game.getField(), game.getHalftimeTweetField());
-			return new ResponseEntity<Game>(game, HttpStatus.OK);
-		} catch (Exception e) {
-			log.error("Problem ending game for game: " + gameId, e);
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
+      getTwitterService().tweet(game.getHalftimeTweet());
+      getTwitterService().tweetToField(game.getField(), game.getHalftimeTweetField());
+      return new ResponseEntity<Game>(game, HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem ending game for game: " + gameId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	@RequestMapping(value = "/undoEvent", method = RequestMethod.POST, params = { "event" })
-	public ResponseEntity<?> undoEvent(@RequestParam("event") Long eventId, HttpServletRequest request, Model model) {
-		try {
-			Game game = getGameService().undoEvent(eventId);
-			return new ResponseEntity<String>(game.getCurrentScore(), HttpStatus.OK);
-		} catch (Exception e) {
-			log.error("Problem undo event for: " + eventId, e);
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
+  @RequestMapping(value = "/undoEvent", method = RequestMethod.POST, params = { "event" })
+  public ResponseEntity<?> undoEvent(@RequestParam("event") Long eventId, HttpServletRequest request, Model model) {
+    try {
+      Game game = getGameService().undoEvent(eventId);
+      return new ResponseEntity<String>(game.getCurrentScore(), HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem undo event for: " + eventId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	@RequestMapping(value = "/pointScored", method = RequestMethod.POST, params = { "game", "team" })
-	public ResponseEntity<?> pointScored(@RequestParam("game") Long gameId, @RequestParam("team") Long teamId,
-			HttpServletRequest request) {
-		try {
-			Game game = getGameService().pointScored(gameId, teamId);
-			getTwitterService().tweetToField(game.getField(), game.getCurrentGameTweet());
-			return new ResponseEntity<String>(game.getCurrentScore(), HttpStatus.OK);
-		} catch (Exception e) {
-			log.error("Problem point scored: " + gameId + " for team " + teamId, e);
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
+  @RequestMapping(value = "/pointScored", method = RequestMethod.POST, params = { "game", "team" })
+  public ResponseEntity<?> pointScored(@RequestParam("game") Long gameId, @RequestParam("team") Long teamId,
+      HttpServletRequest request) {
+    try {
+      Game game = getGameService().pointScored(gameId, teamId);
+      getTwitterService().tweetToField(game.getField(), game.getCurrentGameTweet());
+      return new ResponseEntity<String>(game.getCurrentScore(), HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem point scored: " + gameId + " for team " + teamId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	@RequestMapping(value = "/updateLastEvent", method = RequestMethod.GET, params = { "game" })
-	public ResponseEntity<?> updateLastEvent(@RequestParam("game") Long gameId, HttpServletRequest request) {
-		try {
-			Game game = getGameService().getGame(gameId);
-			return new ResponseEntity<String>(game.getLastEvent().eventAsHtmlRow(), HttpStatus.OK);
-		} catch (Exception e) {
-			log.error("Problem start game for game: " + gameId, e);
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
+  @RequestMapping(value = "/goalAssist", method = RequestMethod.POST, params = { "game", "team", "goal", "assist" })
+  public ResponseEntity<?> goalAssist(@RequestParam("game") Long gameId, @RequestParam("team") Long teamId,
+      @RequestParam("goal") Long scoredById, @RequestParam("assist") Long assistedById, HttpServletRequest request) {
+    try {
+      Game game = getGameService().scoredBy(gameId, teamId, scoredById, assistedById);
+      return new ResponseEntity<String>(game.getCurrentScore(), HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem point scored: " + gameId + " for team " + teamId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	@RequestMapping(value = "/proposedFinalScore", method = RequestMethod.GET, params = { "game" })
-	public ResponseEntity<?> propsoedFianlScore(@RequestParam("game") Long gameId, HttpServletRequest request,
-			Model model) {
-		try {
-			Game game = getGameService().getGame(gameId);
-			return new ResponseEntity<String>(game.getProposedFinalScore(), HttpStatus.OK);
-		} catch (Exception e) {
-			log.error("Problem start game for game: " + gameId, e);
-			return ResponseEntity.badRequest().body(e.getMessage());
-		}
-	}
+  @RequestMapping(value = "/players", method = RequestMethod.GET, params = { "team" })
+  public ResponseEntity<?> getPlayers(@RequestParam("team") Long teamId, HttpServletRequest request) {
+    try {
+      List<Player> players = getGameService().getPlayers(teamId);
+      return new ResponseEntity<List<Player>>(players, HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Could not get players for for team " + teamId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	public GameService getGameService() {
-		return gameService;
-	}
+  @RequestMapping(value = "/updateLastEvent", method = RequestMethod.GET, params = { "game" })
+  public ResponseEntity<?> updateLastEvent(@RequestParam("game") Long gameId, HttpServletRequest request) {
+    try {
+      Game game = getGameService().getGame(gameId);
+      return new ResponseEntity<String>(game.getLastEvent().eventAsHtmlRow(), HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem start game for game: " + gameId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	@Autowired
-	public void setGameService(GameService gameService) {
-		this.gameService = gameService;
-	}
+  @RequestMapping(value = "/proposedFinalScore", method = RequestMethod.GET, params = { "game" })
+  public ResponseEntity<?> propsoedFianlScore(@RequestParam("game") Long gameId, HttpServletRequest request,
+      Model model) {
+    try {
+      Game game = getGameService().getGame(gameId);
+      return new ResponseEntity<String>(game.getProposedFinalScore(), HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem start game for game: " + gameId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
 
-	public TwitterService getTwitterService() {
-		return twitterService;
-	}
+  public GameService getGameService() {
+    return gameService;
+  }
 
-	@Autowired
-	public void setTwitterService(TwitterService twitterService) {
-		this.twitterService = twitterService;
-	}
+  @Autowired
+  public void setGameService(GameService gameService) {
+    this.gameService = gameService;
+  }
+
+  public TwitterService getTwitterService() {
+    return twitterService;
+  }
+
+  @Autowired
+  public void setTwitterService(TwitterService twitterService) {
+    this.twitterService = twitterService;
+  }
 
 }

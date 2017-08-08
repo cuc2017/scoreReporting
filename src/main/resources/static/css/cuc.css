@@ -25,3 +25,7 @@ body {
 .hide-timer {
 	visibility:hidden;
 }
+
+.spacer5 {
+  height: 5px;
+}
