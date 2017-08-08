@@ -34,7 +34,11 @@ public class Player extends AbstractEntity {
 	@Override
 	public String toString() {
 		StringBuffer buffer = new StringBuffer();
+		buffer.append(String.format("%02d ", getNumber()));
+		buffer.append(getFirstName());
+		buffer.append(" ");
 		buffer.append(getLastName());
+		buffer.append(" ");
 		return buffer.toString();
 	}
 

@@ -13,12 +13,14 @@ import com.cuc2017.model.Event;
 import com.cuc2017.model.EventType;
 import com.cuc2017.model.Field;
 import com.cuc2017.model.Game;
+import com.cuc2017.model.Player;
 import com.cuc2017.model.Team;
 import com.cuc2017.repository.CurrentGameRepository;
 import com.cuc2017.repository.DivisionRepository;
 import com.cuc2017.repository.EventRepository;
 import com.cuc2017.repository.FieldRepository;
 import com.cuc2017.repository.GameRepository;
+import com.cuc2017.repository.PlayerRepository;
 import com.cuc2017.repository.TeamRepository;
 
 @Service
@@ -30,6 +32,7 @@ public class GameServiceImpl implements GameService {
 	private TeamRepository teamRepository;
 	private FieldRepository fieldRepository;
 	private GameRepository gameRepository;
+	private PlayerRepository playerRepository;
 	private CurrentGameRepository currentGameRepository;
 	private EventRepository eventRepository;
 	private TwitterService twitterService;
@@ -136,6 +139,7 @@ public class GameServiceImpl implements GameService {
 			getTwitterService()
 					.tweet("Oops ... not halftime yet " + game.getCurrentGameTweet() + game.addFieldInfoToTweet());
 			break;
+		case SCORED_BY:
 		case GAVE_OVER:
 		case READY:
 		case STARTED:
@@ -160,6 +164,11 @@ public class GameServiceImpl implements GameService {
 		Event event = new Event(EventType.POINT_SCORED, game, team);
 		addEvent(game, event);
 		return game;
+	}
+
+	@Override
+	public List<Player> getPlayers(Team team) {
+		return getPlayerRepository().findByTeamOrderByNumberAsc(team);
 	}
 
 	@Override
@@ -234,6 +243,15 @@ public class GameServiceImpl implements GameService {
 	@Autowired
 	public void setTwitterService(TwitterService twitterService) {
 		this.twitterService = twitterService;
+	}
+
+	public PlayerRepository getPlayerRepository() {
+		return playerRepository;
+	}
+
+	@Autowired
+	public void setPlayerRepository(PlayerRepository playerRepository) {
+		this.playerRepository = playerRepository;
 	}
 
 }

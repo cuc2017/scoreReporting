@@ -6,6 +6,7 @@ import com.cuc2017.model.CurrentGame;
 import com.cuc2017.model.Division;
 import com.cuc2017.model.Field;
 import com.cuc2017.model.Game;
+import com.cuc2017.model.Player;
 import com.cuc2017.model.Team;
 
 public interface GameService {
@@ -30,4 +31,6 @@ public interface GameService {
 	List<CurrentGame> getCurrentGames();
 
 	Game undoEvent(Long eventId) throws Exception;
+
+	List<Player> getPlayers(Team homeTeam);
 }

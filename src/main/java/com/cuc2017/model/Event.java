@@ -3,6 +3,7 @@ package com.cuc2017.model;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,19 +15,17 @@ public class Event extends AbstractEntity {
 
 	private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("hh:mm");
 	private EventType eventType;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "game_id")
 	@JsonManagedReference
 	private Game game;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "team_id")
 	private Team team;
-	// @ManyToMany
-	// @JoinColumn(name = "player_id")
-	// private Player scoredBy;
-	// @ManyToMany
-	// @JoinColumn(name = "player_id")
-	// private Player assitedBy;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Player goal;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Player assist;
 
 	private boolean useEvent = true;
 
@@ -53,7 +52,9 @@ public class Event extends AbstractEntity {
 	public String tweetString() {
 		switch (getEventType()) {
 		case POINT_SCORED:
+		case SCORED_BY:
 			break;
+		case TIME_OUT:
 		case HALF_TIME:
 		case GAVE_OVER:
 		case READY:
@@ -73,8 +74,17 @@ public class Event extends AbstractEntity {
 		switch (getEventType()) {
 		case POINT_SCORED:
 			row.append(getTeam().getName());
-			row.append(" scored");
 			break;
+		case SCORED_BY:
+			row.append("Goal: ");
+			row.append(getGoal());
+			row.append("Assist: ");
+			row.append(getAssist());
+			break;
+		case TIME_OUT:
+			row.append(getEventType().getName());
+			row.append(" ");
+			row.append(getTeam().getName());
 		case HALF_TIME:
 		case GAVE_OVER:
 		case READY:
@@ -93,7 +103,10 @@ public class Event extends AbstractEntity {
 	public String toString() {
 		switch (getEventType()) {
 		case POINT_SCORED:
+		case SCORED_BY:
 			return getTeam().getName() + " scored";
+		case TIME_OUT:
+			return getTeam().getName() + " timeout";
 		case HALF_TIME:
 		case GAVE_OVER:
 		case READY:
@@ -133,6 +146,22 @@ public class Event extends AbstractEntity {
 
 	public void setUseEvent(boolean useEvent) {
 		this.useEvent = useEvent;
+	}
+
+	public Player getGoal() {
+		return goal;
+	}
+
+	public void setGoal(Player goal) {
+		this.goal = goal;
+	}
+
+	public Player getAssist() {
+		return assist;
+	}
+
+	public void setAssist(Player assist) {
+		this.assist = assist;
 	}
 
 	// public Player getScoredBy() {

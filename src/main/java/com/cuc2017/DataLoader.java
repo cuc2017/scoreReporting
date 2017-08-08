@@ -126,7 +126,7 @@ public class DataLoader implements ApplicationRunner {
 	}
 
 	private void addPlayersForTeam(Team team) {
-		for (int i = 1; i < 22; i++) {
+		for (int i = 22; i > 0; i--) {
 			getPlayerRepository().save(new Player(i, team.getName(), "Player " + String.valueOf(i), team));
 		}
 	}
