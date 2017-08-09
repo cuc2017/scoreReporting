@@ -58,10 +58,38 @@ public class TwitterTemplateCreator {
 		// String field4AccessTokenSecret =
 		// "4BkuxFV7QhISgBVFZZ2o9uYwZ0l41KCQKVP1QEaPI6gva";
 
-		// String field5ConsumerKey = "";
-		// String field5ConsumerSecret = "";
-		// String field5AccessToken = "";
-		// String field5AccessTokenSecret = "";
+		// String field5ConsumerKey = "YiIhdlUoEVS75fZEXbZRmtYUT";
+		// String field5ConsumerSecret =
+		// "3beAPLIrLt9DVIWFZSuG8pZgNvxgOnc1Tr0hs5PCHR1hrLmZkI";
+		// String field5AccessToken =
+		// "895235908911452161-pCKeUbvxJ6EWqchXTgVszlIWj0dAs9V";
+		// String field5AccessTokenSecret =
+		// "nSF3evUTp3tX96GdkFvFLoO4308z8nVv7AEeFEtBmfGYE";
+
+		// String field6ConsumerKey = "";
+		// String field6ConsumerSecret = "";
+		// String field6AccessToken = "";
+		// String field6AccessTokenSecret = "";
+
+		// String field7ConsumerKey = "";
+		// String field7ConsumerSecret = "";
+		// String field7AccessToken = "";
+		// String field7AccessTokenSecret = "";
+
+		// String field8ConsumerKey = "";
+		// String field8ConsumerSecret = "";
+		// String field8AccessToken = "";
+		// String field8AccessTokenSecret = "";
+
+		// String field9ConsumerKey = "";
+		// String field9ConsumerSecret = "";
+		// String field9AccessToken = "";
+		// String field9AccessTokenSecret = "";
+
+		// String field10ConsumerKey = "";
+		// String field10ConsumerSecret = "";
+		// String field10AccessToken = "";
+		// String field10AccessTokenSecret = "";
 
 		// String field19ConsumerKey = "EV4ydDJZDJpbTsiuVakcAr0B1";
 		// String field19ConsumerSecret =
@@ -88,9 +116,10 @@ public class TwitterTemplateCreator {
 		// TwitterTemplate(field4ConsumerKey,
 		// field4ConsumerSecret, field4AccessToken,
 		// field4AccessTokenSecret));
-		// twitterTemplates.put("Field 5",
-		// new TwitterTemplate(field5ConsumerKey, field5ConsumerSecret,
-		// field5AccessToken, field5AccessTokenSecret));
+		// twitterTemplates.put("Field 5", new
+		// TwitterTemplate(field5ConsumerKey, field5ConsumerSecret,
+		// field5AccessToken,
+		// field5AccessTokenSecret));
 		// twitterTemplates.put("Field 6",
 		// new TwitterTemplate(field6ConsumerKey, field6ConsumerSecret,
 		// field6AccessToken, field6AccessTokenSecret));

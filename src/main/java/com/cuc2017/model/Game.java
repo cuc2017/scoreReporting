@@ -30,6 +30,8 @@ public class Game extends AbstractEntity {
 	private String scoreKeepers;
 	private int homeTeamScore;
 	private int awayTeamScore;
+	private int homeTimeOutThisHalf;
+	private int awayTimeOutThisHalf;
 
 	public Game() {
 		// default constructor
@@ -78,6 +80,27 @@ public class Game extends AbstractEntity {
 		} while (!event.isUseEvent());
 		return event;
 
+	}
+
+	public void resetTimeOuts() {
+		setHomeTimeOutThisHalf(0);
+		setAwayTimeOutThisHalf(0);
+	}
+
+	public void homeTeamTookTimeOut() {
+		homeTimeOutThisHalf++;
+	}
+
+	public void awayTeamTookTimeOut() {
+		awayTimeOutThisHalf++;
+	}
+
+	public void homeTeamUndoTookTimeOut() {
+		homeTimeOutThisHalf--;
+	}
+
+	public void awayTeamUndoTookTimeOut() {
+		awayTimeOutThisHalf--;
 	}
 
 	@Override
@@ -201,6 +224,22 @@ public class Game extends AbstractEntity {
 
 	public void setEvents(List<Event> events) {
 		this.events = events;
+	}
+
+	public int getHomeTimeOutThisHalf() {
+		return homeTimeOutThisHalf;
+	}
+
+	public void setHomeTimeOutThisHalf(int homeTimeOutThisHalf) {
+		this.homeTimeOutThisHalf = homeTimeOutThisHalf;
+	}
+
+	public int getAwayTimeOutThisHalf() {
+		return awayTimeOutThisHalf;
+	}
+
+	public void setAwayTimeOutThisHalf(int awayTimeOutThisHalf) {
+		this.awayTimeOutThisHalf = awayTimeOutThisHalf;
 	}
 
 }
