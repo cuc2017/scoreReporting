@@ -1,0 +1,8939 @@
+[
+ {
+   "type": "team",
+   "first_name": "Mike",
+   "last_name": "Pedersen",
+   "team_name": "Cannons",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Mike",
+   "last_name": "Pedersen",
+   "team_name": "Cannons",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Corine",
+   "last_name": "Masse",
+   "team_name": "Aera",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Roxanne",
+   "last_name": "Goderre",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Chris",
+   "last_name": "Reid",
+   "team_name": "Fallout",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Karelle",
+   "last_name": "LaRoche",
+   "team_name": "Aera",
+   "roles": "captain",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Rachel",
+   "last_name": "Beauchemin",
+   "team_name": "Hydro",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Julia",
+   "last_name": "Bisson",
+   "team_name": "Aera",
+   "roles": "captain",
+   "uniform_number": 15,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Jamie",
+   "last_name": "Fitzgerald",
+   "team_name": "High Tide",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessica",
+   "last_name": "Dubé",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 44,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Jamie",
+   "last_name": "Fitzgerald",
+   "team_name": "High Tide",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michelle",
+   "last_name": "Cimon",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 32,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marie",
+   "last_name": "Béliveau",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 30,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Juliette",
+   "last_name": "Denis",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Maxime",
+   "last_name": "Kelleher",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Pénélope",
+   "last_name": "Robert",
+   "team_name": "Aera",
+   "roles": "spirit captain",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Anais",
+   "last_name": "Millereau",
+   "team_name": "Aera",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sarah-Maude",
+   "last_name": "Amyot",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Britanny",
+   "last_name": "Charest",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 55,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Sam",
+   "last_name": "Law",
+   "team_name": "Savage (F)",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marie-Eve",
+   "last_name": "Leclerc",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mélina",
+   "last_name": "Mongrain",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gwanaelle",
+   "last_name": "Patenaude",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 29,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Maude",
+   "last_name": "Roy",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 42,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gabrielle",
+   "last_name": "Simoneau",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessie",
+   "last_name": "Tanguay",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Julia",
+   "last_name": "Topart",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mariane",
+   "last_name": "Tremblay",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 41,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Florence",
+   "last_name": "Vézina",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nina",
+   "last_name": "Heloir",
+   "team_name": "Aera",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bianca",
+   "last_name": "Thuot",
+   "team_name": "Aera",
+   "roles": "staff",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Alex",
+   "last_name": "Jew",
+   "team_name": "Misfit Open",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Josée",
+   "last_name": "St-Pierre",
+   "team_name": "Aera",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Alex",
+   "last_name": "Jew",
+   "team_name": "Mischief Open",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brayden",
+   "last_name": "Gee",
+   "team_name": "Alpha",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Alex",
+   "last_name": "Jew",
+   "team_name": "Rolling Thunder Open",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Edward",
+   "last_name": "Guo",
+   "team_name": "Alpha",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Alex",
+   "last_name": "Jew",
+   "team_name": "Misfit Women",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Peter",
+   "last_name": "Yu",
+   "team_name": "Alpha",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Alex",
+   "last_name": "Jew",
+   "team_name": "Mischief Women",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "John",
+   "last_name": "Carpenter",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Patrick",
+   "last_name": "Angkiriwang",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Christopher",
+   "last_name": "Mah",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nathan",
+   "last_name": "lam",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joshua",
+   "last_name": "Wang",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicholas",
+   "last_name": "Cheng",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicholas",
+   "last_name": "Fong",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vincent",
+   "last_name": "PW Lee",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Antony",
+   "last_name": "Soulsbury",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 71,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Teri-Lynne",
+   "last_name": "Belanger",
+   "team_name": "Wildfire Junior Boys",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Yuchi",
+   "last_name": "Lin",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 86,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Carla",
+   "last_name": "DiFilippo",
+   "team_name": "TORO",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Carla",
+   "last_name": "DiFilippo",
+   "team_name": "TORO",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Carla",
+   "last_name": "DiFilippo",
+   "team_name": "Uproar",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Carla",
+   "last_name": "DiFilippo",
+   "team_name": "Uproar",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Carla",
+   "last_name": "DiFilippo",
+   "team_name": "Energy",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jay Kit",
+   "last_name": "Foong",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jakob",
+   "last_name": "Von Andrian",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 50,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jayden",
+   "last_name": "Ghieuw",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 72,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Chris",
+   "last_name": "Wakelin",
+   "team_name": "Vortex (Junior Women)",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Kondo",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 29,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Sebastien",
+   "last_name": "Belanger",
+   "team_name": "Scorch",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Devon",
+   "last_name": "Bringeland-Powell",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justin",
+   "last_name": "Chan",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thomas",
+   "last_name": "Carpenter",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Adin",
+   "last_name": "Kwok",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Filip",
+   "last_name": "Kragl",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Preston",
+   "last_name": "Lo",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 68,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Danny",
+   "last_name": "zhu",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kevin",
+   "last_name": "Liang",
+   "team_name": "Alpha",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Carla",
+   "last_name": "Keffer",
+   "team_name": "Bonfire",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jared",
+   "last_name": "Lynd",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 98,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mitchell",
+   "last_name": "Gatto",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Corine",
+   "last_name": "Masse",
+   "team_name": "Aera",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justin",
+   "last_name": "Pettenuzzo",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 51,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "max",
+   "last_name": "wahl",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Keegan",
+   "last_name": "Freeland",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Taiga",
+   "last_name": "Komiyama",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Matt",
+   "last_name": "Wiebe",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kullin",
+   "last_name": "Merilees",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Megan",
+   "last_name": "Green",
+   "team_name": "Nightfury Soars",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Oscar",
+   "last_name": "Obst",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Jon",
+   "last_name": "Hayduk",
+   "team_name": "Vortex (Junior Men)",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Greg",
+   "last_name": "Granger",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jonah",
+   "last_name": "Escarcha",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justin",
+   "last_name": "Sooksavath",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Peter",
+   "last_name": "Yu",
+   "team_name": "Alpha BC",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Loewen",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 39,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Wil",
+   "last_name": "Vaughan ",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tariq",
+   "last_name": "Alibhai",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 91,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Noah",
+   "last_name": "Kent",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hunter",
+   "last_name": "Juhasz",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Braeden",
+   "last_name": "Almas",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jonah",
+   "last_name": "Press",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Iris",
+   "last_name": "Arnon",
+   "team_name": "Wicked West",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cameron",
+   "last_name": "Gauer",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jason",
+   "last_name": "Williams",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Carla",
+   "last_name": "Keffer",
+   "team_name": "Bonfire: Junior Women",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "James",
+   "last_name": "Knight",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Carla",
+   "last_name": "Keffer",
+   "team_name": "Bonfire (Boys)",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jonathan",
+   "last_name": "Hayduk",
+   "team_name": "Bonfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cole",
+   "last_name": "Keffer",
+   "team_name": "Bonfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Hoy",
+   "team_name": "Bonfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Aidan",
+   "last_name": "Wiebe",
+   "team_name": "Bonfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Carla",
+   "last_name": "Keffer",
+   "team_name": "Bonfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Delaney",
+   "last_name": "Ignatieff",
+   "team_name": "Bonfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Claire",
+   "last_name": "Kissinger",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lamya",
+   "last_name": "Rahman",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 31,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kate",
+   "last_name": "Logan",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Karley",
+   "last_name": "Erickson",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jill",
+   "last_name": "Craven",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alicia",
+   "last_name": "Brolly",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Safeena",
+   "last_name": "Shajani",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Katherine",
+   "last_name": "Zhang",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Nicholas",
+   "last_name": "House",
+   "team_name": "NL Junior Open",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sarah",
+   "last_name": "Sampson",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 94,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "McDonald",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Meagan",
+   "last_name": "Davies",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Monica",
+   "last_name": "Devonshire",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Laura",
+   "last_name": "Devonshire",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gabby",
+   "last_name": "Campos",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emilie",
+   "last_name": "McGuire",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 74,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "CAROLYNE ",
+   "last_name": "KIM",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "CATHLYNE ",
+   "last_name": "KIM",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jade",
+   "last_name": "McDonald",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "jennifer",
+   "last_name": "dick",
+   "team_name": "Bonfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Fumika",
+   "last_name": "Noguchi",
+   "team_name": "Bonfire",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mike",
+   "last_name": "Pedersen",
+   "team_name": "Cannons",
+   "roles": "admin|chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicolas",
+   "last_name": "Bennett Soroka",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Landon",
+   "last_name": "Lavoie",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Ramadan",
+   "team_name": "Cannons",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Timothy",
+   "last_name": "Chang",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Austin",
+   "last_name": "Tober",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 49,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Matthew",
+   "last_name": "Tsuyuki",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Trevor ",
+   "last_name": "Wolfenden ",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justin",
+   "last_name": "Wolfenden",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jason",
+   "last_name": "Stepp",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Easton",
+   "last_name": "Fritz",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jacob ",
+   "last_name": "Mah",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Zac",
+   "last_name": "McLeod",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michael ",
+   "last_name": "Wolfenden",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Garrett",
+   "last_name": "Bowes",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jedediah",
+   "last_name": "Heal",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Evan",
+   "last_name": "Shields",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Patrick",
+   "last_name": "Babineau",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kian",
+   "last_name": "Jones",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Elizabeth",
+   "last_name": "Wolfenden",
+   "team_name": "Cannons",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Pauline",
+   "last_name": "Stepp",
+   "team_name": "Cannons",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Evan",
+   "last_name": "Bilenkey",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mike",
+   "last_name": "Pedersen",
+   "team_name": "Cannons",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Chris",
+   "last_name": "Reid",
+   "team_name": "Cannons",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kate",
+   "last_name": "Davies",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lauren",
+   "last_name": "Bennett Soroka",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kaja",
+   "last_name": "Pedersen",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Melanie",
+   "last_name": "Wrigglesworth",
+   "team_name": "Cannons",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emily ",
+   "last_name": "Kay-Leighton",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Melanie",
+   "last_name": "Phillips",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Georgia",
+   "last_name": "Boucher",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emily",
+   "last_name": "Bennett",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Kerri",
+   "last_name": "Kightley",
+   "team_name": "Rogue Squadron",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Madelyn",
+   "last_name": "Talpt",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Elizabeth",
+   "last_name": "Wolfenden",
+   "team_name": "Cannons",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Aline",
+   "last_name": "Wust",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Kevin",
+   "last_name": "MacLeod",
+   "team_name": "Stud",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hannah",
+   "last_name": "Boucher",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sarah",
+   "last_name": "Au",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Elisha",
+   "last_name": "Brooks",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ciara",
+   "last_name": "Wright",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ashlyn",
+   "last_name": "Smith",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jane",
+   "last_name": "Davies",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lauren",
+   "last_name": "Lee",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hannah",
+   "last_name": "Bennett",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Megan",
+   "last_name": "Ganley",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Yeanna",
+   "last_name": "He",
+   "team_name": "Cannons",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lori",
+   "last_name": "Walker",
+   "team_name": "Cannons",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jackie",
+   "last_name": "Bennett",
+   "team_name": "Cannons",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Julie",
+   "last_name": "Davies",
+   "team_name": "Cannons",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Eliane",
+   "last_name": "Wust",
+   "team_name": "Cannons",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Adrienne",
+   "last_name": "Wright",
+   "team_name": "Cannons",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Raymond",
+   "last_name": "Hou",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ezra",
+   "last_name": "Unger Brandt ",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 42,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "jeffery",
+   "last_name": "tang",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tyler",
+   "last_name": "Dawson",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 52,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sammy",
+   "last_name": "Booker",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jonah",
+   "last_name": "Cheung",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Andrew",
+   "last_name": "Chen",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Peter",
+   "last_name": "Lam",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dennis ",
+   "last_name": "Wong",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 55,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bryan",
+   "last_name": "Jung",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Edmund",
+   "last_name": "Un",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Maharai",
+   "last_name": "Mitchell",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 48,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Darren",
+   "last_name": "Tang",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cameron",
+   "last_name": "Knox",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 45,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jason",
+   "last_name": "Chui",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Levi",
+   "last_name": "Uy",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kyle",
+   "last_name": "Lam",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jaedan",
+   "last_name": "Prescott-Brown",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 96,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vlad",
+   "last_name": "Ilic",
+   "team_name": "Energy",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jon",
+   "last_name": "Brandt",
+   "team_name": "Energy",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dylan",
+   "last_name": "Fonseca",
+   "team_name": "Energy",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kevin",
+   "last_name": "Pachorro",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 31,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joshua",
+   "last_name": "Rodrigues",
+   "team_name": "Energy",
+   "roles": "player",
+   "uniform_number": 97,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jamie",
+   "last_name": "Fitzgerald",
+   "team_name": "High Tide",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Danielle",
+   "last_name": "Vienneau",
+   "team_name": "High Tide",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jason",
+   "last_name": "Murty",
+   "team_name": "High Tide",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Megan",
+   "last_name": "Melanson",
+   "team_name": "High Tide",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Liam",
+   "last_name": "LeBlanc",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Guillaume",
+   "last_name": "Perron",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 93,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Stephanie",
+   "last_name": "Babineau",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ben",
+   "last_name": "Willemsen",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emily ",
+   "last_name": "Gaudet ",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Noah ",
+   "last_name": "Richard",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 97,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Maxime ",
+   "last_name": "Dumont",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emma",
+   "last_name": "Johnston",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 55,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rachel",
+   "last_name": "Butterfield",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emily",
+   "last_name": "Brind'Amour",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Annie",
+   "last_name": "Caron",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "James",
+   "last_name": "Topinka",
+   "team_name": "Wheaties",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "jack",
+   "last_name": "bristow",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lynn",
+   "last_name": "Léger",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Danika",
+   "last_name": "Leblanc",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Amelie",
+   "last_name": "Manuel",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Monica",
+   "last_name": "Landry",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Martin",
+   "last_name": "Gallant",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 54,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Seth",
+   "last_name": "Porter",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Roxane",
+   "last_name": "Perron",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dorothy",
+   "last_name": "Drost",
+   "team_name": "High Tide",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joey",
+   "last_name": "Drost",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Véronique",
+   "last_name": "Hebert",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Andre",
+   "last_name": "Gallant",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 55,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Madelaine",
+   "last_name": "Richard",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "sarah",
+   "last_name": "Mckeown",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marise",
+   "last_name": "Michaud",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jeremy",
+   "last_name": "Jaillet",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Christian",
+   "last_name": "Sirois",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 66,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mark",
+   "last_name": "O'Connor",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Julien",
+   "last_name": "Cormier",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "chloe",
+   "last_name": "dallaire",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicolas",
+   "last_name": "Savoie",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Magalie",
+   "last_name": "Boucher",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Isabelle",
+   "last_name": "Belliveau",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "melissa",
+   "last_name": "Laplante",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "miguel",
+   "last_name": "dallaire",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tom",
+   "last_name": "Koval",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Business & Sport Development Director",
+   "last_name": "MODS",
+   "team_name": "Red River Rebellion",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Business & Sport Development Director",
+   "last_name": "MODS",
+   "team_name": "MOFO (Masters Of Flying Objects) Women's Team",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Business & Sport Development Director",
+   "last_name": "MODS",
+   "team_name": "Manitou",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Business & Sport Development Director",
+   "last_name": "MODS",
+   "team_name": "Masters of Flying Objects (MOFO)",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Business & Sport Development Director",
+   "last_name": "MODS",
+   "team_name": "Spitfire",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Smith",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ariane",
+   "last_name": "McGraw",
+   "team_name": "High Tide",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dan ",
+   "last_name": "LeBlanc",
+   "team_name": "High Tide",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rachel",
+   "last_name": "Beauchemin",
+   "team_name": "Hydro",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Felix-Antoine",
+   "last_name": "Amyot",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Corine",
+   "last_name": "Masse",
+   "team_name": "Hydro",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thomas",
+   "last_name": "Duplaix",
+   "team_name": "Hydro",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sean",
+   "last_name": "Daraiche",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Philippe",
+   "last_name": "Bisson",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jakob",
+   "last_name": "Brisette",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 86,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Robin",
+   "last_name": "Dube",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Charles",
+   "last_name": "Asselin",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nabil",
+   "last_name": "Chaouch",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jorge",
+   "last_name": "Ramirez Ruiz",
+   "team_name": "Hydro",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jean-Benoit",
+   "last_name": "Mercier",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vincent",
+   "last_name": "Genest",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Olivier",
+   "last_name": "Genest",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Felix",
+   "last_name": "Leonard",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Romain",
+   "last_name": "Théberge",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rémi",
+   "last_name": "Carrier-Desmarais",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "James",
+   "last_name": "Zhen",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 31,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nathaniel",
+   "last_name": "Leonard",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alexandre",
+   "last_name": "Bell-Dion",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 44,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Belinda",
+   "last_name": "Reed",
+   "team_name": "Ignite",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Antony",
+   "last_name": "Roy-Nadeau",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 96,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Malek",
+   "last_name": "Turgeon-Roy",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 55,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Olivier",
+   "last_name": "Bastien",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Philippe",
+   "last_name": "Garand",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Renaud",
+   "last_name": "Drouin",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Victor",
+   "last_name": "Sauvé",
+   "team_name": "Hydro",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Frédéric",
+   "last_name": "Balleux",
+   "team_name": "Hydro",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Benoit",
+   "last_name": "Denis",
+   "team_name": "Hydro",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sebastien",
+   "last_name": "Labrecque",
+   "team_name": "Ignite",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Benjamin",
+   "last_name": "Cheer",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 40,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Calvin",
+   "last_name": "Richards-Deruchie",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 59,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Xander",
+   "last_name": "Sirois",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Andrew",
+   "last_name": "Leach",
+   "team_name": "Ignite",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gianni",
+   "last_name": "LaFontaine",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 84,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ben",
+   "last_name": "Scott",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 68,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ian",
+   "last_name": "Wallace",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 78,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Evan",
+   "last_name": "Cheer",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jake",
+   "last_name": "Lochhead",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mattia",
+   "last_name": "Fosco",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thomas",
+   "last_name": "Stanton",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 29,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brad",
+   "last_name": "Cheer",
+   "team_name": "Ignite",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dante",
+   "last_name": "LaFontaine",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Matt",
+   "last_name": "Stokes",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 74,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Cameron",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Simon",
+   "last_name": "Walker",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "James",
+   "last_name": "Moreira",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 32,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Scott",
+   "last_name": "Graham",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 36,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Chris",
+   "last_name": "lay",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 53,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Corben",
+   "last_name": "Peters",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 94,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Eric",
+   "last_name": "Zhu",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "samuel",
+   "last_name": "Dupont-Gratton",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessy",
+   "last_name": "Letourneau",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 85,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Liset",
+   "last_name": "Stanton",
+   "team_name": "Ignite",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ken",
+   "last_name": "Lorbetskie",
+   "team_name": "Ignite",
+   "roles": "player",
+   "uniform_number": 61,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michael",
+   "last_name": "Chura",
+   "team_name": "Manitou",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Malcolm",
+   "last_name": "Prescott",
+   "team_name": "Manitou",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Will",
+   "last_name": "Ness",
+   "team_name": "Manitou",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kobe ",
+   "last_name": "Davies",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justin",
+   "last_name": "Kelly",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Dubyts",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jasper",
+   "last_name": "Modha",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 50,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dylan",
+   "last_name": "Kagan",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Benjamin",
+   "last_name": "Grieser",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thomas",
+   "last_name": "McLeod",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ethan",
+   "last_name": "Johnson",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Matthew",
+   "last_name": "Marquess",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ian",
+   "last_name": "Jonkman",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Zachary",
+   "last_name": "Neufeld",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 97,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sam",
+   "last_name": "Peterson",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Neil",
+   "last_name": "Santos",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 30,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lukas",
+   "last_name": "Bohm",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 28,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Zachery",
+   "last_name": "Murray",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 66,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jackson",
+   "last_name": "Wilson",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jordan",
+   "last_name": "Santos",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 81,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicolas",
+   "last_name": "Dutka",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "nick",
+   "last_name": "mcfaddin",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 67,
+   "division": "Junior Open"
+ },
+ {
+   "type": "",
+   "first_name": "",
+   "last_name": "",
+   "team_name": "",
+   "roles": "",
+   "uniform_number": null,
+   "division": ""
+ },
+ {
+   "type": "roster",
+   "first_name": "Keaghan",
+   "last_name": "Pfeifer",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 54,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "MacKinley",
+   "last_name": "Hall",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gabriel",
+   "last_name": "Jung",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cameron",
+   "last_name": "Tramley",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dakota",
+   "last_name": "Andrews",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brett",
+   "last_name": "Blais",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jason",
+   "last_name": "Cohen",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "William",
+   "last_name": "McLeod",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 76,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joseph",
+   "last_name": "McCallum",
+   "team_name": "Manitou",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sean",
+   "last_name": "Storm",
+   "team_name": "MOFO",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Will",
+   "last_name": "Konrad",
+   "team_name": "MOFO",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Daniel",
+   "last_name": "Plourde",
+   "team_name": "MOFO",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicholas",
+   "last_name": "Einarson",
+   "team_name": "MOFO",
+   "roles": "captain",
+   "uniform_number": 5,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Keenan",
+   "last_name": "Ashley",
+   "team_name": "MOFO",
+   "roles": "captain",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tyson",
+   "last_name": "Davies",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 90,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "lukas",
+   "last_name": "neustaedter",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 72,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jadon",
+   "last_name": "Rich",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 92,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Liam ",
+   "last_name": "Gutkin",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "McDonald",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jordan",
+   "last_name": "Steele",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Zachary",
+   "last_name": "Tottle",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thomas",
+   "last_name": "Wright",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jeffrey",
+   "last_name": "Boris",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Charlie",
+   "last_name": "Johnson",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "bassam",
+   "last_name": "abdullah",
+   "team_name": "MOFO",
+   "roles": "captain",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lachlan",
+   "last_name": "Roche",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 97,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Noah",
+   "last_name": "Hoffman",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sean",
+   "last_name": "Bennett",
+   "team_name": "MOFO",
+   "roles": "captain",
+   "uniform_number": 34,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vaughn",
+   "last_name": "Marable",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Skyler",
+   "last_name": "Diamond-Burchuk",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Isaac",
+   "last_name": "Hildebrand",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Quinn",
+   "last_name": "Wilson",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Stephen ",
+   "last_name": "Crew",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Eisbrenner",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cam",
+   "last_name": "Rowe",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 41,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Jew",
+   "team_name": "Mischief",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "sascha",
+   "last_name": "lo",
+   "team_name": "Mischief",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Samson",
+   "last_name": "Hoy",
+   "team_name": "Mischief",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kevin",
+   "last_name": "Chan",
+   "team_name": "Mischief",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tristan",
+   "last_name": "Johnson",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 34,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Andarsen",
+   "last_name": "Ng",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bradley",
+   "last_name": "Ma",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Adam",
+   "last_name": "Beckie",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brian ",
+   "last_name": "Murphy",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Benjamin",
+   "last_name": "Choinski",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "William",
+   "last_name": "Wang",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nelson",
+   "last_name": "Lee",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brytton",
+   "last_name": "Lo",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Eric",
+   "last_name": "Tran",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mathew",
+   "last_name": "Dee",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 55,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cristian",
+   "last_name": "Melendez",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Fritz",
+   "last_name": "Rehmus",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Josh",
+   "last_name": "Loo",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marco",
+   "last_name": "Ng",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marcus",
+   "last_name": "So",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 94,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marek",
+   "last_name": "Chu",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michael",
+   "last_name": "Yu",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Pei",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Lin",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Mah",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Wilson",
+   "last_name": "Leung",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Edric",
+   "last_name": "Sudihok",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Veronica",
+   "last_name": "Ng",
+   "team_name": "Mischief",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ellen",
+   "last_name": "Au-Yeung",
+   "team_name": "Mischief",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Jew",
+   "team_name": "Mischief",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Eugene",
+   "last_name": "Wong",
+   "team_name": "Mischief",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alice",
+   "last_name": "Low",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cindy ",
+   "last_name": "Santiago ",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lianne ",
+   "last_name": "Campbell",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sophia",
+   "last_name": "Tse",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mona",
+   "last_name": "Ou",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Erica ",
+   "last_name": "Yuan",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sophia",
+   "last_name": "Harms",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joey",
+   "last_name": "Liu",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sarah",
+   "last_name": "Zhang",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 37,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joey",
+   "last_name": "Cheung",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Britney",
+   "last_name": "So",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Stephanie",
+   "last_name": "Siu",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 78,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hannah",
+   "last_name": "Samuel",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hazel",
+   "last_name": "Pangilinan",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jennifer",
+   "last_name": "Louie",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emma",
+   "last_name": "Best",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jasmine",
+   "last_name": "Wong",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ariel",
+   "last_name": "Moon",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jess",
+   "last_name": "Eaton",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Katherine",
+   "last_name": "Cheung",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Miu",
+   "last_name": "Shiraiwa",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nanaki",
+   "last_name": "Thind",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Anne",
+   "last_name": "Garcia",
+   "team_name": "Mischief",
+   "roles": "player",
+   "uniform_number": 61,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Robin",
+   "last_name": "Merasty",
+   "team_name": "MOFO",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Karen",
+   "last_name": "Hatch",
+   "team_name": "MOFO",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alexa",
+   "last_name": "Kovacs",
+   "team_name": "MOFO",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vanessa",
+   "last_name": "Hogue",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Maya",
+   "last_name": "Sykes",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Daniela",
+   "last_name": "Auriti",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sam",
+   "last_name": "Burrage",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sarah",
+   "last_name": "Jacobsohn",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kiersten",
+   "last_name": "Hilland",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Yasmin",
+   "last_name": "Bañares",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Zoe",
+   "last_name": "Dyck",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Aurora",
+   "last_name": "Wiebe",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alix",
+   "last_name": "Yallowega",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Shelly",
+   "last_name": "Lam",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 28,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tannis",
+   "last_name": "Hydesmith",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Heather",
+   "last_name": "Herms",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Caitlin",
+   "last_name": "Cho",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Meagan",
+   "last_name": "Gillis",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bryce",
+   "last_name": "Paterson",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Isabelle",
+   "last_name": "Einarson",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 31,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lexy",
+   "last_name": "Mulligan",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Taya",
+   "last_name": "Niessen",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Colleen Andrea",
+   "last_name": "Soriano",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cassidy",
+   "last_name": "Knockaert",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jordyn",
+   "last_name": "Turner",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 66,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sarah",
+   "last_name": "Stoesz",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 94,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Asma",
+   "last_name": "Al Abdul Ridha",
+   "team_name": "MOFO",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Craig",
+   "last_name": "Stoyles",
+   "team_name": "New Scotland Blues",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Todd",
+   "last_name": "MacAulay",
+   "team_name": "New Scotland Blues",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Breagh",
+   "last_name": "Wallebeck",
+   "team_name": "New Scotland Blues",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Samantha",
+   "last_name": "Ellis",
+   "team_name": "New Scotland Blues",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Molly",
+   "last_name": "Wedge",
+   "team_name": "New Scotland Blues",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Annelise",
+   "last_name": "Staples",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 57,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Clara",
+   "last_name": "Goulet",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 67,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Madison",
+   "last_name": "Hull",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bessan",
+   "last_name": "Amer",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 57,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Peyton",
+   "last_name": "O'Regan",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jon",
+   "last_name": "Rrafshi",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kory",
+   "last_name": "Melchoir",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Oliver",
+   "last_name": "Porter",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "William",
+   "last_name": "Clarke",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "William",
+   "last_name": "Barriault",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dawson",
+   "last_name": "Muir",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 42,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Aubrey",
+   "last_name": "Landry",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Colin",
+   "last_name": "Porter",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Songnian (Jax)",
+   "last_name": "Liu",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Eric",
+   "last_name": "Zhang",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Wade",
+   "last_name": "Dobson",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kennedy",
+   "last_name": "Hawes",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Arman",
+   "last_name": "Gudelj",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tyler",
+   "last_name": "Green",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 72,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Keith",
+   "last_name": "MacPhee",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bradley",
+   "last_name": "Rondelet",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 69,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rebecca",
+   "last_name": "Ryan",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lauren",
+   "last_name": "Liem",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jillian",
+   "last_name": "Morris",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Claire",
+   "last_name": "Kleinknecht",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Paige",
+   "last_name": "Hare",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lily",
+   "last_name": "Munk",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cléau",
+   "last_name": "McCurdy",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Anna",
+   "last_name": "Manuel",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Katryn",
+   "last_name": "Crawford",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Haley",
+   "last_name": "Ingemansen",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Madison",
+   "last_name": "Blackmore",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sarah",
+   "last_name": "Macdougall",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Evan",
+   "last_name": "Mercer",
+   "team_name": "New Scotland Blues",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "ben",
+   "last_name": "wortman",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "David",
+   "last_name": "Archibald ",
+   "team_name": "New Scotland Blues",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joey",
+   "last_name": "Njeim",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Barrett",
+   "last_name": "Ferguson-Losier",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Josh",
+   "last_name": "Turner",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Eben",
+   "last_name": "Tebay",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Pirat",
+   "last_name": "Unwiang",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Erin",
+   "last_name": "McCarthy",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Grant",
+   "last_name": "MacDonald",
+   "team_name": "New Scotland Blues",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "bob",
+   "last_name": "green",
+   "team_name": "Nightfury Soars",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Megan",
+   "last_name": "Green",
+   "team_name": "Nightfury Soars",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kerri",
+   "last_name": "Kightley",
+   "team_name": "Nightfury Soars",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jane",
+   "last_name": "Nguyen",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Allyssa",
+   "last_name": "Buckle",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Samantha",
+   "last_name": "Buckle",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hailey",
+   "last_name": "Smith",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jocelyn",
+   "last_name": "Blazey",
+   "team_name": "Nightfury Soars",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Julia",
+   "last_name": "Nickerson",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vania",
+   "last_name": "St Jean",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emily",
+   "last_name": "Burns",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Meghan",
+   "last_name": "Myers",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Naomi",
+   "last_name": "McGuiness-Prowse",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alexia",
+   "last_name": "Shearer",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lily",
+   "last_name": "Russell",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Grace",
+   "last_name": "Smith",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alicia",
+   "last_name": "Blake",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Elora",
+   "last_name": "Kreider",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Victoria",
+   "last_name": "Solti",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Camryn",
+   "last_name": "Atfield",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Olivia",
+   "last_name": "Egert",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Madeleine ",
+   "last_name": "Hayes",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hannah",
+   "last_name": "Huxter",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Taylor",
+   "last_name": "Svanda",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Andrea",
+   "last_name": "Petkovic",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Devon",
+   "last_name": "Knight",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sadie ",
+   "last_name": "Davidson-Dove",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emily ",
+   "last_name": "Kellar ",
+   "team_name": "Nightfury Soars",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tara",
+   "last_name": "Buckle",
+   "team_name": "Nightfury Soars",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cameron",
+   "last_name": "Penney",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Laurel",
+   "last_name": "Penney",
+   "team_name": "NL Storm",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Westcott",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Matthew",
+   "last_name": "Caines",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Hiscock",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Aaron",
+   "last_name": "Power",
+   "team_name": "NL Storm",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jeremy",
+   "last_name": "Pike",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 69,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kyle",
+   "last_name": "Anderson",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "steven",
+   "last_name": "wiseman",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Liam",
+   "last_name": "Mahoney",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicholas",
+   "last_name": "Whitten",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 72,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Noah",
+   "last_name": "Knee",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michael",
+   "last_name": "Trites",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kyle",
+   "last_name": "Roberts",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alexander",
+   "last_name": "Butler",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Aidan",
+   "last_name": "Bennett",
+   "team_name": "NL Storm",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kurtis",
+   "last_name": "Thornhill",
+   "team_name": "NL Storm",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Candace",
+   "last_name": "O'Regan",
+   "team_name": "NL Storm",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Donna",
+   "last_name": "Mahoney",
+   "team_name": "NL Storm",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "steve",
+   "last_name": "baria",
+   "team_name": "Red River Rebellion",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Erin",
+   "last_name": "McKinlay",
+   "team_name": "Red River Rebellion",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emily",
+   "last_name": "Cho",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jade",
+   "last_name": "Wong",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hillary",
+   "last_name": "Rempel",
+   "team_name": "Red River Rebellion",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kamryn",
+   "last_name": "Diehl",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 57,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brooke",
+   "last_name": "Hilland",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 46,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "brooklyn",
+   "last_name": "franck",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessie",
+   "last_name": "Taylor",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Amber",
+   "last_name": "Steinke",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Breanna",
+   "last_name": "Warren",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Grace",
+   "last_name": "Harding",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Abbey",
+   "last_name": "Howard",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ana",
+   "last_name": "Grieser",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 32,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Casandra",
+   "last_name": "Hayward",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alyssa",
+   "last_name": "Ash",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jacqueline",
+   "last_name": "Midford",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Taryn",
+   "last_name": "Steinke",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 64,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lindsay",
+   "last_name": "Marshall",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Maikaela",
+   "last_name": "Vermette",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thalia",
+   "last_name": "Thorlacius",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 37,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicole",
+   "last_name": "Gobert",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hayley",
+   "last_name": "Haarsma",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Erasmia",
+   "last_name": "Tambakis",
+   "team_name": "Red River Rebellion",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Todd",
+   "last_name": "Melville",
+   "team_name": "Rogue Squadron",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Isaiah",
+   "last_name": "Kightley",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tyler",
+   "last_name": "MacDonald",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tristan",
+   "last_name": "Melville",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 31,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Aidan",
+   "last_name": "Melville",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Charlie",
+   "last_name": "Ens",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 42,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joe",
+   "last_name": "Voskamp",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 94,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jocelyne",
+   "last_name": "Stone",
+   "team_name": "Rogue Squadron",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Noah",
+   "last_name": "Miller",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 29,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "David",
+   "last_name": "Archibald ",
+   "team_name": "New Scotland Blues",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "David",
+   "last_name": "Archibald ",
+   "team_name": "New Scotland Blues",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Seth",
+   "last_name": "Dove",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mickle",
+   "last_name": "O'Neill",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Connor",
+   "last_name": "Lever",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mickinley",
+   "last_name": "Lorenzen",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brock",
+   "last_name": "Brundle",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "John",
+   "last_name": "Noble",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 38,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Owen",
+   "last_name": "Nabuurs",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Francis",
+   "last_name": "Brooks",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ethan",
+   "last_name": "Brannan",
+   "team_name": "Rogue Squadron",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Jew",
+   "team_name": "Rolling Thunder",
+   "roles": "admin|coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "David",
+   "last_name": "Stelck",
+   "team_name": "Rolling Thunder",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jacob",
+   "last_name": "Chong",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dylan",
+   "last_name": "Cochrane",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brian",
+   "last_name": "Tang",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Christos",
+   "last_name": "Cunning",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ethan",
+   "last_name": "Benson",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 56,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alan",
+   "last_name": "Ng",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 47,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Regis",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Allan",
+   "last_name": "Cho",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brandon",
+   "last_name": "Krezeski",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bryan",
+   "last_name": "Kang",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Claudio",
+   "last_name": "Quinones",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ji",
+   "last_name": "Yoo",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 42,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justin",
+   "last_name": "Luna",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Luk",
+   "last_name": "Pham",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Patrick",
+   "last_name": "Phi",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Phillip",
+   "last_name": "Le",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Reneandro",
+   "last_name": "Rosario",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryu",
+   "last_name": "Hashimoto",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Samuel",
+   "last_name": "Lam",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vinto",
+   "last_name": "Liu",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "William",
+   "last_name": "Tang",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 34,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Yasir",
+   "last_name": "Mirani",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Yuma",
+   "last_name": "Debroux",
+   "team_name": "Rolling Thunder",
+   "roles": "player",
+   "uniform_number": 87,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kitty",
+   "last_name": "Tu",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Amadis",
+   "last_name": "Wong",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sam",
+   "last_name": "Law",
+   "team_name": "Savage",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Annie",
+   "last_name": "Wang",
+   "team_name": "Savage",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bowen",
+   "last_name": "Liu",
+   "team_name": "Savage",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Anna",
+   "last_name": "Wei",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michelle",
+   "last_name": "Ling",
+   "team_name": "Savage",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Phillis",
+   "last_name": "Yang",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Yumi",
+   "last_name": "Wong",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cherry",
+   "last_name": "Chan",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sandra",
+   "last_name": "Balitaan ",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Laurie",
+   "last_name": "Yeh",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bernice",
+   "last_name": "Xiao",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Annie",
+   "last_name": "Wu",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michelle",
+   "last_name": "Ma",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 30,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michelle",
+   "last_name": "Li",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thidarat",
+   "last_name": "Phoosit",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessie",
+   "last_name": "Ping",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joanne",
+   "last_name": "Yuan",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Theresa",
+   "last_name": "Xiao",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 44,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sierra",
+   "last_name": "Shikaze",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 97,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jariss",
+   "last_name": "Dino",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tammy",
+   "last_name": "Guan",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kelly",
+   "last_name": "Luk",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alyssa",
+   "last_name": "Ang",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justine",
+   "last_name": "Fernandez",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Teresa",
+   "last_name": "Yuen",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joey",
+   "last_name": "Wong",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Claudine",
+   "last_name": "Carbray",
+   "team_name": "Titane Women",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "team",
+   "first_name": "Claudine",
+   "last_name": "Carbray",
+   "team_name": "Titane Open",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "anika",
+   "last_name": "cordero",
+   "team_name": "Savage",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sebastien",
+   "last_name": "Belanger",
+   "team_name": "Scorch",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Patrick",
+   "last_name": "Mapp",
+   "team_name": "Scorch",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Luca",
+   "last_name": "LaFontaine",
+   "team_name": "Scorch",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Freeman",
+   "last_name": "Reid ",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 96,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Malachi",
+   "last_name": "Winter",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 31,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Callum",
+   "last_name": "Keenan",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Benjamin",
+   "last_name": "Lariviere",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Matthew",
+   "last_name": "Norman",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 44,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jonatan",
+   "last_name": "Mercier",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 38,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Felix",
+   "last_name": "Gravelle",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicholas",
+   "last_name": "Belanger",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 80,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alexandre",
+   "last_name": "Tremblay-Larochelle",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 63,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cameron",
+   "last_name": "Kennedy",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 91,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Colin",
+   "last_name": "Porter",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 93,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Isaiah",
+   "last_name": "Freed",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 72,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lawson",
+   "last_name": "Nadeau",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 35,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Shaun",
+   "last_name": "Ruddy",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 87,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thomas",
+   "last_name": "Dunnigan",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 97,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Carson",
+   "last_name": "Weiler",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 71,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Deon",
+   "last_name": "Paul",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 79,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Geoffrey",
+   "last_name": "Loo",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tristan",
+   "last_name": "Higham",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 54,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Julie",
+   "last_name": "Dunnigan",
+   "team_name": "Scorch",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tynan",
+   "last_name": "Peterson",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 42,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tobias",
+   "last_name": "Schlagenhaufer",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Maxime",
+   "last_name": "Rene",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 34,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Desmond",
+   "last_name": "Staples",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 57,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Benjamin",
+   "last_name": "Goodrich-MacLean",
+   "team_name": "Scorch",
+   "roles": "player",
+   "uniform_number": 50,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Shayne",
+   "last_name": "Pfeifer",
+   "team_name": "Spitfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jesse",
+   "last_name": "Casey",
+   "team_name": "Spitfire",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nate",
+   "last_name": "Briscoe",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 73,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sam",
+   "last_name": "Duncan",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 29,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jack",
+   "last_name": "Murray",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Finley",
+   "last_name": "Uhmann",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Isaac",
+   "last_name": "Kaplan",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 50,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Max",
+   "last_name": "Kaplan",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 69,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tyler",
+   "last_name": "Turner",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Riley ",
+   "last_name": "Peterson",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Aidan",
+   "last_name": "Dutka",
+   "team_name": "Spitfire",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brayden",
+   "last_name": "Nemetchek",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ethan",
+   "last_name": "Nemetchek",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 55,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Adoni",
+   "last_name": "Tambakis",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 91,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryley",
+   "last_name": "Smith",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 43,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mark",
+   "last_name": "Neustaedter",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 72,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Adam",
+   "last_name": "Neustaedter",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Diamond",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 89,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Yannick",
+   "last_name": "Bohm",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Caleb",
+   "last_name": "Neufeld",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nathaniel",
+   "last_name": "Dela Cruz",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "James",
+   "last_name": "Williams",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Arlen",
+   "last_name": "Scheelar ",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kolby",
+   "last_name": "Wiebe",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jorge",
+   "last_name": "Sarmiento",
+   "team_name": "Spitfire",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Derian",
+   "last_name": "Kreider",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Daniel",
+   "last_name": "Bouwma",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 29,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Spencer ",
+   "last_name": "Shaw",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mike",
+   "last_name": "Wrona",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Patrick ",
+   "last_name": "Berube",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gavin",
+   "last_name": "Lee",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 34,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tyrus",
+   "last_name": "Jay",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 71,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Liam",
+   "last_name": "Powers",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 41,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dylan",
+   "last_name": "koonjbehary ",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Robbie",
+   "last_name": "Rodway",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Pierce",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 74,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Zachary",
+   "last_name": "Smith",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 89,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brody",
+   "last_name": "Jay",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Austin",
+   "last_name": "Hodgson",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lance ",
+   "last_name": "Birney",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mason",
+   "last_name": "Lee",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 91,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Will",
+   "last_name": "Richardson",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ketan",
+   "last_name": "Vasudeva",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Charlie",
+   "last_name": "Smith",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Logan",
+   "last_name": "Dafour",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Devon",
+   "last_name": "Asemota",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Charlie",
+   "last_name": "Smith",
+   "team_name": "Stud",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Carter",
+   "last_name": "Chin",
+   "team_name": "Stud",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jamie",
+   "last_name": "Millage",
+   "team_name": "Stud",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "ashleigh",
+   "last_name": "duffy",
+   "team_name": "Stud",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Drew",
+   "last_name": "Wilson",
+   "team_name": "Stud",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lévi",
+   "last_name": "Doré",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Eliott",
+   "last_name": "Heloir",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 35,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Raphael",
+   "last_name": "Salvas",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marc-Antoine ",
+   "last_name": "Moreau ",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jean-Christophe",
+   "last_name": "Loiselle",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Benoit",
+   "last_name": "Lapointe",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 31,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Fabrice",
+   "last_name": "Heloir",
+   "team_name": "Titane",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Haroun-Rabah",
+   "last_name": "Aramis",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mohamed",
+   "last_name": "Chrouh",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dylan",
+   "last_name": "Lacombe Burgoyne",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 56,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Simon",
+   "last_name": "Birtz",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thomas",
+   "last_name": "Dubois",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 42,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Raphael",
+   "last_name": "Lalonde Landry",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Charles",
+   "last_name": "Guay",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alexandre",
+   "last_name": "Warin",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 80,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Félix",
+   "last_name": "Pelletier",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 84,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Simon",
+   "last_name": "Drolet",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jacob",
+   "last_name": "Duquette",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 29,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Antoine",
+   "last_name": "Gagné-Martel",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ywan ",
+   "last_name": "Cohonner",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Farouk",
+   "last_name": "Oussaada",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Leandre",
+   "last_name": "Vincelette",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Claudine",
+   "last_name": "Carbray",
+   "team_name": "Titane",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Yohan",
+   "last_name": "Baril",
+   "team_name": "Titane",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mauricio",
+   "last_name": "Martínez Lung",
+   "team_name": "Titane",
+   "roles": "assistant coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kira",
+   "last_name": "Cheer",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessie",
+   "last_name": "Walker",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 48,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Magalie ",
+   "last_name": "Nadeau",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lauriane",
+   "last_name": "Rioux",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Anna",
+   "last_name": "Ni",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Émulie",
+   "last_name": "Chhor",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 36,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marylise",
+   "last_name": "Beaudoin",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Buse",
+   "last_name": "Zeybek",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marion",
+   "last_name": "Juillard",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Fedoua",
+   "last_name": "Salem",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Isabelle",
+   "last_name": "Lupena",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alessia",
+   "last_name": "Vinet",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lindsay",
+   "last_name": "Mercredy",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gabrielle",
+   "last_name": "Chartrand",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 94,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rose",
+   "last_name": "D'Aoust",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Florence",
+   "last_name": "Dionne",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Élizabeth",
+   "last_name": "Roy",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 42,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Marie",
+   "last_name": "Cazanave",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 46,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lorraine",
+   "last_name": "Campeau",
+   "team_name": "Titane",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Audrey",
+   "last_name": "Archambault",
+   "team_name": "Titane",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Claudine",
+   "last_name": "Carbray",
+   "team_name": "Titane",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Yohan",
+   "last_name": "Baril",
+   "team_name": "Titane",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alexandre",
+   "last_name": "Bousquet",
+   "team_name": "Titane",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Evan",
+   "last_name": "Phillips",
+   "team_name": "TORO",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Barrett",
+   "last_name": "Wachholz",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jared",
+   "last_name": "Canfield",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 74,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rebecca",
+   "last_name": "Mesburis",
+   "team_name": "TORO",
+   "roles": "captain",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Katherine",
+   "last_name": "Quach",
+   "team_name": "TORO",
+   "roles": "captain",
+   "uniform_number": 77,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kelly",
+   "last_name": "Smith",
+   "team_name": "TORO",
+   "roles": "captain",
+   "uniform_number": 22,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brittney",
+   "last_name": "Dos Santos",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jazmin",
+   "last_name": "Ulalan",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "carlos",
+   "last_name": "zambrano",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Louie",
+   "last_name": "Weng",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Will",
+   "last_name": "Turner",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kieran",
+   "last_name": "Charnock",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Shanthosh",
+   "last_name": "Sivayogalingam",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vincent",
+   "last_name": "Bulloch",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Morrow",
+   "last_name": "Santocono",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Chris",
+   "last_name": "Gnam",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "owen",
+   "last_name": "Armstrong",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 81,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jaidyn",
+   "last_name": "Lunn",
+   "team_name": "TORO",
+   "roles": "captain",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Campbell",
+   "last_name": "Armstrong",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "curtis",
+   "last_name": "campbell",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Victoria",
+   "last_name": "Harvey",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vishal",
+   "last_name": "Nikam",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kelvin",
+   "last_name": "Huang",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Johnson",
+   "last_name": "Yu",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michelle",
+   "last_name": "Liu",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alexander ",
+   "last_name": "Cotter",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 51,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "John",
+   "last_name": "Fallas",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Angela",
+   "last_name": "Yu",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nathan",
+   "last_name": "Ambrose",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 47,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Miranda",
+   "last_name": "Ko",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Wilkie",
+   "last_name": "Lewis",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Christina",
+   "last_name": "Wang",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Leah ",
+   "last_name": "Tackaberry-Giddens",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sasha",
+   "last_name": "Palmert",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 52,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brianna",
+   "last_name": "Prentice",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Reissa",
+   "last_name": "Lee-Chan",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Lawrence",
+   "last_name": "Mak",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "James",
+   "last_name": "McClean",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Luc",
+   "last_name": "Comire",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rachel",
+   "last_name": "Cooc",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 28,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Doris",
+   "last_name": "Zeng",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Chelsea",
+   "last_name": "Dumasal",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tracey",
+   "last_name": "Dao",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Madeleine",
+   "last_name": "Marcelino",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justin",
+   "last_name": "Wray",
+   "team_name": "TORO",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Erica",
+   "last_name": "Tucker",
+   "team_name": "TORO",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emma",
+   "last_name": "Seaborn",
+   "team_name": "TORO",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Carla",
+   "last_name": "DiFilippo",
+   "team_name": "TORO",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kevin Philip",
+   "last_name": "Lee",
+   "team_name": "TORO",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tony",
+   "last_name": "Tran",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 45,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Colin",
+   "last_name": "Darling",
+   "team_name": "Uproar",
+   "roles": "spirit captain",
+   "uniform_number": 77,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Philip",
+   "last_name": "Abad",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ian",
+   "last_name": "McClean",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jacob",
+   "last_name": "Schmidt",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 76,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Robert",
+   "last_name": "Sun",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 86,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "John",
+   "last_name": "Xia",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 37,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jason",
+   "last_name": "Liu",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Varoon",
+   "last_name": "Gupta",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cynthia",
+   "last_name": "Deng",
+   "team_name": "Uproar",
+   "roles": "captain",
+   "uniform_number": 2,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ganish",
+   "last_name": "Narain",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michael",
+   "last_name": "Leung",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 78,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brian",
+   "last_name": "Tran",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 36,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sam",
+   "last_name": "Walker",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nam",
+   "last_name": "Ho",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 28,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Celine",
+   "last_name": "Nguyen",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 66,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Vivian",
+   "last_name": "Yap",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Amar",
+   "last_name": "Aziz",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessie",
+   "last_name": "Chen",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Racheal ",
+   "last_name": "Ou",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michelle ",
+   "last_name": "Ng",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gabriela",
+   "last_name": "Gonzalez",
+   "team_name": "Uproar",
+   "roles": "captain",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tony",
+   "last_name": "Chan",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Diana",
+   "last_name": "Lam",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 31,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brock ",
+   "last_name": "West",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Eastelle",
+   "last_name": "Ding",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Oliver",
+   "last_name": "Stonehouse",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 30,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jade",
+   "last_name": "Huangfu",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Hanna",
+   "last_name": "Koch",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rachel",
+   "last_name": "Ruffo",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 28,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Oliver",
+   "last_name": "Brown",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 48,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Isabelle",
+   "last_name": "Pacleb",
+   "team_name": "Uproar",
+   "roles": "captain",
+   "uniform_number": 21,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ramy",
+   "last_name": "Ayoub-Horvath",
+   "team_name": "Uproar",
+   "roles": "spirit captain",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Noah",
+   "last_name": "Bailey",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Natalie",
+   "last_name": "Perrin",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gillian",
+   "last_name": "Wu",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Montana",
+   "last_name": "Danis",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Megan",
+   "last_name": "Maniglio",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tyama",
+   "last_name": "Lyall",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jennifer",
+   "last_name": "Hou",
+   "team_name": "Uproar",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gabriel",
+   "last_name": "Isaac",
+   "team_name": "Uproar",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Andrea",
+   "last_name": "Kurahashi",
+   "team_name": "Uproar",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sherry",
+   "last_name": "Liu",
+   "team_name": "Uproar",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rob",
+   "last_name": "Grundy",
+   "team_name": "Uproar",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Krystal",
+   "last_name": "Dos Santos",
+   "team_name": "Uproar",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gagan",
+   "last_name": "Chatha",
+   "team_name": "Vortex",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Chris",
+   "last_name": "Wakelin",
+   "team_name": "Vortex",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brandon",
+   "last_name": "Grant",
+   "team_name": "Vortex",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jonathan",
+   "last_name": "He",
+   "team_name": "Vortex",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Abeer",
+   "last_name": "Lamba",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Harrison",
+   "last_name": "Van Beest",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jonathan",
+   "last_name": "Olarte",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 32,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joshua",
+   "last_name": "Harder",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryan",
+   "last_name": "Yuen",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Steve ",
+   "last_name": "Fok ",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 91,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Angus",
+   "last_name": "Chan",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 73,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Clarence ",
+   "last_name": "Cheung",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Clayton",
+   "last_name": "Cheung",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Raychie ",
+   "last_name": "Asilo ",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 30,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sam",
+   "last_name": "Nanthavong",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brandon",
+   "last_name": "Pham",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jason",
+   "last_name": "Ruperto",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 66,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justin",
+   "last_name": "Falconer-Chow",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ken",
+   "last_name": "Malana",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Edgar",
+   "last_name": "de Guzman",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "lucas",
+   "last_name": "pangan",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Tyler",
+   "last_name": "Ma",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Daniel",
+   "last_name": "Allen",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Silas",
+   "last_name": "Huizinga",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brian",
+   "last_name": "Jung",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brenden",
+   "last_name": "Wu",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 26,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Robin",
+   "last_name": "Wu",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Danie (Jocelyn)",
+   "last_name": "Proby",
+   "team_name": "Vortex",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Chris",
+   "last_name": "Wakelin",
+   "team_name": "Vortex",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ari",
+   "last_name": "Nitikman",
+   "team_name": "Vortex",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jordan",
+   "last_name": "Dhillon",
+   "team_name": "Vortex",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Christy",
+   "last_name": "Yong",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessica",
+   "last_name": "Ho",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 54,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "April",
+   "last_name": "Hortelano",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 49,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gena",
+   "last_name": "Olson",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Khrystianne",
+   "last_name": "Peralta",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Monica",
+   "last_name": "Lee",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jenice",
+   "last_name": "Dumlao",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 59,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Melissa",
+   "last_name": "Sung",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 27,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sheia",
+   "last_name": "Ursua",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Christine",
+   "last_name": "de Guzman",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rishalyn",
+   "last_name": "Reyes ",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Breanne ",
+   "last_name": "Wish",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 20,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mikayla",
+   "last_name": "Watkins",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 42,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessie",
+   "last_name": "Huang",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Connie",
+   "last_name": "Xiong",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Anne",
+   "last_name": "Macinas",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Elyse",
+   "last_name": "Willan",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Audrey",
+   "last_name": "Hwang",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Michelle",
+   "last_name": "Chang",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 79,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Monica",
+   "last_name": "Hsu",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Kayla",
+   "last_name": "Jiang",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mika",
+   "last_name": "Kurahashi",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bella",
+   "last_name": "Wang",
+   "team_name": "Vortex",
+   "roles": "player",
+   "uniform_number": 30,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Easton",
+   "last_name": "Martens",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Zachary",
+   "last_name": "York",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nicholas",
+   "last_name": "Babiak",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 3,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Caleb",
+   "last_name": "Schoepp",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 23,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Cullen",
+   "last_name": "de Leon",
+   "team_name": "Wheaties",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Thomas",
+   "last_name": "Ganley",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Avren",
+   "last_name": "Au",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Bennett",
+   "last_name": "Calverley",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Andrew",
+   "last_name": "Benson",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jared",
+   "last_name": "Blustein",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Abdul",
+   "last_name": "Ikweiri",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 17,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Drew",
+   "last_name": "Radfelder",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Will",
+   "last_name": "Persson",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jennifer",
+   "last_name": "Beck",
+   "team_name": "Wheaties",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "James",
+   "last_name": "Topinka",
+   "team_name": "Wheaties",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Troy",
+   "last_name": "Redshaw",
+   "team_name": "Wheaties",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Joshua",
+   "last_name": "Christianson",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 14,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mac",
+   "last_name": "Findlay",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Erick",
+   "last_name": "Niyigashi",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Josh",
+   "last_name": "Anderson",
+   "team_name": "Wheaties",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jay",
+   "last_name": "Benson",
+   "team_name": "Wheaties",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Stuart",
+   "last_name": "York",
+   "team_name": "Wheaties",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Evan",
+   "last_name": "Waterman",
+   "team_name": "Wicked West",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mike",
+   "last_name": "Belanger",
+   "team_name": "Wicked West",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Iris",
+   "last_name": "Arnon",
+   "team_name": "Wicked West",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Maya",
+   "last_name": "McGregor",
+   "team_name": "Wicked West",
+   "roles": "spirit captain",
+   "uniform_number": 7,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Victoria",
+   "last_name": "Nielen",
+   "team_name": "Wicked West",
+   "roles": "captain",
+   "uniform_number": 91,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Reegan",
+   "last_name": "Belanger",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 10,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Rachel",
+   "last_name": "Sherwood",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 82,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jessica",
+   "last_name": "Stockbrugger",
+   "team_name": "Wicked West",
+   "roles": "captain",
+   "uniform_number": 16,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Autumn",
+   "last_name": "Watson",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 22,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jillian",
+   "last_name": "Murray",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 1,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Madeleine",
+   "last_name": "Eisert",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 6,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Susan",
+   "last_name": "Netherton",
+   "team_name": "Wicked West",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Laura",
+   "last_name": "Li",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 41,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emma",
+   "last_name": "Evans",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 80,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Miyen",
+   "last_name": "Ho",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 18,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Ryley",
+   "last_name": "Belanger",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 28,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Justine",
+   "last_name": "Robillard",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 0,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emily",
+   "last_name": "Scott",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 9,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Katie",
+   "last_name": "Berube",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 12,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Sabreen",
+   "last_name": "Sidhu",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 51,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Amelie",
+   "last_name": "Marshall",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 35,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Amanda",
+   "last_name": "Hadwen",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 78,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emily",
+   "last_name": "Kavanagh",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 67,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Emma",
+   "last_name": "Collette",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 30,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Francesca",
+   "last_name": "Savard",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 96,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Naomi",
+   "last_name": "Peterson",
+   "team_name": "Wicked West",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Chantal",
+   "last_name": "Lacroix",
+   "team_name": "Wicked West",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Women"
+ },
+ {
+   "type": "roster",
+   "first_name": "Blake",
+   "last_name": "Merilees",
+   "team_name": "Wildfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jack",
+   "last_name": "Newstead",
+   "team_name": "Wildfire",
+   "roles": "captain",
+   "uniform_number": 11,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Adel",
+   "last_name": "Aceves",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 5,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jamie",
+   "last_name": "Fox",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 13,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Alex",
+   "last_name": "Wahl",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 24,
+   "division": "Junior Open"
+ },
+ {
+   "type": "team",
+   "first_name": "Hunter",
+   "last_name": "Juhasz",
+   "team_name": "none",
+   "roles": "",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Josh",
+   "last_name": "Bang",
+   "team_name": "Wildfire",
+   "roles": "captain",
+   "uniform_number": 12,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Brandon",
+   "last_name": "Hicks",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 99,
+   "division": "Junior Open"
+ },
+ {
+   "type": "",
+   "first_name": "",
+   "last_name": "",
+   "team_name": "",
+   "roles": "",
+   "uniform_number": null,
+   "division": ""
+ },
+ {
+   "type": "roster",
+   "first_name": "Mackenzie",
+   "last_name": "Pearmain",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 28,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "JiWon ",
+   "last_name": "Woo",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 16,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Owen ",
+   "last_name": "Gregory",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 25,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nathan",
+   "last_name": "Dailly",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 2,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "JJ",
+   "last_name": "Pistawka",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 77,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Mason",
+   "last_name": "Hewett",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 8,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Max",
+   "last_name": "Letts",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 15,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jordan",
+   "last_name": "Rivard",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 33,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Gavin",
+   "last_name": "Brown",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 30,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Max",
+   "last_name": "Lindemin",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 21,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Steve",
+   "last_name": "Gorzhiy",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 19,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Josh",
+   "last_name": "Hicks",
+   "team_name": "Wildfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jack",
+   "last_name": "McRae",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 7,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Nathan",
+   "last_name": "Gauer",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 88,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Dominic",
+   "last_name": "Ruttan",
+   "team_name": "Wildfire",
+   "roles": "player",
+   "uniform_number": 4,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Drew",
+   "last_name": "Hudson",
+   "team_name": "Wildfire",
+   "roles": "coach",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Carla",
+   "last_name": "Keffer",
+   "team_name": "Wildfire",
+   "roles": "admin",
+   "uniform_number": null,
+   "division": "Junior Open"
+ },
+ {
+   "type": "roster",
+   "first_name": "Jason",
+   "last_name": "Pistawka",
+   "team_name": "Wildfire",
+   "roles": "chaperone",
+   "uniform_number": null,
+   "division": "Junior Open"
+ }
+]
