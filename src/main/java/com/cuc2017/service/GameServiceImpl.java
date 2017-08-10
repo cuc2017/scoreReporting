@@ -67,13 +67,16 @@ public class GameServiceImpl implements GameService {
 	}
 
 	private void updateCurrentGame(Game game) {
-		CurrentGame currentGame = getCurrentGameRepository().findByField_Id(game.getField().getId());
-		if (currentGame == null) {
-			currentGame = new CurrentGame(game.getField(), game);
-		} else {
-			currentGame.setGame(game);
+		for (CurrentGame currentGame : getCurrentGameRepository().findAll()) {
+			Field currentGameField = currentGame.getGame().getField();
+			Field gameField = game.getField();
+			if (currentGameField.equals(gameField)) {
+				currentGame.setGame(game);
+				getCurrentGameRepository().save(currentGame);
+				return;
+			}
 		}
-		getCurrentGameRepository().save(currentGame);
+		getCurrentGameRepository().save(new CurrentGame(game.getField(), game));
 	}
 
 	@Override
@@ -221,7 +224,7 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public List<CurrentGame> getCurrentGames() {
-		List<CurrentGame> currentGames = getCurrentGameRepository().findAllByOrderByField_IdAsc();
+		List<CurrentGame> currentGames = getCurrentGameRepository().findAllByOrderByGame_Field_IdAsc();
 		return currentGames;
 	}
 

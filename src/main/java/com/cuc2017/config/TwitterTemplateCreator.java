@@ -66,10 +66,13 @@ public class TwitterTemplateCreator {
 		// String field5AccessTokenSecret =
 		// "nSF3evUTp3tX96GdkFvFLoO4308z8nVv7AEeFEtBmfGYE";
 
-		// String field6ConsumerKey = "";
-		// String field6ConsumerSecret = "";
-		// String field6AccessToken = "";
-		// String field6AccessTokenSecret = "";
+		// String field6ConsumerKey = "dcZXqXgyKFhtIebfesUbqFCPj";
+		// String field6ConsumerSecret =
+		// "cSo21tuKRGZa9wKCZfPQW4XQqjBSMMbwR5Vkcw8HlTN1zu5mn1";
+		// String field6AccessToken =
+		// "895590554066493440-EYTPUpYOMCizmogPE4wsWni2Vmrozl5";
+		// String field6AccessTokenSecret =
+		// "QTzr48KQLeETgeCeBIHp6atenonlBLNTdnxMhVsMiHWzq";
 
 		// String field7ConsumerKey = "";
 		// String field7ConsumerSecret = "";
@@ -104,10 +107,13 @@ public class TwitterTemplateCreator {
 		// String fieldMNPParkAccessToken = "";
 		// String fieldMNPParkAccessTokenSecret = "";
 
-		twitterTemplates.put("General",
-				new TwitterTemplate(consumerKey, consumerSecret, accessToken, accessTokenSecret));
-		twitterTemplates.put("Field 1", new TwitterTemplate(field1ConsumerKey, field1ConsumerSecret, field1AccessToken,
-				field1AccessTokenSecret));
+		// twitterTemplates.put("General",
+		// new TwitterTemplate(consumerKey, consumerSecret, accessToken,
+		// accessTokenSecret));
+		// twitterTemplates.put("Field 1", new
+		// TwitterTemplate(field1ConsumerKey, field1ConsumerSecret,
+		// field1AccessToken,
+		// field1AccessTokenSecret));
 		// twitterTemplates.put("Field 3", new
 		// TwitterTemplate(field3ConsumerKey,
 		// field3ConsumerSecret, field3AccessToken,

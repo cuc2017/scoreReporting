@@ -72,7 +72,7 @@ public class ScoreGameController {
 	@RequestMapping(value = "/game", method = RequestMethod.GET, params = { "game" })
 	public ResponseEntity<?> game(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
 		try {
-			Game game = getGameService().halftime(gameId);
+			Game game = getGameService().getGame(gameId);
 			return new ResponseEntity<Game>(game, HttpStatus.OK);
 		} catch (Exception e) {
 			log.error("Problem ending game for game: " + gameId, e);

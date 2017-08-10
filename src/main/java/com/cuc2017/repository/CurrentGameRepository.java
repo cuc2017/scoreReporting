@@ -5,9 +5,10 @@ import java.util.List;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.cuc2017.model.CurrentGame;
+import com.cuc2017.model.Field;
 
 public interface CurrentGameRepository extends PagingAndSortingRepository<CurrentGame, Long> {
-  CurrentGame findByField_Id(Long id);
+	CurrentGame findByField(Field field);
 
-  List<CurrentGame> findAllByOrderByField_IdAsc();
+	List<CurrentGame> findAllByOrderByGame_Field_IdAsc();
 }
