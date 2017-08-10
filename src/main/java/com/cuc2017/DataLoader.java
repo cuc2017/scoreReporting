@@ -38,17 +38,17 @@ public class DataLoader implements ApplicationRunner {
 
   @Override
   public void run(ApplicationArguments args) {
-    Division openDivision = new Division("Junior Open", "#TestCUC2017JuniorOpen");
+    Division openDivision = new Division("Junior Open", "#CUC2017JuniorOpen");
     getDivisionRepository().save(openDivision);
-    Division womenDivision = new Division("Junior Women", "#TestCUC2017JuniorWomen");
+    Division womenDivision = new Division("Junior Women", "#CUC2017JuniorWomen");
     getDivisionRepository().save(womenDivision);
     for (int i = 1; i <= 19; i++) {
       if (i != 2) {
-        Field field = new Field("Field " + i, "@TeCUC2017Field" + i);
+        Field field = new Field("Field " + i, "@CUC2017Field" + i);
         getFieldRepository().save(field);
       }
     }
-    Field field = new Field("MNP Park", "@TestCUC2017MNPPark");
+    Field field = new Field("MNP Park", "@CUC2017MNPPark");
     getFieldRepository().save(field);
     Team team1 = new Team(openDivision, "Alpha");
     getTeamRepository().save(team1);
@@ -132,15 +132,15 @@ public class DataLoader implements ApplicationRunner {
     Team wteam25 = new Team(womenDivision, "Wicked West");
     getTeamRepository().save(wteam25);
 
-    // for (Team team : getTeamRepository().findAll()) {
-    // addPlayersForTeam(team);
-    // }
+    for (Team team : getTeamRepository().findAll()) {
+      addUnknownPlayerForEachTeam(team);
+    }
 
     loadPlayers(womenDivision, openDivision);
   }
 
   private void loadPlayers(Division juniorWomen, Division juniorOpen) {
-    URL rostersJson = DataLoader.class.getResource("/rosters/juniorRoster.json");
+    URL rostersJson = DataLoader.class.getResource("/rosters/juniorRoster2.json");
     try (InputStream is = rostersJson.openStream()) {
       Gson gson = new Gson();
       JsonReader reader = new JsonReader(new InputStreamReader(is));
@@ -167,10 +167,8 @@ public class DataLoader implements ApplicationRunner {
     }
   }
 
-  private void addPlayersForTeam(Team team) {
-    for (int i = 22; i > 0; i--) {
-      getPlayerRepository().save(new Player(i, team.getName(), "Player " + String.valueOf(i), team));
-    }
+  private void addUnknownPlayerForEachTeam(Team team) {
+    getPlayerRepository().save(new Player(Player.UNKNOWN_PLAYER, "", "Unknown", team));
   }
 
   public DivisionRepository getDivisionRepository() {

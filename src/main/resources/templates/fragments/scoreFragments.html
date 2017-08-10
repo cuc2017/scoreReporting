@@ -63,30 +63,14 @@
               th:attr="data-game-id=${game.id},data-team-id=${game.awayTeam.id}" th:text="${game.awayTeam.name}">(awayTeam)</button>
           </div>
         </div>
-        <div class="spacer5"></div>
-        <div class="row">
-          <div class="col-xs-12">
-            <div id="goalAndAssit" class="form-inline">
-              <div class="form-group">
-                <label id="goalLabel" for="goal">Goal:</label> <select id="goal" class="form-control"
-                  onchange='selectGoalScorer(this)' disabled="true">
-                  <option th:disabled="disabled" th:selected="selected" value=" ">-- scored by --</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label id="assistLabel" for="assist">Assist</label> <select id="assist" class="form-control"
-                  onchange='selectAssistedBy(this)' disabled="true">
-                  <option th:disabled="disabled" th:selected="selected" value=" ">-- assisted by --</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
         <p />
         <div class="table-responsive">
           <table id="eventTable" class="table table-striped">
             <tr>
-              <th colspan="2">Game events</th>
+              <th colspan="1">Game events</th>
+              <th colspan="1">Goal</th>
+              <th colspan="1">Assist</th>
+              <th colspan="1">Time</th>
             </tr>
           </table>
         </div>

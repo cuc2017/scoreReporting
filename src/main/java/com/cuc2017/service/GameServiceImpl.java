@@ -26,283 +26,288 @@ import com.cuc2017.repository.TeamRepository;
 @Service
 public class GameServiceImpl implements GameService {
 
-	private static final Logger log = LoggerFactory.getLogger(GameServiceImpl.class);
+  private static final Logger log = LoggerFactory.getLogger(GameServiceImpl.class);
 
-	private DivisionRepository divisionRepository;
-	private TeamRepository teamRepository;
-	private FieldRepository fieldRepository;
-	private GameRepository gameRepository;
-	private PlayerRepository playerRepository;
-	private CurrentGameRepository currentGameRepository;
-	private EventRepository eventRepository;
-	private TwitterService twitterService;
+  private DivisionRepository divisionRepository;
+  private TeamRepository teamRepository;
+  private FieldRepository fieldRepository;
+  private GameRepository gameRepository;
+  private PlayerRepository playerRepository;
+  private CurrentGameRepository currentGameRepository;
+  private EventRepository eventRepository;
+  private TwitterService twitterService;
 
-	@Override
-	public List<Division> getDivisions() {
-		return getDivisionRepository().findAllByOrderByNameAsc();
-	}
+  @Override
+  public List<Division> getDivisions() {
+    return getDivisionRepository().findAllByOrderByNameAsc();
+  }
 
-	@Override
-	public List<Team> getTeams(Long divisionId) {
-		return getTeamRepository().findByDivision_Id(divisionId);
-	}
+  @Override
+  public List<Team> getTeams(Long divisionId) {
+    return getTeamRepository().findByDivision_Id(divisionId);
+  }
 
-	@Override
-	public List<Field> getFields() {
-		return (List<Field>) getFieldRepository().findAll();
-	}
+  @Override
+  public List<Field> getFields() {
+    return (List<Field>) getFieldRepository().findAll();
+  }
 
-	@Override
-	public Game createGame(Long divisionId, Long homeTeamId, Long awayTeamId, Long fieldId) {
-		Division division = getDivisionRepository().findOne(divisionId);
-		Team homeTeam = getTeam(homeTeamId);
-		Team awayTeam = getTeam(awayTeamId);
-		Field field = getFieldRepository().findOne(fieldId);
-		Game game = new Game(division, homeTeam, awayTeam, field);
-		saveGame(game);
-		Event event = new Event(EventType.READY, game);
-		addEvent(game, event);
-		updateCurrentGame(game);
-		return game;
-	}
+  @Override
+  public Game createGame(Long divisionId, Long homeTeamId, Long awayTeamId, Long fieldId) {
+    Division division = getDivisionRepository().findOne(divisionId);
+    Team homeTeam = getTeam(homeTeamId);
+    Team awayTeam = getTeam(awayTeamId);
+    Field field = getFieldRepository().findOne(fieldId);
+    Game game = new Game(division, homeTeam, awayTeam, field);
+    saveGame(game);
+    Event event = new Event(EventType.READY, game);
+    addEvent(game, event);
+    updateCurrentGame(game);
+    return game;
+  }
 
-	private void updateCurrentGame(Game game) {
-		for (CurrentGame currentGame : getCurrentGameRepository().findAll()) {
-			Field currentGameField = currentGame.getGame().getField();
-			Field gameField = game.getField();
-			if (currentGameField.equals(gameField)) {
-				currentGame.setGame(game);
-				getCurrentGameRepository().save(currentGame);
-				return;
-			}
-		}
-		getCurrentGameRepository().save(new CurrentGame(game.getField(), game));
-	}
+  private void updateCurrentGame(Game game) {
+    for (CurrentGame currentGame : getCurrentGameRepository().findAll()) {
+      Field currentGameField = currentGame.getGame().getField();
+      Field gameField = game.getField();
+      if (currentGameField.equals(gameField)) {
+        currentGame.setGame(game);
+        getCurrentGameRepository().save(currentGame);
+        return;
+      }
+    }
+    getCurrentGameRepository().save(new CurrentGame(game.getField(), game));
+  }
 
-	@Override
-	public Game startGame(Long gameId) {
-		Game game = getGame(gameId);
-		Event event = new Event(EventType.STARTED, game);
-		addEvent(game, event);
-		return game;
-	}
+  @Override
+  public Game startGame(Long gameId) {
+    Game game = getGame(gameId);
+    Event event = new Event(EventType.STARTED, game);
+    addEvent(game, event);
+    return game;
+  }
 
-	@Override
-	public Game endGame(Long gameId) {
-		Game game = getGame(gameId);
-		Event event = new Event(EventType.GAVE_OVER, game);
-		addEvent(game, event);
-		return game;
-	}
+  @Override
+  public Game endGame(Long gameId) {
+    Game game = getGame(gameId);
+    Event event = new Event(EventType.GAVE_OVER, game);
+    addEvent(game, event);
+    return game;
+  }
 
-	@Override
-	public Game halftime(Long gameId) {
-		Game game = getGame(gameId);
-		game.resetTimeOuts();
-		Event event = new Event(EventType.HALF_TIME, game);
-		addEvent(game, event);
-		return game;
-	}
+  @Override
+  public Game halftime(Long gameId) {
+    Game game = getGame(gameId);
+    game.resetTimeOuts();
+    Event event = new Event(EventType.HALF_TIME, game);
+    addEvent(game, event);
+    return game;
+  }
 
-	private void addEvent(Game game, Event event) {
-		saveEvent(event);
-		game.addEvent(event);
-		saveGame(game);
-	}
+  private void addEvent(Game game, Event event) {
+    saveEvent(event);
+    game.addEvent(event);
+    saveGame(game);
+  }
 
-	private void saveGame(Game game) {
-		getGameRepository().save(game);
-	}
+  private void saveGame(Game game) {
+    getGameRepository().save(game);
+  }
 
-	private void saveEvent(Event event) {
-		getEventRepository().save(event);
-	}
+  private void saveEvent(Event event) {
+    getEventRepository().save(event);
+  }
 
-	@Override
-	public Game undoEvent(Long eventId) throws Exception {
-		Event event = getEventRepository().findOne(eventId);
-		event.setUseEvent(false);
-		saveEvent(event);
-		Game game = event.getGame();
-		switch (event.getEventType()) {
-		case POINT_SCORED:
-			if (event.getTeam().equals(game.getHomeTeam())) {
-				game.decrementHomeTeamScore();
-			} else if (event.getTeam().equals(game.getAwayTeam())) {
-				game.decrementAwayTeamScore();
-			} else {
-				log.error("Team is not playing in this game!: " + event.getTeam());
-				throw new Exception("Team is not playing in this game");
-			}
-			saveGame(game);
-			getTwitterService().tweetToField(game.getField(), "Oops ... score is really " + game.getCurrentGameTweet());
-			break;
-		case HALF_TIME:
-			getTwitterService().tweetToField(game.getField(),
-					"Oops ... not halftime yet " + game.getCurrentGameTweet());
-			getTwitterService()
-					.tweet("Oops ... not halftime yet " + game.getCurrentGameTweet() + game.addFieldInfoToTweet());
-			break;
-		case TIME_OUT:
-			if (event.getTeam().equals(game.getHomeTeam())) {
-				getTwitterService().tweetToField(game.getField(),
-						"Oops ... no timeout taken by " + game.getHomeTeam().getName());
-				game.homeTeamUndoTookTimeOut();
-			} else if (event.getTeam().equals(game.getAwayTeam())) {
-				getTwitterService().tweetToField(game.getField(),
-						"Oops ... no timeout taken by " + game.getAwayTeam().getName());
-				game.awayTeamUndoTookTimeOut();
-			} else {
-				log.error("Team is not playing in this game!: " + event.getTeam());
-				throw new Exception("Team is not playing in this game");
-			}
-		case SCORED_BY:
-		case GAVE_OVER:
-		case READY:
-		case STARTED:
-		default:
-			break;
-		}
-		return game;
-	}
+  @Override
+  public Game undoEvent(Long eventId) throws Exception {
+    Event event = getEventRepository().findOne(eventId);
+    event.setUseEvent(false);
+    saveEvent(event);
+    Game game = event.getGame();
+    switch (event.getEventType()) {
+      case POINT_SCORED:
+        if (event.getTeam().equals(game.getHomeTeam())) {
+          game.decrementHomeTeamScore();
+        } else if (event.getTeam().equals(game.getAwayTeam())) {
+          game.decrementAwayTeamScore();
+        } else {
+          log.error("Team is not playing in this game!: " + event.getTeam());
+          throw new Exception("Team is not playing in this game");
+        }
+        saveGame(game);
+        getTwitterService().tweetToField(game.getField(), "Oops ... score is really " + game.getCurrentGameTweet());
+        break;
+      case HALF_TIME:
+        getTwitterService().tweetToField(game.getField(), "Oops ... not halftime yet " + game.getCurrentGameTweet());
+        getTwitterService()
+            .tweet("Oops ... not halftime yet " + game.getCurrentGameTweet() + game.addFieldInfoToTweet());
+        break;
+      case TIME_OUT:
+        if (event.getTeam().equals(game.getHomeTeam())) {
+          getTwitterService().tweetToField(game.getField(),
+              "Oops ... no timeout taken by " + game.getHomeTeam().getName());
+          game.homeTeamUndoTookTimeOut();
+        } else if (event.getTeam().equals(game.getAwayTeam())) {
+          getTwitterService().tweetToField(game.getField(),
+              "Oops ... no timeout taken by " + game.getAwayTeam().getName());
+          game.awayTeamUndoTookTimeOut();
+        } else {
+          log.error("Team is not playing in this game!: " + event.getTeam());
+          throw new Exception("Team is not playing in this game");
+        }
+      case GAVE_OVER:
+      case READY:
+      case STARTED:
+      default:
+        break;
+    }
+    return game;
+  }
 
-	@Override
-	public Game pointScored(Long gameId, Long teamId) throws Exception {
-		Team team = getTeam(teamId);
-		Game game = getGame(gameId);
-		if (team.equals(game.getHomeTeam())) {
-			game.incrementHomeTeamScore();
-		} else if (team.equals(game.getAwayTeam())) {
-			game.incrementAwayTeamScore();
-		} else {
-			log.error("Team is not playing in this game!: " + team);
-			throw new Exception("Team is not playing in this game");
-		}
-		Event event = new Event(EventType.POINT_SCORED, game, team);
-		addEvent(game, event);
-		return game;
-	}
+  @Override
+  public Game pointScored(Long gameId, Long teamId) throws Exception {
+    Team team = getTeam(teamId);
+    Game game = getGame(gameId);
+    Player unknownPlayer = getPlayerRepository().findByTeamAndNumber(team, Player.UNKNOWN_PLAYER);
+    if (team.equals(game.getHomeTeam())) {
+      game.incrementHomeTeamScore();
+    } else if (team.equals(game.getAwayTeam())) {
+      game.incrementAwayTeamScore();
+    } else {
+      log.error("Team is not playing in this game!: " + team);
+      throw new Exception("Team is not playing in this game");
+    }
+    Event event = new Event(EventType.POINT_SCORED, game, team, unknownPlayer, unknownPlayer);
+    addEvent(game, event);
+    return game;
+  }
 
-	@Override
-	public Game scoredBy(Long gameId, Long teamId, Long scoredById, Long assistedById) {
-		Team team = getTeam(teamId);
-		Game game = getGame(gameId);
-		Player scoredBy = getPlayerRepository().findOne(scoredById);
-		Player assistedBy = getPlayerRepository().findOne(assistedById);
-		Event event = new Event(EventType.SCORED_BY, game, team, scoredBy, assistedBy);
-		addEvent(game, event);
-		return game;
-	}
+  @Override
+  public Game goal(Long eventId, Long scoredById) {
+    Event event = getEventRepository().findOne(eventId);
+    Player scoredBy = getPlayerRepository().findOne(scoredById);
+    event.setGoal(scoredBy);
+    getEventRepository().save(event);
+    return event.getGame();
+  }
 
-	@Override
-	public Game timeOut(Long gameId, Long teamId) throws Exception {
-		Team team = getTeam(teamId);
-		Game game = getGame(gameId);
-		if (team.equals(game.getHomeTeam())) {
-			game.homeTeamTookTimeOut();
-		} else if (team.equals(game.getAwayTeam())) {
-			game.awayTeamTookTimeOut();
-		} else {
-			log.error("Team is not playing in this game!: " + team);
-			throw new Exception("Team is not playing in this game");
-		}
-		Event event = new Event(EventType.TIME_OUT, game, team);
-		addEvent(game, event);
-		getTwitterService().tweetToField(game.getField(), event.tweetString() + team.getName());
-		return game;
-	}
+  @Override
+  public Game assist(Long eventId, Long assistedById) {
+    Event event = getEventRepository().findOne(eventId);
+    Player assistedBy = getPlayerRepository().findOne(assistedById);
+    event.setGoal(assistedBy);
+    getEventRepository().save(event);
+    return event.getGame();
+  }
 
-	private Team getTeam(Long teamId) {
-		return getTeamRepository().findOne(teamId);
-	}
+  @Override
+  public Game timeOut(Long gameId, Long teamId) throws Exception {
+    Team team = getTeam(teamId);
+    Game game = getGame(gameId);
+    if (team.equals(game.getHomeTeam())) {
+      game.homeTeamTookTimeOut();
+    } else if (team.equals(game.getAwayTeam())) {
+      game.awayTeamTookTimeOut();
+    } else {
+      log.error("Team is not playing in this game!: " + team);
+      throw new Exception("Team is not playing in this game");
+    }
+    Event event = new Event(EventType.TIME_OUT, game, team);
+    addEvent(game, event);
+    getTwitterService().tweetToField(game.getField(), event.tweetString() + team.getName());
+    return game;
+  }
 
-	@Override
-	public List<Player> getPlayers(Long teamId) {
-		Team team = getTeam(teamId);
-		return getPlayerRepository().findByTeamOrderByNumberAsc(team);
-	}
+  private Team getTeam(Long teamId) {
+    return getTeamRepository().findOne(teamId);
+  }
 
-	@Override
-	public List<CurrentGame> getCurrentGames() {
-		List<CurrentGame> currentGames = getCurrentGameRepository().findAllByOrderByGame_Field_IdAsc();
-		return currentGames;
-	}
+  @Override
+  public List<Player> getPlayers(Team team) {
+    return getPlayerRepository().findByTeamOrderByNumberAsc(team);
+  }
 
-	@Override
-	public Game getGame(Long gameId) {
-		return getGameRepository().findOne(gameId);
-	}
+  @Override
+  public List<CurrentGame> getCurrentGames() {
+    List<CurrentGame> currentGames = getCurrentGameRepository().findAllByOrderByGame_Field_IdAsc();
+    return currentGames;
+  }
 
-	public FieldRepository getFieldRepository() {
-		return fieldRepository;
-	}
+  @Override
+  public Game getGame(Long gameId) {
+    return getGameRepository().findOne(gameId);
+  }
 
-	@Autowired
-	public void setFieldRepository(FieldRepository fieldRepository) {
-		this.fieldRepository = fieldRepository;
-	}
+  public FieldRepository getFieldRepository() {
+    return fieldRepository;
+  }
 
-	public GameRepository getGameRepository() {
-		return gameRepository;
-	}
+  @Autowired
+  public void setFieldRepository(FieldRepository fieldRepository) {
+    this.fieldRepository = fieldRepository;
+  }
 
-	@Autowired
-	public void setGameRepository(GameRepository gameRepository) {
-		this.gameRepository = gameRepository;
-	}
+  public GameRepository getGameRepository() {
+    return gameRepository;
+  }
 
-	public DivisionRepository getDivisionRepository() {
-		return divisionRepository;
-	}
+  @Autowired
+  public void setGameRepository(GameRepository gameRepository) {
+    this.gameRepository = gameRepository;
+  }
 
-	@Autowired
-	public void setDivisionRepository(DivisionRepository divisionRepository) {
-		this.divisionRepository = divisionRepository;
-	}
+  public DivisionRepository getDivisionRepository() {
+    return divisionRepository;
+  }
 
-	public TeamRepository getTeamRepository() {
-		return teamRepository;
-	}
+  @Autowired
+  public void setDivisionRepository(DivisionRepository divisionRepository) {
+    this.divisionRepository = divisionRepository;
+  }
 
-	@Autowired
-	public void setTeamRepository(TeamRepository teamRepository) {
-		this.teamRepository = teamRepository;
-	}
+  public TeamRepository getTeamRepository() {
+    return teamRepository;
+  }
 
-	public CurrentGameRepository getCurrentGameRepository() {
-		return currentGameRepository;
-	}
+  @Autowired
+  public void setTeamRepository(TeamRepository teamRepository) {
+    this.teamRepository = teamRepository;
+  }
 
-	@Autowired
-	public void setCurrentGameRepository(CurrentGameRepository currentGameRepository) {
-		this.currentGameRepository = currentGameRepository;
-	}
+  public CurrentGameRepository getCurrentGameRepository() {
+    return currentGameRepository;
+  }
 
-	public EventRepository getEventRepository() {
-		return eventRepository;
-	}
+  @Autowired
+  public void setCurrentGameRepository(CurrentGameRepository currentGameRepository) {
+    this.currentGameRepository = currentGameRepository;
+  }
 
-	@Autowired
-	public void setEventRepository(EventRepository eventRepository) {
-		this.eventRepository = eventRepository;
-	}
+  public EventRepository getEventRepository() {
+    return eventRepository;
+  }
 
-	public TwitterService getTwitterService() {
-		return twitterService;
-	}
+  @Autowired
+  public void setEventRepository(EventRepository eventRepository) {
+    this.eventRepository = eventRepository;
+  }
 
-	@Autowired
-	public void setTwitterService(TwitterService twitterService) {
-		this.twitterService = twitterService;
-	}
+  public TwitterService getTwitterService() {
+    return twitterService;
+  }
 
-	public PlayerRepository getPlayerRepository() {
-		return playerRepository;
-	}
+  @Autowired
+  public void setTwitterService(TwitterService twitterService) {
+    this.twitterService = twitterService;
+  }
 
-	@Autowired
-	public void setPlayerRepository(PlayerRepository playerRepository) {
-		this.playerRepository = playerRepository;
-	}
+  public PlayerRepository getPlayerRepository() {
+    return playerRepository;
+  }
+
+  @Autowired
+  public void setPlayerRepository(PlayerRepository playerRepository) {
+    this.playerRepository = playerRepository;
+  }
 
 }

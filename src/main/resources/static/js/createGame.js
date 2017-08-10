@@ -123,84 +123,46 @@ function updateEventTable(gameId) {
 	});
 }
 
-function updatePlayersList(teamId) {
-	$('#goal').prop("disabled", false);
-	$('#assist').data('team-id', teamId);
-	$('#goal').find("option:gt(0)").remove();
-	$('#goal')[0].selectedIndex = 0;
-	if (teamId == homeTeamId) {
-		addGoalScoredByPlayers(homeTeamPlayers);
-	} else {
-		addGoalScoredByPlayers(awayTeamPlayers);
-	}
+
+function selectGoalBy(goalBy) {
+  var tr = goalBy.closest('tr');
+  var eventId = $(tr).data('event-id');
+  var selectedIndex = goalBy.selectedIndex;
+  var goalById = goalBy.options[selectedIndex].value; 
+  $.ajax({
+    type : "post",
+    url : '/goal/?event=' + eventId + '&goal=' + goalById ,
+    success : function(game) {
+      console.log("Goal scored successful");
+    },
+    error : function(error) {
+      console.log(error.responseText);
+    }
+  });  
 }
 
-function addGoalScoredByPlayers(players) {
-	$.each(players, function(index, value) {
-		$('#goal').append(
-				$('<option/>', {
-					value : value.id,
-					text : "" + value.number + " " + value.firstName + " "
-							+ value.lastName
-				}));
-	});
-}
 
-function selectGoalScorer(goalBy) {
-	$('#assist').prop("disabled", false);
-	var teamId = $('#assist').data('team-id');
-	$('#assist').find("option:gt(0)").remove();
-	$('#assist')[0].selectedIndex = 0;
-	if (teamId == homeTeamId) {
-		addAssistedByPlayers(homeTeamPlayers);
-	} else {
-		addAssistedByPlayers(awayTeamPlayers);
-	}
-}
-
-function addAssistedByPlayers(players) {
-	$.each(players, function(index, value) {
-		$('#assist').append(
-				$('<option/>', {
-					value : value.id,
-					text : "" + value.number + " " + value.firstName + " "
-							+ value.lastName
-				}));
-	});
-}
-
-function selectAssistedBy(assistBy) {
-	$('#assist').prop("disabled", true);
-	$('#goal').prop("disabled", true);
-	var scoredBySelected = $("#goal option:selected");
-	var gameId = getGameId()
-	var teamId = $('#assist').data('team-id');
-	var goalById = scoredBySelected.val();
-	var assistedBySelected = $("#assist option:selected");
-	var assistedById = assistedBySelected.val();
-	$('#goal')[0].selectedIndex = 0;
-	$('#assist')[0].selectedIndex = 0;
-	$.ajax({
-		type : "post",
-		url : '/goalAssist/?game=' + gameId + '&team=' + teamId + '&goal='
-				+ goalById + '&assist=' + assistedById,
-		success : function(currentScore) {
-			$('#currentScore').html(currentScore);
-			updateEventTable(gameId);
-		},
-		error : function(error) {
-			console.log(error.responseText);
-		}
-	});
-	console.log("Scored by: " + gameId + " for team: " + teamId + " goal: "
-			+ goalById);
+function selectAssistBy(assistBy) {
+  var tr = assistBy.closest('tr');
+  var eventId = $(tr).data('event-id');
+  var selectedIndex = assistBy.selectedIndex;
+  var assistById = assistBy.options[selectedIndex].value; 
+  $.ajax({
+    type : "post",
+    url : '/assist/?event=' + eventId + '&assist=' + assistById ,
+    success : function(game) {
+      console.log("Assist successful: " + game);
+    },
+    error : function(error) {
+      console.log(error.responseText);
+    }
+  });  
 }
 
 function pointScored(button) {
 	startPointScoredTimer();
 	var gameId = button.data('game-id')
 	var teamId = button.data('team-id')
-	updatePlayersList(teamId);
 	$.ajax({
 		type : "post",
 		url : '/pointScored/?game=' + gameId + '&team=' + teamId,
