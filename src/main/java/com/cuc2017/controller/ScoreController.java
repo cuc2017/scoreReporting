@@ -34,8 +34,15 @@ public class ScoreController {
   private GameService gameService;
   private TwitterService twitterService;
 
+  @RequestMapping(value = "/scoreSheet", method = RequestMethod.GET, params = { "game" })
+  public String scoreSheet(HttpServletRequest request, @RequestParam("game") Long gameId, Model model) {
+    Game game = getGameService().getGame(gameId);
+    model.addAttribute("game", game);
+    return "scoresheet";
+  }
+
   @RequestMapping("/score")
-  public String restricted(HttpServletRequest request, Model model) {
+  public String score(HttpServletRequest request, Model model) {
     model.addAttribute("divisions", getGameService().getDivisions());
     model.addAttribute("fields", getGameService().getFields());
     return "score";

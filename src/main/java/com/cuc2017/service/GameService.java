@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cuc2017.model.CurrentGame;
 import com.cuc2017.model.Division;
+import com.cuc2017.model.Event;
 import com.cuc2017.model.Field;
 import com.cuc2017.model.Game;
 import com.cuc2017.model.Player;
@@ -39,4 +40,8 @@ public interface GameService {
   List<Player> getPlayers(Team team);
 
   Game timeOut(Long gameId, Long teamId) throws Exception;
+
+  String eventAsHtmlRow(Event event);
+
+  String updateAllPointEvents(Game game);
 }

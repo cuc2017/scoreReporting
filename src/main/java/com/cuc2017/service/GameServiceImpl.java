@@ -1,6 +1,8 @@
 package com.cuc2017.service;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,12 @@ import com.cuc2017.repository.TeamRepository;
 public class GameServiceImpl implements GameService {
 
   private static final Logger log = LoggerFactory.getLogger(GameServiceImpl.class);
+  private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("hh:mm");
+
+  static {
+    TimeZone timeZone = TimeZone.getTimeZone("America/New_York");
+    FORMATTER.setTimeZone(timeZone);
+  }
 
   private DivisionRepository divisionRepository;
   private TeamRepository teamRepository;
@@ -50,6 +58,82 @@ public class GameServiceImpl implements GameService {
   @Override
   public List<Field> getFields() {
     return (List<Field>) getFieldRepository().findAll();
+  }
+
+  @Override
+  public String eventAsHtmlRow(Event event) {
+    StringBuffer row = new StringBuffer();
+    eventAsHtmlRow(event, row, true);
+    return row.toString();
+  }
+
+  private void eventAsHtmlRow(Event event, StringBuffer row, boolean addSelect) {
+    row.append("<tr data-event-id='");
+    row.append(event.getId());
+    row.append("'>");
+    switch (event.getEventType()) {
+      case POINT_SCORED:
+        row.append("<td>");
+        row.append(event.getTeam().getName());
+        row.append(" scored</td>");
+        row.append("<td>");
+        if (addSelect) {
+          row.append("<select id='goal-");
+          row.append(event.getId());
+          row.append("' class='form-control' onchange='selectGoalBy(this)'>");
+          addPlayers(event, row, event.getGoal());
+          row.append("</select>");
+        } else {
+          row.append(event.getGoal());
+        }
+        row.append("</td><td>");
+        if (addSelect) {
+
+          row.append("<select id='assist-");
+          row.append(event.getId());
+          row.append("' class='form-control' onchange='selectAssistBy(this)'>");
+          addPlayers(event, row, event.getAssist());
+          row.append("</select>");
+        } else {
+          row.append(event.getAssist());
+        }
+
+        row.append("</td><td>");
+        break;
+      case TIME_OUT:
+        row.append("<td colspan='3'>");
+        row.append(event.getEventType().getName());
+        row.append(" ");
+        row.append(event.getTeam().getName());
+        row.append("</td><td>");
+        break;
+      case HALF_TIME:
+      case GAVE_OVER:
+      case READY:
+      case STARTED:
+      default:
+        row.append("<td colspan='3'>");
+        row.append(event.getEventType().getName());
+        row.append("</td><td>");
+    }
+    row.append(FORMATTER.format(event.getCreated()));
+    row.append("</td");
+    row.append("</tr>");
+  }
+
+  private void addPlayers(Event event, StringBuffer row, Player selectedPlayer) {
+    List<Player> players = getPlayers(event.getTeam());
+    for (Player player : players) {
+      row.append("<option ");
+      if (player.equals(selectedPlayer)) {
+        row.append("selected='selected'");
+      }
+      row.append(" value='");
+      row.append(player.getId());
+      row.append("'>");
+      row.append(player);
+      row.append("</option>");
+    }
   }
 
   @Override
@@ -165,6 +249,17 @@ public class GameServiceImpl implements GameService {
   }
 
   @Override
+  public String updateAllPointEvents(Game game) {
+    StringBuffer buffer = new StringBuffer();
+    for (Event event : game.getEvents()) {
+      if (event.getEventType() == EventType.POINT_SCORED) {
+        eventAsHtmlRow(event, buffer, false);
+      }
+    }
+    return buffer.toString();
+  }
+
+  @Override
   public Game pointScored(Long gameId, Long teamId) throws Exception {
     Team team = getTeam(teamId);
     Game game = getGame(gameId);
@@ -195,7 +290,7 @@ public class GameServiceImpl implements GameService {
   public Game assist(Long eventId, Long assistedById) {
     Event event = getEventRepository().findOne(eventId);
     Player assistedBy = getPlayerRepository().findOne(assistedById);
-    event.setGoal(assistedBy);
+    event.setAssist(assistedBy);
     getEventRepository().save(event);
     return event.getGame();
   }

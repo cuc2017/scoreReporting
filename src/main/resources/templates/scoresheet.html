@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div th:replace="fragments/head :: navbar">(navbar)</div>
+    <div class="row">
+      <div class="small-box col-md-6 col-md-offset-3">
+        <h3 th:utext="${game.currentScore}"></h3>
+        <h4 th:text="@{${game.division} + ' @ ' + ${game.field}}"></h4>
+      </div>
+    </div>
+    <p />
+    <div class="table-responsive">
+      <table id="eventTable" th:attr="data-game-id=${game.id}" class="table table-striped">
+        <tr>
+          <th colspan="1">Game events</th>
+          <th colspan="1">Goal</th>
+          <th colspan="1">Assist</th>
+          <th colspan="1">Time</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="/js/scoresheet.js"></script>
+</body>
+</html>
