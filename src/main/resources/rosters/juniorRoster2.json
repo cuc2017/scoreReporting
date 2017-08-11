@@ -309,7 +309,7 @@
    "type": "roster",
    "first_name": "Brayden",
    "last_name": "Gee",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "coach",
    "uniform_number": null,
    "division": "Junior Open"
@@ -327,7 +327,7 @@
    "type": "roster",
    "first_name": "Edward",
    "last_name": "Guo",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "coach",
    "uniform_number": null,
    "division": "Junior Open"
@@ -345,7 +345,7 @@
    "type": "roster",
    "first_name": "Peter",
    "last_name": "Yu",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "coach",
    "uniform_number": null,
    "division": "Junior Open"
@@ -363,7 +363,7 @@
    "type": "roster",
    "first_name": "John",
    "last_name": "Carpenter",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 15,
    "division": "Junior Open"
@@ -372,7 +372,7 @@
    "type": "roster",
    "first_name": "Patrick",
    "last_name": "Angkiriwang",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 24,
    "division": "Junior Open"
@@ -381,7 +381,7 @@
    "type": "roster",
    "first_name": "Christopher",
    "last_name": "Mah",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 25,
    "division": "Junior Open"
@@ -390,7 +390,7 @@
    "type": "roster",
    "first_name": "Nathan",
    "last_name": "lam",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 13,
    "division": "Junior Open"
@@ -399,7 +399,7 @@
    "type": "roster",
    "first_name": "Joshua",
    "last_name": "Wang",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 16,
    "division": "Junior Open"
@@ -408,7 +408,7 @@
    "type": "roster",
    "first_name": "Nicholas",
    "last_name": "Cheng",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 23,
    "division": "Junior Open"
@@ -417,7 +417,7 @@
    "type": "roster",
    "first_name": "Nicholas",
    "last_name": "Fong",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 10,
    "division": "Junior Open"
@@ -426,7 +426,7 @@
    "type": "roster",
    "first_name": "Vincent",
    "last_name": "PW Lee",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 1,
    "division": "Junior Open"
@@ -435,7 +435,7 @@
    "type": "roster",
    "first_name": "Antony",
    "last_name": "Soulsbury",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 71,
    "division": "Junior Open"
@@ -453,7 +453,7 @@
    "type": "roster",
    "first_name": "Yuchi",
    "last_name": "Lin",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 86,
    "division": "Junior Open"
@@ -507,7 +507,7 @@
    "type": "roster",
    "first_name": "Jay Kit",
    "last_name": "Foong",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 6,
    "division": "Junior Open"
@@ -516,7 +516,7 @@
    "type": "roster",
    "first_name": "Jakob",
    "last_name": "Von Andrian",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 50,
    "division": "Junior Open"
@@ -525,7 +525,7 @@
    "type": "roster",
    "first_name": "Jayden",
    "last_name": "Ghieuw",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 72,
    "division": "Junior Open"
@@ -543,7 +543,7 @@
    "type": "roster",
    "first_name": "Ryan",
    "last_name": "Kondo",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 29,
    "division": "Junior Open"
@@ -561,7 +561,7 @@
    "type": "roster",
    "first_name": "Devon",
    "last_name": "Bringeland-Powell",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 88,
    "division": "Junior Open"
@@ -570,7 +570,7 @@
    "type": "roster",
    "first_name": "Justin",
    "last_name": "Chan",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 17,
    "division": "Junior Open"
@@ -579,7 +579,7 @@
    "type": "roster",
    "first_name": "Thomas",
    "last_name": "Carpenter",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 14,
    "division": "Junior Open"
@@ -588,7 +588,7 @@
    "type": "roster",
    "first_name": "Adin",
    "last_name": "Kwok",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 0,
    "division": "Junior Open"
@@ -597,7 +597,7 @@
    "type": "roster",
    "first_name": "Filip",
    "last_name": "Kragl",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 7,
    "division": "Junior Open"
@@ -606,7 +606,7 @@
    "type": "roster",
    "first_name": "Preston",
    "last_name": "Lo",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 68,
    "division": "Junior Open"
@@ -615,7 +615,7 @@
    "type": "roster",
    "first_name": "Danny",
    "last_name": "zhu",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 8,
    "division": "Junior Open"
@@ -624,7 +624,7 @@
    "type": "roster",
    "first_name": "Kevin",
    "last_name": "Liang",
-   "team_name": "Alpha",
+   "team_name": "Alpha BC",
    "roles": "player",
    "uniform_number": 12,
    "division": "Junior Open"

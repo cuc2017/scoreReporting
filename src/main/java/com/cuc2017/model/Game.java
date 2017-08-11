@@ -87,6 +87,15 @@ public class Game extends AbstractEntity {
 		setAwayTimeOutThisHalf(0);
 	}
 
+	public boolean hasHadHalfTime() {
+		for (Event event : events) {
+			if (event.getEventType() == EventType.HALF_TIME) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public void homeTeamTookTimeOut() {
 		homeTimeOutThisHalf++;
 	}

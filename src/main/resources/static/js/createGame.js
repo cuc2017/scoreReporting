@@ -178,22 +178,23 @@ function pointScored(button) {
 }
 
 function startHalftimeTimer() {
-	setUpTimer(halftimeTimerTick);
+	setUpTimer(halftimeTimerTick, "half time");
 }
 
 function startPointScoredTimer() {
-	setUpTimer(pointScoredTimerTick);
+	setUpTimer(pointScoredTimerTick, "point scored");
 }
 
 function startTimeOutTimer() {
-	setUpTimer(pointScoredTimerTick);
+	setUpTimer(pointScoredTimerTick, "timeout taken");
 }
 
-function setUpTimer(timerTick) {
+function setUpTimer(timerTick, countUpEvent) {
 	if (countUpTimer) {
 		stopCountUpTimer();
 	}
 	showTimerMessage('');
+	$('#countupEvent').html(countUpEvent + ': ');
 	$('#timer').removeClass('hide-timer');
 	countUpTimer = new Timer();
 	countUpTimerIndex = 0;
@@ -402,6 +403,7 @@ $('#undoButton').click(function() {
 			tableRow.remove();
 			updateUndoButton();
 			updateTimeOutButtons();
+			stopCountUpTimer();
 		},
 		error : function(error) {
 			console.log(error.responseText);
