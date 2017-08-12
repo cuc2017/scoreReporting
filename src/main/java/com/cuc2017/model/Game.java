@@ -1,9 +1,11 @@
 package com.cuc2017.model;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -15,6 +17,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Game extends AbstractEntity {
+
+	private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("hh:mm");
+
+	static {
+		TimeZone timeZone = TimeZone.getTimeZone("America/New_York");
+		FORMATTER.setTimeZone(timeZone);
+	}
 
 	@ManyToOne
 	private Division division;
@@ -87,6 +96,7 @@ public class Game extends AbstractEntity {
 		setAwayTimeOutThisHalf(0);
 	}
 
+	@JsonIgnore
 	public boolean hasHadHalfTime() {
 		for (Event event : events) {
 			if (event.getEventType() == EventType.HALF_TIME) {
@@ -94,6 +104,44 @@ public class Game extends AbstractEntity {
 			}
 		}
 		return false;
+	}
+
+	@JsonIgnore
+	public Event getStartGameEvent() {
+		for (Event event : events) {
+			if (event.getEventType() == EventType.STARTED) {
+				return event;
+			}
+		}
+		return null;
+	}
+
+	@JsonIgnore
+	public String getGameStartTime() {
+		Event startEvent = getStartGameEvent();
+		if (startEvent == null) {
+			return "Not yet started";
+		}
+		return FORMATTER.format(startEvent.getCreated());
+	}
+
+	@JsonIgnore
+	public Event getEndGameEvent() {
+		for (Event event : events) {
+			if (event.getEventType() == EventType.GAVE_OVER) {
+				return event;
+			}
+		}
+		return null;
+	}
+
+	@JsonIgnore
+	public String getGameEndTime() {
+		Event endEvent = getEndGameEvent();
+		if (endEvent == null) {
+			return "Ongoing";
+		}
+		return FORMATTER.format(endEvent.getCreated());
 	}
 
 	public void homeTeamTookTimeOut() {

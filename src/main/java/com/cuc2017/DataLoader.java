@@ -5,6 +5,12 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.List;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,93 +56,129 @@ public class DataLoader implements ApplicationRunner {
 		}
 		Field field = new Field("MNP Park", "@CUC2017MNPPark");
 		getFieldRepository().save(field);
-		Team team1 = new Team(openDivision, "Alpha BC");
+		Team team1 = new Team(openDivision, "Alpha BC", 1);
 		getTeamRepository().save(team1);
-		Team team2 = new Team(openDivision, "Bonfire");
+		Team team2 = new Team(openDivision, "Bonfire", 2);
 		getTeamRepository().save(team2);
-		Team team3 = new Team(openDivision, "Cannons");
+		Team team3 = new Team(openDivision, "Cannons", 3);
 		getTeamRepository().save(team3);
-		Team team4 = new Team(openDivision, "Energy");
+		Team team4 = new Team(openDivision, "Energy", 4);
 		getTeamRepository().save(team4);
-		Team team5 = new Team(openDivision, "High Tide");
+		Team team5 = new Team(openDivision, "High Tide", 5);
 		getTeamRepository().save(team5);
-		Team team6 = new Team(openDivision, "Hydro");
+		Team team6 = new Team(openDivision, "Hydro", 6);
 		getTeamRepository().save(team6);
-		Team team7 = new Team(openDivision, "Ignite");
+		Team team7 = new Team(openDivision, "Ignite", 7);
 		getTeamRepository().save(team7);
-		Team team8 = new Team(openDivision, "Manitou");
+		Team team8 = new Team(openDivision, "Manitou", 8);
 		getTeamRepository().save(team8);
-		Team team24 = new Team(openDivision, "Mischief");
+		Team team24 = new Team(openDivision, "Mischief", 10);
 		getTeamRepository().save(team24);
-		Team team9 = new Team(openDivision, "Misfit");
+		Team team9 = new Team(openDivision, "Misfit", 11);
 		getTeamRepository().save(team9);
-		Team team10 = new Team(openDivision, "MOFO");
+		Team team10 = new Team(openDivision, "MOFO", 9);
 		getTeamRepository().save(team10);
-		Team team11 = new Team(openDivision, "New Scotland Blues");
+		Team team11 = new Team(openDivision, "New Scotland Blues", 12);
 		getTeamRepository().save(team11);
-		Team team12 = new Team(openDivision, "NL Storm");
+		Team team12 = new Team(openDivision, "NL Storm", 13);
 		getTeamRepository().save(team12);
-		Team team13 = new Team(openDivision, "Rogue Squadron");
+		Team team13 = new Team(openDivision, "Rogue Squadron", 14);
 		getTeamRepository().save(team13);
-		Team team14 = new Team(openDivision, "Rolling Thunder");
+		Team team14 = new Team(openDivision, "Rolling Thunder", 15);
 		getTeamRepository().save(team14);
-		Team team15 = new Team(openDivision, "Scorch");
+		Team team15 = new Team(openDivision, "Scorch", 16);
 		getTeamRepository().save(team15);
-		Team team16 = new Team(openDivision, "Spitfire");
+		Team team16 = new Team(openDivision, "Spitfire", 17);
 		getTeamRepository().save(team16);
-		Team team17 = new Team(openDivision, "Stud");
+		Team team17 = new Team(openDivision, "Stud", 18);
 		getTeamRepository().save(team17);
-		Team team18 = new Team(openDivision, "Titane");
+		Team team18 = new Team(openDivision, "Titane", 19);
 		getTeamRepository().save(team18);
-		Team team19 = new Team(openDivision, "TORO");
+		Team team19 = new Team(openDivision, "TORO", 20);
 		getTeamRepository().save(team19);
-		Team team20 = new Team(openDivision, "Uproar");
+		Team team20 = new Team(openDivision, "Uproar", 21);
 		getTeamRepository().save(team20);
-		Team team21 = new Team(openDivision, "Vortex");
+		Team team21 = new Team(openDivision, "Vortex", 22);
 		getTeamRepository().save(team21);
-		Team team22 = new Team(openDivision, "Wheaties");
+		Team team22 = new Team(openDivision, "Wheaties", 23);
 		getTeamRepository().save(team22);
-		Team team23 = new Team(openDivision, "Wildfire");
+		Team team23 = new Team(openDivision, "Wildfire", 24);
 		getTeamRepository().save(team23);
 
-		Team wteam11 = new Team(womenDivision, "Aera");
+		Team wteam11 = new Team(womenDivision, "Aera", 25);
 		getTeamRepository().save(wteam11);
-		Team wteam12 = new Team(womenDivision, "Bonfire");
+		Team wteam12 = new Team(womenDivision, "Bonfire", 26);
 		getTeamRepository().save(wteam12);
-		Team wteam13 = new Team(womenDivision, "Cannons");
+		Team wteam13 = new Team(womenDivision, "Cannons", 27);
 		getTeamRepository().save(wteam13);
-		Team wteam14 = new Team(womenDivision, "High Tide");
+		Team wteam14 = new Team(womenDivision, "High Tide", 28);
 		getTeamRepository().save(wteam14);
-		Team wteam15 = new Team(womenDivision, "Mischief");
+		Team wteam15 = new Team(womenDivision, "Mischief", 29);
 		getTeamRepository().save(wteam15);
-		Team wteam16 = new Team(womenDivision, "Misfit");
+		Team wteam16 = new Team(womenDivision, "Misfit", 30);
 		getTeamRepository().save(wteam16);
-		Team wteam17 = new Team(womenDivision, "MOFO");
+		Team wteam17 = new Team(womenDivision, "MOFO", 31);
 		getTeamRepository().save(wteam17);
-		Team wteam18 = new Team(womenDivision, "New Scotland Blues");
+		Team wteam18 = new Team(womenDivision, "New Scotland Blues", 32);
 		getTeamRepository().save(wteam18);
-		Team wteam19 = new Team(womenDivision, "Nightfury Soars");
+		Team wteam19 = new Team(womenDivision, "Nightfury Soars", 33);
 		getTeamRepository().save(wteam19);
-		Team wteam22 = new Team(womenDivision, "Red River Rebellion");
+		Team wteam22 = new Team(womenDivision, "Red River Rebellion", 34);
 		getTeamRepository().save(wteam22);
-		Team wteam26 = new Team(womenDivision, "Savage");
+		Team wteam26 = new Team(womenDivision, "Savage", 35);
 		getTeamRepository().save(wteam26);
-		Team wteam20 = new Team(womenDivision, "Titane");
+		Team wteam20 = new Team(womenDivision, "Titane", 36);
 		getTeamRepository().save(wteam20);
-		Team wteam21 = new Team(womenDivision, "TORO");
+		Team wteam21 = new Team(womenDivision, "TORO", 37);
 		getTeamRepository().save(wteam21);
-		Team wteam23 = new Team(womenDivision, "Uproar");
+		Team wteam23 = new Team(womenDivision, "Uproar", 38);
 		getTeamRepository().save(wteam23);
-		Team wteam24 = new Team(womenDivision, "Vortex");
+		Team wteam24 = new Team(womenDivision, "Vortex", 39);
 		getTeamRepository().save(wteam24);
-		Team wteam25 = new Team(womenDivision, "Wicked West");
+		Team wteam25 = new Team(womenDivision, "Wicked West", 40);
 		getTeamRepository().save(wteam25);
 
-		for (Team team : getTeamRepository().findAll()) {
-			addUnknownPlayerForEachTeam(team);
+		Iterable<Team> teams = getTeamRepository().findAll();
+		for (Team team : teams) {
+			addAdditionalPlayesrForEachTeam(team);
 		}
 
-		loadPlayers(womenDivision, openDivision);
+		loadPlayersFromUltimatCanadaSite(teams);
+		// loadPlayers(womenDivision, openDivision);
+	}
+
+	private void loadPlayersFromUltimatCanadaSite(Iterable<Team> teams) {
+		HttpClient client = HttpClientBuilder.create().build();
+		try {
+			for (Team team : teams) {
+				URL url = new URL("http://80.172.224.48/cuc2017jr/?view=teamcard&team=" + team.getTeamNumber());
+				Document page = Jsoup.parse(url, 5000);
+				Element playerTable = page.select("table[style=width:80%]").first();
+				Elements players = playerTable.select("tr");
+				for (Element playerRow : players) {
+					Element playerCell = playerRow.select("a[href]").first();
+					if (playerCell != null) {
+						String linkHref = playerCell.attr("href");
+						String ultimateCanadaId = linkHref.substring(linkHref.indexOf("player=") + 7);
+						String linkText = playerCell.text();
+						int number = 0;
+						if (linkText.startsWith("#")) {
+							int firstSpace = linkText.indexOf(' ');
+							number = Integer.parseInt(linkText.substring(1, firstSpace));
+							linkText = linkText.substring(firstSpace + 1);
+						}
+						int firstSpace = linkText.indexOf(' ');
+						String firstName = linkText.substring(0, firstSpace);
+						String lastName = linkText.substring(firstSpace + 1);
+						Player player = new Player(number, firstName, lastName, team, ultimateCanadaId);
+						getPlayerRepository().save(player);
+					}
+				}
+			}
+		} catch (Exception e) {
+			log.error("Could not load players ", e);
+		}
+
 	}
 
 	private void loadPlayers(Division juniorWomen, Division juniorOpen) {
@@ -168,8 +210,9 @@ public class DataLoader implements ApplicationRunner {
 		}
 	}
 
-	private void addUnknownPlayerForEachTeam(Team team) {
+	private void addAdditionalPlayesrForEachTeam(Team team) {
 		getPlayerRepository().save(new Player(Player.UNKNOWN_PLAYER, "", "Unknown", team));
+		getPlayerRepository().save(new Player(Player.CALLAHAN, "Gallahan", "Goal", team));
 	}
 
 	public DivisionRepository getDivisionRepository() {

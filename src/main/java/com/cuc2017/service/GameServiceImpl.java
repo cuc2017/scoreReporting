@@ -1,8 +1,10 @@
 package com.cuc2017.service;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,11 +65,11 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public String eventAsHtmlRow(Event event) {
 		StringBuffer row = new StringBuffer();
-		eventAsHtmlRow(event, row, true);
+		eventAsHtmlRow(event, row, true, null);
 		return row.toString();
 	}
 
-	private void eventAsHtmlRow(Event event, StringBuffer row, boolean addSelect) {
+	private void eventAsHtmlRow(Event event, StringBuffer row, boolean addSelect, Date gameStartTime) {
 		row.append("<tr data-event-id='");
 		row.append(event.getId());
 		row.append("'>");
@@ -78,26 +80,25 @@ public class GameServiceImpl implements GameService {
 			row.append(" scored</td>");
 			row.append("<td>");
 			if (addSelect) {
-				row.append("<select id='goal-");
-				row.append(event.getId());
-				row.append("' class='form-control' onchange='selectGoalBy(this)'>");
-				addPlayers(event, row, event.getGoal());
-				row.append("</select>");
-			} else {
-				row.append(event.getGoal());
-			}
-			row.append("</td><td>");
-			if (addSelect) {
 
 				row.append("<select id='assist-");
 				row.append(event.getId());
 				row.append("' class='form-control' onchange='selectAssistBy(this)'>");
-				addPlayers(event, row, event.getAssist());
+				addPlayers(event, row, event.getAssist(), true);
 				row.append("</select>");
 			} else {
 				row.append(event.getAssist());
 			}
-
+			row.append("</td><td>");
+			if (addSelect) {
+				row.append("<select id='goal-");
+				row.append(event.getId());
+				row.append("' class='form-control' onchange='selectGoalBy(this)'>");
+				addPlayers(event, row, event.getGoal(), false);
+				row.append("</select>");
+			} else {
+				row.append(event.getGoal());
+			}
 			row.append("</td><td>");
 			break;
 		case TIME_OUT:
@@ -107,23 +108,34 @@ public class GameServiceImpl implements GameService {
 			row.append(event.getTeam().getName());
 			row.append("</td><td>");
 			break;
+		case STARTED:
 		case HALF_TIME:
 		case GAVE_OVER:
 		case READY:
-		case STARTED:
 		default:
 			row.append("<td colspan='3'>");
 			row.append(event.getEventType().getName());
 			row.append("</td><td>");
 		}
-		row.append(FORMATTER.format(event.getCreated()));
+		if (addSelect) {
+			row.append(FORMATTER.format(event.getCreated()));
+
+		} else {
+			long duration = event.getCreated().getTime() - gameStartTime.getTime();
+			long seconds = TimeUnit.MILLISECONDS.toSeconds(duration) % 60;
+			long minutes = TimeUnit.MILLISECONDS.toMinutes(duration);
+			row.append(minutes + "min " + seconds + "sec");
+		}
 		row.append("</td");
 		row.append("</tr>");
 	}
 
-	private void addPlayers(Event event, StringBuffer row, Player selectedPlayer) {
+	private void addPlayers(Event event, StringBuffer row, Player selectedPlayer, boolean allowCallahan) {
 		List<Player> players = getPlayers(event.getTeam());
 		for (Player player : players) {
+			if (player.isCallahanPlayer() && !allowCallahan) {
+				continue;
+			}
 			row.append("<option ");
 			if (player.equals(selectedPlayer)) {
 				row.append("selected='selected'");
@@ -250,11 +262,16 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public String updateAllPointEvents(Game game) {
+	public String updateAllEvents(Game game) {
 		StringBuffer buffer = new StringBuffer();
+		Event startGameEvent = game.getStartGameEvent();
+		Date startGameTime = null;
+		if (startGameEvent != null) {
+			startGameTime = startGameEvent.getCreated();
+		}
 		for (Event event : game.getEvents()) {
-			if (event.isUseEvent() && event.getEventType() == EventType.POINT_SCORED) {
-				eventAsHtmlRow(event, buffer, false);
+			if (event.isUseEvent() && event.getEventType() != EventType.READY) {
+				eventAsHtmlRow(event, buffer, false, startGameTime);
 			}
 		}
 		return buffer.toString();

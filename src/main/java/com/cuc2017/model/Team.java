@@ -6,38 +6,48 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Team extends AbstractEntity {
 
-  @ManyToOne
-  private Division division;
-  private String name;
+	@ManyToOne
+	private Division division;
+	private String name;
+	private int teamNumber;
 
-  public Team() {
-    // default constructor
-  }
+	public Team() {
+		// default constructor
+	}
 
-  @Override
-  public String toString() {
-    return getName();
-  }
+	@Override
+	public String toString() {
+		return getName();
+	}
 
-  public Team(Division division, String name) {
-    this.division = division;
-    this.name = name;
-  }
+	public Team(Division division, String name, int ultimateCanadaTeamNumber) {
+		this.division = division;
+		this.name = name;
+		this.teamNumber = ultimateCanadaTeamNumber;
+	}
 
-  public Division getDivision() {
-    return division;
-  }
+	public Division getDivision() {
+		return division;
+	}
 
-  public void setDivision(Division division) {
-    this.division = division;
-  }
+	public void setDivision(Division division) {
+		this.division = division;
+	}
 
-  public String getName() {
-    return name;
-  }
+	public String getName() {
+		return name;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getTeamNumber() {
+		return teamNumber;
+	}
+
+	public void setTeamNumber(int teamNumber) {
+		this.teamNumber = teamNumber;
+	}
 
 }
