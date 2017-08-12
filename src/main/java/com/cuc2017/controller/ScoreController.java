@@ -48,6 +48,11 @@ public class ScoreController {
     return "score";
   }
 
+  @RequestMapping("/docs")
+  public String docs(HttpServletRequest request, Model model) {
+    return "docs";
+  }
+
   @RequestMapping(value = "/currentScores", method = RequestMethod.GET)
   public String getCurrentScores(HttpServletRequest request, Model model) {
     try {
