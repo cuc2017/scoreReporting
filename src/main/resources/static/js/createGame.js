@@ -81,6 +81,12 @@ function getPlayers() {
 	});
 }
 
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload();
+    }
+};
+
 function onPageLeave(e) {
 	var confirmationMessage = "The Game is not over, are you sure you want to leave?";
 	(e || window.event).returnValue = confirmationMessage;
@@ -94,6 +100,8 @@ $('#baseRow').on('click', '#startGame', function() {
 	$('#gameOn').removeClass('hidden');
 	$('#footer').removeClass('hidden');
 	window.addEventListener('beforeunload', onPageLeave);
+	window.addEventListener('pageHide', onPageLeave);
+
 	$.ajax({
 		type : "post",
 		url : '/startGame/?game=' + gameId,

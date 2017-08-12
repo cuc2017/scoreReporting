@@ -81,7 +81,11 @@ public class ScoreGameController {
 	public ResponseEntity<?> gameStartTime(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
 		try {
 			Game game = getGameService().getGame(gameId);
-			return new ResponseEntity<String>(game.getGameStartTime(), HttpStatus.OK);
+			String startTime = "";
+			if (game != null) {
+				startTime = game.getGameStartTime();
+			}
+			return new ResponseEntity<String>(startTime, HttpStatus.OK);
 		} catch (Exception e) {
 			log.error("Problem ending game for game: " + gameId, e);
 			return ResponseEntity.badRequest().body(e.getMessage());
@@ -92,7 +96,11 @@ public class ScoreGameController {
 	public ResponseEntity<?> gameEndTime(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
 		try {
 			Game game = getGameService().getGame(gameId);
-			return new ResponseEntity<String>(game.getGameEndTime(), HttpStatus.OK);
+			String endTime = "";
+			if (game != null) {
+				endTime = game.getGameEndTime();
+			}
+			return new ResponseEntity<String>(endTime, HttpStatus.OK);
 		} catch (Exception e) {
 			log.error("Problem ending game for game: " + gameId, e);
 			return ResponseEntity.badRequest().body(e.getMessage());

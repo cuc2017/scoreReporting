@@ -124,7 +124,7 @@ public class GameServiceImpl implements GameService {
 			long duration = event.getCreated().getTime() - gameStartTime.getTime();
 			long seconds = TimeUnit.MILLISECONDS.toSeconds(duration) % 60;
 			long minutes = TimeUnit.MILLISECONDS.toMinutes(duration);
-			row.append(minutes + "min " + seconds + "sec");
+			row.append(minutes + " min " + seconds + " sec");
 		}
 		row.append("</td");
 		row.append("</tr>");
@@ -252,6 +252,7 @@ public class GameServiceImpl implements GameService {
 				log.error("Team is not playing in this game!: " + event.getTeam());
 				throw new Exception("Team is not playing in this game");
 			}
+			saveGame(game);
 		case GAVE_OVER:
 		case READY:
 		case STARTED:
@@ -263,7 +264,11 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public String updateAllEvents(Game game) {
+		if (game == null) {
+			return "";
+		}
 		StringBuffer buffer = new StringBuffer();
+
 		Event startGameEvent = game.getStartGameEvent();
 		Date startGameTime = null;
 		if (startGameEvent != null) {

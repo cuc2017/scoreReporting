@@ -44,18 +44,42 @@ public class DataLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) {
-		Division openDivision = new Division("Junior Open", "#TestCUC2017JuniorOpen");
+		Division openDivision = new Division("Junior Open", "#CUC2017JuniorOpen");
 		getDivisionRepository().save(openDivision);
-		Division womenDivision = new Division("Junior Women", "#TestCUC2017JuniorWomen");
+		Division womenDivision = new Division("Junior Women", "#CUC2017JuniorWomen");
 		getDivisionRepository().save(womenDivision);
-		for (int i = 1; i <= 19; i++) {
-			if (i != 2) {
-				Field field = new Field("Field " + i, "@TCUC2017Field" + i);
-				getFieldRepository().save(field);
-			}
-		}
-		Field field = new Field("MNP Park", "@CUC2017MNPPark");
-		getFieldRepository().save(field);
+
+		getFieldRepository().save(new Field("Field 1", "@CUC2017Field1"));
+		getFieldRepository().save(new Field("Field 3", "@CUC2017Field3"));
+		getFieldRepository().save(new Field("Field 4", "@CUC2017Field4"));
+		getFieldRepository().save(new Field("Field 5", "@CUC2017Field5"));
+		getFieldRepository().save(new Field("Field 6", "@CUC2017Field6"));
+		getFieldRepository().save(new Field("Field 7", "@CUC2017Field7"));
+		getFieldRepository().save(new Field("Field 8", "@CUC2017Field8"));
+		getFieldRepository().save(new Field("Field 9", "@CUC2017Field9")); // Check
+																			// Field
+		getFieldRepository().save(new Field("Field 10", "@CUC2017Field10"));// Check
+																			// Field
+		getFieldRepository().save(new Field("Field 11", "@CUC2017Field11"));// Check
+																			// Field
+		getFieldRepository().save(new Field("Field 12", "@CUC2017Field12"));// Check
+																			// Field
+		getFieldRepository().save(new Field("Field 13", "@CUC2017Field13"));// Check
+																			// Field
+		getFieldRepository().save(new Field("Field 14", "@CUC2017Field14"));// Check
+																			// Field
+		getFieldRepository().save(new Field("Field 15", "@CUC2017Field15"));// Check
+																			// Field
+		getFieldRepository().save(new Field("Field 16", "@CUC2017Field16"));// Check
+																			// Field
+		getFieldRepository().save(new Field("Field 17", "@CUC2017Field17"));// Check
+																			// Field
+		getFieldRepository().save(new Field("Field 18", "@CUC2017Field18"));// Check
+																			// Field
+		getFieldRepository().save(new Field("Field 19", "@CUC2017Field19"));// Check
+																			// Field
+		getFieldRepository().save(new Field("MNP Park", "@CUC2017MNPPark"));
+
 		Team team1 = new Team(openDivision, "Alpha BC", 1);
 		getTeamRepository().save(team1);
 		Team team2 = new Team(openDivision, "Bonfire", 2);
