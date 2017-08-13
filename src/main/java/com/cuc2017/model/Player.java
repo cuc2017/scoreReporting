@@ -1,5 +1,6 @@
 package com.cuc2017.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -11,7 +12,8 @@ public class Player extends AbstractEntity {
 	private String lastName;
 	private int number;
 	private String ultimateCanadaPlayerId;
-
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Game game;
 	@ManyToOne
 	private Team team;
 
@@ -26,9 +28,19 @@ public class Player extends AbstractEntity {
 		this.team = team;
 	}
 
+	public Player(int number, String firstName, String lastName, Team team, Game game) {
+		this(number, firstName, lastName, team);
+		this.game = game;
+	}
+
 	public Player(int number, String firstName, String lastName, Team team, String ultimateCanadaPlayerId) {
 		this(number, firstName, lastName, team);
 		this.setUltimateCanadaPlayerId(ultimateCanadaPlayerId);
+	}
+
+	public Player(int number, String firstName, String lastName, Team team, String ultimateCanadaPlayerId, Game game) {
+		this(number, firstName, lastName, team, ultimateCanadaPlayerId);
+		this.game = game;
 	}
 
 	public String getFirstName() {
@@ -80,6 +92,14 @@ public class Player extends AbstractEntity {
 
 	public void setTeam(Team team) {
 		this.team = team;
+	}
+
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
 	}
 
 	public String getUltimateCanadaPlayerId() {

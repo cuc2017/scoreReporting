@@ -5,12 +5,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.List;
 
-import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +38,10 @@ public class DataLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) {
+		if (getDivisionRepository().count() > 0) {
+			return;
+		}
+
 		Division openDivision = new Division("Junior Open", "#CUC2017JuniorOpen");
 		getDivisionRepository().save(openDivision);
 		Division womenDivision = new Division("Junior Women", "#CUC2017JuniorWomen");
@@ -56,28 +54,18 @@ public class DataLoader implements ApplicationRunner {
 		getFieldRepository().save(new Field("Field 6", "@CUC2017Field6"));
 		getFieldRepository().save(new Field("Field 7", "@CUC2017Field7"));
 		getFieldRepository().save(new Field("Field 8", "@CUC2017Field8"));
-		getFieldRepository().save(new Field("Field 9", "@CUC2017Field9")); // Check
-																			// Field
+		getFieldRepository().save(new Field("Field 9", "@CUC2017Field9"));
 		getFieldRepository().save(new Field("Field 10", "@CUC2017Field10"));// Check
 																			// Field
-		getFieldRepository().save(new Field("Field 11", "@CUC2017Field11"));// Check
-																			// Field
-		getFieldRepository().save(new Field("Field 12", "@CUC2017Field12"));// Check
-																			// Field
-		getFieldRepository().save(new Field("Field 13", "@CUC2017Field13"));// Check
-																			// Field
-		getFieldRepository().save(new Field("Field 14", "@CUC2017Field14"));// Check
-																			// Field
-		getFieldRepository().save(new Field("Field 15", "@CUC2017Field15"));// Check
-																			// Field
-		getFieldRepository().save(new Field("Field 16", "@CUC2017Field16"));// Check
-																			// Field
-		getFieldRepository().save(new Field("Field 17", "@CUC2017Field17"));// Check
-																			// Field
-		getFieldRepository().save(new Field("Field 18", "@CUC2017Field18"));// Check
-																			// Field
-		getFieldRepository().save(new Field("Field 19", "@CUC2017Field19"));// Check
-																			// Field
+		getFieldRepository().save(new Field("Field 11", "@CUC2017Field11"));
+		getFieldRepository().save(new Field("Field 12", "@CUC2017Field12"));
+		getFieldRepository().save(new Field("Field 13", "@CUC2017Field13"));
+		getFieldRepository().save(new Field("Field 14", "@CUC2017Field14"));
+		getFieldRepository().save(new Field("Field 15", "@CUC2017Field15"));
+		getFieldRepository().save(new Field("Field 16", "@CUC2017Field16"));
+		getFieldRepository().save(new Field("Field 17", "@CUC2017Field17"));
+		getFieldRepository().save(new Field("Field 18", "@CUC2017Field18"));
+		getFieldRepository().save(new Field("Field 19", "@CUC2017Field19"));
 		getFieldRepository().save(new Field("MNP Park", "@CUC2017MNPPark"));
 
 		Team team1 = new Team(openDivision, "Alpha BC", 1);
@@ -162,47 +150,13 @@ public class DataLoader implements ApplicationRunner {
 		Team wteam25 = new Team(womenDivision, "Wicked West", 40);
 		getTeamRepository().save(wteam25);
 
-		Iterable<Team> teams = getTeamRepository().findAll();
-		for (Team team : teams) {
-			addAdditionalPlayesrForEachTeam(team);
-		}
-
-		loadPlayersFromUltimatCanadaSite(teams);
+		// Iterable<Team> teams = getTeamRepository().findAll();
+		// for (Team team : teams) {
+		// addAdditionalPlayesrForEachTeam(team);
+		// }
+		//
+		// loadPlayersFromUltimatCanadaSite(teams);
 		// loadPlayers(womenDivision, openDivision);
-	}
-
-	private void loadPlayersFromUltimatCanadaSite(Iterable<Team> teams) {
-		HttpClient client = HttpClientBuilder.create().build();
-		try {
-			for (Team team : teams) {
-				URL url = new URL("http://80.172.224.48/cuc2017jr/?view=teamcard&team=" + team.getTeamNumber());
-				Document page = Jsoup.parse(url, 5000);
-				Element playerTable = page.select("table[style=width:80%]").first();
-				Elements players = playerTable.select("tr");
-				for (Element playerRow : players) {
-					Element playerCell = playerRow.select("a[href]").first();
-					if (playerCell != null) {
-						String linkHref = playerCell.attr("href");
-						String ultimateCanadaId = linkHref.substring(linkHref.indexOf("player=") + 7);
-						String linkText = playerCell.text();
-						int number = 0;
-						if (linkText.startsWith("#")) {
-							int firstSpace = linkText.indexOf(' ');
-							number = Integer.parseInt(linkText.substring(1, firstSpace));
-							linkText = linkText.substring(firstSpace + 1);
-						}
-						int firstSpace = linkText.indexOf(' ');
-						String firstName = linkText.substring(0, firstSpace);
-						String lastName = linkText.substring(firstSpace + 1);
-						Player player = new Player(number, firstName, lastName, team, ultimateCanadaId);
-						getPlayerRepository().save(player);
-					}
-				}
-			}
-		} catch (Exception e) {
-			log.error("Could not load players ", e);
-		}
-
 	}
 
 	private void loadPlayers(Division juniorWomen, Division juniorOpen) {
@@ -232,11 +186,6 @@ public class DataLoader implements ApplicationRunner {
 		} catch (Exception e) {
 			log.error("Problem loading players", e);
 		}
-	}
-
-	private void addAdditionalPlayesrForEachTeam(Team team) {
-		getPlayerRepository().save(new Player(Player.UNKNOWN_PLAYER, "", "Unknown", team));
-		getPlayerRepository().save(new Player(Player.CALLAHAN, "Gallahan", "Goal", team));
 	}
 
 	public DivisionRepository getDivisionRepository() {

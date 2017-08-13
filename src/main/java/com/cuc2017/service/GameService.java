@@ -37,11 +37,11 @@ public interface GameService {
 
 	Game undoEvent(Long eventId) throws Exception;
 
-	List<Player> getPlayers(Team team);
-
 	Game timeOut(Long gameId, Long teamId) throws Exception;
 
 	String eventAsHtmlRow(Event event);
 
 	String updateAllEvents(Game game);
+
+	List<Player> getPlayers(Game game, Team team);
 }

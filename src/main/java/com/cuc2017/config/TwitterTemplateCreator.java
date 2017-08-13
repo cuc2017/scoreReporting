@@ -74,30 +74,30 @@ public class TwitterTemplateCreator {
 		String field8AccessToken = "895825606449008643-1VkvKKEFhaPfhvlA9Oi31GmRdBCp5BU";
 		String field8AccessTokenSecret = "qWJ2i8gW560ow8U13HuM1R9HywmvCZ2f1LkQ0fjzW91hC";
 
-		String field9ConsumerKey = "";
-		String field9ConsumerSecret = "";
-		String field9AccessToken = "";
-		String field9AccessTokenSecret = "";
+		String field9ConsumerKey = "lRMUhAYna1H3Pg81cfBfDLCYV";
+		String field9ConsumerSecret = "7WXFNCYqJttiA11IaH76VGyH89r7V3erFpZ0GAZddhGVYGisdy";
+		String field9AccessToken = "lRMUhAYna1H3Pg81cfBfDLCYV";
+		String field9AccessTokenSecret = "7WXFNCYqJttiA11IaH76VGyH89r7V3erFpZ0GAZddhGVYGisdy";
 
-		String field10ConsumerKey = "";
-		String field10ConsumerSecret = "";
-		String field10AccessToken = "";
-		String field10AccessTokenSecret = "";
+		String field10ConsumerKey = "cPkcMKkmWFCCR68wQE1UzSTos";
+		String field10ConsumerSecret = "2lNJRch9XkFtbvUDK6tPOu8cBY74CAYBUFi5SQhhahInyv83OM";
+		String field10AccessToken = "895988903097794562-WX6gn1p5VhOgd9vtY01kbzV5vG0NFR9";
+		String field10AccessTokenSecret = "7d7v0tYlIVAdF35QFtY8LZdZQSfdf76GA7EjYFwZ9B3TD";
 
-		String field11ConsumerKey = "";
-		String field11ConsumerSecret = "";
-		String field11AccessToken = "";
-		String field11AccessTokenSecret = "";
+		String field11ConsumerKey = "9y6LIpntsAVGIhQ9IdRUHGp15";
+		String field11ConsumerSecret = "Df30KY3F3uHNfKq5qHXbLl9ZssY8MNRRysKHV0TdGwZknSIqSF";
+		String field11AccessToken = "895995074114461696-8ce9sWPmBFxENafHbAg66dqtuB2GzZN";
+		String field11AccessTokenSecret = "5fW3t8iQvMywjed0fbdV2sTMpgai8VyPD5eYg4QKuFg1u";
 
-		String field12ConsumerKey = "";
-		String field12ConsumerSecret = "";
-		String field12AccessToken = "";
-		String field12AccessTokenSecret = "";
+		String field12ConsumerKey = "7qCK4kZIZzn8isjRYsZrBx52R";
+		String field12ConsumerSecret = "IpHKdMsft9jXsmsYPR4tmmFipAQGaZ6v8rhL9jpDmdslqRjpip";
+		String field12AccessToken = "895999644039303168-zj5U1kpjgiBx3Q0dfbhxtHki1rEnuQu";
+		String field12AccessTokenSecret = "RI118XkuRfA1KxjzW4aXRwqT0ek0Vx3vIe0AfDdG5Rytk";
 
-		String field13ConsumerKey = "";
-		String field13ConsumerSecret = "";
-		String field13AccessToken = "";
-		String field13AccessTokenSecret = "";
+		String field13ConsumerKey = "1f0F5D8BbN555JVGazwopvUGb";
+		String field13ConsumerSecret = "3xhs0XAQKpmHEB7PAazA2p2VNY5Gjxv4oV2PpeTrJDLsYpoojw";
+		String field13AccessToken = "896000572255588353-4UTc1fHV0p270i9Hv09T2i3NyJHtlB2";
+		String field13AccessTokenSecret = "i3Vn3k4vTVpkSI5dTKq7NiHoOkY6spRTJNG2mRwDnfIR3";
 
 		String field14ConsumerKey = "rfyuC7fSTS8rBa9g1nVeWgBAv";
 		String field14ConsumerSecret = "dC8zi5aJWHfHqcAqOe9dSE7n7GZWz8EUPy8L39FSXUMMrk8vAD";
@@ -114,15 +114,15 @@ public class TwitterTemplateCreator {
 		String field16AccessToken = "896085062193696768-Y7SoaYRukrAcRLg23l3uqLyxqOIWKv3";
 		String field16AccessTokenSecret = "uHzHHh1oRyX6INNxST0kPRQegn1CgzLxK7a3WL1KwE0l2";
 
-		String field17ConsumerKey = "";
-		String field17ConsumerSecret = "";
-		String field17AccessToken = "";
-		String field17AccessTokenSecret = "";
+		String field17ConsumerKey = "oVrf5K64CkeCaGlRukQg79OaL";
+		String field17ConsumerSecret = "G63kQ2rkYlcCqQiQMAMxrteBcjLLIga4oGHogbx0BHHoA5CtkI";
+		String field17AccessToken = "896171914351214592-pZSibwDLysuA2zWKD2CsPjqhX8BSUJ7";
+		String field17AccessTokenSecret = "TExTF6fRyyDYBXhjLp0mrjsI8FhxnnZBPD8TK4jmhiugC";
 
-		String field18ConsumerKey = "";
-		String field18ConsumerSecret = "";
-		String field18AccessToken = "";
-		String field18AccessTokenSecret = "";
+		String field18ConsumerKey = "LZHru0paYdPdRlQsBwHZnGRub";
+		String field18ConsumerSecret = "6ZQGTwNJCtdHCBIO0UwbNXl8TlUGdW134CwN27JqfhekZM0U9r";
+		String field18AccessToken = "896174315594534912-oGNDIwHAwBHa0rtCO0vjDXNeoFX0J6n";
+		String field18AccessTokenSecret = "r0fHnrwrtpIHTZ6WxknsjsaBLJ4c1pqUIHCTJxmenTovW";
 
 		String field19ConsumerKey = "EV4ydDJZDJpbTsiuVakcAr0B1";
 		String field19ConsumerSecret = "pMMl8VM2ABIF5QulVn7YhLPSN2dJWMGmfxn9PWVdk4w6v9yufP";

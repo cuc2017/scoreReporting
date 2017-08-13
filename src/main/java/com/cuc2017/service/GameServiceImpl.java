@@ -1,11 +1,16 @@
 package com.cuc2017.service;
 
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,6 +72,49 @@ public class GameServiceImpl implements GameService {
 		StringBuffer row = new StringBuffer();
 		eventAsHtmlRow(event, row, true, null);
 		return row.toString();
+	}
+
+	private void loadPlayersForTeam(Team team, Game game) {
+		loadPlayersFromUltimatCanadaSite(team, game);
+		addAdditionalPlayesrForEachTeam(team, game);
+	}
+
+	private void loadPlayersFromUltimatCanadaSite(Team team, Game game) {
+		try {
+			log.info("loading for team: " + team);
+			URL url = new URL("http://80.172.224.48/cuc2017jr/?view=teamcard&team=" + team.getTeamNumber());
+			Document page = Jsoup.parse(url, 5000);
+			log.info(page.text());
+			Element playerTable = page.select("table[style=width:80%]").first();
+			Elements players = playerTable.select("tr");
+			for (Element playerRow : players) {
+				Element playerCell = playerRow.select("a[href]").first();
+				if (playerCell != null) {
+					String linkHref = playerCell.attr("href");
+					String ultimateCanadaId = linkHref.substring(linkHref.indexOf("player=") + 7);
+					String linkText = playerCell.text();
+					int number = 0;
+					if (linkText.startsWith("#")) {
+						int firstSpace = linkText.indexOf(' ');
+						number = Integer.parseInt(linkText.substring(1, firstSpace));
+						linkText = linkText.substring(firstSpace + 1);
+					}
+					int firstSpace = linkText.indexOf(' ');
+					String firstName = linkText.substring(0, firstSpace);
+					String lastName = linkText.substring(firstSpace + 1);
+					Player player = new Player(number, firstName, lastName, team, ultimateCanadaId, game);
+					getPlayerRepository().save(player);
+					log.info("Loaded player: " + player);
+				}
+			}
+		} catch (Exception e) {
+			log.error("Could not load players ", e);
+		}
+	}
+
+	private void addAdditionalPlayesrForEachTeam(Team team, Game game) {
+		getPlayerRepository().save(new Player(Player.UNKNOWN_PLAYER, "", "Unknown", team, game));
+		getPlayerRepository().save(new Player(Player.CALLAHAN, "Gallahan", "Goal", team, game));
 	}
 
 	private void eventAsHtmlRow(Event event, StringBuffer row, boolean addSelect, Date gameStartTime) {
@@ -131,7 +179,8 @@ public class GameServiceImpl implements GameService {
 	}
 
 	private void addPlayers(Event event, StringBuffer row, Player selectedPlayer, boolean allowCallahan) {
-		List<Player> players = getPlayers(event.getTeam());
+		log.info("in add player");
+		List<Player> players = getPlayers(event.getGame(), event.getTeam());
 		for (Player player : players) {
 			if (player.isCallahanPlayer() && !allowCallahan) {
 				continue;
@@ -156,6 +205,8 @@ public class GameServiceImpl implements GameService {
 		Field field = getFieldRepository().findOne(fieldId);
 		Game game = new Game(division, homeTeam, awayTeam, field);
 		saveGame(game);
+		loadPlayersForTeam(homeTeam, game);
+		loadPlayersForTeam(awayTeam, game);
 		Event event = new Event(EventType.READY, game);
 		addEvent(game, event);
 		updateCurrentGame(game);
@@ -284,9 +335,13 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public Game pointScored(Long gameId, Long teamId) throws Exception {
+		log.info("In point scored");
 		Team team = getTeam(teamId);
+		log.info("In point scored team is: " + team);
 		Game game = getGame(gameId);
-		Player unknownPlayer = getPlayerRepository().findByTeamAndNumber(team, Player.UNKNOWN_PLAYER);
+		log.info("Game is: " + game);
+		Player unknownPlayer = getPlayerRepository().findByGameAndTeamAndNumber(game, team, Player.UNKNOWN_PLAYER);
+		log.info("Player  is: " + unknownPlayer);
 		if (team.equals(game.getHomeTeam())) {
 			game.incrementHomeTeamScore();
 		} else if (team.equals(game.getAwayTeam())) {
@@ -297,6 +352,11 @@ public class GameServiceImpl implements GameService {
 		}
 		Event event = new Event(EventType.POINT_SCORED, game, team, unknownPlayer, unknownPlayer);
 		addEvent(game, event);
+
+		log.info("Evens are: ");
+		for (Event e : getGame(gameId).getEvents()) {
+			log.info("Event is: " + e);
+		}
 		return game;
 	}
 
@@ -352,8 +412,16 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public List<Player> getPlayers(Team team) {
-		return getPlayerRepository().findByTeamOrderByNumberAsc(team);
+	public List<Player> getPlayers(Game game, Team team) {
+		log.info("In get players");
+		List<Player> players = getPlayerRepository().findByGameAndTeamOrderByNumberAsc(game, team);
+		log.info("Got players: " + players.size());
+		List<Player> players2 = (List<Player>) getPlayerRepository().findAll();
+		log.info("Got Players: " + players.size());
+		for (Player player : players2) {
+			log.info(player.getGame() + " team: " + team + " player: " + player);
+		}
+		return players;
 	}
 
 	@Override

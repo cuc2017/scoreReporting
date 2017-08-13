@@ -11,6 +11,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -35,6 +36,7 @@ public class Game extends AbstractEntity {
 	private Field field;
 	@OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
 	@JsonBackReference
+	@OrderBy("id ASC")
 	private List<Event> events = new ArrayList<>();
 	private String scoreKeepers;
 	private int homeTeamScore;
@@ -298,5 +300,4 @@ public class Game extends AbstractEntity {
 	public void setAwayTimeOutThisHalf(int awayTimeOutThisHalf) {
 		this.awayTimeOutThisHalf = awayTimeOutThisHalf;
 	}
-
 }
