@@ -224,6 +224,24 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
+	public boolean fieldInUse(Long fieldId) {
+		for (CurrentGame currentGame : getCurrentGameRepository().findAll()) {
+			if (currentGame.isUseGame()) {
+				Game game = currentGame.getGame();
+				if (game != null) {
+					if (!game.isGameOver()) {
+						Field field = game.getField();
+						if (field != null && field.getId() == fieldId) {
+							return true;
+						}
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+	@Override
 	public Game startGame(Long gameId) {
 		Game game = getGame(gameId);
 		Event event = new Event(EventType.STARTED, game);

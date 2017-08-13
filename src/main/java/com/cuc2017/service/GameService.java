@@ -44,4 +44,6 @@ public interface GameService {
 	String updateAllEvents(Game game);
 
 	List<Player> getPlayers(Game game, Team team);
+
+	boolean fieldInUse(Long fieldId);
 }

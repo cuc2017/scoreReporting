@@ -30,7 +30,7 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// http.authorizeRequests().antMatchers("/**").permitAll();
-		http.authorizeRequests().antMatchers("/score").fullyAuthenticated()
+		http.authorizeRequests().antMatchers("/score", "/scorekeeper", "/scoreKeeper").fullyAuthenticated()
 				.antMatchers("/**", "/currentScores/**", "google849f54b5f1b34ed4.html").permitAll();
 	}
 }

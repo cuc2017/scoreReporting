@@ -26,6 +26,26 @@
 		</div>
 	</div>
 	
+		<div class="modal fade" id="fieldInUseModal" tabindex="-1" role="dialog"
+		aria-labelledby="Field In Use">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Field in use</h4>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">
+						That field has an active game on it. Are you sure that is the right field?
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+					<button id="useFieldOk" type="button" class="btn btn-warning btn-ok"
+						data-dismiss="modal">Yes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="container-fluid">
 		<div th:replace="fragments/head :: navbar">(navbar)</div>

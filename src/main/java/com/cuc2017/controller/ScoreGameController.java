@@ -25,6 +25,17 @@ public class ScoreGameController {
 	private GameService gameService;
 	private TwitterService twitterService;
 
+	@RequestMapping(value = "/fieldInUse", method = RequestMethod.GET, params = { "field" })
+	public ResponseEntity<?> fieldInUse(@RequestParam("field") Long fieldId, HttpServletRequest request, Model model) {
+		try {
+			boolean fieldIsInUse = getGameService().fieldInUse(fieldId);
+			return new ResponseEntity<Boolean>(fieldIsInUse, HttpStatus.OK);
+		} catch (Exception e) {
+			log.error("Problem checking fieldIsInUse: " + fieldId, e);
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
 	@RequestMapping(value = "/startGame", method = RequestMethod.POST, params = { "game" })
 	public ResponseEntity<?> startGame(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
 		try {

@@ -11,7 +11,27 @@ var homeTimeOutButtonName = "TO Home";
 var awayTimeOutButtonName = "TO Away";
 
 function fieldChanged(selectedField) {
-	$('#scoreGameButton').removeClass('hidden');
+	var selectedIndex = selectedField.selectedIndex;
+	var fieldId = selectedField.options[selectedIndex].value;
+
+	$.ajax({
+		type : "get",
+		url : '/fieldInUse/?field=' + fieldId,
+		success : function(inUse) {
+			$('#scoreGameButton').addClass('hidden');
+			if (inUse) {
+				$('#fieldInUseModal').modal('show').one('click', '#useFieldOk',
+						function(e) {
+							$('#scoreGameButton').removeClass('hidden');
+						});
+			} else {
+				$('#scoreGameButton').removeClass('hidden');
+			}
+		},
+		error : function(error) {
+			console.log(error.responseText);
+		}
+	});
 }
 
 $(document)
@@ -82,9 +102,9 @@ function getPlayers() {
 }
 
 window.onpageshow = function(event) {
-    if (event.persisted) {
-        window.location.reload();
-    }
+	if (event.persisted) {
+		window.location.reload();
+	}
 };
 
 function onPageLeave(e) {
@@ -131,40 +151,38 @@ function updateEventTable(gameId) {
 	});
 }
 
-
 function selectGoalBy(goalBy) {
-  var tr = goalBy.closest('tr');
-  var eventId = $(tr).data('event-id');
-  var selectedIndex = goalBy.selectedIndex;
-  var goalById = goalBy.options[selectedIndex].value; 
-  $.ajax({
-    type : "post",
-    url : '/goal/?event=' + eventId + '&goal=' + goalById ,
-    success : function(game) {
-      console.log("Goal scored successful");
-    },
-    error : function(error) {
-      console.log(error.responseText);
-    }
-  });  
+	var tr = goalBy.closest('tr');
+	var eventId = $(tr).data('event-id');
+	var selectedIndex = goalBy.selectedIndex;
+	var goalById = goalBy.options[selectedIndex].value;
+	$.ajax({
+		type : "post",
+		url : '/goal/?event=' + eventId + '&goal=' + goalById,
+		success : function(game) {
+			console.log("Goal scored successful");
+		},
+		error : function(error) {
+			console.log(error.responseText);
+		}
+	});
 }
 
-
 function selectAssistBy(assistBy) {
-  var tr = assistBy.closest('tr');
-  var eventId = $(tr).data('event-id');
-  var selectedIndex = assistBy.selectedIndex;
-  var assistById = assistBy.options[selectedIndex].value; 
-  $.ajax({
-    type : "post",
-    url : '/assist/?event=' + eventId + '&assist=' + assistById ,
-    success : function(game) {
-      console.log("Assist successful: " + game);
-    },
-    error : function(error) {
-      console.log(error.responseText);
-    }
-  });  
+	var tr = assistBy.closest('tr');
+	var eventId = $(tr).data('event-id');
+	var selectedIndex = assistBy.selectedIndex;
+	var assistById = assistBy.options[selectedIndex].value;
+	$.ajax({
+		type : "post",
+		url : '/assist/?event=' + eventId + '&assist=' + assistById,
+		success : function(game) {
+			console.log("Assist successful: " + game);
+		},
+		error : function(error) {
+			console.log(error.responseText);
+		}
+	});
 }
 
 function pointScored(button) {
@@ -212,7 +230,9 @@ function setUpTimer(timerTick, countUpEvent) {
 }
 
 function stopCountUpTimer() {
-	countUpTimer.Stop();
+	if (countUpTimer != null) {
+		countUpTimer.Stop();
+	}
 	countUpTimer = null;
 	$('#timer').addClass('hide-timer');
 	countUpTimerIndex = 0;
@@ -398,7 +418,6 @@ function updateUndoButton() {
 		$('#undoButton').prop("disabled", false);
 	}
 }
-
 
 $('#undoButton').click(function() {
 	var tableRow = $('#eventTable > tbody > tr').eq(1);
