@@ -61,6 +61,12 @@ public class ScoreController {
 		return "tvscores";
 	}
 
+	@RequestMapping("/allGames")
+	public String allGames(HttpServletRequest request, Model model) {
+		model.addAttribute("games", getGameService().getAllGames());
+		return "allGames";
+	}
+
 	@RequestMapping("/score")
 	public String score(HttpServletRequest request, Model model) {
 		model.addAttribute("divisions", getGameService().getDivisions());

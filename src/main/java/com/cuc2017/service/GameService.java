@@ -46,4 +46,6 @@ public interface GameService {
 	List<Player> getPlayers(Game game, Team team);
 
 	boolean fieldInUse(Long fieldId);
+
+	List<Game> getAllGames();
 }
