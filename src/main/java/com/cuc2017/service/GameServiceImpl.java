@@ -36,7 +36,7 @@ import com.cuc2017.repository.TeamRepository;
 public class GameServiceImpl implements GameService {
 
 	private static final Logger log = LoggerFactory.getLogger(GameServiceImpl.class);
-	private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("hh:mm");
+	public static final SimpleDateFormat FORMATTER = new SimpleDateFormat("hh:mm");
 
 	static {
 		TimeZone timeZone = TimeZone.getTimeZone("America/New_York");
@@ -81,10 +81,8 @@ public class GameServiceImpl implements GameService {
 
 	private void loadPlayersFromUltimatCanadaSite(Team team, Game game) {
 		try {
-			log.info("loading for team: " + team);
 			URL url = new URL("http://80.172.224.48/cuc2017jr/?view=teamcard&team=" + team.getTeamNumber());
 			Document page = Jsoup.parse(url, 5000);
-			log.info(page.text());
 			Element playerTable = page.select("table[style=width:80%]").first();
 			Elements players = playerTable.select("tr");
 			for (Element playerRow : players) {
@@ -104,7 +102,6 @@ public class GameServiceImpl implements GameService {
 					String lastName = linkText.substring(firstSpace + 1);
 					Player player = new Player(number, firstName, lastName, team, ultimateCanadaId, game);
 					getPlayerRepository().save(player);
-					log.info("Loaded player: " + player);
 				}
 			}
 		} catch (Exception e) {
@@ -179,7 +176,6 @@ public class GameServiceImpl implements GameService {
 	}
 
 	private void addPlayers(Event event, StringBuffer row, Player selectedPlayer, boolean allowCallahan) {
-		log.info("in add player");
 		List<Player> players = getPlayers(event.getGame(), event.getTeam());
 		for (Player player : players) {
 			if (player.isCallahanPlayer() && !allowCallahan) {
@@ -219,6 +215,7 @@ public class GameServiceImpl implements GameService {
 			Field gameField = game.getField();
 			if (currentGameField.equals(gameField)) {
 				currentGame.setGame(game);
+				currentGame.setUseGame(true);
 				getCurrentGameRepository().save(currentGame);
 				return;
 			}
@@ -335,13 +332,9 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public Game pointScored(Long gameId, Long teamId) throws Exception {
-		log.info("In point scored");
 		Team team = getTeam(teamId);
-		log.info("In point scored team is: " + team);
 		Game game = getGame(gameId);
-		log.info("Game is: " + game);
 		Player unknownPlayer = getPlayerRepository().findByGameAndTeamAndNumber(game, team, Player.UNKNOWN_PLAYER);
-		log.info("Player  is: " + unknownPlayer);
 		if (team.equals(game.getHomeTeam())) {
 			game.incrementHomeTeamScore();
 		} else if (team.equals(game.getAwayTeam())) {
@@ -352,11 +345,6 @@ public class GameServiceImpl implements GameService {
 		}
 		Event event = new Event(EventType.POINT_SCORED, game, team, unknownPlayer, unknownPlayer);
 		addEvent(game, event);
-
-		log.info("Evens are: ");
-		for (Event e : getGame(gameId).getEvents()) {
-			log.info("Event is: " + e);
-		}
 		return game;
 	}
 
@@ -403,7 +391,8 @@ public class GameServiceImpl implements GameService {
 		if (game.hasHadHalfTime()) {
 			half = "Timeout in the second half: ";
 		}
-		getTwitterService().tweetToField(game.getField(), timeOutsTakenString + half + team.getName());
+		getTwitterService().tweetToField(game.getField(),
+				timeOutsTakenString + half + team.getName() + " " + team.getDivision().getHashtag());
 		return game;
 	}
 
@@ -413,21 +402,25 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public List<Player> getPlayers(Game game, Team team) {
-		log.info("In get players");
 		List<Player> players = getPlayerRepository().findByGameAndTeamOrderByNumberAsc(game, team);
-		log.info("Got players: " + players.size());
-		List<Player> players2 = (List<Player>) getPlayerRepository().findAll();
-		log.info("Got Players: " + players.size());
-		for (Player player : players2) {
-			log.info(player.getGame() + " team: " + team + " player: " + player);
-		}
 		return players;
 	}
 
 	@Override
 	public List<CurrentGame> getCurrentGames() {
+		updateCurrentGames();
 		List<CurrentGame> currentGames = getCurrentGameRepository().findAllByOrderByGame_Field_IdAsc();
 		return currentGames;
+	}
+
+	private void updateCurrentGames() {
+		List<CurrentGame> currentGames = (List<CurrentGame>) getCurrentGameRepository().findAll();
+		for (CurrentGame currentGame : currentGames) {
+			if (!currentGame.getGame().isRecent()) {
+				currentGame.setUseGame(false);
+				getCurrentGameRepository().save(currentGame);
+			}
+		}
 	}
 
 	@Override

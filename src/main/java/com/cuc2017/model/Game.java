@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Game extends AbstractEntity {
 
+	private static final int RECENT_GAME_TIME = 30 * 60 * 1000;
 	private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("hh:mm");
 
 	static {
@@ -73,6 +74,15 @@ public class Game extends AbstractEntity {
 		return getCreated().after(today);
 	}
 
+	public boolean isRecent() {
+		Date now = new Date();
+		long duration = now.getTime() - getLastEvent().getCreated().getTime();
+		if (duration < RECENT_GAME_TIME) {
+			return true;
+		}
+		return false;
+	}
+
 	public void addEvent(Event event) {
 		getEvents().add(event);
 	}
@@ -91,6 +101,11 @@ public class Game extends AbstractEntity {
 		} while (!event.isUseEvent());
 		return event;
 
+	}
+
+	@JsonIgnore
+	public String getLastEventTime() {
+		return FORMATTER.format(getLastEvent().getCreated());
 	}
 
 	public void resetTimeOuts() {
@@ -135,6 +150,16 @@ public class Game extends AbstractEntity {
 			}
 		}
 		return null;
+	}
+
+	@JsonIgnore
+	public boolean isGameOver() {
+		for (Event event : events) {
+			if (event.getEventType() == EventType.GAVE_OVER) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@JsonIgnore

@@ -37,6 +37,15 @@ public class ScoreController {
 
 	@RequestMapping(value = "/scoresheet", method = RequestMethod.GET, params = { "game" })
 	public String scoreSheet(HttpServletRequest request, @RequestParam("game") Long gameId, Model model) {
+		return createScoreSheets(gameId, model);
+	}
+
+	@RequestMapping(value = "/scoreSheet", method = RequestMethod.GET, params = { "game" })
+	public String scoreSheetWithCapital(HttpServletRequest request, @RequestParam("game") Long gameId, Model model) {
+		return createScoreSheets(gameId, model);
+	}
+
+	private String createScoreSheets(Long gameId, Model model) {
 		Game game = getGameService().getGame(gameId);
 		model.addAttribute("game", game);
 		return "scoresheet";
@@ -82,7 +91,9 @@ public class ScoreController {
 	private void getCurrentGames(List<CurrentGame> currentGames, Model model) {
 		List<Game> games = new ArrayList<>(currentGames.size());
 		for (CurrentGame currentGame : currentGames) {
-			games.add(currentGame.getGame());
+			if (currentGame.isUseGame()) {
+				games.add(currentGame.getGame());
+			}
 		}
 		model.addAttribute("games", games);
 	}

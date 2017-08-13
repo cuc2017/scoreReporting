@@ -31,13 +31,10 @@ public class TwitterTemplateCreator {
 		// String field1AccessTokenSecret =
 		// "sWoTNDoXEb54x9GcOIfSdb69DU2jMLP2AM1EVcWjjcAVA";
 
-		// String consumerKey = "VpY9CCxcniGMXIfPWnieCj1Tz";
-		// String consumerSecret =
-		// "zFEbbknWd5kUe7LkDPUfebnNJ3H6sQ9yMj47UILS3ctQnWPDgR";
-		// String accessToken =
-		// "893494170043723776-5frMtf5U5bT1rOBQ8OEMmFVBy3ahJEr";
-		// String accessTokenSecret =
-		// "78XsDvCduzSZGxakY9qXv9eyrtVHLwEFMda4mjxhFRUzH";
+		String consumerKey = "VpY9CCxcniGMXIfPWnieCj1Tz";
+		String consumerSecret = "zFEbbknWd5kUe7LkDPUfebnNJ3H6sQ9yMj47UILS3ctQnWPDgR";
+		String accessToken = "893494170043723776-5frMtf5U5bT1rOBQ8OEMmFVBy3ahJEr";
+		String accessTokenSecret = "78XsDvCduzSZGxakY9qXv9eyrtVHLwEFMda4mjxhFRUzH";
 
 		String field1ConsumerKey = "oCv7L1BhUW0jxu92VT74DHEsq";
 		String field1ConsumerSecret = "CPUSruaXfOluUSxVaqDYlMwDyzulyUw7643A8RSd02K4Sv3CTG";
@@ -132,11 +129,11 @@ public class TwitterTemplateCreator {
 		String fieldMNPParkConsumerKey = "GsLYlHMdhUPr7atBUbSE4WlMx";
 		String fieldMNPParkConsumerSecret = "vAxh3nvs9zJnzZS1d5WW98kHVQi575n3SsyIRtbAyLpECuLSat";
 		String fieldMNPParkAccessToken = "896490373832466432-SHKPRZKmUtXhQFjgaYckP8zOxdlo4rU";
-		// String fieldMNPParkAccessTokenSecret =
-		// "v9RKcjfF1OlZrFPCKxtyGnzFFu6L2B205v1RzPrOMXWzU";
+		String fieldMNPParkAccessTokenSecret = "v9RKcjfF1OlZrFPCKxtyGnzFFu6L2B205v1RzPrOMXWzU";
 
-		// twitterTemplates.put("General", new TwitterTemplate(consumerKey,
-		// consumerSecret, accessToken, accessTokenSecret));
+		// twitterTemplates.put("General",
+		// new TwitterTemplate(consumerKey, consumerSecret, accessToken,
+		// accessTokenSecret));
 		// twitterTemplates.put("Field 1",
 		// new TwitterTemplate(field1ConsumerKey, field1ConsumerSecret,
 		// field1AccessToken, field1AccessTokenSecret));
@@ -196,10 +193,9 @@ public class TwitterTemplateCreator {
 		// twitterTemplates.put("Field 19", new
 		// TwitterTemplate(field19ConsumerKey, field19ConsumerSecret,
 		// field19AccessToken, field19AccessTokenSecret));
-		// twitterTemplates.put("MNP Park",
-		// new TwitterTemplate(fieldMNPParkConsumerKey,
-		// fieldMNPParkConsumerSecret, fieldMNPParkAccessToken,
-		// fieldMNPParkAccessTokenSecret));
+		// twitterTemplates.put("MNP Park", new
+		// TwitterTemplate(fieldMNPParkConsumerKey, fieldMNPParkConsumerSecret,
+		// fieldMNPParkAccessToken, fieldMNPParkAccessTokenSecret));
 		return twitterTemplates;
 	}
 }

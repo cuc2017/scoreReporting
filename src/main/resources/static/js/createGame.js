@@ -286,7 +286,7 @@ function endGame(gameId) {
 		type : "post",
 		url : '/endGame/?game=' + gameId,
 		success : function(startGame) {
-			window.location.replace("/scoreSheet?game=" + gameId);
+			window.location.replace("/scoresheet?game=" + gameId);
 		},
 		error : function(error) {
 			console.log(error.responseText);
