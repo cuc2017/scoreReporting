@@ -48,4 +48,6 @@ public interface GameService {
 	boolean fieldInUse(Long fieldId);
 
 	List<Game> getAllGames();
+
+	void doNotUseGame(Long gameId);
 }

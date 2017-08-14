@@ -44,6 +44,7 @@ public class Game extends AbstractEntity {
 	private int awayTeamScore;
 	private int homeTimeOutThisHalf;
 	private int awayTimeOutThisHalf;
+	private boolean useGame = true;
 
 	public Game() {
 		// default constructor
@@ -116,7 +117,7 @@ public class Game extends AbstractEntity {
 	@JsonIgnore
 	public boolean hasHadHalfTime() {
 		for (Event event : events) {
-			if (event.getEventType() == EventType.HALF_TIME) {
+			if (event.getEventType() == EventType.HALF_TIME && event.isUseEvent()) {
 				return true;
 			}
 		}
@@ -126,7 +127,7 @@ public class Game extends AbstractEntity {
 	@JsonIgnore
 	public Event getStartGameEvent() {
 		for (Event event : events) {
-			if (event.getEventType() == EventType.STARTED) {
+			if (event.getEventType() == EventType.STARTED && event.isUseEvent()) {
 				return event;
 			}
 		}
@@ -145,7 +146,7 @@ public class Game extends AbstractEntity {
 	@JsonIgnore
 	public Event getEndGameEvent() {
 		for (Event event : events) {
-			if (event.getEventType() == EventType.GAVE_OVER) {
+			if (event.getEventType() == EventType.GAVE_OVER && event.isUseEvent()) {
 				return event;
 			}
 		}
@@ -155,7 +156,7 @@ public class Game extends AbstractEntity {
 	@JsonIgnore
 	public boolean isGameOver() {
 		for (Event event : events) {
-			if (event.getEventType() == EventType.GAVE_OVER) {
+			if (event.getEventType() == EventType.GAVE_OVER && event.isUseEvent()) {
 				return true;
 			}
 		}
@@ -324,5 +325,13 @@ public class Game extends AbstractEntity {
 
 	public void setAwayTimeOutThisHalf(int awayTimeOutThisHalf) {
 		this.awayTimeOutThisHalf = awayTimeOutThisHalf;
+	}
+
+	public boolean isUseGame() {
+		return useGame;
+	}
+
+	public void setUseGame(boolean useGame) {
+		this.useGame = useGame;
 	}
 }

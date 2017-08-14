@@ -82,11 +82,12 @@ public class ScoreController {
 	@RequestMapping(value = "/currentScores", method = RequestMethod.GET)
 	public String getCurrentScores(HttpServletRequest request, Model model) {
 		try {
-			List<CurrentGame> currentGames = getGameService().getCurrentGames();
-			if (currentGames == null || currentGames.isEmpty()) {
+			List<Game> currentGames = getCurrentGames();
+			if (currentGames.isEmpty()) {
 				return NO_CURRENT_GAMES_FRAGMENT;
 			}
-			getCurrentGames(currentGames, model);
+
+			model.addAttribute("games", currentGames);
 			return CURRENT_GAMES_FRAGMENT;
 		} catch (Exception e) {
 			log.error("Problem getting current scores", e);
@@ -94,24 +95,26 @@ public class ScoreController {
 		}
 	}
 
-	private void getCurrentGames(List<CurrentGame> currentGames, Model model) {
+	private List<Game> getCurrentGames() {
+		List<CurrentGame> currentGames = getGameService().getCurrentGames();
 		List<Game> games = new ArrayList<>(currentGames.size());
 		for (CurrentGame currentGame : currentGames) {
 			if (currentGame.isUseGame()) {
 				games.add(currentGame.getGame());
 			}
 		}
-		model.addAttribute("games", games);
+		return games;
 	}
 
 	@RequestMapping(value = "/tvCurrentScores", method = RequestMethod.GET)
 	public String getTvScores(HttpServletRequest request, Model model) {
 		try {
-			List<CurrentGame> currentGames = getGameService().getCurrentGames();
-			if (currentGames == null || currentGames.isEmpty()) {
+			List<Game> currentGames = getCurrentGames();
+			if (currentGames.isEmpty()) {
 				return NO_CURRENT_GAMES_FRAGMENT;
 			}
-			getCurrentGames(currentGames, model);
+
+			model.addAttribute("games", currentGames);
 			return TV_SCORES_GAMES_FRAGMENT;
 		} catch (Exception e) {
 			log.error("Problem getting current scores", e);

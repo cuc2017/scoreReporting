@@ -61,6 +61,7 @@ $(document)
 															+ fieldId,
 													success : function(
 															aboutToStartGame) {
+														$('#navbar').addClass('hidden');
 														$('#baseRow')
 																.html(
 																		aboutToStartGame);
@@ -137,6 +138,19 @@ $('#baseRow').on('click', '#startGame', function() {
 	});
 });
 
+$('#baseRow').on('click', '#noGame', function() {
+	var gameId = $(this).data('game-id')
+	$.ajax({
+		type : "post",
+		url : '/doNotUseGame/?game=' + gameId,
+		success : function(game) {
+			window.location.replace("/");
+		},
+		error : function(error) {
+			console.log(error.responseText);
+		}
+	});
+});
 function updateEventTable(gameId) {
 	$.ajax({
 		type : "get",
@@ -301,17 +315,22 @@ function pad(val) {
 
 function endGame(gameId) {
 	console.log("Game ended: " + gameId);
-	window.removeEventListener('beforeunload', onPageLeave);
 	$.ajax({
 		type : "post",
 		url : '/endGame/?game=' + gameId,
-		success : function(startGame) {
-			window.location.replace("/scoresheet?game=" + gameId);
+		success : function(endGame) {
+			updateEventTable(gameId);
+			$('#finishedGame').prop("disabled", false);;
 		},
 		error : function(error) {
 			console.log(error.responseText);
 		}
 	});
+}
+
+function finishGame(gameId) {
+	window.removeEventListener('beforeunload', onPageLeave);
+	window.location.replace("/scoresheet?game=" + gameId);
 }
 
 $('#baseRow').on('click', '#homeTeamScored', function() {
@@ -324,6 +343,11 @@ $('#baseRow').on('click', '#awayTeamScored', function() {
 
 $('#gameEnded').click(
 		function() {
+			endGame(getGameId());
+		});
+
+$('#finishedGame').click(
+		function() {
 			var gameId = getGameId();
 			$.ajax({
 				type : "get",
@@ -332,7 +356,7 @@ $('#gameEnded').click(
 					$('#proposedFinalScore').html(proposedFinalScore)
 					$('#endGameModal').modal('show').one('click', '#endGameOk',
 							function(e) {
-								endGame(gameId);
+								finishGame(gameId);
 							});
 				},
 				error : function(error) {
@@ -431,6 +455,7 @@ $('#undoButton').click(function() {
 			updateUndoButton();
 			updateTimeOutButtons();
 			stopCountUpTimer();
+			$('#finishedGame').prop("disabled", true);			
 		},
 		error : function(error) {
 			console.log(error.responseText);

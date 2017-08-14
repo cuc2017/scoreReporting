@@ -68,6 +68,20 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
+	public void doNotUseGame(Long gameId) {
+		Game game = getGame(gameId);
+		game.setUseGame(false);
+		saveGame(game);
+		List<CurrentGame> currentGames = (List<CurrentGame>) getCurrentGameRepository().findAll();
+		for (CurrentGame currentGame : currentGames) {
+			if (currentGame.getGame().getId() == gameId) {
+				currentGame.setUseGame(false);
+				getCurrentGameRepository().save(currentGame);
+			}
+		}
+	}
+
+	@Override
 	public String eventAsHtmlRow(Event event) {
 		StringBuffer row = new StringBuffer();
 		eventAsHtmlRow(event, row, true, null);
@@ -320,6 +334,12 @@ public class GameServiceImpl implements GameService {
 			}
 			saveGame(game);
 		case GAVE_OVER:
+			getTwitterService().tweetToField(game.getField(),
+					"Oops ... game is not over " + game.getCurrentGameTweet());
+			getTwitterService()
+					.tweet("Oops ... game is not over " + game.getCurrentGameTweet() + game.addFieldInfoToTweet());
+			saveGame(game);
+			break;
 		case READY:
 		case STARTED:
 		default:
@@ -363,6 +383,7 @@ public class GameServiceImpl implements GameService {
 		}
 		Event event = new Event(EventType.POINT_SCORED, game, team, unknownPlayer, unknownPlayer);
 		addEvent(game, event);
+		updateCurrentGame(game);
 		return game;
 	}
 
@@ -443,7 +464,7 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public List<Game> getAllGames() {
-		return getGameRepository().findAllByOrderByIdDesc();
+		return getGameRepository().findByUseGameOrderByIdDesc(true);
 	}
 
 	@Override

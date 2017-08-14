@@ -131,46 +131,74 @@ public class TwitterTemplateCreator {
 		String fieldMNPParkAccessToken = "896490373832466432-SHKPRZKmUtXhQFjgaYckP8zOxdlo4rU";
 		String fieldMNPParkAccessTokenSecret = "v9RKcjfF1OlZrFPCKxtyGnzFFu6L2B205v1RzPrOMXWzU";
 
-		twitterTemplates.put("General",
-				new TwitterTemplate(consumerKey, consumerSecret, accessToken, accessTokenSecret));
-		twitterTemplates.put("Field 1", new TwitterTemplate(field1ConsumerKey, field1ConsumerSecret, field1AccessToken,
-				field1AccessTokenSecret));
-		twitterTemplates.put("Field 3", new TwitterTemplate(field3ConsumerKey, field3ConsumerSecret, field3AccessToken,
-				field3AccessTokenSecret));
-		twitterTemplates.put("Field 4", new TwitterTemplate(field4ConsumerKey, field4ConsumerSecret, field4AccessToken,
-				field4AccessTokenSecret));
-		twitterTemplates.put("Field 5", new TwitterTemplate(field5ConsumerKey, field5ConsumerSecret, field5AccessToken,
-				field5AccessTokenSecret));
-		twitterTemplates.put("Field 6", new TwitterTemplate(field6ConsumerKey, field6ConsumerSecret, field6AccessToken,
-				field6AccessTokenSecret));
-		twitterTemplates.put("Field 7", new TwitterTemplate(field7ConsumerKey, field7ConsumerSecret, field7AccessToken,
-				field7AccessTokenSecret));
-		twitterTemplates.put("Field 8", new TwitterTemplate(field8ConsumerKey, field8ConsumerSecret, field8AccessToken,
-				field8AccessTokenSecret));
-		twitterTemplates.put("Field 9", new TwitterTemplate(field9ConsumerKey, field9ConsumerSecret, field9AccessToken,
-				field9AccessTokenSecret));
-		twitterTemplates.put("Field 10", new TwitterTemplate(field10ConsumerKey, field10ConsumerSecret,
-				field10AccessToken, field10AccessTokenSecret));
-		twitterTemplates.put("Field 11", new TwitterTemplate(field11ConsumerKey, field11ConsumerSecret,
-				field11AccessToken, field11AccessTokenSecret));
-		twitterTemplates.put("Field 12", new TwitterTemplate(field12ConsumerKey, field12ConsumerSecret,
-				field12AccessToken, field12AccessTokenSecret));
-		twitterTemplates.put("Field 13", new TwitterTemplate(field13ConsumerKey, field13ConsumerSecret,
-				field13AccessToken, field13AccessTokenSecret));
-		twitterTemplates.put("Field 14", new TwitterTemplate(field14ConsumerKey, field14ConsumerSecret,
-				field14AccessToken, field14AccessTokenSecret));
-		twitterTemplates.put("Field 15", new TwitterTemplate(field15ConsumerKey, field15ConsumerSecret,
-				field15AccessToken, field15AccessTokenSecret));
-		twitterTemplates.put("Field 16", new TwitterTemplate(field16ConsumerKey, field16ConsumerSecret,
-				field16AccessToken, field16AccessTokenSecret));
-		twitterTemplates.put("Field 17", new TwitterTemplate(field17ConsumerKey, field17ConsumerSecret,
-				field17AccessToken, field17AccessTokenSecret));
-		twitterTemplates.put("Field 18", new TwitterTemplate(field18ConsumerKey, field18ConsumerSecret,
-				field18AccessToken, field18AccessTokenSecret));
-		twitterTemplates.put("Field 19", new TwitterTemplate(field19ConsumerKey, field19ConsumerSecret,
-				field19AccessToken, field19AccessTokenSecret));
-		twitterTemplates.put("MNP Park", new TwitterTemplate(fieldMNPParkConsumerKey, fieldMNPParkConsumerSecret,
-				fieldMNPParkAccessToken, fieldMNPParkAccessTokenSecret));
+		// twitterTemplates.put("General",
+		// new TwitterTemplate(consumerKey, consumerSecret, accessToken,
+		// accessTokenSecret));
+		// twitterTemplates.put("Field 1", new
+		// TwitterTemplate(field1ConsumerKey, field1ConsumerSecret,
+		// field1AccessToken,
+		// field1AccessTokenSecret));
+		// twitterTemplates.put("Field 3", new
+		// TwitterTemplate(field3ConsumerKey, field3ConsumerSecret,
+		// field3AccessToken,
+		// field3AccessTokenSecret));
+		// twitterTemplates.put("Field 4", new
+		// TwitterTemplate(field4ConsumerKey, field4ConsumerSecret,
+		// field4AccessToken,
+		// field4AccessTokenSecret));
+		// twitterTemplates.put("Field 5", new
+		// TwitterTemplate(field5ConsumerKey, field5ConsumerSecret,
+		// field5AccessToken,
+		// field5AccessTokenSecret));
+		// twitterTemplates.put("Field 6", new
+		// TwitterTemplate(field6ConsumerKey, field6ConsumerSecret,
+		// field6AccessToken,
+		// field6AccessTokenSecret));
+		// twitterTemplates.put("Field 7", new
+		// TwitterTemplate(field7ConsumerKey, field7ConsumerSecret,
+		// field7AccessToken,
+		// field7AccessTokenSecret));
+		// twitterTemplates.put("Field 8", new
+		// TwitterTemplate(field8ConsumerKey, field8ConsumerSecret,
+		// field8AccessToken,
+		// field8AccessTokenSecret));
+		// twitterTemplates.put("Field 9", new
+		// TwitterTemplate(field9ConsumerKey, field9ConsumerSecret,
+		// field9AccessToken,
+		// field9AccessTokenSecret));
+		// twitterTemplates.put("Field 10", new
+		// TwitterTemplate(field10ConsumerKey, field10ConsumerSecret,
+		// field10AccessToken, field10AccessTokenSecret));
+		// twitterTemplates.put("Field 11", new
+		// TwitterTemplate(field11ConsumerKey, field11ConsumerSecret,
+		// field11AccessToken, field11AccessTokenSecret));
+		// twitterTemplates.put("Field 12", new
+		// TwitterTemplate(field12ConsumerKey, field12ConsumerSecret,
+		// field12AccessToken, field12AccessTokenSecret));
+		// twitterTemplates.put("Field 13", new
+		// TwitterTemplate(field13ConsumerKey, field13ConsumerSecret,
+		// field13AccessToken, field13AccessTokenSecret));
+		// twitterTemplates.put("Field 14", new
+		// TwitterTemplate(field14ConsumerKey, field14ConsumerSecret,
+		// field14AccessToken, field14AccessTokenSecret));
+		// twitterTemplates.put("Field 15", new
+		// TwitterTemplate(field15ConsumerKey, field15ConsumerSecret,
+		// field15AccessToken, field15AccessTokenSecret));
+		// twitterTemplates.put("Field 16", new
+		// TwitterTemplate(field16ConsumerKey, field16ConsumerSecret,
+		// field16AccessToken, field16AccessTokenSecret));
+		// twitterTemplates.put("Field 17", new
+		// TwitterTemplate(field17ConsumerKey, field17ConsumerSecret,
+		// field17AccessToken, field17AccessTokenSecret));
+		// twitterTemplates.put("Field 18", new
+		// TwitterTemplate(field18ConsumerKey, field18ConsumerSecret,
+		// field18AccessToken, field18AccessTokenSecret));
+		// twitterTemplates.put("Field 19", new
+		// TwitterTemplate(field19ConsumerKey, field19ConsumerSecret,
+		// field19AccessToken, field19AccessTokenSecret));
+		// twitterTemplates.put("MNP Park", new
+		// TwitterTemplate(fieldMNPParkConsumerKey, fieldMNPParkConsumerSecret,
+		// fieldMNPParkAccessToken, fieldMNPParkAccessTokenSecret));
 		return twitterTemplates;
 	}
 }

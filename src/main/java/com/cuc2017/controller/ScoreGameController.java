@@ -50,6 +50,17 @@ public class ScoreGameController {
 		}
 	}
 
+	@RequestMapping(value = "/doNotUseGame", method = RequestMethod.POST, params = { "game" })
+	public ResponseEntity<?> doNotUseGame(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
+		try {
+			getGameService().doNotUseGame(gameId);
+			return new ResponseEntity<String>("", HttpStatus.OK);
+		} catch (Exception e) {
+			log.error("Problem start game for game: " + gameId, e);
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
+	}
+
 	@RequestMapping(value = "/endGame", method = RequestMethod.POST, params = { "game" })
 	public ResponseEntity<?> endGame(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
 		try {
@@ -130,7 +141,7 @@ public class ScoreGameController {
 	}
 
 	@RequestMapping(value = "/timeOut", method = RequestMethod.POST, params = { "game", "team" })
-	public ResponseEntity<?> timeOUt(@RequestParam("game") Long gameId, @RequestParam("team") Long teamId,
+	public ResponseEntity<?> timeOut(@RequestParam("game") Long gameId, @RequestParam("team") Long teamId,
 			HttpServletRequest request) {
 		try {
 			Game game = getGameService().timeOut(gameId, teamId);
