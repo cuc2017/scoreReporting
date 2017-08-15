@@ -5,13 +5,20 @@
 <body>
 	<div class="container-fluid">
 		<div th:replace="fragments/head :: navbar">(navbar)</div>
-		<div class="small-box col-sm-6 col-sm-offset-3">
-			<a
-				href="http://cuc.canadianultimate.com/c/cuc-ottawa/junior-divisions/schedule-and-results/"
-				target="_blank">Schedule and Official Results on the Ultimate Canada web site</a>
+		<div class="row">
+			<div class="col-xs-8">
+				<a
+					href="http://cuc.canadianultimate.com/c/cuc-ottawa/junior-divisions/schedule-and-results/"
+					target="_blank">Schedule and Official Results on the Ultimate
+					Canada web site</a>
+			</div>
+			<div class="co-xs-4">
+				<div id="clockbox"></div>
+			</div>
 		</div>
 		<div id="scores"></div>
 	</div>
 	<script src="/js/currentScores.js"></script>
+	<script src="/js/clock.js"></script>
 </body>
 </html>

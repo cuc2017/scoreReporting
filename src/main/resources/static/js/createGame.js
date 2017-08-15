@@ -3,6 +3,8 @@ var offenceSet = 'Blow whistle twice: offense should be set';
 var playUnderWay = 'Blow whistle three times: disc should be pulled';
 var countUpTimer;
 var countUpTimerIndex;
+var gameTimer;
+var gameTimerIndex;
 var homeTeamId;
 var homeTeamPlayers;
 var awayTeamId;
@@ -120,6 +122,7 @@ $('#baseRow').on('click', '#startGame', function() {
 	$('#readyForGame').addClass('hidden');
 	$('#gameOn').removeClass('hidden');
 	$('#footer').removeClass('hidden');
+	startGameTimer();
 	window.addEventListener('beforeunload', onPageLeave);
 	window.addEventListener('pageHide', onPageLeave);
 
@@ -221,6 +224,14 @@ function startHalftimeTimer() {
 	setUpTimer(halftimeTimerTick, "half time");
 }
 
+function startGameTimer() {
+	gameTimer = new Timer();
+	gameTimerIndex = 0;
+	updateTimer(timerTimeInMinsAndSecs(gameTimerIndex));
+	gameTimer.Tick = gameTimerTick;
+	gameTimer.Start()
+}
+
 function startPointScoredTimer() {
 	setUpTimer(pointScoredTimerTick, "point scored");
 }
@@ -279,7 +290,7 @@ function pointScoredTimerTick() {
 
 function halftimeTimerTick() {
 	countUpTimerIndex = countUpTimerIndex + 1;
-	updateTimer(pad(countUpTimerIndex));
+	updateTimer(timerTimeInMinsAndSecs(countUpTimerIndex));
 
 	if (countUpTimerIndex == 260) {
 		showTimerMessage(warningForOffense);
@@ -290,20 +301,17 @@ function halftimeTimerTick() {
 	}
 }
 
-function pointScoredTimerTick() {
-	countUpTimerIndex = countUpTimerIndex + 1;
-	updateTimer(pad(countUpTimerIndex));
-
-	if (countUpTimerIndex == 50) {
-		showTimerMessage(warningForOffense);
-	} else if (countUpTimerIndex == 70) {
-		showTimerMessage(offenceSet);
-	} else if (countUpTimerIndex == 90) {
-		showTimerMessage(playUnderWay);
-	} else if (countUpTimerIndex == 120) {
-		stopCountUpTimer();
-	}
+function timerTimeInMinsAndSecs(time){
+	var mins = Math.floor(time/60);
+	var secs = time % 60;
+	return pad(mins) + " mins " + pad(secs) + " secs";
 }
+
+function gameTimerTick() {
+	gameTimerIndex = gameTimerIndex + 1;
+	$('#gameTime').html(timerTimeInMinsAndSecs(gameTimerIndex));
+}
+
 function pad(val) {
 	var valString = val + "";
 	if (valString.length < 2) {

@@ -10,6 +10,10 @@ body {
 	padding-bottom: -40px; 
 }
 
+.gameTime{
+	margin-top: -40px;
+}
+
 .tv-padding{
 	padding-right:3;
 	padding-left:3;
