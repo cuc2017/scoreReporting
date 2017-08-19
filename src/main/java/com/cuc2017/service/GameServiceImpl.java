@@ -35,6 +35,8 @@ import com.cuc2017.repository.TeamRepository;
 @Service
 public class GameServiceImpl implements GameService {
 
+	private static final String JUNIOR_TEAM_CARDS = "http://80.172.224.48/cuc2017jr/?view=teamcard&team=";
+	private static final String ADULT_TEAM_CARDS = "http://80.172.224.48/cuc2017/?view=teamcard&team=";
 	private static final Logger log = LoggerFactory.getLogger(GameServiceImpl.class);
 	public static final SimpleDateFormat FORMATTER = new SimpleDateFormat("hh:mm");
 
@@ -95,7 +97,7 @@ public class GameServiceImpl implements GameService {
 
 	private void loadPlayersFromUltimatCanadaSite(Team team, Game game) {
 		try {
-			URL url = new URL("http://80.172.224.48/cuc2017jr/?view=teamcard&team=" + team.getTeamNumber());
+			URL url = new URL(ADULT_TEAM_CARDS + team.getTeamNumber());
 			Document page = Jsoup.parse(url, 5000);
 			Element playerTable = page.select("table[style=width:80%]").first();
 			Elements players = playerTable.select("tr");

@@ -38,14 +38,18 @@ public class DataLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) {
+
+		getFieldRepository().save(new Field("Field 25", ""));
+		getFieldRepository().save(new Field("Field 26", ""));
+		getFieldRepository().save(new Field("Field 27", ""));
+		getFieldRepository().save(new Field("Field 28", ""));
+		getFieldRepository().save(new Field("Field 29", ""));
+		getFieldRepository().save(new Field("Field 30", ""));
+		getFieldRepository().save(new Field("Field 31", ""));
+
 		if (getDivisionRepository().count() > 0) {
 			return;
 		}
-
-		Division openDivision = new Division("Junior Open", "#CUC2017JuniorOpen");
-		getDivisionRepository().save(openDivision);
-		Division womenDivision = new Division("Junior Women", "#CUC2017JuniorWomen");
-		getDivisionRepository().save(womenDivision);
 
 		getFieldRepository().save(new Field("Field 1", "@CUC2017Field1"));
 		getFieldRepository().save(new Field("Field 3", "@CUC2017Field3"));
@@ -67,6 +71,150 @@ public class DataLoader implements ApplicationRunner {
 		getFieldRepository().save(new Field("Field 18", "@CUC2017Field18"));
 		getFieldRepository().save(new Field("Field 19", "@CUC2017Field19"));
 		getFieldRepository().save(new Field("MNP Park", "@CUC2017MNPPark"));
+		getFieldRepository().save(new Field("Field 21", "@CUC2017Fiel121"));
+		getFieldRepository().save(new Field("Field 22", "@CUC2017Field22"));
+		getFieldRepository().save(new Field("Field 23", "@CUC2017Field23"));
+		getFieldRepository().save(new Field("Field 24", "@CUC2017Field24"));
+
+		loadAdultDivisions();
+		// loadJuniorDivisions();
+		// Iterable<Team> teams = getTeamRepository().findAll();
+		// for (Team team : teams) {
+		// addAdditionalPlayesrForEachTeam(team);
+		// }
+		//
+		// loadPlayersFromUltimatCanadaSite(teams);
+		// loadPlayers(womenDivision, openDivision);
+	}
+
+	private void loadAdultDivisions() {
+		Division openDivision = new Division("Open", "#CUC2017Open");
+		getDivisionRepository().save(openDivision);
+		Division womenDivision = new Division("Women", "#CUC2017Women");
+		getDivisionRepository().save(womenDivision);
+		Division masterOpenDivision = new Division("Masters Open", "#CUC2017MastersOpen");
+		getDivisionRepository().save(masterOpenDivision);
+		Division masterWomenDivision = new Division("Masters Women", "#CUC2017MastersWomen");
+		getDivisionRepository().save(masterWomenDivision);
+
+		Team team1 = new Team(openDivision, "Alberta Flatball Club", 23);
+		getTeamRepository().save(team1);
+		Team team2 = new Team(openDivision, "Blackfish", 24);
+		getTeamRepository().save(team2);
+		Team team3 = new Team(openDivision, "Club M - Manic", 25);
+		getTeamRepository().save(team3);
+		Team team4 = new Team(openDivision, "Critical Mass", 26);
+		getTeamRepository().save(team4);
+		Team team5 = new Team(openDivision, "DNA", 27);
+		getTeamRepository().save(team5);
+		Team team6 = new Team(openDivision, "General Strike", 28);
+		getTeamRepository().save(team6);
+		Team team7 = new Team(openDivision, "GOAT", 29);
+		getTeamRepository().save(team7);
+		Team team8 = new Team(openDivision, "Grand Trunk", 30);
+		getTeamRepository().save(team8);
+		Team team24 = new Team(openDivision, "Jerk Factory", 31);
+		getTeamRepository().save(team24);
+		Team team9 = new Team(openDivision, "Mockingbird", 32);
+		getTeamRepository().save(team9);
+		Team team10 = new Team(openDivision, "Phoenix", 33);
+		getTeamRepository().save(team10);
+		Team team11 = new Team(openDivision, "Refinery", 34);
+		getTeamRepository().save(team11);
+		Team team12 = new Team(openDivision, "Regiment", 35);
+		getTeamRepository().save(team12);
+		Team team13 = new Team(openDivision, "ROY", 36);
+		getTeamRepository().save(team13);
+		Team team14 = new Team(openDivision, "Sherbrooke Gentlemen", 37);
+		getTeamRepository().save(team14);
+		Team team15 = new Team(openDivision, "Whiskeyjacks", 38);
+		getTeamRepository().save(team15);
+
+		Team wteam11 = new Team(womenDivision, "6ixers", 39);
+		getTeamRepository().save(wteam11);
+		Team wteam12 = new Team(womenDivision, "Flurry", 40);
+		getTeamRepository().save(wteam12);
+		Team wteam13 = new Team(womenDivision, "Fusion", 41);
+		getTeamRepository().save(wteam13);
+		Team wteam14 = new Team(womenDivision, "Iris", 42);
+		getTeamRepository().save(wteam14);
+		Team wteam15 = new Team(womenDivision, "Korra", 43);
+		getTeamRepository().save(wteam15);
+		Team wteam16 = new Team(womenDivision, "PPF", 44);
+		getTeamRepository().save(wteam16);
+		Team wteam17 = new Team(womenDivision, "Qub", 45);
+		getTeamRepository().save(wteam17);
+		Team wteam18 = new Team(womenDivision, "Salty", 46);
+		getTeamRepository().save(wteam18);
+		Team wteam19 = new Team(womenDivision, "SHHippos", 47);
+		getTeamRepository().save(wteam19);
+		Team wteam22 = new Team(womenDivision, "Stella", 48);
+		getTeamRepository().save(wteam22);
+		Team wteam26 = new Team(womenDivision, "Storm", 49);
+		getTeamRepository().save(wteam26);
+		Team wteam20 = new Team(womenDivision, "Tempest", 50);
+		getTeamRepository().save(wteam20);
+		Team wteam21 = new Team(womenDivision, "Traffic", 51);
+		getTeamRepository().save(wteam21);
+		Team wteam23 = new Team(womenDivision, "Vénus", 52);
+		getTeamRepository().save(wteam23);
+		Team wteam24 = new Team(womenDivision, "Vesta", 53);
+		getTeamRepository().save(wteam24);
+		Team wteam25 = new Team(womenDivision, "Wendigo", 54);
+		getTeamRepository().save(wteam25);
+
+		Team masterteam1 = new Team(masterOpenDivision, "Best Before", 1);
+		getTeamRepository().save(masterteam1);
+		Team masterteam2 = new Team(masterOpenDivision, "Carbon", 2);
+		getTeamRepository().save(masterteam2);
+		Team masterteam3 = new Team(masterOpenDivision, "Iron Crow", 3);
+		getTeamRepository().save(masterteam3);
+		Team masterteam4 = new Team(masterOpenDivision, "Mangina", 4);
+		getTeamRepository().save(masterteam4);
+		Team masterteam5 = new Team(masterOpenDivision, "NSOM", 5);
+		getTeamRepository().save(masterteam5);
+		Team masterteam6 = new Team(masterOpenDivision, "NSOM 2", 6);
+		getTeamRepository().save(masterteam6);
+		Team masterteam7 = new Team(masterOpenDivision, "Quantum", 7);
+		getTeamRepository().save(masterteam7);
+		Team masterteam8 = new Team(masterOpenDivision, "Silverbacks", 8);
+		getTeamRepository().save(masterteam8);
+		Team masterteam24 = new Team(masterOpenDivision, "Torque", 9);
+		getTeamRepository().save(masterteam24);
+		Team masterteam9 = new Team(masterOpenDivision, "Viper", 10);
+		getTeamRepository().save(masterteam9);
+
+		Team masterwteam11 = new Team(masterWomenDivision, "Annie Oakley", 11);
+		getTeamRepository().save(masterwteam11);
+		Team masterwteam12 = new Team(masterWomenDivision, "Aurora", 12);
+		getTeamRepository().save(masterwteam12);
+		Team masterwteam13 = new Team(masterWomenDivision, "DYNA", 13);
+		getTeamRepository().save(masterwteam13);
+		Team masterwteam14 = new Team(masterWomenDivision, "Eclipse", 14);
+		getTeamRepository().save(masterwteam14);
+		Team masterwteam15 = new Team(masterWomenDivision, "lowercase", 15);
+		getTeamRepository().save(masterwteam15);
+		Team masterwteam16 = new Team(masterWomenDivision, "MINT", 16);
+		getTeamRepository().save(masterwteam16);
+		Team masterwteam17 = new Team(masterWomenDivision, "Nebula", 17);
+		getTeamRepository().save(masterwteam17);
+		Team masterwteam18 = new Team(masterWomenDivision, "Quasar", 18);
+		getTeamRepository().save(masterwteam18);
+		Team masterwteam19 = new Team(masterWomenDivision, "The Collective", 19);
+		getTeamRepository().save(masterwteam19);
+		Team masterwteam22 = new Team(masterWomenDivision, "THRIFT SHOP", 20);
+		getTeamRepository().save(masterwteam22);
+		Team masterwteam26 = new Team(masterWomenDivision, "Vintage", 21);
+		getTeamRepository().save(masterwteam26);
+		Team masterwteam20 = new Team(masterWomenDivision, "X-Squad", 22);
+		getTeamRepository().save(masterwteam20);
+	}
+
+	private void loadJuniorDivisions() {
+		Division openDivision = new Division("Junior Open", "#CUC2017JuniorOpen");
+		getDivisionRepository().save(openDivision);
+		Division womenDivision = new Division("Junior Women", "#CUC2017JuniorWomen");
+		getDivisionRepository().save(womenDivision);
 
 		Team team1 = new Team(openDivision, "Alpha BC", 1);
 		getTeamRepository().save(team1);
@@ -150,13 +298,6 @@ public class DataLoader implements ApplicationRunner {
 		Team wteam25 = new Team(womenDivision, "Wicked West", 40);
 		getTeamRepository().save(wteam25);
 
-		// Iterable<Team> teams = getTeamRepository().findAll();
-		// for (Team team : teams) {
-		// addAdditionalPlayesrForEachTeam(team);
-		// }
-		//
-		// loadPlayersFromUltimatCanadaSite(teams);
-		// loadPlayers(womenDivision, openDivision);
 	}
 
 	private void loadPlayers(Division juniorWomen, Division juniorOpen) {

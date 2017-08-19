@@ -1,6 +1,6 @@
 var timer;
-var refreshTimeSucces = 3000;
-var refreshTimeFailure = 60000;
+var refreshTimeSucces = 5000;
+var refreshTimeFailure = 1200000;
 
 function updateCurrentScores(){
   $.ajax({
