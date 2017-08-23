@@ -39,14 +39,6 @@ public class DataLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) {
 
-		getFieldRepository().save(new Field("Field 25", ""));
-		getFieldRepository().save(new Field("Field 26", ""));
-		getFieldRepository().save(new Field("Field 27", ""));
-		getFieldRepository().save(new Field("Field 28", ""));
-		getFieldRepository().save(new Field("Field 29", ""));
-		getFieldRepository().save(new Field("Field 30", ""));
-		getFieldRepository().save(new Field("Field 31", ""));
-
 		if (getDivisionRepository().count() > 0) {
 			return;
 		}
@@ -75,6 +67,13 @@ public class DataLoader implements ApplicationRunner {
 		getFieldRepository().save(new Field("Field 22", "@CUC2017Field22"));
 		getFieldRepository().save(new Field("Field 23", "@CUC2017Field23"));
 		getFieldRepository().save(new Field("Field 24", "@CUC2017Field24"));
+		getFieldRepository().save(new Field("Field 25", ""));
+		getFieldRepository().save(new Field("Field 26", ""));
+		getFieldRepository().save(new Field("Field 27", ""));
+		getFieldRepository().save(new Field("Field 28", ""));
+		getFieldRepository().save(new Field("Field 29", ""));
+		getFieldRepository().save(new Field("Field 30", ""));
+		getFieldRepository().save(new Field("Field 31", ""));
 
 		loadAdultDivisions();
 		// loadJuniorDivisions();
