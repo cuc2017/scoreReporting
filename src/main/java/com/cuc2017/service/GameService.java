@@ -11,43 +11,44 @@ import com.cuc2017.model.Player;
 import com.cuc2017.model.Team;
 
 public interface GameService {
-	List<Division> getDivisions();
 
-	List<Team> getTeams(Long divisionId);
+  List<Division> getDivisions();
 
-	List<Field> getFields();
+  List<Team> getTeams(Long divisionId);
 
-	Game createGame(Long divisionId, Long homeTeamId, Long awayTeamId, Long fieldIds);
+  List<Field> getFields();
 
-	Game getGame(Long gameId);
+  Game createGame(Long divisionId, Long homeTeamId, Long awayTeamId, Long fieldIds);
 
-	Game pointScored(Long gameId, Long teamId) throws Exception;
+  Game getGame(Long gameId);
 
-	Game goal(Long eventId, Long scoredById);
+  Game pointScored(Long gameId, Long teamId) throws Exception;
 
-	Game assist(Long eventId, Long assistedById);
+  Game goal(Long eventId, Long scoredById);
 
-	Game startGame(Long gameId);
+  Game assist(Long eventId, Long assistedById);
 
-	Game endGame(Long gameId);
+  Game startGame(Long gameId);
 
-	Game halftime(Long gameId);
+  Game endGame(Long gameId);
 
-	List<CurrentGame> getCurrentGames();
+  Game halftime(Long gameId);
 
-	Game undoEvent(Long eventId) throws Exception;
+  List<CurrentGame> getCurrentGames();
 
-	Game timeOut(Long gameId, Long teamId) throws Exception;
+  Game undoEvent(Long eventId) throws Exception;
 
-	String eventAsHtmlRow(Event event);
+  Game timeOut(Long gameId, Long teamId) throws Exception;
 
-	String updateAllEvents(Game game);
+  String eventAsHtmlRow(Event event);
 
-	List<Player> getPlayers(Game game, Team team);
+  String updateAllEvents(Game game);
 
-	boolean fieldInUse(Long fieldId);
+  List<Player> getPlayers(Game game, Team team);
 
-	List<Game> getAllGames();
+  boolean fieldInUse(Long fieldId);
 
-	void doNotUseGame(Long gameId);
+  List<Game> getAllGames();
+
+  void doNotUseGame(Long gameId);
 }

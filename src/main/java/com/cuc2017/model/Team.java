@@ -4,50 +4,55 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Team extends AbstractEntity {
+public class Team extends AbstractEntity implements Comparable<Team> {
 
-	@ManyToOne
-	private Division division;
-	private String name;
-	private int teamNumber;
+  @ManyToOne
+  private Division division;
+  private String name;
+  private int teamNumber;
 
-	public Team() {
-		// default constructor
-	}
+  public Team() {
+    // default constructor
+  }
 
-	@Override
-	public String toString() {
-		return getName();
-	}
+  @Override
+  public String toString() {
+    return getName();
+  }
 
-	public Team(Division division, String name, int ultimateCanadaTeamNumber) {
-		this.division = division;
-		this.name = name;
-		this.teamNumber = ultimateCanadaTeamNumber;
-	}
+  public Team(Division division, String name, int ultimateCanadaTeamNumber) {
+    this.division = division;
+    this.name = name;
+    this.teamNumber = ultimateCanadaTeamNumber;
+  }
 
-	public Division getDivision() {
-		return division;
-	}
+  @Override
+  public int compareTo(Team other) {
+    return this.getName().compareTo(other.getName());
+  }
 
-	public void setDivision(Division division) {
-		this.division = division;
-	}
+  public Division getDivision() {
+    return division;
+  }
 
-	public String getName() {
-		return name;
-	}
+  public void setDivision(Division division) {
+    this.division = division;
+  }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+  public String getName() {
+    return name;
+  }
 
-	public int getTeamNumber() {
-		return teamNumber;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	public void setTeamNumber(int teamNumber) {
-		this.teamNumber = teamNumber;
-	}
+  public int getTeamNumber() {
+    return teamNumber;
+  }
+
+  public void setTeamNumber(int teamNumber) {
+    this.teamNumber = teamNumber;
+  }
 
 }

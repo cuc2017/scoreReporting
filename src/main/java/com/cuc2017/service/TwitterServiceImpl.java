@@ -14,7 +14,7 @@ import com.cuc2017.model.Field;
 @Service
 public class TwitterServiceImpl implements TwitterService {
 
-  private static final String CUC2017_SCORES_HASHTAG = " #CUC2017Scores";
+  private static final String CUC2017_SCORES_HASHTAG = " #CUC2018Scores";
 
   private static final Logger log = LoggerFactory.getLogger(TwitterServiceImpl.class);
 
@@ -24,13 +24,14 @@ public class TwitterServiceImpl implements TwitterService {
   @Async
   public void tweet(String tweetText) {
     try {
-      // TwitterTemplate twitterTemplate = getTwitterTemplates().get("General");
-      // if (twitterTemplate != null) {
-      // twitterTemplate.timelineOperations().updateStatus(tweetText +
-      // CUC2017_SCORES_HASHTAG);
-      // } else {
-      log.info("Tweet to scores: " + tweetText);
-      // }
+      TwitterTemplate twitterTemplate = getTwitterTemplates().get("General");
+      if (twitterTemplate != null) {
+        twitterTemplate.timelineOperations().updateStatus(tweetText);
+        // twitterTemplate.timelineOperations().updateStatus(tweetText +
+        // CUC2017_SCORES_HASHTAG);
+      } else {
+        log.info("Tweet to scores: " + tweetText);
+      }
     } catch (RuntimeException e) {
       log.error("Unable to tweet " + tweetText, e);
     }
