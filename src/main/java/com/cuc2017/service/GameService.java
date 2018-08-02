@@ -32,6 +32,8 @@ public interface GameService {
 
   Game endGame(Long gameId);
 
+  Game finishGame(Long gameId);
+
   Game halftime(Long gameId);
 
   List<CurrentGame> getCurrentGames();

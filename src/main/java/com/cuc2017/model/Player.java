@@ -6,107 +6,116 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Player extends AbstractEntity {
-	public static final int UNKNOWN_PLAYER = -1;
-	public static final int CALLAHAN = 100;
-	private String firstName;
-	private String lastName;
-	private int number;
-	private String ultimateCanadaPlayerId;
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Game game;
-	@ManyToOne
-	private Team team;
+  public static final int UNKNOWN_PLAYER = -1;
+  public static final int CALLAHAN = 100;
+  private String firstName;
+  private String lastName;
+  private int number;
+  private String ultimateCanadaPlayerId;
+  @ManyToOne(cascade = CascadeType.ALL)
+  private Game game;
+  @ManyToOne
+  private Team team;
 
-	public Player() {
-		// default Constructor
-	}
+  public Player() {
+    // default Constructor
+  }
 
-	public Player(int number, String firstName, String lastName, Team team) {
-		this.number = number;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.team = team;
-	}
+  public Player(int number, String firstName, String lastName, Team team) {
+    this.number = number;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.team = team;
+  }
 
-	public Player(int number, String firstName, String lastName, Team team, Game game) {
-		this(number, firstName, lastName, team);
-		this.game = game;
-	}
+  public Player(int number, String firstName, String lastName, Team team, Game game) {
+    this(number, firstName, lastName, team);
+    this.game = game;
+  }
 
-	public Player(int number, String firstName, String lastName, Team team, String ultimateCanadaPlayerId) {
-		this(number, firstName, lastName, team);
-		this.setUltimateCanadaPlayerId(ultimateCanadaPlayerId);
-	}
+  public Player(int number, String firstName, String lastName, Team team, String ultimateCanadaPlayerId) {
+    this(number, firstName, lastName, team);
+    this.setUltimateCanadaPlayerId(ultimateCanadaPlayerId);
+  }
 
-	public Player(int number, String firstName, String lastName, Team team, String ultimateCanadaPlayerId, Game game) {
-		this(number, firstName, lastName, team, ultimateCanadaPlayerId);
-		this.game = game;
-	}
+  public Player(int number, String firstName, String lastName, Team team, String ultimateCanadaPlayerId, Game game) {
+    this(number, firstName, lastName, team, ultimateCanadaPlayerId);
+    this.game = game;
+  }
 
-	public String getFirstName() {
-		return firstName;
-	}
+  public String getFirstName() {
+    return firstName;
+  }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-	@Override
-	public String toString() {
-		StringBuffer buffer = new StringBuffer();
-		if (isCallahanPlayer()) {
-			buffer.append("XX ");
-		} else if (getNumber() > UNKNOWN_PLAYER) {
-			buffer.append(String.format("%02d ", getNumber()));
-		}
-		buffer.append(getFirstName());
-		buffer.append(" ");
-		buffer.append(getLastName());
-		buffer.append(" ");
-		return buffer.toString();
-	}
+  @Override
+  public String toString() {
+    StringBuffer buffer = new StringBuffer();
+    if (isCallahanPlayer()) {
+      buffer.append("XX ");
+    } else if (getNumber() > UNKNOWN_PLAYER) {
+      buffer.append(String.format("%02d ", getNumber()));
+    }
+    buffer.append(getFirstName());
+    buffer.append(" ");
+    buffer.append(getLastName());
+    buffer.append(" ");
+    return buffer.toString();
+  }
 
-	public boolean isCallahanPlayer() {
-		return getNumber() == CALLAHAN;
-	}
+  public String getPlayerNumberAsString() {
+    if (isCallahanPlayer()) {
+      return "XX";
+    } else if (getNumber() > UNKNOWN_PLAYER) {
+      return String.valueOf(getNumber());
+    }
+    return "-1";
+  }
 
-	public String getLastName() {
-		return lastName;
-	}
+  public boolean isCallahanPlayer() {
+    return getNumber() == CALLAHAN;
+  }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+  public String getLastName() {
+    return lastName;
+  }
 
-	public int getNumber() {
-		return number;
-	}
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-	public void setNumber(int number) {
-		this.number = number;
-	}
+  public int getNumber() {
+    return number;
+  }
 
-	public Team getTeam() {
-		return team;
-	}
+  public void setNumber(int number) {
+    this.number = number;
+  }
 
-	public void setTeam(Team team) {
-		this.team = team;
-	}
+  public Team getTeam() {
+    return team;
+  }
 
-	public Game getGame() {
-		return game;
-	}
+  public void setTeam(Team team) {
+    this.team = team;
+  }
 
-	public void setGame(Game game) {
-		this.game = game;
-	}
+  public Game getGame() {
+    return game;
+  }
 
-	public String getUltimateCanadaPlayerId() {
-		return ultimateCanadaPlayerId;
-	}
+  public void setGame(Game game) {
+    this.game = game;
+  }
 
-	public void setUltimateCanadaPlayerId(String ultimateCanadaPlayerId) {
-		this.ultimateCanadaPlayerId = ultimateCanadaPlayerId;
-	}
+  public String getUltimateCanadaPlayerId() {
+    return ultimateCanadaPlayerId;
+  }
+
+  public void setUltimateCanadaPlayerId(String ultimateCanadaPlayerId) {
+    this.ultimateCanadaPlayerId = ultimateCanadaPlayerId;
+  }
 }

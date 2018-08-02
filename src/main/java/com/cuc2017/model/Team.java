@@ -28,7 +28,7 @@ public class Team extends AbstractEntity implements Comparable<Team> {
 
   @Override
   public int compareTo(Team other) {
-    return this.getName().compareTo(other.getName());
+    return this.getName().toLowerCase().compareTo(other.getName().toLowerCase());
   }
 
   public Division getDivision() {

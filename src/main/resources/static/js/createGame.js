@@ -337,8 +337,17 @@ function endGame(gameId) {
 }
 
 function finishGame(gameId) {
-	window.removeEventListener('beforeunload', onPageLeave);
-	window.location.replace("/scoresheet?game=" + gameId);
+  window.removeEventListener('beforeunload', onPageLeave);
+  $.ajax({
+    type : "post",
+    url : '/finishGame/?game=' + gameId,
+    success : function(endGame) {
+      window.location.replace("/scoresheet?game=" + gameId);
+    },
+    error : function(error) {
+      console.log(error.responseText);
+    }
+  });
 }
 
 $('#baseRow').on('click', '#homeTeamScored', function() {

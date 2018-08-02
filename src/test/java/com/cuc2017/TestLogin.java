@@ -18,7 +18,6 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.HttpClientUtils;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -250,14 +249,15 @@ public class TestLogin {
 
   private void login(HttpClient client) throws UnsupportedEncodingException, IOException, ClientProtocolException {
 
-    HttpGet get = new HttpGet("http://80.172.224.48/cuc2017-test/scorekeeper/?view=login");
-    HttpResponse response1 = client.execute(get);
-    final BufferedReader rd1 = new BufferedReader(new InputStreamReader(response1.getEntity().getContent()));
-    String line2 = "";
-    while ((line2 = rd1.readLine()) != null) {
-      System.out.println(line2);
-    }
-    HttpPost post = new HttpPost("http://80.172.224.48/cuc2017-test/scorekeeper/?view=login");
+    // HttpGet get = new HttpGet(GameServiceImpl.LOGIN);
+    // HttpResponse response1 = client.execute(get);
+    // final BufferedReader rd1 = new BufferedReader(new
+    // InputStreamReader(response1.getEntity().getContent()));
+    // String line2 = "";
+    // while ((line2 = rd1.readLine()) != null) {
+    // System.out.println(line2);
+    // }
+    HttpPost post = new HttpPost(GameServiceImpl.LOGIN);
     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
     nameValuePairs.add(new BasicNameValuePair("login", "Login"));
     nameValuePairs.add(new BasicNameValuePair("mypassword", "cucuc"));

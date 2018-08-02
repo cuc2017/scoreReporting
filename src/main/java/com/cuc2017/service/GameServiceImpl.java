@@ -1,12 +1,25 @@
 package com.cuc2017.service;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.HttpClientUtils;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.LaxRedirectStrategy;
+import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -22,6 +35,7 @@ import com.cuc2017.model.Event;
 import com.cuc2017.model.EventType;
 import com.cuc2017.model.Field;
 import com.cuc2017.model.Game;
+import com.cuc2017.model.GameOrderDetails;
 import com.cuc2017.model.Player;
 import com.cuc2017.model.Team;
 import com.cuc2017.repository.CurrentGameRepository;
@@ -42,6 +56,7 @@ public class GameServiceImpl implements GameService {
   private static final String ADULT_SITE = SEASON;
   private static final String ACTIVE_SITE = TEST_SITE;
 
+  public static final String LOGIN = HOSTNAME + ACTIVE_SITE + "/scorekeeper/?view=login";
   private static final String TEAM_CARDS = HOSTNAME + ACTIVE_SITE + "/?view=teamcard&team=";
   public static final String DIVISION_CARDS = HOSTNAME + ACTIVE_SITE + "?view=seriesstatus&series=";
   public static final String GAMES_CARD = HOSTNAME + ACTIVE_SITE + "/?view=admin/seasongames&season=" + SEASON
@@ -282,6 +297,146 @@ public class GameServiceImpl implements GameService {
     Event event = new Event(EventType.GAVE_OVER, game);
     addEvent(game, event);
     return game;
+  }
+
+  @Override
+  public Game finishGame(Long gameId) {
+    Game game = getGame(gameId);
+    HttpClient client = null;
+    try {
+      GameOrderDetails gameOrderDetails = findGameIdFromUltimatCanadaSite(game.getHomeTeam(), game.getAwayTeam());
+      if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
+        log.warn("Could not get game details");
+        return game;
+      }
+      log.info("Game: " + game + " game order: " + gameOrderDetails);
+      client = HttpClientBuilder.create().setRedirectStrategy(new LaxRedirectStrategy()).build();
+      login(client);
+      updatePlayers(client, game, gameOrderDetails);
+      saveScore(client, game, gameOrderDetails);
+    } catch (Exception e) {
+      log.error("Problem saving game to WFDF system: " + game, e);
+    } finally {
+      HttpClientUtils.closeQuietly(client);
+    }
+    return game;
+  }
+
+  private GameOrderDetails findGameIdFromUltimatCanadaSite(Team team1, Team team2) throws Exception {
+    try {
+      URL url = new URL(GameServiceImpl.GAMES_CARD + team1.getDivision().getSeries());
+      Document page = Jsoup.parse(url, 5000);
+      Element gamesTable = page.select("table.admintable").first();
+      Elements games = gamesTable.select("tr");
+      for (Element gameRow : games) {
+        Elements tds = gameRow.select("td");
+        if (tds.size() <= 0) {
+          continue;
+        }
+        String teamName1 = tds.get(1).text();
+        String teamName2 = tds.get(5).text();
+        if (teamName1 != null && teamName2 != null) {
+          if (teamName1.equalsIgnoreCase(team1.getName()) && teamName2.equalsIgnoreCase(team2.getName())) {
+            if (tds.get(2).text().contains("?")) {
+              return findGameNumber(team1, team2, tds.get(6));
+            }
+          } else if (teamName1.equalsIgnoreCase(team2.getName()) && teamName2.equalsIgnoreCase(team1.getName())) {
+            if (tds.get(2).text().contains("?")) {
+              return findGameNumber(team2, team1, tds.get(6));
+            }
+          }
+        }
+      }
+    } catch (Exception e) {
+      log.error("Error finding game details for: " + team1 + " vs: " + team2, e);
+    }
+    return null;
+  }
+
+  private GameOrderDetails findGameNumber(Team team1, Team team2, Element gameTableRow) {
+    Element gameUrlElement = gameTableRow.select("a[href]").first();
+    String gameUrl = gameUrlElement.attr("href");
+    int gameNumberIndex = gameUrl.indexOf("game=");
+    String gameNumberString = gameUrl.substring(gameNumberIndex + 5);
+    return new GameOrderDetails(team1, team2, Integer.valueOf(gameNumberString));
+  }
+
+  private void login(HttpClient client) throws UnsupportedEncodingException, IOException, ClientProtocolException {
+    List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
+    nameValuePairs.add(new BasicNameValuePair("login", "Login"));
+    nameValuePairs.add(new BasicNameValuePair("mypassword", "cucuc"));
+    nameValuePairs.add(new BasicNameValuePair("myusername", "score"));
+    doPost(client, LOGIN, nameValuePairs);
+  }
+
+  private void updatePlayers(HttpClient client, Game game, GameOrderDetails gameOrderDetails) throws Exception {
+    String uri = GameServiceImpl.ADD_PLAYERS + gameOrderDetails.getGameNumber();
+    List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+    addPlayers("homecheck[]", game, gameOrderDetails.getHomeTeam(), nameValuePairs);
+    addPlayers("awaycheck[]", game, gameOrderDetails.getAwayTeam(), nameValuePairs);
+    nameValuePairs.add(new BasicNameValuePair("save", "Save"));
+    nameValuePairs.add(new BasicNameValuePair("backurl",
+        "http://80.172.224.48/cuc2017-test//?view=user/addscoresheet&game=" + gameOrderDetails.getGameNumber()));
+    doPost(client, uri, nameValuePairs);
+  }
+
+  private void addPlayers(String arrayName, Game game, Team team, List<NameValuePair> nameValuePairs) {
+    for (Player player : getPlayers(game, team)) {
+      nameValuePairs.add(new BasicNameValuePair(arrayName, player.getUltimateCanadaPlayerId()));
+      nameValuePairs
+          .add(new BasicNameValuePair("p" + player.getUltimateCanadaPlayerId(), String.valueOf(player.getNumber())));
+    }
+  }
+
+  private void saveScore(HttpClient client, Game game, GameOrderDetails gameOrderDetails) throws Exception {
+    String uri = GameServiceImpl.SCORESHEET + gameOrderDetails.getGameNumber();
+    List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(6);
+    nameValuePairs.add(new BasicNameValuePair("isongoing", "on"));
+    nameValuePairs.add(new BasicNameValuePair("save", "Save scores"));
+    int goalNumber = 1;
+    Date gameStartTime = game.getCreated();
+    for (Event event : game.getEvents()) {
+      if (event.isUseEvent() && event.getEventType() == EventType.POINT_SCORED) {
+        nameValuePairs.add(new BasicNameValuePair("pass" + goalNumber, event.getAssist().getPlayerNumberAsString()));
+        nameValuePairs.add(new BasicNameValuePair("goal" + goalNumber, event.getGoal().getPlayerNumberAsString()));
+        if (event.getTeam().equals(gameOrderDetails.getHomeTeam())) {
+          nameValuePairs.add(new BasicNameValuePair("team" + goalNumber, "H"));
+        } else {
+          nameValuePairs.add(new BasicNameValuePair("team" + goalNumber, "A"));
+        }
+        long duration = event.getCreated().getTime() - gameStartTime.getTime();
+        long seconds = TimeUnit.MILLISECONDS.toSeconds(duration) % 60;
+        long minutes = TimeUnit.MILLISECONDS.toMinutes(duration);
+        String secondString = String.format("%02d ", seconds);
+        nameValuePairs.add(new BasicNameValuePair("time" + goalNumber, minutes + ":" + secondString));
+        goalNumber++;
+      }
+    }
+
+    doPost(client, uri, nameValuePairs);
+  }
+
+  protected void doPost(HttpClient client, String uri, List<NameValuePair> nameValuePairs)
+      throws UnsupportedEncodingException, IOException, ClientProtocolException {
+
+    HttpPost post = new HttpPost(uri);
+    post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+    post.addHeader("Origin", HOSTNAME);
+    post.addHeader("Upgrade-Insecure-Requests", "1");
+    post.addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
+    post.addHeader("User-Agent",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36");
+    post.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    post.addHeader("Referer", uri);
+    post.addHeader("Accept-Encoding", "gzip, deflate");
+    post.addHeader("Accept-Language:", "en-US,en;q=0.9");
+    HttpResponse response = null;
+    try {
+      response = client.execute(post);
+      log.info("Response code for post: " + uri + " is: " + response.getStatusLine().getStatusCode());
+    } finally {
+      HttpClientUtils.closeQuietly(response);
+    }
   }
 
   @Override
