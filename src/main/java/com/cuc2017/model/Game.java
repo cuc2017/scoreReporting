@@ -194,7 +194,12 @@ public class Game extends AbstractEntity {
   }
 
   public String getGameTweetSummary() {
-    return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision().getHashtag() + " on " + getField();
+    return getHomeTeam() + " vs " + getAwayTeam() + " in " + getDivision().getHashtag() + " on " + getField()
+        + getFollowThisGameTweet();
+  }
+
+  private String getFollowThisGameTweet() {
+    return " follow this game (https://scores.cuc2018.com/scoresheet?game=" + getId() + ")";
   }
 
   public String getCurrentGameTweet() {
@@ -215,7 +220,7 @@ public class Game extends AbstractEntity {
   }
 
   public String getHalftimeTweet() {
-    return getHalftimeTweetField() + addFieldInfoToTweet();
+    return getHalftimeTweetField() + addFieldInfoToTweet() + getFollowThisGameTweet();
   }
 
   public String addFieldInfoToTweet() {

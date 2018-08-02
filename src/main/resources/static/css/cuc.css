@@ -48,3 +48,8 @@ body {
 .spacer5 {
   height: 5px;
 }
+
+a.currentGameScore{
+  color: inherit;
+  text-decoration: inherit;
+}

@@ -13,6 +13,10 @@ function updatePage(){
 	updateEventTable();
 }
 
+function setTimer(){
+  timer = setTimeout(updatePage, refreshTimeSucces);
+}
+
 function slowDownTimerOnError(){
 	clearTimeout(timer);
 	timer = setTimeout(updatePage, refreshTimeFailure);
@@ -56,6 +60,7 @@ function updateEventTable() {
 		success : function(events) {
 			$("#eventTable").find("tr:gt(0)").remove();			
 			$('#eventTable > tbody > tr').eq(0).after(events);
+			setTimer();
 		},
 		error : function(error) {
 			console.log("Problem updating event list" + error.responseText);
@@ -66,5 +71,4 @@ function updateEventTable() {
 
 $(document).ready(function() {
 	updatePage();
-	timer = setTimeout(updatePage, refreshTimeSucces);
 });

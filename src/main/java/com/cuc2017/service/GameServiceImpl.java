@@ -607,6 +607,7 @@ public class GameServiceImpl implements GameService {
 
   @Override
   public List<Player> getPlayers(Game game, Team team) {
+    log.info("Get players for game: " + game + " team: " + team);
     List<Player> players = getPlayerRepository().findByGameAndTeamOrderByNumberAsc(game, team);
     return players;
   }

@@ -27,7 +27,7 @@ public class TwitterServiceImpl implements TwitterService {
     try {
       TwitterTemplate twitterTemplate = getTwitterTemplates().get("General");
       if (twitterTemplate != null) {
-        twitterTemplate.timelineOperations().updateStatus(tweetText + " follow all live games at: " + WEB_SITE);
+        twitterTemplate.timelineOperations().updateStatus(tweetText + " follow current games (" + WEB_SITE + ")");
         // twitterTemplate.timelineOperations().updateStatus(tweetText +
         // CUC2017_SCORES_HASHTAG);
       } else {

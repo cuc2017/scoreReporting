@@ -3,178 +3,162 @@
 <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
 </head>
 <body>
-	<div th:fragment="addHomeTeams">
-		<label id="homeTeamLabel" for="homeTeam" class="sr-only">Home
-			Team</label> <select id="homeTeam" class="form-control"
-			onchange='homeTeamChanged(this)'>
-			<option th:disabled="disabled" th:selected="selected" value=" ">--
-				select home team --</option>
-			<option th:each="team: ${homeTeams}" th:value="${team.id}"
-				th:text="${team.name}">(home team)</option>
-		</select>
-	</div>
+  <div th:fragment="addHomeTeams">
+    <label id="homeTeamLabel" for="homeTeam" class="sr-only">Home Team</label> <select id="homeTeam"
+      class="form-control" onchange='homeTeamChanged(this)'>
+      <option th:disabled="disabled" th:selected="selected" value=" ">-- select home team --</option>
+      <option th:each="team: ${homeTeams}" th:value="${team.id}" th:text="${team.name}">(home team)</option>
+    </select>
+  </div>
 
-	<div th:fragment="addAwayTeams">
-		<label id="awayTeamLabel" for="awayTeam" class="sr-only">Away
-			Team</label> <select id="awayTeam" class="form-control"
-			onchange='awayTeamChanged(this)'>
-			<option th:disabled="disabled" th:selected="selected" value=" ">--
-				select away team --</option>
-			<option th:each="team: ${awayTeams}" th:value="${team.id}"
-				th:text="${team.name}">(away team)</option>
-		</select>
-	</div>
+  <div th:fragment="addAwayTeams">
+    <label id="awayTeamLabel" for="awayTeam" class="sr-only">Away Team</label> <select id="awayTeam"
+      class="form-control" onchange='awayTeamChanged(this)'>
+      <option th:disabled="disabled" th:selected="selected" value=" ">-- select away team --</option>
+      <option th:each="team: ${awayTeams}" th:value="${team.id}" th:text="${team.name}">(away team)</option>
+    </select>
+  </div>
 
-	<div th:fragment="scoreGame">
-		<div id="readyForGame">
-			<div class="box col-md-8 col-md-offset-2">
-				<h4>
-					Waiting for pull to start the game:<br /> <span th:text="${game}">(game)</span>
-				</h4>
-				<div id="startGameButton">
-					<div class="row">
-						<div class="col-xs-6">
-							<button th:attr="data-game-id=${game.id}" id="startGame"
-								class="btn btn-primary" type="button">Press when horn
-								sounds to start game</button>
-						</div>
-						<div class="col-xs-6">
-							<button th:attr="data-game-id=${game.id}" id="noGame"
-								class="btn btn-primary" type="button">Oops ... not
-								scoring this game</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="gameOn" th:attr="data-game-id=${game.id}" class="hidden">
-			<div class="container">
-				<div class="row gameTime">
-								<div class="col-xs-12">
-						<h4>
-							Game Time: <span id="gameTime"></span>
-						</h4>
-					</div>
-				
-				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<div id="timer" class="hide-timer">
-							<h4>
-								Time since <span id="countupEvent"></span> <span
-									id="countupTime"></span> <span id="countupMessage"></span>
-							</h4>
-							<button id="playStarted" type="button" class="btn btn-default">Play
-								has Started</button>
-						</div>
-					</div>
-					</div>
-				<div class="row">
-					<div class="col-xs-6">
-						<h3 id="currentScore" th:utext="${game.currentScore}"></h3>
-					</div>
-					<div class="col-xs-6">
-						<h5>
-							Please do not navigate away from this tab (using back button,
-							typing in a new URL or reloading the page until the game is
-							finished). <small>You can use another tab if you want to
-								check the docs.</small>
-						</h5>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12">
-						<h4
-							th:text="@{${game.division.name} + ' on ' + ${game.field.fieldName}}"></h4>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-3">Point Scored by:</div>
-					<div class="col-xs-9">
-						<button id="homeTeamScored" type="button" class="btn btn-default"
-							th:attr="data-game-id=${game.id},data-team-id=${game.homeTeam.id}"
-							th:text="${game.homeTeam.name}">(homeTeam)</button>
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<button id="awayTeamScored" type="button" class="btn btn-default"
-							th:attr="data-game-id=${game.id},data-team-id=${game.awayTeam.id}"
-							th:text="${game.awayTeam.name}">(awayTeam)</button>
-					</div>
-				</div>
-				<p />
-				<div class="table-responsive">
-					<table id="eventTable" class="table table-striped">
-						<tr>
-							<th colspan="1">Game events</th>
-							<th colspan="1">Assist</th>
-							<th colspan="1">Goal</th>
-							<th colspan="1">Time</th>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div th:fragment="scoreGame">
+    <div id="readyForGame">
+      <div class="box col-md-8 col-md-offset-2">
+        <h4>
+          Waiting for pull to start the game:<br />
+          <span th:text="${game}">(game)</span>
+        </h4>
+        <div id="startGameButton">
+          <div class="row">
+            <div class="col-xs-6">
+              <button th:attr="data-game-id=${game.id}" id="startGame" class="btn btn-primary" type="button">Press
+                when horn sounds to start game</button>
+            </div>
+            <div class="col-xs-6">
+              <button th:attr="data-game-id=${game.id}" id="noGame" class="btn btn-primary" type="button">Oops
+                ... not scoring this game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="gameOn" th:attr="data-game-id=${game.id}" class="hidden">
+      <div class="container">
+        <div class="row gameTime">
+          <div class="col-xs-12">
+            <h4>
+              Game Time:
+              <span id="gameTime"></span>
+            </h4>
+          </div>
 
-	<div th:fragment="currentGames">
-		<p />
-		<div class="container">
-			<div class="row">
-				<div th:each="game : ${games}">
-					<div class="col-xs-6 col-sm-4 col-md-3">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<div th:if="${account}">
-										<a th:href="@{'/scoresheet'(game=${game.id})}"
-											th:text="${game.field.fieldName}"></a> &nbsp;&nbsp;<small>Updated:
-											<span th:text="${game.lastEventTime}"></span>
-										</small>
-									</div>
-									<div th:unless="${account}">
-										<span th:text="${game.field.fieldName}"></span>&nbsp;&nbsp;<small>Updated:
-											<span th:text="${game.lastEventTime}"></span>
-										</small>
-									</div>
-								</h3>
-							</div>
-							<div class="panel-body">
-								<h4 th:text="${game.division.name}"></h4>
-								<p th:utext="${game.currentScore}"></p>
-								<p th:text="${game.lastEvent}"></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="timer" class="hide-timer">
+              <h4>
+                Time since
+                <span id="countupEvent"></span>
+                <span id="countupTime"></span>
+                <span id="countupMessage"></span>
+              </h4>
+              <button id="playStarted" type="button" class="btn btn-default">Play has Started</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <h3 id="currentScore" th:utext="${game.currentScore}"></h3>
+          </div>
+          <div class="col-xs-6">
+            <h5>
+              Please do not navigate away from this tab (using back button, typing in a new URL or reloading the page
+              until the game is finished). <small>You can use another tab if you want to check the docs.</small>
+            </h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h4 th:text="@{${game.division.name} + ' on ' + ${game.field.fieldName}}"></h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-3">Point Scored by:</div>
+          <div class="col-xs-9">
+            <button id="homeTeamScored" type="button" class="btn btn-default"
+              th:attr="data-game-id=${game.id},data-team-id=${game.homeTeam.id}" th:text="${game.homeTeam.name}">(homeTeam)</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button id="awayTeamScored" type="button" class="btn btn-default"
+              th:attr="data-game-id=${game.id},data-team-id=${game.awayTeam.id}" th:text="${game.awayTeam.name}">(awayTeam)</button>
+          </div>
+        </div>
+        <p />
+        <div class="table-responsive">
+          <table id="eventTable" class="table table-striped">
+            <tr>
+              <th colspan="1">Game events</th>
+              <th colspan="1">Assist</th>
+              <th colspan="1">Goal</th>
+              <th colspan="1">Time</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	<div th:fragment="tvCurrentScores">
-		<div class="row">
-			<div th:each="game : ${games}">
-				<div class="col-xs-6 col-sm-4 col-md-2 tv-padding">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h5 class="panel-title">
-								<span th:text="${game.field.fieldName}"></span>&nbsp;&nbsp;<small>Updated:
-									<span th:text="${game.lastEventTime}"></span>
-								</small>
-							</h5>
-						</div>
-						<div class="panel-body tv-panel-body-padding">
-							<h5 th:text="${game.division.name}"></h5>
-							<p th:utext="${game.currentScore}"></p>
-							<small th:text="${game.lastEvent}"></small>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div th:fragment="currentGames">
+    <p />
+    <div class="container">
+      <div class="row">
+        <div th:each="game : ${games}">
+          <div class="col-xs-6 col-sm-4 col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">
+                  <a class="btn-block currentGameScore" th:href="@{'/scoresheet'(game=${game.id})}"><span
+                      th:text="${game.field.fieldName}"></span>&nbsp;&nbsp;<small>Updated: <span
+                        th:text="${game.lastEventTime}"></span>
+                  </small></a>
+                </h3>
+              </div>
+              <div class="panel-body">
+                <a class="btn-block currentGameScore" th:href="@{'/scoresheet'(game=${game.id})}">
+                  <h4 th:text="${game.division.name}"></h4>
+                  <p th:utext="${game.currentScore}"></p>
+                  <p th:text="${game.lastEvent}"></p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	<div th:fragment="noCurrentGames">
-		<div class="box col-md-6 col-md-offset-3">There are no current
-			games</div>
-	</div>
+  <div th:fragment="tvCurrentScores">
+    <div class="row">
+      <div th:each="game : ${games}">
+        <div class="col-xs-6 col-sm-4 col-md-2 tv-padding">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h5 class="panel-title">
+                <span th:text="${game.field.fieldName}"></span>
+                &nbsp;&nbsp;<small>Updated: <span th:text="${game.lastEventTime}"></span>
+                </small>
+              </h5>
+            </div>
+            <div class="panel-body tv-panel-body-padding">
+              <h5 th:text="${game.division.name}"></h5>
+              <p th:utext="${game.currentScore}"></p>
+              <small th:text="${game.lastEvent}"></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div th:fragment="noCurrentGames">
+    <div class="box col-md-6 col-md-offset-3">There are no current games</div>
+  </div>
 </body>
 </html>
