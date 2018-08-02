@@ -70,6 +70,7 @@ public class DataLoader implements ApplicationRunner {
     getFieldRepository().save(new Field("Field 20", ""));
     getFieldRepository().save(new Field("Terry Fox", ""));
 
+    // TODO: Set proper division load
     // loadAdultDivisions();
     loadJuniorDivisions();
   }
