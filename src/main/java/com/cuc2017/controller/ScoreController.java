@@ -68,6 +68,12 @@ public class ScoreController {
     return "allGames";
   }
 
+  @RequestMapping("/finishGame")
+  public String finishGame(HttpServletRequest request, Model model) {
+    model.addAttribute("games", getGameService().getAllGames());
+    return "finishGame";
+  }
+
   @RequestMapping("/score")
   public String score(HttpServletRequest request, Model model) {
     model.addAttribute("divisions", getGameService().getDivisions());

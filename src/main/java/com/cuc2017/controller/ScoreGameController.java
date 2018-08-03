@@ -110,6 +110,22 @@ public class ScoreGameController {
     }
   }
 
+  @RequestMapping(value = "/gameScoreSheet", method = RequestMethod.GET, params = { "game" })
+  public ResponseEntity<?> gameScoreSheet(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
+    try {
+      Game game = getGameService().getGame(gameId);
+      if (game == null) {
+        return ResponseEntity.badRequest().body("Can not find game: " + gameId);
+      }
+      String events = getGameService().updateAllEvents(game);
+      GameScoreSheet gameScoreSheet = new GameScoreSheet(game, events);
+      return new ResponseEntity<GameScoreSheet>(gameScoreSheet, HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem ending game for game: " + gameId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
+
   @RequestMapping(value = "/gameStartTime", method = RequestMethod.GET, params = { "game" })
   public ResponseEntity<?> gameStartTime(@RequestParam("game") Long gameId, HttpServletRequest request, Model model) {
     try {

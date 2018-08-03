@@ -1,5 +1,5 @@
 var timer;
-var refreshTimeSucces = 3000;
+var refreshTimeSucces = 5000;
 var refreshTimeFailure = 60000;
 
 function getGameId() {
@@ -8,9 +8,22 @@ function getGameId() {
 }
 
 function updatePage(){
-	updateStartTime();
-	updateEndTime();
-	updateEventTable();
+  var gameId = getGameId();
+  $.ajax({
+    type : "get",
+    url : '/gameScoreSheet/?game=' + gameId,
+    success : function(gameScoreSheet) {
+      updateScore(gameScoreSheet.currentScore);
+      updateStartTime(gameScoreSheet.startTime);
+      updateEndTime(gameScoreSheet.endTime);
+      updateEventTable(gameScoreSheet.events);
+      setTimer();
+    },
+    error : function(error) {
+      console.log("Problem updating scoreSheet" + error.responseText);
+      slowDownTimerOnError();
+    }
+  });
 }
 
 function setTimer(){
@@ -22,51 +35,21 @@ function slowDownTimerOnError(){
 	timer = setTimeout(updatePage, refreshTimeFailure);
 }
 
-function updateStartTime() {
-	var gameId = getGameId();
-	$.ajax({
-		type : "get",
-		url : '/gameStartTime/?game=' + gameId,
-		success : function(startTime) {
-			$("#startTime").html(startTime);			
-		},
-		error : function(error) {
-			console.log("Problem updating starttime" + error.responseText);
-			slowDownTimerOnError();
-		}
-	});
+function updateScore(score) {
+  $("#currentGameScore").html(score);      
 }
 
-function updateEndTime() {
-	var gameId = getGameId();
-	$.ajax({
-		type : "get",
-		url : '/gameEndTime/?game=' + gameId,
-		success : function(endTime) {
-			$("#endTime").html(endTime);			
-		},
-		error : function(error) {
-			console.log("Problem updating starttime" + error.responseText);
-			slowDownTimerOnError();
-		}
-	});
+function updateStartTime(startTime) {
+	$("#startTime").html(startTime);			
 }
 
-function updateEventTable() {
-	var gameId = getGameId();
-	$.ajax({
-		type : "get",
-		url : '/updateAllEvents/?game=' + gameId,
-		success : function(events) {
-			$("#eventTable").find("tr:gt(0)").remove();			
-			$('#eventTable > tbody > tr').eq(0).after(events);
-			setTimer();
-		},
-		error : function(error) {
-			console.log("Problem updating event list" + error.responseText);
-			slowDownTimerOnError();
-		}
-	});
+function updateEndTime(endTime) {
+	$("#endTime").html(endTime);			
+}
+
+function updateEventTable(events) {
+	$("#eventTable").find("tr:gt(0)").remove();			
+	$('#eventTable > tbody > tr').eq(0).after(events);
 }
 
 $(document).ready(function() {

@@ -310,6 +310,7 @@ function pad(val) {
 }
 
 function endGame(gameId) {
+  stopCountUpTimer();
   console.log("Game ended: " + gameId);
   $.ajax({
     type : "post",
@@ -317,7 +318,7 @@ function endGame(gameId) {
     success : function(endGame) {
       updateEventTable(gameId);
       $('#finishedGame').prop("disabled", false);
-      ;
+
     },
     error : function(error) {
       console.log(error.responseText);

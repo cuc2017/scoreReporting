@@ -7,7 +7,7 @@
     <div th:replace="fragments/head :: navbar">(navbar)</div>
     <div class="row">
       <div class="small-box col-md-6 col-md-offset-3">
-        <h3 th:utext="${game.currentScore}"></h3>
+        <h3 id="currentGameScore" th:utext="${game.currentScore}"></h3>
         <h4 th:text="@{${game.division} + ' @ ' + ${game.field}}"></h4>
        <h4>From: <span id="startTime">Not yet started</span> until: <span id="endTime">Not Yet started</span></h4>
       </div>

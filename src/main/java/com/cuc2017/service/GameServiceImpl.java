@@ -302,6 +302,10 @@ public class GameServiceImpl implements GameService {
   @Override
   public Game finishGame(Long gameId) {
     Game game = getGame(gameId);
+    if (!game.isGameOver()) {
+      log.warn("Game not over");
+    }
+    log.info("Finishing game: " + game);
     // TODO: comment for scoretraining
     // HttpClient client = null;
     // try {
