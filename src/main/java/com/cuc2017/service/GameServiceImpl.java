@@ -1,8 +1,10 @@
 package com.cuc2017.service;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,8 +17,11 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.HttpClientUtils;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.LaxRedirectStrategy;
 import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -49,18 +54,17 @@ public class GameServiceImpl implements GameService {
 
   private static final String HOSTNAME = "http://80.172.224.48/";
   // TODO: SET proper season
-  private static final String SEASON = "cuc2016";
+  private static final String SEASON = "CUC2018Jr";
   private static final String TEST_SITE = "cuc2017-test";
-  private static final String JUNIOR_SITE = SEASON + "jr";
-  private static final String ADULT_SITE = SEASON;
+  private static final String JUNIOR_SITE = "cuc2018jr";
+  private static final String ADULT_SITE = "cuc2018";
   // TODO: Set proper active Site
-  private static final String ACTIVE_SITE = TEST_SITE;
+  private static final String ACTIVE_SITE = JUNIOR_SITE;
 
   public static final String LOGIN = HOSTNAME + ACTIVE_SITE + "/scorekeeper/?view=login";
   private static final String TEAM_CARDS = HOSTNAME + ACTIVE_SITE + "/?view=teamcard&team=";
   public static final String DIVISION_CARDS = HOSTNAME + ACTIVE_SITE + "?view=seriesstatus&series=";
-  public static final String GAMES_CARD = HOSTNAME + ACTIVE_SITE + "/?view=admin/seasongames&season=" + SEASON
-      + "&series=";
+  public static final String GAMES_CARD = HOSTNAME + ACTIVE_SITE + "/index.php?view=user/respgames&season=" + SEASON;
   public static final String SCORESHEET = HOSTNAME + ACTIVE_SITE + "/?view=user/addscoresheet&game=";
   public static final String ADD_PLAYERS = HOSTNAME + ACTIVE_SITE + "/?view=user/addplayerlists&game=";
   private static final Logger log = LoggerFactory.getLogger(GameServiceImpl.class);
@@ -128,17 +132,13 @@ public class GameServiceImpl implements GameService {
       Element playerTable = page.select("table[style=width:80%]").first();
       Elements players = playerTable.select("tr");
       for (Element playerRow : players) {
+        Element numberTd = playerRow.selectFirst("td");
         Element playerCell = playerRow.select("a[href]").first();
         if (playerCell != null) {
           String linkHref = playerCell.attr("href");
           String ultimateCanadaId = linkHref.substring(linkHref.indexOf("player=") + 7);
           String linkText = playerCell.text();
-          int number = 0;
-          if (linkText.startsWith("#")) {
-            int firstSpace = linkText.indexOf(' ');
-            number = Integer.parseInt(linkText.substring(1, firstSpace));
-            linkText = linkText.substring(firstSpace + 1);
-          }
+          int number = Integer.parseInt(numberTd.text());
           int firstSpace = linkText.indexOf(' ');
           String firstName = linkText.substring(0, firstSpace);
           String lastName = linkText.substring(firstSpace + 1);
@@ -307,49 +307,52 @@ public class GameServiceImpl implements GameService {
     }
     log.info("Finishing game: " + game);
     // TODO: comment for scoretraining
-    // HttpClient client = null;
-    // try {
-    // GameOrderDetails gameOrderDetails =
-    // findGameIdFromUltimatCanadaSite(game.getHomeTeam(), game.getAwayTeam());
-    // if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
-    // log.warn("Could not get game details");
-    // return game;
-    // }
-    // log.info("Game: " + game + " game order: " + gameOrderDetails);
-    // client = HttpClientBuilder.create().setRedirectStrategy(new
-    // LaxRedirectStrategy()).build();
-    // login(client);
-    // updatePlayers(client, game, gameOrderDetails);
-    // saveScore(client, game, gameOrderDetails);
-    // } catch (Exception e) {
-    // log.error("Problem saving game to WFDF system: " + game, e);
-    // } finally {
-    // HttpClientUtils.closeQuietly(client);
-    // }
+    HttpClient client = null;
+    try {
+      client = HttpClientBuilder.create().setRedirectStrategy(new LaxRedirectStrategy()).build();
+      login(client);
+      GameOrderDetails gameOrderDetails = findGameIdFromUltimatCanadaSite(client, game.getHomeTeam(),
+          game.getAwayTeam());
+      if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
+        log.warn("Could not get game details");
+        return game;
+      }
+      log.info("Game: " + game + " game order: " + gameOrderDetails);
+      updatePlayers(client, game, gameOrderDetails);
+      saveScore(client, game, gameOrderDetails);
+    } catch (Exception e) {
+      log.error("Problem saving game to WFDF system: " + game, e);
+    } finally {
+      HttpClientUtils.closeQuietly(client);
+    }
     return game;
   }
 
-  private GameOrderDetails findGameIdFromUltimatCanadaSite(Team team1, Team team2) throws Exception {
+  private GameOrderDetails findGameIdFromUltimatCanadaSite(HttpClient client, Team team1, Team team2) throws Exception {
     try {
-      URL url = new URL(GameServiceImpl.GAMES_CARD + team1.getDivision().getSeries());
-      Document page = Jsoup.parse(url, 5000);
-      Element gamesTable = page.select("table.admintable").first();
-      Elements games = gamesTable.select("tr");
-      for (Element gameRow : games) {
-        Elements tds = gameRow.select("td");
-        if (tds.size() <= 0) {
-          continue;
-        }
-        String teamName1 = tds.get(1).text();
-        String teamName2 = tds.get(5).text();
-        if (teamName1 != null && teamName2 != null) {
-          if (teamName1.equalsIgnoreCase(team1.getName()) && teamName2.equalsIgnoreCase(team2.getName())) {
-            if (tds.get(2).text().contains("?")) {
-              return findGameNumber(team1, team2, tds.get(6));
-            }
-          } else if (teamName1.equalsIgnoreCase(team2.getName()) && teamName2.equalsIgnoreCase(team1.getName())) {
-            if (tds.get(2).text().contains("?")) {
-              return findGameNumber(team2, team1, tds.get(6));
+      HttpGet get = new HttpGet(GameServiceImpl.GAMES_CARD);
+      HttpResponse response = client.execute(get);
+      InputStream is = response.getEntity().getContent();
+      Document page = Jsoup.parse(is, StandardCharsets.UTF_8.displayName(), GameServiceImpl.GAMES_CARD);
+      Element content = page.select("div.content").first();
+      Elements tables = content.select("table");
+      for (Element table : tables) {
+        for (Element gameRow : table.select("tr")) {
+          Elements tds = gameRow.select("td");
+          if (tds.size() <= 0) {
+            continue;
+          }
+          String teamName1 = tds.get(1).text();
+          String teamName2 = tds.get(3).text();
+          if (teamName1 != null && teamName2 != null) {
+            if (teamName1.equalsIgnoreCase(team1.getName()) && teamName2.equalsIgnoreCase(team2.getName())) {
+              if (tds.get(4).text().contains("0") && tds.get(6).text().contains("0")) {
+                return findGameNumber(team1, team2, tds.get(8));
+              }
+            } else if (teamName1.equalsIgnoreCase(team2.getName()) && teamName2.equalsIgnoreCase(team1.getName())) {
+              if (tds.get(4).text().contains("0") && tds.get(6).text().contains("0")) {
+                return findGameNumber(team2, team1, tds.get(8));
+              }
             }
           }
         }
@@ -371,7 +374,7 @@ public class GameServiceImpl implements GameService {
   private void login(HttpClient client) throws UnsupportedEncodingException, IOException, ClientProtocolException {
     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
     nameValuePairs.add(new BasicNameValuePair("login", "Login"));
-    nameValuePairs.add(new BasicNameValuePair("mypassword", "cucuc"));
+    nameValuePairs.add(new BasicNameValuePair("mypassword", "repeek"));
     nameValuePairs.add(new BasicNameValuePair("myusername", "score"));
     doPost(client, LOGIN, nameValuePairs);
   }

@@ -28,10 +28,9 @@ public class TwitterServiceImpl implements TwitterService {
       TwitterTemplate twitterTemplate = getTwitterTemplates().get("General");
       if (twitterTemplate != null) {
         // TODO: comment for scoretraining
-        // twitterTemplate.timelineOperations().updateStatus(tweetText + "
-        // follow current games (" + WEB_SITE + ")");
+        twitterTemplate.timelineOperations().updateStatus(tweetText + "follow current games (" + WEB_SITE + ")");
         // TODO: uncomment for scoretraining
-        log.info("Tweet to scores: " + tweetText);
+        // log.info("Tweet to scores: " + tweetText);
       } else {
         log.info("Tweet to scores: " + tweetText);
       }

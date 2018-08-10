@@ -4,12 +4,14 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.HttpClientUtils;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -38,47 +41,55 @@ public class TestLogin {
 
   @Test
   public void testFindGameId() throws Exception {
-    Division openDivision = new Division("Junior Open", 1, "#CUC2017JuniorOpen");
-
-    Team team1 = new Team(openDivision, "Energy", 1);
-    Team team2 = new Team(openDivision, "Vortex", 2);
-
-    GameOrderDetails id = findGameIdFromUltimatCanadaSite(team1, team2);
-    System.out.println("Id is: " + id);
-
-    id = findGameIdFromUltimatCanadaSite(team2, team1);
-    System.out.println("Id is: " + id);
-
     HttpClient client = HttpClientBuilder.create().setRedirectStrategy(new LaxRedirectStrategy()).build();
     login(client);
-    updatePlayers(client, id);
-    saveScore(client, id);
+    Division openDivision = new Division("Junior Women", 2, "");
+
+    Team team1 = new Team(openDivision, "TORO", 1);
+    Team team2 = new Team(openDivision, "Bonfire: Junior Women", 2);
+
+    GameOrderDetails id = findGameIdFromUltimatCanadaSite(client, team1, team2);
+    System.out.println("Id is: " + id);
+
+    id = findGameIdFromUltimatCanadaSite(client, team2, team1);
+    System.out.println("Id is: " + id);
+
+    // updatePlayers(client, id);
+    // saveScore(client, id);
 
   }
 
-  private GameOrderDetails findGameIdFromUltimatCanadaSite(Team team1, Team team2) throws Exception {
+  private GameOrderDetails findGameIdFromUltimatCanadaSite(HttpClient client, Team team1, Team team2) throws Exception {
     // try {
-    URL url = new URL(GameServiceImpl.GAMES_CARD + team1.getDivision().getSeries());
-    Document page = Jsoup.parse(url, 5000);
-    Element gamesTable = page.select("table.admintable").first();
-    Elements games = gamesTable.select("tr");
-    for (Element gameRow : games) {
-      Elements tds = gameRow.select("td");
-      if (tds.size() <= 0) {
-        continue;
-      }
-      String teamName1 = tds.get(1).text();
-      String teamName2 = tds.get(5).text();
-      if (teamName1 != null && teamName2 != null) {
-        if (teamName1.equalsIgnoreCase(team1.getName()) && teamName2.equalsIgnoreCase(team2.getName())) {
-          System.out.println("Game row is: " + gameRow);
-          if (tds.get(2).text().contains("?")) {
-            return findGameNumber(team1, team2, tds.get(6));
-          }
-        } else if (teamName1.equalsIgnoreCase(team2.getName()) && teamName2.equalsIgnoreCase(team1.getName())) {
-          System.out.println("Game row is: " + gameRow);
-          if (tds.get(2).text().contains("?")) {
-            return findGameNumber(team2, team1, tds.get(6));
+    URL url = new URL(GameServiceImpl.GAMES_CARD);
+    HttpGet get = new HttpGet(GameServiceImpl.GAMES_CARD);
+    HttpResponse response1 = client.execute(get);
+    InputStream is = response1.getEntity().getContent();
+    // final BufferedReader rd1 = new BufferedReader(new
+    // InputStreamReader(response1.getEntity().getContent()));
+
+    Document page = Jsoup.parse(is, StandardCharsets.UTF_8.displayName(), GameServiceImpl.GAMES_CARD);
+    Element content = page.select("div.content").first();
+    Elements tables = content.select("table");
+    for (Element table : tables) {
+      for (Element gameRow : table.select("tr")) {
+        Elements tds = gameRow.select("td");
+        if (tds.size() <= 0) {
+          continue;
+        }
+        String teamName1 = tds.get(1).text();
+        String teamName2 = tds.get(3).text();
+        if (teamName1 != null && teamName2 != null) {
+          if (teamName1.equalsIgnoreCase(team1.getName()) && teamName2.equalsIgnoreCase(team2.getName())) {
+            System.out.println("Game row is: " + gameRow);
+            if (tds.get(4).text().contains("0") && tds.get(6).text().contains("0")) {
+              return findGameNumber(team1, team2, tds.get(8));
+            }
+          } else if (teamName1.equalsIgnoreCase(team2.getName()) && teamName2.equalsIgnoreCase(team1.getName())) {
+            System.out.println("Game row is: " + gameRow);
+            if (tds.get(4).text().contains("0") && tds.get(6).text().contains("0")) {
+              return findGameNumber(team2, team1, tds.get(8));
+            }
           }
         }
       }
@@ -260,7 +271,7 @@ public class TestLogin {
     HttpPost post = new HttpPost(GameServiceImpl.LOGIN);
     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
     nameValuePairs.add(new BasicNameValuePair("login", "Login"));
-    nameValuePairs.add(new BasicNameValuePair("mypassword", "cucuc"));
+    nameValuePairs.add(new BasicNameValuePair("mypassword", "repeek"));
     nameValuePairs.add(new BasicNameValuePair("myusername", "score"));
     post.addHeader("User-Agent",
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.");

@@ -73,13 +73,13 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
           <!--  TODO: login and logout comment for scoretraining -->
-<!-- 						<li th:if="${account}"> -->
-<!-- 							<form id="logout" method="post" action="/logout" -->
-<!-- 								style="display: none;"></form> <a -->
-<!-- 							href="javascript:processLogout();" class="text-uppercase">Sign out</a> -->
-<!-- 						</li> -->
-<!-- 						<li th:unless="${account}"><a href="/login" -->
-<!-- 							class="text-uppercase">Sign in</a></li> -->
+						<li th:if="${account}">
+							<form id="logout" method="post" action="/logout"
+								style="display: none;"></form> <a
+							href="javascript:processLogout();" class="text-uppercase">Sign out</a>
+						</li>
+						<li th:unless="${account}"><a href="/login"
+							class="text-uppercase">Sign in</a></li>
 					</ul>
 				</div>
 			</div>
