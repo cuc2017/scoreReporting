@@ -1,6 +1,6 @@
-var warningForOffense = 'Blow whistle once: warning for offense';
-var offenceSet = 'Blow whistle twice: offense should be set';
-var playUnderWay = 'Blow whistle three times: disc should be pulled';
+var warningForOffense = '<font color="black">Blow whistle once: warning for offense</font>';
+var offenceSet = '<font color="blue">Blow whistle twice: offense should be set</font>';
+var playUnderWay = '<font color="red">Blow whistle three times: disc should be pulled</font>';
 var countUpTimer;
 var countUpTimerIndex;
 var gameTimer;
@@ -225,7 +225,20 @@ function startPointScoredTimer() {
 }
 
 function startTimeOutTimer() {
-  setUpTimer(pointScoredTimerTick, "timeout taken");
+  if (!countUpTimer) {
+    setUpTimer(pointScoredTimerTick, "timeout taken");
+  }
+  var oldCountUpTimerIndex =   countUpTimerIndex;
+
+  stopCountUpTimer();
+  updateTimer(pad(countUpTimerIndex));
+  $('#countupEvent').html("point and timout: ");
+  $('#timer').removeClass('hide-timer');
+  countUpTimer = new Timer();
+  countUpTimerIndex = oldCountUpTimerIndex;
+  updateTimer(pad(countUpTimerIndex));
+  countUpTimer.Tick = pointScoredAndTimeoutTimerTick;
+  countUpTimer.Start()
 }
 
 function setUpTimer(timerTick, countUpEvent) {
@@ -272,6 +285,19 @@ function pointScoredTimerTick() {
   } else if (countUpTimerIndex == 70) {
     showTimerMessage(offenceSet);
   } else if (countUpTimerIndex == 90) {
+    showTimerMessage(playUnderWay);
+  }
+}
+
+function pointScoredAndTimeoutTimerTick() {
+  countUpTimerIndex = countUpTimerIndex + 1;
+  updateTimer(pad(countUpTimerIndex));
+
+  if (countUpTimerIndex == 140) {
+    showTimerMessage(warningForOffense);
+  } else if (countUpTimerIndex == 160) {
+    showTimerMessage(offenceSet);
+  } else if (countUpTimerIndex == 180) {
     showTimerMessage(playUnderWay);
   }
 }

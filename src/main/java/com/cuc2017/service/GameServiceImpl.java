@@ -20,8 +20,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.HttpClientUtils;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.LaxRedirectStrategy;
 import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -153,7 +151,7 @@ public class GameServiceImpl implements GameService {
 
   private void addAdditionalPlayesrForEachTeam(Team team, Game game) {
     getPlayerRepository().save(new Player(Player.UNKNOWN_PLAYER, "", "Unknown", team, game));
-    getPlayerRepository().save(new Player(Player.CALLAHAN, "Gallahan", "Goal", team, game));
+    getPlayerRepository().save(new Player(Player.CALLAHAN, "Callahan", "Goal", team, game));
   }
 
   private void eventAsHtmlRow(Event event, StringBuffer row, boolean addSelect, Date gameStartTime) {
@@ -307,24 +305,26 @@ public class GameServiceImpl implements GameService {
     }
     log.info("Finishing game: " + game);
     // TODO: comment for scoretraining
-    HttpClient client = null;
-    try {
-      client = HttpClientBuilder.create().setRedirectStrategy(new LaxRedirectStrategy()).build();
-      login(client);
-      GameOrderDetails gameOrderDetails = findGameIdFromUltimatCanadaSite(client, game.getHomeTeam(),
-          game.getAwayTeam());
-      if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
-        log.warn("Could not get game details");
-        return game;
-      }
-      log.info("Game: " + game + " game order: " + gameOrderDetails);
-      updatePlayers(client, game, gameOrderDetails);
-      saveScore(client, game, gameOrderDetails);
-    } catch (Exception e) {
-      log.error("Problem saving game to WFDF system: " + game, e);
-    } finally {
-      HttpClientUtils.closeQuietly(client);
-    }
+    // HttpClient client = null;
+    // try {
+    // client = HttpClientBuilder.create().setRedirectStrategy(new
+    // LaxRedirectStrategy()).build();
+    // login(client);
+    // GameOrderDetails gameOrderDetails =
+    // findGameIdFromUltimatCanadaSite(client, game.getHomeTeam(),
+    // game.getAwayTeam());
+    // if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
+    // log.warn("Could not get game details");
+    // return game;
+    // }
+    // log.info("Game: " + game + " game order: " + gameOrderDetails);
+    // updatePlayers(client, game, gameOrderDetails);
+    // saveScore(client, game, gameOrderDetails);
+    // } catch (Exception e) {
+    // log.error("Problem saving game to WFDF system: " + game, e);
+    // } finally {
+    // HttpClientUtils.closeQuietly(client);
+    // }
     return game;
   }
 
