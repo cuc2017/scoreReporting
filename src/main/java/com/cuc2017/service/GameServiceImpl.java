@@ -59,7 +59,7 @@ public class GameServiceImpl implements GameService {
   private static final String JUNIOR_SITE = "cuc2018jr";
   private static final String ADULT_SITE = "cuc2018";
   // TODO: Set proper active Site
-  private static final String ACTIVE_SITE = JUNIOR_SITE;
+  private static final String ACTIVE_SITE = ADULT_SITE;
 
   public static final String LOGIN = HOSTNAME + ACTIVE_SITE + "/scorekeeper/?view=login";
   private static final String TEAM_CARDS = HOSTNAME + ACTIVE_SITE + "/?view=teamcard&team=";
