@@ -11,6 +11,9 @@ function gameSelected(selectedGame) {
   $.ajax({
     type : "post",
     url : '/finishGame/?game=' + gameId,
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
     success : function(endGame) {
       window.location.replace("/scoresheet?game=" + gameId);
     },

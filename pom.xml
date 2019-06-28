@@ -1,14 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.cuc2017</groupId>
 	<artifactId>scoreReporting</artifactId>
-	<version>0.3.13</version>
+	<version>0.4.0</version>
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.boot.version>1.5.14.RELEASE</spring.boot.version>
-		<stormpath.version>2.0.4-okta</stormpath.version>
+		<!-- <stormpath.version>2.0.4-okta</stormpath.version> -->
 		<gson.version>2.3</gson.version>
 	</properties>
 
@@ -20,15 +21,19 @@
 	</parent>
 	<dependencies>
 		<!-- Compile-time dependencies: -->
-		<dependency>
-			<groupId>com.stormpath.spring</groupId>
-			<artifactId>stormpath-default-spring-boot-starter</artifactId>
-			<version>${stormpath.version}</version>
-		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>com.stormpath.spring</groupId> -->
+		<!-- <artifactId>stormpath-default-spring-boot-starter</artifactId> -->
+		<!-- <version>${stormpath.version}</version> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -49,14 +54,26 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 		</dependency>
-<!-- 		TODO: comment for scoretraining -->
-<!-- 		<dependency> -->
-<!-- 		<groupId>mysql</groupId> -->
-<!-- 		<artifactId>mysql-connector-java</artifactId> -->
-<!-- 		</dependency> -->
+		<!-- TODO: comment for scoretraining -->
+		<!-- <dependency> -->
+		<!-- <groupId>mysql</groupId> -->
+		<!-- <artifactId>mysql-connector-java</artifactId> -->
+		<!-- </dependency> -->
 		<!-- TODO: uncomment for scoretraining -->
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -118,7 +135,8 @@
 								<unzip
 									src="${project.build.directory}/${project.build.finalName}.jar"
 									dest="${project.build.directory}/${project.build.finalName}" />
-								<copy todir="${project.build.directory}/${project.build.finalName}/"
+								<copy
+									todir="${project.build.directory}/${project.build.finalName}/"
 									overwrite="false">
 									<fileset dir="./" includes=".ebextensions/**" />
 								</copy>

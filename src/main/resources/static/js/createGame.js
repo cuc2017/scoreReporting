@@ -51,6 +51,9 @@ $(document).ready(
               type : "post",
               url : '/selectGame/?division=' + divisionId + "&homeTeam=" + homeTeamId + '&awayTeam=' + awayTeamId
                   + '&field=' + fieldId,
+              beforeSend : function(xhr) {
+                xhr.setRequestHeader(header, token);
+              },
               success : function(aboutToStartGame) {
                 $('#navbar').addClass('hidden');
                 $('#baseRow').html(aboutToStartGame);
@@ -82,6 +85,9 @@ function getPlayers() {
     $.ajax({
       type : "get",
       url : '/players/?team=' + awayTeamId,
+      beforeSend : function(xhr) {
+        xhr.setRequestHeader(header, token);
+      },
       success : function(players) {
         awayTeamPlayers = players;
       },
@@ -117,6 +123,9 @@ $('#baseRow').on('click', '#startGame', function() {
   $.ajax({
     type : "post",
     url : '/startGame/?game=' + gameId,
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
     success : function(game) {
       updateEventTable(gameId);
       homeTimeOutButtonName = "TO " + game.homeTeam.name.substring(0, 8);
@@ -134,6 +143,9 @@ $('#baseRow').on('click', '#noGame', function() {
   $.ajax({
     type : "post",
     url : '/doNotUseGame/?game=' + gameId,
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
     success : function(game) {
       window.location.replace("/");
     },
@@ -164,7 +176,10 @@ function selectGoalBy(goalBy) {
   $.ajax({
     type : "post",
     url : '/goal/?event=' + eventId + '&goal=' + goalById,
-    success : function(game) {
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
+   success : function(game) {
       console.log("Goal scored successful");
     },
     error : function(error) {
@@ -181,7 +196,10 @@ function selectAssistBy(assistBy) {
   $.ajax({
     type : "post",
     url : '/assist/?event=' + eventId + '&assist=' + assistById,
-    success : function(game) {
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
+   success : function(game) {
       console.log("Assist successful: " + game);
     },
     error : function(error) {
@@ -197,6 +215,9 @@ function pointScored(button) {
   $.ajax({
     type : "post",
     url : '/pointScored/?game=' + gameId + '&team=' + teamId,
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
     success : function(currentScore) {
       $('#currentScore').html(currentScore);
       updateEventTable(gameId);
@@ -341,6 +362,9 @@ function endGame(gameId) {
   $.ajax({
     type : "post",
     url : '/endGame/?game=' + gameId,
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
     success : function(endGame) {
       updateEventTable(gameId);
       $('#finishedGame').prop("disabled", false);
@@ -357,6 +381,9 @@ function finishGame(gameId) {
   $.ajax({
     type : "post",
     url : '/finishGame/?game=' + gameId,
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
     success : function(endGame) {
       window.location.replace("/scoresheet?game=" + gameId);
     },
@@ -430,7 +457,10 @@ $('#halftime').click(function() {
   $.ajax({
     type : "post",
     url : '/halftime/?game=' + gameId,
-    success : function(game) {
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
+   success : function(game) {
       updateEventTable(gameId);
       updateTimeOutButtons();
     },
@@ -454,6 +484,9 @@ function timeOut(teamId) {
   $.ajax({
     type : "post",
     url : '/timeOut/?game=' + gameId + '&team=' + teamId,
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
     success : function(game) {
       updateEventTable(gameId);
       updateTimeOutButtons();
@@ -479,6 +512,9 @@ $('#undoButton').click(function() {
   $.ajax({
     type : "post",
     url : '/undoEvent/?event=' + eventId,
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
     success : function(currentScore) {
       $('#currentScore').html(currentScore);
       tableRow.remove();
@@ -504,7 +540,10 @@ function divisionChanged(selectedDivision) {
   $.ajax({
     type : "post",
     url : '/selectDivision/?division=' + divisionId,
-    success : function(homeTeams) {
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
+   success : function(homeTeams) {
       $('#homeTeams').html(homeTeams);
       $('#awayTeams').addClass('hidden');
       $('#fields').addClass('hidden');
@@ -525,7 +564,10 @@ function homeTeamChanged(selectedHomeTeam) {
   $.ajax({
     type : "post",
     url : '/selectHomeTeam/?division=' + divisionId + "&homeTeam=" + homeTeamId,
-    success : function(awayTeams) {
+    beforeSend : function(xhr) {
+      xhr.setRequestHeader(header, token);
+    },
+   success : function(awayTeams) {
       $('#awayTeams').removeClass('hidden');
       $('#awayTeams').html(awayTeams);
       $('#fields').addClass('hidden');

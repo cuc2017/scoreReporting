@@ -49,8 +49,7 @@ public class DataLoader implements ApplicationRunner {
     }
 
     getFieldRepository().save(new Field("Field 1", ""));
-    getFieldRepository().save(new Field("Field 2A", ""));
-    getFieldRepository().save(new Field("Field 2B", ""));
+    getFieldRepository().save(new Field("Field 2", ""));
     getFieldRepository().save(new Field("Field 3", ""));
     getFieldRepository().save(new Field("Field 4", ""));
     getFieldRepository().save(new Field("Field 5", ""));
@@ -61,7 +60,6 @@ public class DataLoader implements ApplicationRunner {
     getFieldRepository().save(new Field("Field 10", ""));
     getFieldRepository().save(new Field("Field 11", ""));
     getFieldRepository().save(new Field("Field 12", ""));
-    getFieldRepository().save(new Field("Field W1", ""));
     getFieldRepository().save(new Field("Field 13", ""));
     getFieldRepository().save(new Field("Field 14", ""));
     getFieldRepository().save(new Field("Field 15", ""));

@@ -62,7 +62,7 @@
 							class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand brand" href="/"> <img alt="CUC logo"
-						src="images/2018cuclogo.jpg" class="logo" />
+						src="images/CUC2019Logo.png" class="logo" />
 					</a>
 				</div>
 				<div class="collapse navbar-collapse">
@@ -89,6 +89,14 @@
 				$("#logout")[0].submit();
 			}
 		</script>
+    <script th:inline="javascript">
+      var csrf = /*[[${_csrf}]]*/;
+      if (csrf !== null) {
+        var token = csrf.token;
+        var header = csrf.headerName;
+      }
+    </script>
+    
 	</div>
 
 </body>
