@@ -11,37 +11,37 @@ import javax.persistence.Entity;
 @Entity
 public class Field extends AbstractEntity {
 
-	@Column(unique = true)
-	private String fieldName;
-	private String atTag;
+  @Column(unique = true)
+  private String fieldName;
+  private String atTag;
 
-	public Field() {
-		// for default construction
-	}
+  public Field() {
+    // for default construction
+  }
 
-	public Field(String fieldName, String atTag) {
-		this.fieldName = fieldName;
-		this.setAtTag(atTag);
-	}
+  public Field(String fieldName, String atTag) {
+    this.fieldName = fieldName;
+    this.setAtTag(atTag);
+  }
 
-	@Override
-	public String toString() {
-		return getFieldName();
-	}
+  @Override
+  public String toString() {
+    return getFieldName();
+  }
 
-	public String getFieldName() {
-		return fieldName;
-	}
+  public String getFieldName() {
+    return fieldName;
+  }
 
-	public void setFieldName(String fieldName) {
-		this.fieldName = fieldName;
-	}
+  public void setFieldName(String fieldName) {
+    this.fieldName = fieldName;
+  }
 
-	public String getAtTag() {
-		return atTag;
-	}
+  public String getAtTag() {
+    return atTag;
+  }
 
-	public void setAtTag(String atTag) {
-		this.atTag = atTag;
-	}
+  public void setAtTag(String atTag) {
+    this.atTag = atTag;
+  }
 }

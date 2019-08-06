@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Game extends AbstractEntity {
 
+  private static final String TWEET_CONTENTS = " follow this game (https://scores.cuc2019.com/scoresheet?game=";
   private static final int RECENT_GAME_TIME = 60 * 60 * 1000;
   private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("hh:mm");
 
@@ -199,7 +200,7 @@ public class Game extends AbstractEntity {
   }
 
   private String getFollowThisGameTweet() {
-    return " follow this game (https://scores.cuc2018.com/scoresheet?game=" + getId() + ")";
+    return TWEET_CONTENTS + getId() + ")";
   }
 
   public String getCurrentGameTweet() {
