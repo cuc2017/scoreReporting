@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
+</head>
+<body>
+	<div class="container-fluid">
+		<div th:replace="fragments/head :: navbar">(navbar)</div>
+   <div class="row">
+      <div class="col-xs-8">
+        <h4 class="text-muted">Manage Fields</h4>
+      </div>
+    </div>
+    <div class="container top-buffer bottom-buffer">
+      <div class="table-responsive">
+        <table class="table  table-striped">
+          <tr>
+            <th>Name</th>
+            <th>In Use</th>
+ 
+          </tr>
+          <tr th:each="field: ${fields}">
+            <td th:text="${field.fieldName}"></td>
+            <td th:text="${field.useField}"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div> 
+</body>
+</html>

@@ -95,7 +95,7 @@ public class GameServiceImpl implements GameService {
 
   @Override
   public List<Field> getFields() {
-    return (List<Field>) getFieldRepository().findAll();
+    return getFieldRepository().findByUseField(true);
   }
 
   @Override

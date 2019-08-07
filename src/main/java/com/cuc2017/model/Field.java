@@ -14,6 +14,7 @@ public class Field extends AbstractEntity {
   @Column(unique = true)
   private String fieldName;
   private String atTag;
+  private boolean useField;
 
   public Field() {
     // for default construction
@@ -22,6 +23,7 @@ public class Field extends AbstractEntity {
   public Field(String fieldName, String atTag) {
     this.fieldName = fieldName;
     this.setAtTag(atTag);
+    this.setUseField(true);
   }
 
   @Override
@@ -43,5 +45,13 @@ public class Field extends AbstractEntity {
 
   public void setAtTag(String atTag) {
     this.atTag = atTag;
+  }
+
+  public boolean isUseField() {
+    return useField;
+  }
+
+  public void setUseField(boolean useField) {
+    this.useField = useField;
   }
 }
