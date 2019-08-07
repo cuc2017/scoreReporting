@@ -57,6 +57,11 @@ public class ScoreController {
     return "home";
   }
 
+  // @RequestMapping("/login")
+  // String login(HttpServletRequest request) {
+  // return "login";
+  // }
+
   @RequestMapping("/tvscores")
   String tvscores(HttpServletRequest request) {
     return "tvscores";
