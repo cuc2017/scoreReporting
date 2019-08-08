@@ -5,26 +5,52 @@
 <body>
 	<div class="container-fluid">
 		<div th:replace="fragments/head :: navbar">(navbar)</div>
-   <div class="row">
-      <div class="col-xs-8">
+      <div class="container">
         <h4 class="text-muted">Manage Fields</h4>
-      </div>
     </div>
+ 
     <div class="container top-buffer bottom-buffer">
       <div class="table-responsive">
         <table class="table  table-striped">
           <tr>
             <th>Name</th>
             <th>In Use</th>
- 
+
           </tr>
           <tr th:each="field: ${fields}">
             <td th:text="${field.fieldName}"></td>
-            <td th:text="${field.useField}"></td>
+            <td>
+              <input class="fieldCheckbox" type="checkbox" th:checked="${field.useField}" th:attr="data-field-id=${field.id}" /></td>
           </tr>
         </table>
       </div>
     </div>
   </div> 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.fieldCheckbox').change(function() {
+        var checked = this.checked;
+        var id = $(this).data('field-id');
+        $.ajax({
+          type : "post",
+          url : '/field/' + id + '?toUse='
+              + checked,
+          beforeSend : function(xhr) {
+            xhr.setRequestHeader(header, token);
+          },
+          success : function() {
+            location.reload(); 
+          },
+          error : function(error) {
+            window
+                .alert("Could not change field in use. With error: "
+                    + error.responseText);
+          }
+        });
+        console.log("checked: " + checked + " id: " + id);
+      });
+    });
+   </script>
+  
 </body>
 </html>

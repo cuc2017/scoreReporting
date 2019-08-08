@@ -111,7 +111,7 @@ function onPageLeave(e) {
 }
 
 $('#baseRow').on('click', '#startGame', function() {
-  var gameId = $(this).data('game-id')
+  var gameId = $(this).data('game-id');
   console.log("Game started: " + gameId);
   $('#readyForGame').addClass('hidden');
   $('#gameOn').removeClass('hidden');

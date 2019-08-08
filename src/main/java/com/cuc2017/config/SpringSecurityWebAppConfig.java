@@ -31,7 +31,7 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
     // @formatter:off
     http.httpBasic()
         .and().authorizeRequests()
-        .antMatchers("/allGames/**", "/fields/**").hasAnyRole("ADMIN")
+        .antMatchers("/allGames/**", "/fields/**", "/field/**").hasAnyRole("ADMIN")
         .antMatchers("/", "/scoresheet/**", "/gameScoreSheet/**", "/currentScores/**", "google849f54b5f1b34ed4.html").permitAll()
         .anyRequest().authenticated()
         .and()

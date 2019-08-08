@@ -69,9 +69,6 @@ public class DataLoader implements ApplicationRunner {
     getFieldRepository().save(new Field("Field 19", ""));
     getFieldRepository().save(new Field("Field 20", ""));
     getFieldRepository().save(new Field("Field 21", ""));
-    Field entity = new Field("Field Test", "");
-    entity.setUseField(false);
-    getFieldRepository().save(entity);
 
     // TODO: Set proper division load
     // loadAdultDivisions();

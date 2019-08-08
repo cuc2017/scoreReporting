@@ -18,6 +18,13 @@ public class FieldServiceImpl implements FieldService {
     return (List<Field>) getFieldRepository().findAll();
   }
 
+  @Override
+  public void changeUsed(long fieldId, boolean toUse) {
+    Field field = getFieldRepository().findOne(fieldId);
+    field.setUseField(toUse);
+    getFieldRepository().save(field);
+  }
+
   public FieldRepository getFieldRepository() {
     return fieldRepository;
   }
