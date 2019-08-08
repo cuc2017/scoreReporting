@@ -43,6 +43,18 @@ public class FieldsController {
     }
   }
 
+  @RequestMapping(value = "field/add", params = { "name" }, method = RequestMethod.POST)
+  public ResponseEntity<?> addField(Model model, @RequestParam(value = "name", required = true) String name,
+      HttpServletRequest request) {
+    try {
+      Field field = getFieldService().addField(name);
+      log.info("Added field: " + field);
+      return ResponseEntity.ok().build();
+    } catch (Exception e) {
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
+
   public FieldService getFieldService() {
     return fieldService;
   }

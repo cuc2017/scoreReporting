@@ -25,6 +25,12 @@ public class FieldServiceImpl implements FieldService {
     getFieldRepository().save(field);
   }
 
+  @Override
+  public Field addField(String fieldName) {
+    Field field = new Field(fieldName, "");
+    return getFieldRepository().save(field);
+  }
+
   public FieldRepository getFieldRepository() {
     return fieldRepository;
   }

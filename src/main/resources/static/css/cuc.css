@@ -1,55 +1,59 @@
 @CHARSET "UTF-8";
 
 body {
-	margin-top: 60px;
-	padding-bottom: 50px; 
+  margin-top: 60px;
+  padding-bottom: 50px;
 }
 
-.tvscores{
-	margin-top: -50px;
-	padding-bottom: -40px; 
+.top-buffer {
+  margin-top: 20px;
 }
 
-.gameTime{
-	margin-top: -40px;
+.tvscores {
+  margin-top: -50px;
+  padding-bottom: -40px;
 }
 
-.tv-padding{
-	padding-right:3;
-	padding-left:3;
+.gameTime {
+  margin-top: -40px;
 }
 
-.tv-panel-body-padding{
-	padding-right:11;
-	padding-left:11;
+.tv-padding {
+  padding-right: 3;
+  padding-left: 3;
+}
+
+.tv-panel-body-padding {
+  padding-right: 11;
+  padding-left: 11;
 }
 
 .box {
-	padding: 50px;
-	text-align: center;
-	vertical-align: middle;
+  padding: 50px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .small-box {
-	padding: 5px;
-	text-align: center;
-	vertical-align: middle;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .logo {
-	margin-top: -15px;
-	height: 44px;
+  margin-top: -15px;
+  height: 44px;
 }
 
 .hide-timer {
-	visibility:hidden;
+  visibility: hidden;
 }
 
 .spacer5 {
   height: 5px;
 }
 
-a.currentGameScore{
+a.currentGameScore {
   color: inherit;
   text-decoration: inherit;
 }

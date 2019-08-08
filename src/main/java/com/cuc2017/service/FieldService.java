@@ -9,4 +9,6 @@ public interface FieldService {
   List<Field> getAllFields();
 
   void changeUsed(long fieldId, boolean toUse);
+
+  Field addField(String fieldName);
 }
