@@ -76,13 +76,13 @@
          	</ul>
 					<ul class="nav navbar-nav navbar-right">
           <!--  TODO: login and logout comment for scoretraining -->
-						<li sec:authorize="isAuthenticated()">
-							<form id="logout" method="post" th:action="@{/logout}"
-								style="display: none;"></form> <a
-							href="javascript:processLogout();" class="text-uppercase">Sign out</a>
-						</li>
-						<li sec:authorize="isAnonymous()"><a href="/login"
-							class="text-uppercase">Sign in</a></li>
+<!-- 						<li sec:authorize="isAuthenticated()"> -->
+<!-- 							<form id="logout" method="post" th:action="@{/logout}" -->
+<!-- 								style="display: none;"></form> <a -->
+<!-- 							href="javascript:processLogout();" class="text-uppercase">Sign out</a> -->
+<!-- 						</li> -->
+<!-- 						<li sec:authorize="isAnonymous()"><a href="/login" -->
+<!-- 							class="text-uppercase">Sign in</a></li> -->
 					</ul>
 				</div>
 			</div>
