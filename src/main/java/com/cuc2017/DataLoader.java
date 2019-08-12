@@ -71,16 +71,16 @@ public class DataLoader implements ApplicationRunner {
     getFieldRepository().save(new Field("Field 21", ""));
 
     // TODO: Set proper division load
-    // loadAdultDivisions();
-    loadJuniorDivisions();
+    loadAdultDivisions();
+    // loadJuniorDivisions();
   }
 
   private void loadAdultDivisions() {
-    Division openDivision = new Division("Open", 4, "CUC2018 Open");
+    Division openDivision = new Division("Open", 2, "CUC2018 Open");
     getDivisionRepository().save(openDivision);
-    Division womenDivision = new Division("Women", 5, "CUC2018 Women");
+    Division womenDivision = new Division("Women", 1, "CUC2018 Women");
     getDivisionRepository().save(womenDivision);
-    Division masterOpenDivision = new Division("Masters Open", 2, "CUC2018 MastersOpen");
+    Division masterOpenDivision = new Division("Masters Open", 4, "CUC2018 MastersOpen");
     getDivisionRepository().save(masterOpenDivision);
     Division masterWomenDivision = new Division("Masters Women", 3, "CUC2018 MastersWomen");
     getDivisionRepository().save(masterWomenDivision);

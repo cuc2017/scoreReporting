@@ -14,7 +14,6 @@ import com.cuc2017.model.Field;
 @Service
 public class TwitterServiceImpl implements TwitterService {
 
-  private static final String CUC2017_SCORES_HASHTAG = " #CUC2018Scores";
   private static final String WEB_SITE = "https://scores.cuc2019.com";
 
   private static final Logger log = LoggerFactory.getLogger(TwitterServiceImpl.class);
