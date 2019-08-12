@@ -20,6 +20,8 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.HttpClientUtils;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.LaxRedirectStrategy;
 import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -50,13 +52,19 @@ import com.cuc2017.repository.TeamRepository;
 @Service
 public class GameServiceImpl implements GameService {
 
-  private static final String HOSTNAME = "http://80.172.224.48/";
+  // TODO: set proper hostname
+  private static final String HOSTNAME_2019 = "https://frisbee.gravato.eu/";
+  private static final String HOSTNAME_TRAINING = "http://80.172.224.48/";
+
+  private static final String HOSTNAME = HOSTNAME_2019;
   // TODO: SET proper season
-  // private static final String SEASON = "CUC2016";
-  private static final String SEASON = "CUC2018";
+  private static final String SEASON_LIVE = "CUC2019Jr";
+  private static final String SEASON_TRAINING = "CUC2018";
+  private static final String SEASON = SEASON_LIVE;
   private static final String TEST_SITE = "cuc2017-test";
-  private static final String JUNIOR_SITE = "cuc2018jr";
-  private static final String ADULT_SITE = "cuc2018";
+  private static final String JUNIOR_SITE = "cuc2019jr";
+  private static final String ADULT_SITE = "cuc2019";
+  private static final String TRAINING_SITE = "cuc2018jr";
   // TODO: Set proper active Site
   private static final String ACTIVE_SITE = JUNIOR_SITE;
 
@@ -306,26 +314,24 @@ public class GameServiceImpl implements GameService {
     }
     log.info("Finishing game: " + game);
     // TODO: comment for scoretraining
-    // HttpClient client = null;
-    // try {
-    // client = HttpClientBuilder.create().setRedirectStrategy(new
-    // LaxRedirectStrategy()).build();
-    // login(client);
-    // GameOrderDetails gameOrderDetails =
-    // findGameIdFromUltimatCanadaSite(client, game.getHomeTeam(),
-    // game.getAwayTeam());
-    // if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
-    // log.warn("Could not get game details");
-    // return game;
-    // }
-    // log.info("Game: " + game + " game order: " + gameOrderDetails);
-    // updatePlayers(client, game, gameOrderDetails);
-    // saveScore(client, game, gameOrderDetails);
-    // } catch (Exception e) {
-    // log.error("Problem saving game to WFDF system: " + game, e);
-    // } finally {
-    // HttpClientUtils.closeQuietly(client);
-    // }
+    HttpClient client = null;
+    try {
+      client = HttpClientBuilder.create().setRedirectStrategy(new LaxRedirectStrategy()).build();
+      login(client);
+      GameOrderDetails gameOrderDetails = findGameIdFromUltimatCanadaSite(client, game.getHomeTeam(),
+          game.getAwayTeam());
+      if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
+        log.warn("Could not get game details");
+        return game;
+      }
+      log.info("Game: " + game + " game order: " + gameOrderDetails);
+      updatePlayers(client, game, gameOrderDetails);
+      saveScore(client, game, gameOrderDetails);
+    } catch (Exception e) {
+      log.error("Problem saving game to WFDF system: " + game, e);
+    } finally {
+      HttpClientUtils.closeQuietly(client);
+    }
     return game;
   }
 
@@ -374,9 +380,10 @@ public class GameServiceImpl implements GameService {
 
   private void login(HttpClient client) throws UnsupportedEncodingException, IOException, ClientProtocolException {
     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
+    // TODO: Update for new season
     nameValuePairs.add(new BasicNameValuePair("login", "Login"));
-    nameValuePairs.add(new BasicNameValuePair("mypassword", "repeek"));
-    nameValuePairs.add(new BasicNameValuePair("myusername", "score"));
+    nameValuePairs.add(new BasicNameValuePair("mypassword", "keepercuc"));
+    nameValuePairs.add(new BasicNameValuePair("myusername", "cucscore"));
     doPost(client, LOGIN, nameValuePairs);
   }
 
