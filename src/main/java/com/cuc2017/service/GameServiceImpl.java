@@ -62,14 +62,14 @@ public class GameServiceImpl implements GameService {
   private static final String SEASON_LIVE_ADULT = "CUC2019";
   private static final String SEASON_LIVE_MIX = "CUC2019Mix";
   private static final String SEASON_TRAINING = "CUC2018";
-  private static final String SEASON = SEASON_LIVE_ADULT;
+  private static final String SEASON = SEASON_LIVE_JR;
   private static final String TEST_SITE = "cuc2017-test";
   private static final String JUNIOR_SITE = "cuc2019jr";
   private static final String ADULT_SITE = "cuc2019";
   private static final String MIXED_SITE = "cuc2019mix";
   private static final String TRAINING_SITE = "cuc2018jr";
   // TODO: Set proper active Site
-  private static final String ACTIVE_SITE = ADULT_SITE;
+  private static final String ACTIVE_SITE = JUNIOR_SITE;
 
   public static final String LOGIN = HOSTNAME + ACTIVE_SITE + "/scorekeeper/?view=login";
   private static final String TEAM_CARDS = HOSTNAME + ACTIVE_SITE + "/?view=teamcard&team=";
