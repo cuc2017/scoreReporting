@@ -40,7 +40,11 @@
         </div>
       </div>
     </div>
-    <div id="gameOn" th:attr="data-game-id=${game.id}" class="hidden">
+    <div th:include="fragments/scoreFragments :: gameOn"></div>
+   </div>
+
+  <div th:fragment="gameOn" th:remove="tag">
+     <div id="gameOn" th:attr="data-game-id=${game.id}" class="hidden">
       <div class="container">
         <div class="row gameTime">
           <div class="col-xs-12">
@@ -49,7 +53,6 @@
               <span id="gameTime"></span>
             </h4>
           </div>
-
         </div>
         <div class="row">
           <div class="col-xs-12">
@@ -157,6 +160,7 @@
     </div>
   </div>
 
+  
   <div th:fragment="noCurrentGames">
     <div class="box col-md-6 col-md-offset-3">There are no current games</div>
   </div>

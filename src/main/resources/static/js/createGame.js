@@ -4,7 +4,7 @@ var playUnderWay = '<font color="red">Blow whistle three times: disc should be p
 var countUpTimer;
 var countUpTimerIndex;
 var gameTimer;
-var gameTimerIndex;
+var gameStartTime = null;
 var homeTeamId;
 var homeTeamPlayers = null;
 var awayTeamId;
@@ -234,9 +234,9 @@ function startHalftimeTimer() {
 }
 
 function startGameTimer() {
+  gameStartTime = new Date();
   gameTimer = new Timer();
-  gameTimerIndex = 0;
-  updateTimer(timerTimeInMinsAndSecs(gameTimerIndex));
+  updateTimer(timerTimeInMinsAndSecs(0));
   gameTimer.Tick = gameTimerTick;
   gameTimer.Start()
 }
@@ -343,10 +343,16 @@ function timerTimeInMinsAndSecs(time) {
 }
 
 function gameTimerTick() {
-  gameTimerIndex = gameTimerIndex + 1;
-  $('#gameTime').html(timerTimeInMinsAndSecs(gameTimerIndex));
+  var elapsedTime = getElapsedTime(gameStartTime);
+  $('#gameTime').html(timerTimeInMinsAndSecs(elapsedTime));
 }
 
+function getElapsedTime(time){
+  var currentTime = new Date();
+  var elapsedTimeInMs = currentTime.getTime() - time.getTime();
+  var elapsedTime = Math.floor(elapsedTimeInMs / 1000);
+  return elapsedTime;
+}
 function pad(val) {
   var valString = val + "";
   if (valString.length < 2) {
