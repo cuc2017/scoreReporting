@@ -227,6 +227,17 @@ public class ScoreGameController {
     }
   }
 
+  @RequestMapping(value = "/updateEvents", method = RequestMethod.GET, params = { "game" })
+  public ResponseEntity<?> updateEvents(@RequestParam("game") Long gameId, HttpServletRequest request) {
+    try {
+      Game game = getGameService().getGame(gameId);
+      return new ResponseEntity<String>(getGameService().updateAllEventsForScorePage(game), HttpStatus.OK);
+    } catch (Exception e) {
+      log.error("Problem start game for game: " + gameId, e);
+      return ResponseEntity.badRequest().body(e.getMessage());
+    }
+  }
+
   @RequestMapping(value = "/updateAllEvents", method = RequestMethod.GET, params = { "game" })
   public ResponseEntity<?> updateAllEvents(@RequestParam("game") Long gameId, HttpServletRequest request) {
     try {

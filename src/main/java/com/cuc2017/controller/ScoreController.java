@@ -87,6 +87,30 @@ public class ScoreController {
     return "score";
   }
 
+  @RequestMapping(value = "/score", method = RequestMethod.GET, params = { "game" })
+  public String editScore(HttpServletRequest request, @RequestParam("game") Long gameId, Model model) {
+    try {
+      Game game = getGameService().getGame(gameId);
+      model.addAttribute("game", game);
+      String homeTeamName = game.getHomeTeam().getName();
+      if (homeTeamName.length() > 8) {
+        homeTeamName = homeTeamName.substring(0, 7);
+      }
+      model.addAttribute("homeTeamNameToButtonName", homeTeamName);
+      String awayTeamName = game.getAwayTeam().getName();
+      if (awayTeamName.length() > 8) {
+        awayTeamName = awayTeamName.substring(0, 7);
+      }
+      model.addAttribute("awayTeamNameToButtonName", awayTeamName);
+      model.addAttribute("startGameTime", game.getStartGameEvent().getCreated().getTime());
+      model.addAttribute("eventIds", game.getAllInUseEventIds());
+    } catch (Exception e) {
+      log.error("Problem editing game for gameId: " + gameId, e);
+      throw e;
+    }
+    return "editScore";
+  }
+
   @RequestMapping("/docs")
   public String docs(HttpServletRequest request, Model model) {
     return "docs";

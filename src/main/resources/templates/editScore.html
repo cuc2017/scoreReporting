@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
+</head>
+<body>
+  <div th:include="fragments/scoreFragments :: endGameModalFragment" th:remove="tag"></div>
+  <div th:include="fragments/scoreFragments :: fieldInUseModalFragment" th:remove="tag"></div>
+
+	<div class="container-fluid">
+		<div th:replace="fragments/head :: navbar">(navbar)</div>
+		<div class="row">
+			<div id="baseRow">
+        <div th:include="fragments/scoreFragments :: gameOn" th:remove="tag"></div>
+			</div>
+    </div> 
+	</div>
+  
+  <div th:include="fragments/scoreFragments :: footer" th:remove="tag"></div>
+  
+	<script src="/js/timer.js"></script>
+	<script src="/js/createGame.js"></script>
+  <script th:inline="javascript">
+    var eventIds =/*[[${eventIds}]]*/;
+    homeTimeOutButtonName = 'TO ' + /*[[${homeTeamNameToButtonName}]]*/;
+    awayTimeOutButtonName = 'TO ' + /*[[${awayTeamNameToButtonName}]]*/;
+    homeTeamId = /*[[${game.homeTeam.id}]]*/;
+    awayTeamId = /*[[${game.awayTeam.id}]]*/;
+    var originalGameStartTime = new Date(/*[[${startGameTime}]]*/);
+  </script>
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+      getPlayers();
+      setUpPageOnStart(); 
+      gameStartTime = originalGameStartTime;
+      updateTimeOutButtons();
+      loadEventsOnStart();
+      $('#navbar').addClass('hidden');
+    });
+  </script>
+</body>
+</html>

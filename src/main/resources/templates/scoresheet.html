@@ -3,6 +3,26 @@
 <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
 </head>
 <body>
+  <div class="modal fade" id="editGameModal" tabindex="-1"
+    role="dialog" aria-labelledby="EditGame">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit game</h4>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">Are you sure you want to edit this game?
+          <p>Only do so if the game is no longer being scored. 
+          If scoring is done on two tablets at the same time it will mess up the game</p></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+          <a class="btn btn-warning btn-ok" th:href="@{'/score?game=' + ${game.id}}">Yes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container-fluid">
     <div th:replace="fragments/head :: navbar">(navbar)</div>
     <div class="row">
@@ -10,6 +30,8 @@
         <h3 id="currentGameScore" th:utext="${game.currentScore}"></h3>
         <h4 th:text="@{${game.division} + ' @ ' + ${game.field}}"></h4>
        <h4>From: <span id="startTime">Not yet started</span> until: <span id="endTime">Not Yet started</span></h4>
+       <button sec:authorize="isAuthenticated()" id="Editame" type="button"
+          class="btn btn-primary" data-toggle="modal" data-target="#editGameModal">Edit Game</button>      
       </div>
     </div>
     <p />

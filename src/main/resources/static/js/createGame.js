@@ -85,9 +85,6 @@ function getPlayers() {
     $.ajax({
       type : "get",
       url : '/players/?team=' + awayTeamId,
-      beforeSend : function(xhr) {
-        xhr.setRequestHeader(header, token);
-      },
       success : function(players) {
         awayTeamPlayers = players;
       },
@@ -113,13 +110,8 @@ function onPageLeave(e) {
 $('#baseRow').on('click', '#startGame', function() {
   var gameId = $(this).data('game-id');
   console.log("Game started: " + gameId);
-  $('#readyForGame').addClass('hidden');
-  $('#gameOn').removeClass('hidden');
-  $('#footer').removeClass('hidden');
-  startGameTimer();
-  window.addEventListener('beforeunload', onPageLeave);
-  window.addEventListener('pageHide', onPageLeave);
-
+  setUpPageOnStart();
+  
   $.ajax({
     type : "post",
     url : '/startGame/?game=' + gameId,
@@ -127,16 +119,29 @@ $('#baseRow').on('click', '#startGame', function() {
       xhr.setRequestHeader(header, token);
     },
     success : function(game) {
-      updateEventTable(gameId);
-      homeTimeOutButtonName = "TO " + game.homeTeam.name.substring(0, 8);
-      awayTimeOutButtonName = "TO " + game.awayTeam.name.substring(0, 8);
-      updateTimeOutButtons();
+      setUpButtonsOnStart(game);
     },
     error : function(error) {
       console.log(error.responseText);
     }
   });
 });
+
+function setUpPageOnStart(){
+  $('#readyForGame').addClass('hidden');
+  $('#gameOn').removeClass('hidden');
+  $('#footer').removeClass('hidden');
+  startGameTimer();
+  window.addEventListener('beforeunload', onPageLeave);
+  window.addEventListener('pageHide', onPageLeave);
+}
+
+function setUpButtonsOnStart(game){
+  updateEventTable(game.id);
+  homeTimeOutButtonName = "TO " + game.homeTeam.name.substring(0, 8);
+  awayTimeOutButtonName = "TO " + game.awayTeam.name.substring(0, 8);
+  updateTimeOutButtons();
+}
 
 $('#baseRow').on('click', '#noGame', function() {
   var gameId = $(this).data('game-id')
@@ -154,6 +159,7 @@ $('#baseRow').on('click', '#noGame', function() {
     }
   });
 });
+
 function updateEventTable(gameId) {
   $.ajax({
     type : "get",
@@ -164,6 +170,21 @@ function updateEventTable(gameId) {
     },
     error : function(error) {
       console.log("Problem updating event list" + error.responseText);
+    }
+  });
+}
+
+function loadEventsOnStart() {
+  var gameId = getGameId();
+  $.ajax({
+    type : "get",
+    url : '/updateEvents/?game=' + gameId,
+    success : function(eventDetails) {
+      $('#eventTable > tbody > tr').eq(0).after(eventDetails);
+      updateUndoButton();
+    },
+    error : function(error) {
+      console.log("Problem updating event " + eventId + error.responseText);
     }
   });
 }

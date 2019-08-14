@@ -90,6 +90,16 @@ public class Game extends AbstractEntity {
   }
 
   @JsonIgnore
+  public Event getEventFromEventId(Long eventId) {
+    for (Event event : getEvents()) {
+      if (event.getId().equals(eventId)) {
+        return event;
+      }
+    }
+    return null;
+  }
+
+  @JsonIgnore
   public Event getLastEvent() {
     int eventsSize = getEvents().size();
     int counter = 0;
@@ -102,7 +112,17 @@ public class Game extends AbstractEntity {
       event = getEvents().get(eventsSize - counter);
     } while (!event.isUseEvent());
     return event;
+  }
 
+  @JsonIgnore
+  public List<Long> getAllInUseEventIds() {
+    List<Long> eventIds = new ArrayList<>();
+    for (Event event : getEvents()) {
+      if (event.isUseEvent()) {
+        eventIds.add(event.getId());
+      }
+    }
+    return eventIds;
   }
 
   @JsonIgnore

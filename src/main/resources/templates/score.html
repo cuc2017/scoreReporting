@@ -3,48 +3,8 @@
 <!--/*/ <th:block th:include="fragments/head :: head"/> /*/-->
 </head>
 <body>
-	<div class="modal fade" id="endGameModal" tabindex="-1" role="dialog"
-		aria-labelledby="End Game">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Finished Game</h4>
-				</div>
-				<div class="modal-body">
-					<div class="text-center">
-						<p>Are you finished scoring this Game?</p>
-						<h4 id="proposedFinalScore"></h4>
-						<p> After this you will not be able change anything</p>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-					<button id="endGameOk" type="button" class="btn btn-warning btn-ok"
-						data-dismiss="modal">Yes</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="fieldInUseModal" tabindex="-1"
-		role="dialog" aria-labelledby="Field In Use">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Field in use</h4>
-				</div>
-				<div class="modal-body">
-					<div class="text-center">That field has an active game on it.
-						Are you sure that is the right field?</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-					<button id="useFieldOk" type="button"
-						class="btn btn-warning btn-ok" data-dismiss="modal">Yes</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div th:include="fragments/scoreFragments :: endGameModalFragment" th:remove="tag"></div>
+  <div th:include="fragments/scoreFragments :: fieldInUseModalFragment" th:remove="tag"></div>
 
 	<div class="container-fluid">
 		<div th:replace="fragments/head :: navbar">(navbar)</div>
@@ -92,25 +52,9 @@
 			</div>
 		</div>
 	</div>
-	<footer id="footer"
-		class="hidden navbar navbar-default navbar-fixed-bottom">
-		<div class="container">
-			<div class="navbar-header">
-				<button id="undoButton" type="button"
-					class="btn btn-warning navbar-btn">Undo</button>
-				<button id="halftime" type="button"
-					class="btn btn-default navbar-btn">Halftime</button>
-				<button id="homeTimeOuts" type="button"
-					class="btn btn-default navbar-btn">TO - HOME</button>
-				<button id="awayTimeOuts" type="button"
-					class="btn btn-default navbar-btn">TO - AWAY</button>
-				<button id="gameEnded" type="button"
-					class="btn btn-primary navbar-btn">Game Over</button>
-				<button id="finishedGame" type="button"
-					class="btn btn-primary navbar-btn" disabled="true">Finished Game</button>
-			</div>
-		</div>
-	</footer>
+  
+  <div th:include="fragments/scoreFragments :: footer" th:remove="tag"></div>
+  
 	<script src="/js/timer.js"></script>
 	<script src="/js/createGame.js"></script>
 </body>
