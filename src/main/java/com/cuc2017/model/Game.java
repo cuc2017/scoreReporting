@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Game extends AbstractEntity {
 
   private static final String TWEET_CONTENTS = " follow this game (https://scores.cuc2019.com/scoresheet?game=";
-  private static final int RECENT_GAME_TIME = 60 * 60 * 1000;
+  private static final int RECENT_GAME_TIME = 30 * 60 * 1000; // 30 mins
   private static final SimpleDateFormat FORMATTER = new SimpleDateFormat("hh:mm");
 
   static {

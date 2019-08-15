@@ -33,6 +33,9 @@ import com.google.gson.stream.JsonReader;
 @Component
 public class DataLoader implements ApplicationRunner {
 
+  // TODO: Update year
+  private static final String CUC_YEAR = "CUC2019";
+
   private static final Logger log = LoggerFactory.getLogger(DataLoader.class);
 
   private DivisionRepository divisionRepository;
@@ -69,20 +72,25 @@ public class DataLoader implements ApplicationRunner {
     getFieldRepository().save(new Field("Field 19", ""));
     getFieldRepository().save(new Field("Field 20", ""));
     getFieldRepository().save(new Field("Field 21", ""));
+    getFieldRepository().save(new Field("Field 22", ""));
+    getFieldRepository().save(new Field("Field 23", ""));
+    getFieldRepository().save(new Field("Field 24", ""));
+    getFieldRepository().save(new Field("Terry Fox", ""));
 
     // TODO: Set proper division load
-    loadAdultDivisions();
+    loadMixedDivisions();
+    // loadAdultDivisions();
     // loadJuniorDivisions();
   }
 
   private void loadAdultDivisions() {
-    Division openDivision = new Division("Open", 2, "CUC2018 Open");
+    Division openDivision = new Division("Open", 2, CUC_YEAR + " Open");
     getDivisionRepository().save(openDivision);
-    Division womenDivision = new Division("Women", 1, "CUC2018 Women");
+    Division womenDivision = new Division("Women", 1, CUC_YEAR + " Women");
     getDivisionRepository().save(womenDivision);
-    Division masterOpenDivision = new Division("Masters Open", 4, "CUC2018 MastersOpen");
+    Division masterOpenDivision = new Division("Masters Open", 4, CUC_YEAR + " MastersOpen");
     getDivisionRepository().save(masterOpenDivision);
-    Division masterWomenDivision = new Division("Masters Women", 3, "CUC2018 MastersWomen");
+    Division masterWomenDivision = new Division("Masters Women", 3, CUC_YEAR + " MastersWomen");
     getDivisionRepository().save(masterWomenDivision);
 
     loadTeamsFromUltimatCanadaSite(openDivision);
@@ -122,10 +130,20 @@ public class DataLoader implements ApplicationRunner {
     }
   }
 
+  private void loadMixedDivisions() {
+    Division mixedDivision = new Division("Mixed", 1, CUC_YEAR + " Mixed");
+    getDivisionRepository().save(mixedDivision);
+    Division mixedMastersDivision = new Division("Mixed Masters", 2, CUC_YEAR + " Mixed Masters");
+    getDivisionRepository().save(mixedMastersDivision);
+
+    loadTeamsFromUltimatCanadaSite(mixedDivision);
+    loadTeamsFromUltimatCanadaSite(mixedMastersDivision);
+  }
+
   private void loadJuniorDivisions() {
-    Division openDivision = new Division("Junior Open", 1, "CUC2018 JuniorOpen");
+    Division openDivision = new Division("Junior Open", 1, CUC_YEAR + " JuniorOpen");
     getDivisionRepository().save(openDivision);
-    Division womenDivision = new Division("Junior Women", 2, "CUC2018 JuniorWomen");
+    Division womenDivision = new Division("Junior Women", 2, CUC_YEAR + " JuniorWomen");
     getDivisionRepository().save(womenDivision);
 
     loadTeamsFromUltimatCanadaSite(openDivision);

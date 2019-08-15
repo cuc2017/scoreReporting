@@ -21,8 +21,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.HttpClientUtils;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.LaxRedirectStrategy;
 import org.apache.http.message.BasicNameValuePair;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -56,22 +54,22 @@ public class GameServiceImpl implements GameService {
   // TODO: set proper hostname
   private static final String HOSTNAME_2019 = "https://frisbee.gravato.eu/";
   private static final String HOSTNAME_TRAINING = "http://80.172.224.48/";
+  private static final String HOSTNAME = HOSTNAME_TRAINING;
 
-  private static final String HOSTNAME = HOSTNAME_2019;
   // TODO: Set proper season
   private static final String SEASON_LIVE_JR = "CUC2019Jr";
   private static final String SEASON_LIVE_ADULT = "CUC2019";
   private static final String SEASON_LIVE_MIX = "CUC2019Mix";
   private static final String SEASON_TRAINING = "CUC2018";
-  private static final String SEASON = SEASON_LIVE_ADULT;
+  private static final String SEASON = SEASON_TRAINING;
 
+  // TODO: Set proper active Site
   private static final String TEST_SITE = "cuc2017-test";
   private static final String JUNIOR_SITE = "cuc2019jr";
   private static final String ADULT_SITE = "cuc2019";
   private static final String MIXED_SITE = "cuc2019mix";
-  private static final String TRAINING_SITE = "cuc2018jr";
-  // TODO: Set proper active Site
-  private static final String ACTIVE_SITE = ADULT_SITE;
+  private static final String TRAINING_SITE = "cuc2018mix";
+  private static final String ACTIVE_SITE = TRAINING_SITE;
 
   public static final String LOGIN = HOSTNAME + ACTIVE_SITE + "/scorekeeper/?view=login";
   private static final String TEAM_CARDS = HOSTNAME + ACTIVE_SITE + "/?view=teamcard&team=";
@@ -319,24 +317,26 @@ public class GameServiceImpl implements GameService {
     }
     log.info("Finishing game: " + game);
     // TODO: comment for scoretraining
-    HttpClient client = null;
-    try {
-      client = HttpClientBuilder.create().setRedirectStrategy(new LaxRedirectStrategy()).build();
-      login(client);
-      GameOrderDetails gameOrderDetails = findGameIdFromUltimatCanadaSite(client, game.getHomeTeam(),
-          game.getAwayTeam());
-      if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
-        log.warn("Could not get game details");
-        return game;
-      }
-      log.info("Game: " + game + " game order: " + gameOrderDetails);
-      updatePlayers(client, game, gameOrderDetails);
-      saveScore(client, game, gameOrderDetails);
-    } catch (Exception e) {
-      log.error("Problem saving game to WFDF system: " + game, e);
-    } finally {
-      HttpClientUtils.closeQuietly(client);
-    }
+    // HttpClient client = null;
+    // try {
+    // client = HttpClientBuilder.create().setRedirectStrategy(new
+    // LaxRedirectStrategy()).build();
+    // login(client);
+    // GameOrderDetails gameOrderDetails =
+    // findGameIdFromUltimatCanadaSite(client, game.getHomeTeam(),
+    // game.getAwayTeam());
+    // if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
+    // log.warn("Could not get game details");
+    // return game;
+    // }
+    // log.info("Game: " + game + " game order: " + gameOrderDetails);
+    // updatePlayers(client, game, gameOrderDetails);
+    // saveScore(client, game, gameOrderDetails);
+    // } catch (Exception e) {
+    // log.error("Problem saving game to WFDF system: " + game, e);
+    // } finally {
+    // HttpClientUtils.closeQuietly(client);
+    // }
     return game;
   }
 
