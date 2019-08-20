@@ -269,6 +269,7 @@ function startPointScoredTimer() {
 function startTimeOutTimer() {
   if (countUpTimerIndex <= 0 || countUpTimerIndex > 90) {
     setUpTimer(pointScoredTimerTick, "timeout taken");
+    return;
   }
   var oldCountUpTimerIndex =   countUpTimerIndex;
 

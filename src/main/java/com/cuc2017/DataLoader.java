@@ -131,9 +131,9 @@ public class DataLoader implements ApplicationRunner {
   }
 
   private void loadMixedDivisions() {
-    Division mixedDivision = new Division("Mixed", 1, CUC_YEAR + " Mixed");
+    Division mixedDivision = new Division("Mixed", 2, CUC_YEAR + " Mixed");
     getDivisionRepository().save(mixedDivision);
-    Division mixedMastersDivision = new Division("Mixed Masters", 2, CUC_YEAR + " Mixed Masters");
+    Division mixedMastersDivision = new Division("Mixed Masters", 1, CUC_YEAR + " Mixed Masters");
     getDivisionRepository().save(mixedMastersDivision);
 
     loadTeamsFromUltimatCanadaSite(mixedDivision);
