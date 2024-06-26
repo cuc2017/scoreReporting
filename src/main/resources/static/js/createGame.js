@@ -268,7 +268,7 @@ function startPointScoredTimer() {
 
 function startTimeOutTimer() {
   if (countUpTimerIndex <= 0 || countUpTimerIndex > 90) {
-    setUpTimer(pointScoredTimerTick, "timeout taken");
+    setUpTimer(timeOutTimerTick, "timeout taken");
     return;
   }
   var oldCountUpTimerIndex =   countUpTimerIndex;
@@ -323,6 +323,19 @@ function pointScoredTimerTick() {
   countUpTimerIndex = countUpTimerIndex + 1;
   updateTimer(pad(countUpTimerIndex));
 
+  if (countUpTimerIndex == 55) {
+    showTimerMessage(warningForOffense);
+  } else if (countUpTimerIndex == 70) {
+    showTimerMessage(offenceSet);
+  } else if (countUpTimerIndex == 85) {
+    showTimerMessage(playUnderWay);
+  }
+}
+
+function timeOutTimerTick() {
+  countUpTimerIndex = countUpTimerIndex + 1;
+  updateTimer(pad(countUpTimerIndex));
+
   if (countUpTimerIndex == 50) {
     showTimerMessage(warningForOffense);
   } else if (countUpTimerIndex == 70) {
@@ -331,16 +344,15 @@ function pointScoredTimerTick() {
     showTimerMessage(playUnderWay);
   }
 }
-
 function pointScoredAndTimeoutTimerTick() {
   countUpTimerIndex = countUpTimerIndex + 1;
   updateTimer(pad(countUpTimerIndex));
 
   if (countUpTimerIndex == 140) {
     showTimerMessage(warningForOffense);
-  } else if (countUpTimerIndex == 160) {
+  } else if (countUpTimerIndex == 155) {
     showTimerMessage(offenceSet);
-  } else if (countUpTimerIndex == 180) {
+  } else if (countUpTimerIndex == 170) {
     showTimerMessage(playUnderWay);
   }
 }
@@ -349,11 +361,11 @@ function halftimeTimerTick() {
   countUpTimerIndex = countUpTimerIndex + 1;
   updateTimer(timerTimeInMinsAndSecs(countUpTimerIndex));
 
-  if (countUpTimerIndex == 260) {
+  if (countUpTimerIndex == 285) {
     showTimerMessage(warningForOffense);
-  } else if (countUpTimerIndex == 280) {
-    showTimerMessage(offenceSet);
   } else if (countUpTimerIndex == 300) {
+    showTimerMessage(offenceSet);
+  } else if (countUpTimerIndex == 315) {
     showTimerMessage(playUnderWay);
   }
 }

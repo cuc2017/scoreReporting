@@ -15,7 +15,7 @@ import com.cuc2017.model.Field;
 public class TwitterServiceImpl implements TwitterService {
 
   // TODO: Update website
-  private static final String WEB_SITE = "https://scores.cuc2019.com";
+  private static final String WEB_SITE = "https://scores.cuc2024.com";
 
   private static final Logger log = LoggerFactory.getLogger(TwitterServiceImpl.class);
 
@@ -28,7 +28,7 @@ public class TwitterServiceImpl implements TwitterService {
       TwitterTemplate twitterTemplate = getTwitterTemplates().get("General");
       if (twitterTemplate != null) {
         // TODO: comment for scoretraining
-        twitterTemplate.timelineOperations().updateStatus(tweetText + "follow current games (" + WEB_SITE + ")");
+//        twitterTemplate.timelineOperations().updateStatus(tweetText + "follow current games (" + WEB_SITE + ")");
         // TODO: uncomment for scoretraining
         log.info("Tweet to scores: " + tweetText);
       } else {

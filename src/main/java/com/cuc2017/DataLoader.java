@@ -34,7 +34,7 @@ import com.google.gson.stream.JsonReader;
 public class DataLoader implements ApplicationRunner {
 
   // TODO: Update year
-  private static final String CUC_YEAR = "CUC2019";
+  private static final String CUC_YEAR = "CUC2024";
 
   private static final Logger log = LoggerFactory.getLogger(DataLoader.class);
 
@@ -70,17 +70,12 @@ public class DataLoader implements ApplicationRunner {
     getFieldRepository().save(new Field("Field 17", ""));
     getFieldRepository().save(new Field("Field 18", ""));
     getFieldRepository().save(new Field("Field 19", ""));
-    getFieldRepository().save(new Field("Field 20", ""));
-    getFieldRepository().save(new Field("Field 21", ""));
-    getFieldRepository().save(new Field("Field 22", ""));
-    getFieldRepository().save(new Field("Field 23", ""));
-    getFieldRepository().save(new Field("Field 24", ""));
-    getFieldRepository().save(new Field("Terry Fox", ""));
+    getFieldRepository().save(new Field("Carleton", ""));
 
     // TODO: Set proper division load
-    loadMixedDivisions();
+    // loadMixedDivisions();
     // loadAdultDivisions();
-    // loadJuniorDivisions();
+    loadJuniorDivisions();
   }
 
   private void loadAdultDivisions() {
@@ -88,18 +83,15 @@ public class DataLoader implements ApplicationRunner {
     getDivisionRepository().save(openDivision);
     Division womenDivision = new Division("Women", 1, CUC_YEAR + " Women");
     getDivisionRepository().save(womenDivision);
-    Division masterOpenDivision = new Division("Masters Open", 4, CUC_YEAR + " MastersOpen");
-    getDivisionRepository().save(masterOpenDivision);
-    Division masterWomenDivision = new Division("Masters Women", 3, CUC_YEAR + " MastersWomen");
-    getDivisionRepository().save(masterWomenDivision);
+    Division mixedDivision = new Division("Mixed", 2, CUC_YEAR + " Mixed");
+    getDivisionRepository().save(mixedDivision);
 
-    loadTeamsFromUltimatCanadaSite(openDivision);
-    loadTeamsFromUltimatCanadaSite(womenDivision);
-    loadTeamsFromUltimatCanadaSite(masterOpenDivision);
-    loadTeamsFromUltimatCanadaSite(masterWomenDivision);
+    loadTeamsFromUltimateCanadaSite(openDivision);
+    loadTeamsFromUltimateCanadaSite(womenDivision);
+    loadTeamsFromUltimateCanadaSite(mixedDivision);
   }
 
-  private void loadTeamsFromUltimatCanadaSite(Division division) {
+  private void loadTeamsFromUltimateCanadaSite(Division division) {
     try {
       URL url = new URL(GameServiceImpl.DIVISION_CARDS + division.getSeries());
       Document page = Jsoup.parse(url, 5000);
@@ -130,24 +122,27 @@ public class DataLoader implements ApplicationRunner {
     }
   }
 
-  private void loadMixedDivisions() {
-    Division mixedDivision = new Division("Mixed", 2, CUC_YEAR + " Mixed");
-    getDivisionRepository().save(mixedDivision);
+  private void loadMastersDivisions() {
+    Division masterOpenDivision = new Division("Masters Open", 4, CUC_YEAR + " MastersOpen");
+    getDivisionRepository().save(masterOpenDivision);
+    Division masterWomenDivision = new Division("Masters Women", 3, CUC_YEAR + " MastersWomen");
+    getDivisionRepository().save(masterWomenDivision);
     Division mixedMastersDivision = new Division("Mixed Masters", 1, CUC_YEAR + " Mixed Masters");
     getDivisionRepository().save(mixedMastersDivision);
 
-    loadTeamsFromUltimatCanadaSite(mixedDivision);
-    loadTeamsFromUltimatCanadaSite(mixedMastersDivision);
+    loadTeamsFromUltimateCanadaSite(masterOpenDivision);
+    loadTeamsFromUltimateCanadaSite(masterWomenDivision);
+    loadTeamsFromUltimateCanadaSite(mixedMastersDivision);
   }
 
   private void loadJuniorDivisions() {
-    Division openDivision = new Division("Junior Open", 1, CUC_YEAR + " JuniorOpen");
+    Division openDivision = new Division("Junior Open", 2, CUC_YEAR + " JuniorOpen");
     getDivisionRepository().save(openDivision);
-    Division womenDivision = new Division("Junior Women", 2, CUC_YEAR + " JuniorWomen");
+    Division womenDivision = new Division("Junior Women", 1, CUC_YEAR + " JuniorWomen");
     getDivisionRepository().save(womenDivision);
 
-    loadTeamsFromUltimatCanadaSite(openDivision);
-    loadTeamsFromUltimatCanadaSite(womenDivision);
+    loadTeamsFromUltimateCanadaSite(openDivision);
+    loadTeamsFromUltimateCanadaSite(womenDivision);
   }
 
   private void loadPlayers(Division juniorWomen, Division juniorOpen) {

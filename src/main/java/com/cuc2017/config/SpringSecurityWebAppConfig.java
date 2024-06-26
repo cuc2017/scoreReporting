@@ -14,35 +14,37 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
 
   @Autowired
   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+    // TODO: Update passwords
   // @formatter:off
+
   auth.inMemoryAuthentication()
-          .withUser("scorekeeper").password("skBrampton").roles("USER")
+          .withUser("scorekeeper").password("skOttawa").roles("USER")
           .and()
-          .withUser("admin").password("Edmonton20!9").roles("ADMIN");
+          .withUser("admin").password("Ottawa2024!").roles("ADMIN");
   // @formatter:on
   }
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     // TODO: uncomment for scoretraining
-    // http.authorizeRequests().antMatchers("/**").permitAll();
+    http.authorizeRequests().antMatchers("/**").permitAll();
 
     // TODO: comment for scoretraining
     // @formatter:off
-    http.httpBasic()
-        .and().authorizeRequests()
-        .antMatchers("/allGames/**", "/fields/**", "/field/**").hasAnyRole("ADMIN")
-        .antMatchers("/", "/scoresheet/**", "/gameScoreSheet/**", "/currentScores/**", "google849f54b5f1b34ed4.html").permitAll()
-        .anyRequest().authenticated()
-        .and()
-        .formLogin()
-          .loginPage("/login")
-          .defaultSuccessUrl("/", true)
-          .permitAll()
-        .and()
-        .logout()
-          .logoutSuccessUrl("/")
-          .permitAll();
+//    http.httpBasic()
+//        .and().authorizeRequests()
+//        .antMatchers("/allGames/**", "/fields/**", "/field/**").hasAnyRole("ADMIN")
+//        .antMatchers("/", "/scoresheet/**", "/gameScoreSheet/**", "/currentScores/**", "google849f54b5f1b34ed4.html").permitAll()
+//        .anyRequest().authenticated()
+//        .and()
+//        .formLogin()
+//          .loginPage("/login")
+//          .defaultSuccessUrl("/", true)
+//          .permitAll()
+//        .and()
+//        .logout()
+//          .logoutSuccessUrl("/")
+//          .permitAll();
      // @formatter:on
   }
 }
