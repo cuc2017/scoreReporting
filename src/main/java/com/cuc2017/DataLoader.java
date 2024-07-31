@@ -57,7 +57,6 @@ public class DataLoader implements ApplicationRunner {
     getFieldRepository().save(new Field("Field 4", ""));
     getFieldRepository().save(new Field("Field 5", ""));
     getFieldRepository().save(new Field("Field 6", ""));
-    getFieldRepository().save(new Field("Field 7", ""));
     getFieldRepository().save(new Field("Field 8", ""));
     getFieldRepository().save(new Field("Field 9", ""));
     getFieldRepository().save(new Field("Field 10", ""));

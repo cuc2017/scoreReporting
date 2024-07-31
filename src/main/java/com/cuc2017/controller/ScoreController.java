@@ -116,6 +116,11 @@ public class ScoreController {
     return "docs";
   }
 
+  @RequestMapping("/map")
+  public String map(HttpServletRequest request, Model model) {
+    return "map";
+  }
+
   @RequestMapping(value = "/currentScores", method = RequestMethod.GET)
   public String getCurrentScores(HttpServletRequest request, Model model) {
     try {

@@ -9,6 +9,7 @@ public class Team extends AbstractEntity implements Comparable<Team> {
   @ManyToOne
   private Division division;
   private String name;
+  private String displayName;
   private int teamNumber;
 
   public Team() {
@@ -23,6 +24,7 @@ public class Team extends AbstractEntity implements Comparable<Team> {
   public Team(Division division, String name, int ultimateCanadaTeamNumber) {
     this.division = division;
     this.name = name;
+    this.displayName = name;
     this.teamNumber = ultimateCanadaTeamNumber;
   }
 
@@ -55,4 +57,11 @@ public class Team extends AbstractEntity implements Comparable<Team> {
     this.teamNumber = teamNumber;
   }
 
+  public String getDisplayName() {
+    return displayName;
+  }
+
+  public void setDisplayName(String displayName) {
+    this.displayName = displayName;
+  }
 }

@@ -1,1 +1,0 @@
-web: java -Xms256m -jar scoreReporting-0.6.3.jar
