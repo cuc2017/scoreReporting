@@ -54,24 +54,24 @@ import com.cuc2017.repository.TeamRepository;
 public class GameServiceImpl implements GameService {
 
   // TODO: set proper hostname
-  private static final String HOSTNAME_2024 = "https://frisbee.gravato.eu/";
+  private static final String HOSTNAME_2024 = "https://results.canadianultimate.com/";
   private static final String HOSTNAME_TRAINING = "https://results.canadianultimate.com/";
-  private static final String HOSTNAME = HOSTNAME_TRAINING;
+  private static final String HOSTNAME = HOSTNAME_2024;
 
   // TODO: Set proper season
-  private static final String SEASON_LIVE_JR = "CUC2024Jr";
+  private static final String SEASON_LIVE_JR = "CUCJR2024";
   private static final String SEASON_LIVE_ADULT = "CUC2024";
   private static final String SEASON_LIVE_MIX = "CUC2024Mas";
   private static final String SEASON_TRAINING = "CUC2018";
-  private static final String SEASON = SEASON_TRAINING;
+  private static final String SEASON = SEASON_LIVE_JR;
 
   // TODO: Set proper active Site
   private static final String TEST_SITE = "cuc2017-test";
-  private static final String JUNIOR_SITE = "cuc2019jr";
+  private static final String JUNIOR_SITE = "cucjr2024";
   private static final String ADULT_SITE = "cuc2019";
   private static final String MIXED_SITE = "cuc2019mix";
   private static final String TRAINING_SITE = "cucjr2023";
-  private static final String ACTIVE_SITE = TRAINING_SITE;
+  private static final String ACTIVE_SITE = JUNIOR_SITE;
 
   public static final String LOGIN = HOSTNAME + ACTIVE_SITE + "/scorekeeper/?view=login";
   private static final String TEAM_CARDS = HOSTNAME + ACTIVE_SITE + "/?view=teamcard&team=";
@@ -319,24 +319,24 @@ public class GameServiceImpl implements GameService {
     }
     log.info("Finishing game: " + game);
     // TODO: comment for scoretraining
-//    HttpClient client = null;
-//    try {
-//      client = HttpClientBuilder.create().setRedirectStrategy(new LaxRedirectStrategy()).build();
-//      login(client);
-//      GameOrderDetails gameOrderDetails = findGameIdFromUltimatCanadaSite(client, game.getHomeTeam(),
-//          game.getAwayTeam());
-//      if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
-//        log.warn("Could not get game details");
-//        return game;
-//      }
-//      log.info("Game: " + game + " game order: " + gameOrderDetails);
-//      updatePlayers(client, game, gameOrderDetails);
-//      saveScore(client, game, gameOrderDetails);
-//    } catch (Exception e) {
-//      log.error("Problem saving game to WFDF system: " + game, e);
-//    } finally {
-//      HttpClientUtils.closeQuietly(client);
-//    }
+    HttpClient client = null;
+    try {
+      client = HttpClientBuilder.create().setRedirectStrategy(new LaxRedirectStrategy()).build();
+      login(client);
+      GameOrderDetails gameOrderDetails = findGameIdFromUltimatCanadaSite(client, game.getHomeTeam(),
+          game.getAwayTeam());
+      if (gameOrderDetails == null || gameOrderDetails.getGameNumber() <= 0) {
+        log.warn("Could not get game details");
+        return game;
+      }
+      log.info("Game: " + game + " game order: " + gameOrderDetails);
+      updatePlayers(client, game, gameOrderDetails);
+      saveScore(client, game, gameOrderDetails);
+    } catch (Exception e) {
+      log.error("Problem saving game to WFDF system: " + game, e);
+    } finally {
+      HttpClientUtils.closeQuietly(client);
+    }
     return game;
   }
 
@@ -387,8 +387,8 @@ public class GameServiceImpl implements GameService {
     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
     // TODO: Update for new season
     nameValuePairs.add(new BasicNameValuePair("login", "Login"));
-    nameValuePairs.add(new BasicNameValuePair("mypassword", "training2024"));
-    nameValuePairs.add(new BasicNameValuePair("myusername", "cucscore"));
+    nameValuePairs.add(new BasicNameValuePair("mypassword", "n4emTjm2"));
+    nameValuePairs.add(new BasicNameValuePair("myusername", "cucjrscore"));
     doPost(client, LOGIN, nameValuePairs);
   }
 

@@ -135,9 +135,9 @@ public class DataLoader implements ApplicationRunner {
   }
 
   private void loadJuniorDivisions() {
-    Division openDivision = new Division("Junior Open", 2, CUC_YEAR + " JuniorOpen");
+    Division openDivision = new Division("Junior Open", 1, CUC_YEAR + " JuniorOpen");
     getDivisionRepository().save(openDivision);
-    Division womenDivision = new Division("Junior Women", 1, CUC_YEAR + " JuniorWomen");
+    Division womenDivision = new Division("Junior Women", 2, CUC_YEAR + " JuniorWomen");
     getDivisionRepository().save(womenDivision);
 
     loadTeamsFromUltimateCanadaSite(openDivision);
