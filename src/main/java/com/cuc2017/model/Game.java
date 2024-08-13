@@ -265,11 +265,15 @@ public class Game extends AbstractEntity {
   }
 
   public void decrementAwayTeamScore() {
-    awayTeamScore--;
+    if (awayTeamScore > 0) {
+      awayTeamScore--;
+    }
   }
 
   public void decrementHomeTeamScore() {
-    homeTeamScore--;
+    if (homeTeamScore > 0) {
+      homeTeamScore--;
+    }
   }
 
   public Team getHomeTeam() {
