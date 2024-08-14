@@ -74,7 +74,7 @@ public class DataLoader implements ApplicationRunner {
     // TODO: Set proper division load
     // loadMixedDivisions();
     loadAdultDivisions();
-    loadJuniorDivisions();
+    //loadJuniorDivisions();
   }
 
   private void loadAdultDivisions() {

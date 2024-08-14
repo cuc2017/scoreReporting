@@ -1,6 +1,13 @@
 # scoreReporting
 Score reporting system for cuc2017, cuc2018, cuc2019 and cuc2024
 
+# create zip to give to AWS
+- update pom version number
+- update Profile version number to match
+- mvn clean package
+- copy scoreReporting jar to deploy
+- zip scoreReporting-[version].zip Procfile scoreReporting-[version].jar
+
 # AWS elasticbeanstalk configuration to add
 - use t3-large t3-medium size
 - use loadbalanced instance
