@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.cuc2017</groupId>
 	<artifactId>scoreReporting</artifactId>
-	<version>0.6.7</version> <!-- also update Procfile -->
+	<version>0.6.8</version> <!-- also update Procfile -->
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
