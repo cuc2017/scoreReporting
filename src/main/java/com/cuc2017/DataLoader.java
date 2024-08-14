@@ -73,16 +73,16 @@ public class DataLoader implements ApplicationRunner {
 
     // TODO: Set proper division load
     // loadMixedDivisions();
-    // loadAdultDivisions();
+    loadAdultDivisions();
     loadJuniorDivisions();
   }
 
   private void loadAdultDivisions() {
     Division openDivision = new Division("Open", 2, CUC_YEAR + " Open");
     getDivisionRepository().save(openDivision);
-    Division womenDivision = new Division("Women", 1, CUC_YEAR + " Women");
+    Division womenDivision = new Division("Women", 3, CUC_YEAR + " Women");
     getDivisionRepository().save(womenDivision);
-    Division mixedDivision = new Division("Mixed", 2, CUC_YEAR + " Mixed");
+    Division mixedDivision = new Division("Mixed", 1, CUC_YEAR + " Mixed");
     getDivisionRepository().save(mixedDivision);
 
     loadTeamsFromUltimateCanadaSite(openDivision);

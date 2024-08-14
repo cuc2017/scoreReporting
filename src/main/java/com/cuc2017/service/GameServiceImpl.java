@@ -63,15 +63,15 @@ public class GameServiceImpl implements GameService {
   private static final String SEASON_LIVE_ADULT = "CUC2024";
   private static final String SEASON_LIVE_MIX = "CUC2024Mas";
   private static final String SEASON_TRAINING = "CUC2018";
-  private static final String SEASON = SEASON_LIVE_JR;
+  private static final String SEASON = SEASON_LIVE_ADULT;
 
   // TODO: Set proper active Site
   private static final String TEST_SITE = "cuc2017-test";
   private static final String JUNIOR_SITE = "cucjr2024";
-  private static final String ADULT_SITE = "cuc2019";
+  private static final String ADULT_SITE = "cuc2024";
   private static final String MIXED_SITE = "cuc2019mix";
   private static final String TRAINING_SITE = "cucjr2023";
-  private static final String ACTIVE_SITE = JUNIOR_SITE;
+  private static final String ACTIVE_SITE = ADULT_SITE;
 
   public static final String LOGIN = HOSTNAME + ACTIVE_SITE + "/scorekeeper/?view=login";
   private static final String TEAM_CARDS = HOSTNAME + ACTIVE_SITE + "/?view=teamcard&team=";
@@ -387,8 +387,8 @@ public class GameServiceImpl implements GameService {
     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
     // TODO: Update for new season
     nameValuePairs.add(new BasicNameValuePair("login", "Login"));
-    nameValuePairs.add(new BasicNameValuePair("mypassword", "n4emTjm2"));
-    nameValuePairs.add(new BasicNameValuePair("myusername", "cucjrscore"));
+    nameValuePairs.add(new BasicNameValuePair("mypassword", "s3A2v3rc"));
+    nameValuePairs.add(new BasicNameValuePair("myusername", "cucscore"));
     doPost(client, LOGIN, nameValuePairs);
   }
 
@@ -399,7 +399,7 @@ public class GameServiceImpl implements GameService {
     addPlayers("awaycheck[]", game, gameOrderDetails.getAwayTeam(), nameValuePairs);
     nameValuePairs.add(new BasicNameValuePair("save", "Save"));
     nameValuePairs.add(new BasicNameValuePair("backurl",
-        "http://80.172.224.48/cuc2017-test//?view=user/addscoresheet&game=" + gameOrderDetails.getGameNumber()));
+        HOSTNAME + "index?view=user/addscoresheet&game=" + gameOrderDetails.getGameNumber()));
     doPost(client, uri, nameValuePairs);
   }
 
