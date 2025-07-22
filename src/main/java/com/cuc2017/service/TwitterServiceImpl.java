@@ -15,7 +15,7 @@ import com.cuc2017.model.Field;
 public class TwitterServiceImpl implements TwitterService {
 
   // TODO: Update website
-  private static final String WEB_SITE = "https://scores.cuc2024.com";
+  private static final String WEB_SITE = "https://scores.cuc2025scores.com";
 
   private static final Logger log = LoggerFactory.getLogger(TwitterServiceImpl.class);
 

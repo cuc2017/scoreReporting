@@ -34,7 +34,7 @@ import com.google.gson.stream.JsonReader;
 public class DataLoader implements ApplicationRunner {
 
   // TODO: Update year
-  private static final String CUC_YEAR = "CUC2024";
+  private static final String CUC_YEAR = "CUC2025";
 
   private static final Logger log = LoggerFactory.getLogger(DataLoader.class);
 
@@ -57,6 +57,7 @@ public class DataLoader implements ApplicationRunner {
     getFieldRepository().save(new Field("Field 4", ""));
     getFieldRepository().save(new Field("Field 5", ""));
     getFieldRepository().save(new Field("Field 6", ""));
+    getFieldRepository().save(new Field("Field 7", ""));
     getFieldRepository().save(new Field("Field 8", ""));
     getFieldRepository().save(new Field("Field 9", ""));
     getFieldRepository().save(new Field("Field 10", ""));
@@ -69,12 +70,13 @@ public class DataLoader implements ApplicationRunner {
     getFieldRepository().save(new Field("Field 17", ""));
     getFieldRepository().save(new Field("Field 18", ""));
     getFieldRepository().save(new Field("Field 19", ""));
-    getFieldRepository().save(new Field("Carleton", ""));
+    // getFieldRepository().save(new Field("Carleton", ""));
 
     // TODO: Set proper division load
     // loadMixedDivisions();
-    loadAdultDivisions();
-    //loadJuniorDivisions();
+    // loadAdultDivisions();
+    // loadJuniorDivisions();
+    loadMastersDivisions();
   }
 
   private void loadAdultDivisions() {
@@ -122,7 +124,7 @@ public class DataLoader implements ApplicationRunner {
   }
 
   private void loadMastersDivisions() {
-    Division masterOpenDivision = new Division("Masters Open", 4, CUC_YEAR + " MastersOpen");
+    Division masterOpenDivision = new Division("Masters Open", 2, CUC_YEAR + " MastersOpen");
     getDivisionRepository().save(masterOpenDivision);
     Division masterWomenDivision = new Division("Masters Women", 3, CUC_YEAR + " MastersWomen");
     getDivisionRepository().save(masterWomenDivision);

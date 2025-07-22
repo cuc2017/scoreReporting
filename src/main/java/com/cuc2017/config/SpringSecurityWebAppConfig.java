@@ -20,14 +20,14 @@ public class SpringSecurityWebAppConfig extends WebSecurityConfigurerAdapter {
   auth.inMemoryAuthentication()
           .withUser("scorekeeper").password("skOttawa").roles("USER")
           .and()
-          .withUser("admin").password("Ottawa2024!").roles("ADMIN");
+          .withUser("admin").password("Ottawa2025!").roles("ADMIN");
   // @formatter:on
   }
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     // TODO: uncomment for scoretraining
-//    http.authorizeRequests().antMatchers("/**").permitAll();
+  //  http.authorizeRequests().antMatchers("/**").permitAll();
 
     // TODO: comment for scoretraining
     // @formatter:off

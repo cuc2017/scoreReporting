@@ -54,24 +54,26 @@ import com.cuc2017.repository.TeamRepository;
 public class GameServiceImpl implements GameService {
 
   // TODO: set proper hostname
-  private static final String HOSTNAME_2024 = "https://results.canadianultimate.com/";
+  private static final String HOSTNAME_2025 = "https://results.canadianultimate.com/";
   private static final String HOSTNAME_TRAINING = "https://results.canadianultimate.com/";
-  private static final String HOSTNAME = HOSTNAME_2024;
+  private static final String HOSTNAME = HOSTNAME_2025;
 
   // TODO: Set proper season
-  private static final String SEASON_LIVE_JR = "CUCJR2024";
-  private static final String SEASON_LIVE_ADULT = "CUC2024";
-  private static final String SEASON_LIVE_MIX = "CUC2024Mas";
-  private static final String SEASON_TRAINING = "CUC2018";
-  private static final String SEASON = SEASON_LIVE_ADULT;
+  private static final String SEASON_LIVE_JR = "CUCJR2025";
+  private static final String SEASON_LIVE_ADULT = "CUC2025";
+  private static final String SEASON_LIVE_MASTER = "CUCM2025";
+  private static final String SEASON_LIVE_MIX = "CUC2025Mas";
+  private static final String SEASON_TRAINING = "CUC2024";
+  private static final String SEASON = SEASON_LIVE_MASTER;
 
   // TODO: Set proper active Site
   private static final String TEST_SITE = "cuc2017-test";
-  private static final String JUNIOR_SITE = "cucjr2024";
-  private static final String ADULT_SITE = "cuc2024";
-  private static final String MIXED_SITE = "cuc2019mix";
-  private static final String TRAINING_SITE = "cucjr2023";
-  private static final String ACTIVE_SITE = ADULT_SITE;
+  private static final String JUNIOR_SITE = "cucjr2025";
+  private static final String ADULT_SITE = "cuc2025";
+  private static final String MASTER_SITE = "cucm2025";
+  private static final String MIXED_SITE = "cuc2025mix";
+  private static final String TRAINING_SITE = "cucjr2024";
+  private static final String ACTIVE_SITE = MASTER_SITE;
 
   public static final String LOGIN = HOSTNAME + ACTIVE_SITE + "/scorekeeper/?view=login";
   private static final String TEAM_CARDS = HOSTNAME + ACTIVE_SITE + "/?view=teamcard&team=";
@@ -387,8 +389,8 @@ public class GameServiceImpl implements GameService {
     List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
     // TODO: Update for new season
     nameValuePairs.add(new BasicNameValuePair("login", "Login"));
-    nameValuePairs.add(new BasicNameValuePair("mypassword", "s3A2v3rc"));
-    nameValuePairs.add(new BasicNameValuePair("myusername", "cucscore"));
+    nameValuePairs.add(new BasicNameValuePair("mypassword", "cucm25"));
+    nameValuePairs.add(new BasicNameValuePair("myusername", "cucadmin"));
     doPost(client, LOGIN, nameValuePairs);
   }
 

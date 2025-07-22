@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.cuc2017</groupId>
 	<artifactId>scoreReporting</artifactId>
-	<version>0.6.8</version> <!-- also update Procfile -->
+	<version>0.7.3</version> <!-- also update Procfile -->
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,11 +40,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 		<dependency>
@@ -72,15 +67,15 @@
 			<artifactId>gson</artifactId>
 		</dependency>
 		<!-- TODO: comment for scoretraining -->
-		<dependency>
-		  <groupId>mysql</groupId>
-		  <artifactId>mysql-connector-java</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--		  <groupId>mysql</groupId>-->
+<!--		  <artifactId>mysql-connector-java</artifactId>-->
+<!--		</dependency>-->
 		<!-- TODO: uncomment for scoretraining -->
-<!-- 		<dependency>-->
-<!-- 			<groupId>com.h2database</groupId>-->
-<!-- 			<artifactId>h2</artifactId>-->
-<!-- 		</dependency>-->
+ 		<dependency>
+ 			<groupId>com.h2database</groupId>
+ 			<artifactId>h2</artifactId>
+ 		</dependency>
 		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-twitter</artifactId>
@@ -123,6 +118,15 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.7.1</version>
+				<configuration>
+					<descriptors>
+						<descriptor>aws/aws-ebs-distribution.xml</descriptor>
+					</descriptors>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

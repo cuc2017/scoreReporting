@@ -1,20 +1,21 @@
 # scoreReporting
-Score reporting system for cuc2017, cuc2018, cuc2019 and cuc2024
+Score reporting system for cuc2017, cuc2018, cuc2019, cuc2024 and cuc2025
 
 # create zip to give to AWS
 - update pom version number
-- update Profile version number to match
-- mvn clean package
-- copy scoreReporting jar to deploy
-- zip scoreReporting-[version].zip Procfile scoreReporting-[version].jar
+- mvn clean package assembly:single
+- use zip file in target should look like: scoreReporting-version-aws.ebs.zip
 
 # AWS elasticbeanstalk configuration to add
 see also https://www.codejava.net/aws/elastic-beanstalk-deploy-spring-boot-application-with-mysql#google_vignette
+- create domain in route 53
+- create wildcard certificate in certification manager using domain created above
 - select custom configuration
 - need to create service roles and ec2 instance profile
 - use t3-large t3-medium size
 - use loadbalanced instance
-- loadbalance: application and add port 443 (need sticky sessions)
+- loadbalance: application and add port 443 (need sticky sessions) and certificate created above
+- change default to send via port 5000 from process
 - add mysql database default configuration except
    - username: cuc2024 password: chooseone
    - delete on delete instance
